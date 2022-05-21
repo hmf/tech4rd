@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>https://manikmagar.github.io/jbake-future-imperfect-template</link>
-    <atom:link href="https://manikmagar.github.io/jbake-future-imperfect-template/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:8820/</link>
+    <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 21 May 2022 10:29:38 +0100</pubDate>
-    <lastBuildDate>Sat, 21 May 2022 10:29:38 +0100</lastBuildDate>
+    <pubDate>Sat, 21 May 2022 10:34:11 +0100</pubDate>
+    <lastBuildDate>Sat, 21 May 2022 10:34:11 +0100</lastBuildDate>
 
     <item>
       <title>Fourth Post</title>
-      <link>https://manikmagar.github.io/jbake-future-imperfect-template/blog/2013/fourth-post.html</link>
+      <link>http://localhost:8820//blog/2013/fourth-post.html</link>
       <pubDate>Thu, 17 Oct 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/fourth-post.html</guid>
       	<description>
@@ -41,7 +41,7 @@ libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.&lt;/p&gt;
     </item>
     <item>
       <title>Third Post</title>
-      <link>https://manikmagar.github.io/jbake-future-imperfect-template/blog/2013/third-post.html</link>
+      <link>http://localhost:8820//blog/2013/third-post.html</link>
       <pubDate>Thu, 26 Sep 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/third-post.html</guid>
       	<description>
@@ -71,7 +71,7 @@ libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.&lt;/p&gt;
     </item>
     <item>
       <title>Second Post</title>
-      <link>https://manikmagar.github.io/jbake-future-imperfect-template/blog/2013/second-post.html</link>
+      <link>http://localhost:8820//blog/2013/second-post.html</link>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/second-post.html</guid>
       	<description>
@@ -92,7 +92,7 @@ libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.&lt;/p&gt;
     </item>
     <item>
       <title>First Post</title>
-      <link>https://manikmagar.github.io/jbake-future-imperfect-template/blog/2013/first-post.html</link>
+      <link>http://localhost:8820//blog/2013/first-post.html</link>
       <pubDate>Wed, 24 Jul 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/first-post.html</guid>
       	<description>
