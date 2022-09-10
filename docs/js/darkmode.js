@@ -2,8 +2,8 @@
 
 $(function(){
 	// Stylesheets used by highlight.js
-	const hljs_dark = '\n<link rel="stylesheet" href="/css/hljs_lioshi.min.css">';
-	const hljs_light = '\n<link rel="stylesheet" href="/css/hljs_googlecode.min.css">';
+	const hljs_dark = '\n<link rel="stylesheet" href="css/hljs_lioshi.min.css">';
+	const hljs_light = '\n<link rel="stylesheet" href="css/hljs_googlecode.min.css">';
 
 	function updateHLjsStyle(theme, deleteLast = true) { 
 		var head = document.getElementsByTagName('head')[0].innerHTML;
