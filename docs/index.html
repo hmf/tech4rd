@@ -203,7 +203,13 @@
   
          
     <div id="content">
-       <!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---> <!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex ---> <!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir ---> <!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --> <!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --> <!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --> <!-- ./mill ./mill resolve site._
+       <!--- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser --->
+<!--- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex --->
+<!--- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir --->
+<!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown -->
+<!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop -->
+<!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 -->
+<!-- ./mill ./mill resolve site._
 
 [1/1] resolve 
 site.gitTemplateURL
@@ -222,192 +228,196 @@ site.jbakeWorker
 site.siteDestination
 site.sources
 
- --> 
+ -->
 <style>
 r { color: Red }
 o { color: Orange }
 g { color: Green }
 b { color: Blue }
-</style> 
-<h1>Introduction</h1> 
-<p>This is the first part in a series of articles about creating and publishing technical content on publicly available hosts. The goal is to set-up a source to write and publish a static website to various target hosts. I want to make this as easy and painless as possible, so I have opted to use Markdown to write the contents, use code editing tools and version control to manage the content and use a static site generator to be able to cross-publish the full site or single posts to various destinations (hosts). The aim is to keep these hosts synchronized and facilitate updating when required. I will have one repository for the site's sources that will be kept private. I assume that all content that is published is public. I will use Java as the base technology to develop, maintain and publish the sites. In particular the tools used were selected to facilitate the documentation of Java and Scala 3 projects, including library APIs. This includes the use of the <a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill</a> build tool (<a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill documentation</a>) to develop and execute the required scripts to generate and publish the content.</p> 
-<h1>Getting started</h1> 
-<p>We start off by creating a Github repository with the sources for the websites. This is my private source where I keep my research and unfinished work. It also contains the final rendered pieces that can then me moved to the destination hosts.</p> 
-<p>Then we create the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site">Github repository where the website is published</a>.</p> 
-<ol> 
- <li>Go to your github account and <a href="https://github.com/new">press the <code>create a new repository</code></a> option;</li> 
- <li>Create the <a href="tech4rtd">repository name</a> for your site using GitHub pages;</li> 
- <li>Add a description (<code>Articles on software development, programming stuff, embedded systems, sensors and electronics.</code>);</li> 
- <li>Make sure the site is public (don't keep their anything private);</li> 
- <li>Select the option to initialize the repository with a <code>README.md</code> file;</li> 
- <li>Select the option to add an initial <code>.gitignore</code> file (use the Scala template);</li> 
- <li>Click the <code>create a template</code> button.</li> 
-</ol> 
-<p>Github documentation states that: "GitHub Pages sites are publicly available on the internet, even if the repository for the site is private." Because these sites are public, don't store any personal, private or sensitive data there.</p> 
-<p>Now we can create the website source repository.</p> 
-<ol> 
- <li>Go to the <a href="https://github.com/hmf/tech4rd">repository you created</a> to keep the sources of the site;</li> 
- <li>Create a <code>index.md</code> or <code>index.html</code> file as the site's initial content: 
-  <ol> 
-   <li>Don't place this file in the project's root of the source repository;</li> 
-   <li>Select <code>add</code> -&gt; <code>create a new file</code>;</li> 
-   <li>Input both the path and the file: <code>docs/index.md</code></li> 
-   <li>Place some content in this page;</li> 
-  </ol> </li> 
- <li>We then configure the publishing source: 
-  <ol> 
-   <li>In the source site click on the <code>Settings</code> tab;</li> 
-   <li>Go to the <code>Code and Automation</code> section;</li> 
-   <li>Under this section click on <code>Pages</code> to open the <code>Github pages</code> configuration page:</li> 
-   <li>Select <code>Source</code> for a specific branch or leave as <code>None</code>. Select the <code>main</code> branch and select <code>/docs</code> as the site content folder.</li> 
-   <li>Don't forget to press the <code>save</code> button. When you do this the <a href="https://hmf.github.io/tech4rd/">site's URL</a> is provided for you;</li> 
-   <li>Note that the site will not be immediately available. It can take up to 10 minutes for each change to be reflected in the site;</li> 
-   <li>You can then choose a theme for the Jekyll static site generator if you use the <code>gh-pages</code> branch. We are going to use another static site generator, so leave it as is;</li> 
-  </ol> </li> 
- <li>Add the website link to you Github repository page 
-  <ol> 
-   <li>Go to the project's Github repository site;</li> 
-   <li>Click on the configuration wheel of the <code>About</code> field;</li> 
-   <li>Click on the <code>Website</code> field and paste the <a href="https://hmf.github.io/tech4rd/">previously configured URL</a> into it;</li> 
-   <li>Fill in the <code>Description</code> and <code>Topics</code> as desired. For example: 
-    <ol> 
-     <li><code>Description</code>: Articles on software development and embedded systems.</li> 
-     <li><code>Topics</code>: java scala programming electronics embedded-systems software-development sensors.</li> 
-    </ol> </li> 
-  </ol> </li> 
-</ol> 
-<p>You can now view the initial content of your site. From the sites repository, click on the URL you have just saved. You should be able to see your contents.</p> 
-<h1>Automatically generated sites</h1> 
-<p>In the example above, we provided a Markdown file and the content was automatically made available as HTML. Several companies provide hosting platforms that can automatically render Markdown files as HTML. The site's content can be, for example, standard text files that can be viewed with the web interface of a code repository. It can also contain HTML content for a project or personal website. Examples of this include <a href="https://docs.github.com/en/pages">Github pages</a> (used above) and <a href="https://docs.gitlab.com/ee/user/project/pages/">Gitlab pages</a>.</p> 
-<p>Generating a static website based only on Markdown, may not be enough for all but the simplest website. In these cases, one can use several Markdown files and use links among them. This allows one to set up simple static sites that include: manually generated static menus or indexes, use of links between content and adding any formatting that is supported by Markdown syntax. It is important to note that these hosts support the parsing of Markdown files that are not <em>"standard"</em>. We have for example <a href="https://github.github.com/gfm/">Github's</a> and <a href="https://docs.gitlab.com/ee/user/markdown.html">Gitlab's</a> flavoured versions of Markdown. These versions of Markdown include for example encoding "for mentions", "emojis" and "issues" that can be placed in the source. These features facilitate interaction with the code repository and are parsed using the host's default parsers. In <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github">some cases</a>, the online Web interface also allows for additional configurations and facilitates the editing of the content.</p> 
-<p>There is no standard for Markdown. The closest we have to a standard is <a href="https://daringfireball.net/projects/markdown/syntax">John Gruber’s canonical description of Markdown’s syntax</a>. A good source for a complete description of Markdown (including cheat sheets), is the <a href="https://www.markdownguide.org/">Markdown Guide</a>. Here you can also find a list of <a href="https://www.markdownguide.org/extended-syntax/">extended-syntax</a> versions of the Markdown language that includes for example the <a href="https://commonmark.org/">Commonmark</a> and <a href="https://rmarkdown.rstudio.com/">R</a> Markdown variants.</p> 
-<p>It is also possible to add themes, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/adding-a-theme-to-your-github-pages-site-with-the-theme-chooser">for example in GitHub pages</a>, when using Markdown-only sites. Internally, Github pages uses Jekyll. In this case, the HTML files will automatically be created via this static site generator. No need to install or invoke the static site tools. However, to activate and use the theme, it is necessary for you to set up the YAML front matter that specifies the layout of each HTML output.</p> 
-<p>Alternatively, one can use a static site generator by incorporating it into the CI/CD workflow<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup> or use it locally to manually create and publish the site's contents to the hosts' website location. We will look at the details in the section on <a href="#static_site_generation">static site generation</a>.</p> 
-<h1>Static site generation</h1> 
-<p>Static site generators process a set of source files (written, for example, in <a href="[https://en.wikipedia.org/wiki/Markdown]">MarkDown</a>, <a href="https://asciidoc.org/">AsciiDoc</a> (see <a href="https://en.wikipedia.org/wiki/AsciiDoc">AsciiDoc in Wikipedia</a>) and <a href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a>) and generate the HTML content. Usually each source file is converted into a corresponding HTML file. Files in HTML can also be used as sources, but they are usually not processed by the static site generator. In addition to this, these tools also make use of templates (such as <a href="https://freemarker.apache.org/">Freemarker</a> or <a href="https://www.thymeleaf.org/">ThymeLeaf</a>) to define the layout and look of the website.</p> 
-<p>The templates let us configure the sites' menus, add headers and footers to the HTML pages, provide social media links, social share menus and 404 error handling for several hosts. They also allow one to place JavaScript in the HTML pages so that additional functionality can be made available. Examples include adding <a href="https://analytics.google.com/">Google Analytics</a> scripts, estimating read times for the posts, show maths expressions (<a href="https://www.mathjax.org/">MathJax</a>, <a href="https://mathjs.org/">MathJS</a>, <a href="https://katex.org/">KaTex</a>), draw flowcharts (<a href="https://mermaid-js.github.io/mermaid/#/">Mermaid-Js</a>, <a href="https://flowchart.js.org/">Flowchart.js</a>), render plots (<a href="https://www.chartjs.org/">ChartJS</a>, <a href="https://plotly.com/javascript/">Plotly</a>, <a href="https://gionkunz.github.io/chartist-js/">Chartist-Js</a>, <a href="https://rawgraphs.io/">RawGraphs.io</a>, <a href="https://d3js.org/">d3js</a>, <a href="https://c3js.org/">c3js</a>, <a href="https://nvd3.org/">nvd3</a>) and use icons (<a href="https://github.com/feathericons/feather">FeatherIcons</a>, <a href="https://ionicons.com/">IonIcons</a>, <a href="https://fontawesome.com/">FontAwesome</a>, <a href="https://github.com/tabler/tabler-icons">Tabler</a>, <a href="http://css.gg/">css.gg</a>).</p> 
-<p>There are quite a few static site generators out there. These include for example: <a href="https://docusaurus.io/">Docusaurus.io</a> (<a href="https://github.com/facebook/docusaurus">Docusaurus in Github</a>), <a href="https://jekyllrb.com/">Jekyll</a> (<a href="https://github.com/jekyll/jekyll">Jekyll in Github</a>), <a href="http://sphinx-doc.org/">sphinx-doc</a>, <a href="http://www.foundweekends.org/pamflet/">Pamflet</a> (<a href="https://github.com/foundweekends/pamflet">Pamflet in Github</a>), <a href="https://nanoc.ws/">Nanoc</a>, <a href="https://www.gitbook.com/">GitBook</a>, <a href="https://developer.lightbend.com/docs/paradox/current/">Paradox</a> (<a href="https://github.com/lightbend/paradox">Paradox in Github</a>), <a href="https://gohugo.io/">GoHugo</a> and <a href="http://asciidoctor.org/">AsciiDoctor</a>. Many of these tools are developed in Ruby, Go or Python. I have opted to use JVM based static site generators to make it easy to automate the process - I only depend on the JVM. Maven packages that can be installed via the Ivy package manager and <a href="https://www.javaadvent.com/2021/12/generate-your-static-website-with-java-and-jbake.html">Maven or Gradle plugins</a> to run the necessary tools. No need to deal with operating system package installation once the Java system is installed. This also makes the use of <a href="https://en.wikipedia.org/wiki/CI/CD">CI/CD</a> workflows easier to update a Blog or launch a new software release.</p> 
-<p>Some of these static site generators include: <a href="https://jbake.org/">JBake</a> (<a href="https://en.wikipedia.org/wiki/AsciiDoc">JBake in github</a>), <a href="https://planet42.github.io/Laika/">Laika</a> (<a href="https://github.com/planet42/Laika">Laika Github</a>), <a href="http://www.foundweekends.org/pamflet/">Pamflet</a> and <a href="https://developer.lightbend.com/docs/paradox/current/">Paradox</a>. Laika is a interesting case in that it is also capable of generating documents of other formats such as PDF. I also include in this category tools that can be used to generate Java or Scala API documentation. In the case of Java we have <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a>. For <a href="https://docs.scala-lang.org/">Scala</a> we will focus on <a href="https://docs.scala-lang.org/scala3/scaladoc.html">ScalaDoc specifically for Scala3</a> (see the <a href="https://docs.scala-lang.org/scala3/guides/scaladoc/">Scala3 ScalaDoc Guide</a> and <a href="https://dotty.epfl.ch/docs/usage/scaladoc/">Scala3 ScalaDoc Usage</a> webpages). Note that ScalaDoc is part of the <a href="https://github.com/lampepfl/dotty">Scala3</a> compiler, also known as Dotty. The Scala3 ScalaDoc tool is a static site generator in and of itself.</p> 
-<p>In addition to the HTML templates, the source files can also be preprocessed prior to conversion. In particular, I am interested in documenting software. The <a href="https://scalameta.org/mdoc/">MDoc</a> (<a href="https://github.com/scalameta/mdoc">MDoc in Github</a>) can be used to compile code snippets embedded in the Markdown sources. Depending on the static site generator we also have build tool plugins for the Scala ecosystem. For example, the <a href="https://www.scala-sbt.org/sbt-site/">Sbt-site</a>(<a href="https://github.com/sbt/sbt-site">Sbt-site Github</a>) plugin can use several generators to create a static website. The <a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill build tool</a> includes plugins for <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_docusaurus_2">Docusaurus</a>, <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">JBake</a> and <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">MDoc plugin</a>.</p> 
-<p>I will first show you how to set-up and use a JBake static site. More concretely I will configure, populate and publish a blog. Later I will also describe how to use ScalaDoc and MDoc to document software and keep this documentation up to date with the software repository.</p> 
-<h2>Workflow</h2> 
-<p>Before getting into the nitty gritty, let's first take a look at what the workflow of publishing a site might look like. To generate a site we basically take a set of sources, for example Markdown files and drawings, and transform them into the website's artifacts. These artifacts are usually HTML files, but may include PDF files and images (for example in the PNG or SVG formats). Usually a single source file is transformed into a single HTML file, but in general this is not a strict requirement. A source file may go through several transformations before the final output is generated. For example a Markdown file may have its code fences compiled by the <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">MDoc plugin</a> resulting in a changed source. This file is then processed by <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">JBake</a> using <a href="https://freemarker.apache.org/">Freemarker</a> templates to produce the final HTML file.</p> 
-<p>The various transformations may be applied by several tools, each of which may need their own configuration. For example, we may want to generate HTML pages with a specific layout that may include pre-compiled content, specific menus, headers and footers. <a href="https://freemarker.apache.org/">Freemarker</a> for example allows the use of templates and a domain specific language (DSL) that defines the look and feel of the final HTML page. In this case, the static site generator takes as input a Freemarker template and a Markdown source file to generate the final output. Sometimes the source file itself may include configurations used to tweak the output. For example, the <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">MDoc plugin</a> allows us to tag each code fence to define the type of output we want or, a Markdown file may have a header. It is important to point out that anyone is free to include manually edited HTML pages to the site's contents. In addition to this, Markdown for example, allows one to embed HTML snippets that will be kept unaltered.</p> 
-<p>Compiling a site means taking a set of sources that are located in a given path, transforming these and placing them in the site's final directory. Some files may not be processed at all. For example images may be copied, as is, to the site's destination folder. Generally the location of the source files within the source directory determines how and where the content is made available. For example, blogs may have a directory specifically set aside to contain posts indexed by the publishing date. Usually the transformed files are placed in a local private directory where they can be served and checked locally. Once the content has been checked (or not), it can be published to the final public serving host.</p> 
-<p>The compilation of the website is usually done by executing one or more commands of a static site generator tool at the command line. This tool must be configured prior to execution. Such configurations may include the path to the site's sources and transformation workflow to be used. Usually the sources need to be made available in a specified path and with a required directory structure. As I have pointed out, we may also need to configure the use of other tools and their respective configurations.</p> 
-<p>The site generator command is usually invoked at the root of the site's sources. However, it may advantageous to invoke the static site generator via a build tool such as <a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill</a>. It allows us to customize our workflow so that we can use several tools including specific preprocessing transformers for our website. We are free to implement our own transformations tasks and embed them into the workflow of our Mill scripts that do source compilation and unit testing. We can also use Mill with CI/CD pipelines to automatically publish new content. Another advantage of using a build tool like Mill is that we only provide a Mill command line script with our sources and a Mill build script. Mill will then download and install itself and any of the required dependencies (such as the JBake tools) before executing the build script. When using CI/CD, we don't have to worry about downloading and installing Mill or any additional tools. In the next section we will use a <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">Mill JBake plugin</a> to generate a static site.</p> 
-<h1>JBake</h1> 
-<p>So the first question is, why JBake? JBake is a mature Java tool that has good documentation and large user community. So it should provide most of us with what we need or want (analytics, icons, menus, etc.). In particular, JBake has been extensively used to document open software projects and implement blogs and personal sites. Having said this, it does not seem to be as popular as <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">GoHugo</a> but, it is well supported and several templates are available. In particular it can use the Freemarker, <a href="http://www.groovy-lang.org/">Groovy Simple and Markup</a>, Thymeleaf, <a href="https://github.com/neuland/jade4j">Jade</a> and <a href="https://pebbletemplates.io/">Pebble</a> template engines.</p> 
-<p>To set up a <a href="https://jbake.org/docs/2.6.7/#quickstart_guide">JBake static site</a> consists of the following steps:</p> 
-<ol> 
- <li>Download and install the JBake tool;</li> 
- <li>Create a directory for the website's source;</li> 
- <li>Populate the directory with JBake's default configuration that uses Freemarker templates;</li> 
- <li>Customize the templates if this is necessary;</li> 
- <li>Add to or change content in the site's sources directory (assets, content, templates);</li> 
- <li>Use JBake to generate the website's final output (HTML, XHTML);</li> 
- <li>Preview the contents (includes a <em>"watch"</em> mode to automatically preview and update the content);</li> 
- <li>Publish the contents.</li> 
-</ol> 
-<p>To update the website we need only add or change the website's content and repeat the steps that generate the final output and publish the contents. JBake is used via the command line to perform all theses actions. It is also possible to use command line parameters, change configuration files and set environment variables to configure JBake's output. For full details see <a href="https://jbake.org/docs/">JBake's documentation</a>. I strongly suggest you keep the site's sources under version control. Either place these sources in an existing repository that you want to document, or place this in a separate repository where you keep only the website's source code. In this example, we will work on a blog, so we use a separate repository that contains only the site's sources.</p> 
-<h2>Installing Mill</h2> 
-<p>In this article we will use <a href="https://github.com/lefou/mill-jbake">Mill's JBake plugin</a>. This allows us to download and execute JBake without installing this tool in the host operating system. This is advantageous when using a CI/CD pipeline in a virtual machine. All the static website generation setup and configuration is done as documented in <a href="https://jbake.org/docs/">JBake's site</a>. The execution of JBake however, is done via a Mill build script and the corresponding Mill tasks encoded in that script. So let's start off by installing and writing up our Mill script:</p> 
-<p>First place yourself at the site's source repository:</p> 
+</style>
+<h1>Introduction</h1>
+<p>This is the first part in a series of articles about creating and publishing technical content on publicly available hosts. The goal is to set-up a source to write and publish a static website to various target hosts. I want to make this as easy and painless as possible, so I have opted to use Markdown to write the contents, use code editing tools and version control to manage the content and use a static site generator to be able to cross-publish the full site or single posts to various destinations (hosts). The aim is to keep these hosts synchronized and facilitate updating when required. I will have one repository for the site's sources that will be kept private. I assume that all content that is published is public. I will use Java as the base technology to develop, maintain and publish the sites. In particular the tools used were selected to facilitate the documentation of Java and Scala 3 projects, including library APIs. This includes the use of the <a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill</a> build tool (<a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill documentation</a>) to develop and execute the required scripts to generate and publish the content.</p>
+<h1>Getting started</h1>
+<p>We start off by creating a Github repository with the sources for the websites. This is my private source where I keep my research and unfinished work. It also contains the final rendered pieces that can then me moved to the destination hosts.</p>
+<p>Then we create the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site">Github repository where the website is published</a>.</p>
+<ol>
+<li>Go to your github account and <a href="https://github.com/new">press the <code>create a new repository</code></a> option;</li>
+<li>Create the <a href="tech4rtd">repository name</a> for your site using GitHub pages;</li>
+<li>Add a description (<code>Articles on software development, programming stuff, embedded systems, sensors and electronics.</code>);</li>
+<li>Make sure the site is public (don't keep their anything private);</li>
+<li>Select the option to initialize the repository with a <code>README.md</code> file;</li>
+<li>Select the option to add an initial <code>.gitignore</code> file (use the Scala template);</li>
+<li>Click the <code>create a template</code> button.</li>
+</ol>
+<p>Github documentation states that: &quot;GitHub Pages sites are publicly available on the internet, even if the repository for the site is private.&quot; Because these sites are public, don't store any personal, private or sensitive data there.</p>
+<p>Now we can create the website source repository.</p>
+<ol>
+<li>Go to the <a href="https://github.com/hmf/tech4rd">repository you created</a> to keep the sources of the site;</li>
+<li>Create a <code>index.md</code> or <code>index.html</code> file as the site's initial content:
+<ol>
+<li>Don't place this file in the project's root of the source repository;</li>
+<li>Select <code>add</code> -&gt; <code>create a new file</code>;</li>
+<li>Input both the path and the file: <code>docs/index.md</code></li>
+<li>Place some content in this page;</li>
+</ol>
+</li>
+<li>We then configure the publishing source:
+<ol>
+<li>In the source site click on the <code>Settings</code> tab;</li>
+<li>Go to the <code>Code and Automation</code> section;</li>
+<li>Under this section click on <code>Pages</code> to open the <code>Github pages</code> configuration page:</li>
+<li>Select <code>Source</code> for a specific branch or leave as <code>None</code>. Select the <code>main</code> branch and select <code>/docs</code> as the site content folder.</li>
+<li>Don't forget to press the <code>save</code> button. When you do this the <a href="https://hmf.github.io/tech4rd/">site's URL</a> is provided for you;</li>
+<li>Note that the site will not be immediately available. It can take up to 10 minutes for each change to be reflected in the site;</li>
+<li>You can then choose a theme for the Jekyll static site generator if you use the <code>gh-pages</code> branch. We are going to use another static site generator, so leave it as is;</li>
+</ol>
+</li>
+<li>Add the website link to you Github repository page
+<ol>
+<li>Go to the project's Github repository site;</li>
+<li>Click on the configuration wheel of the <code>About</code> field;</li>
+<li>Click on the <code>Website</code> field and paste the <a href="https://hmf.github.io/tech4rd/">previously configured URL</a> into it;</li>
+<li>Fill in the <code>Description</code> and <code>Topics</code> as desired. For example:
+<ol>
+<li><code>Description</code>: Articles on software development and embedded systems.</li>
+<li><code>Topics</code>: java scala programming electronics embedded-systems software-development sensors.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>You can now view the initial content of your site. From the sites repository, click on the URL you have just saved. You should be able to see your contents.</p>
+<h1>Automatically generated sites</h1>
+<p>In the example above, we provided a Markdown file and the content was automatically made available as HTML. Several companies provide hosting platforms that can automatically render Markdown files as HTML. The site's content can be, for example, standard text files that can be viewed with the web interface of a code repository. It can also contain HTML content for a project or personal website. Examples of this include <a href="https://docs.github.com/en/pages">Github pages</a> (used above) and <a href="https://docs.gitlab.com/ee/user/project/pages/">Gitlab pages</a>.</p>
+<p>Generating a static website based only on Markdown, may not be enough for all but the simplest website. In these cases, one can use several Markdown files and use links among them. This allows one to set up simple static sites that include: manually generated static menus or indexes, use of links between content and adding any formatting that is supported by Markdown syntax. It is important to note that these hosts support the parsing of Markdown files that are not <em>&quot;standard&quot;</em>. We have for example <a href="https://github.github.com/gfm/">Github's</a> and <a href="https://docs.gitlab.com/ee/user/markdown.html">Gitlab's</a> flavoured versions of Markdown. These versions of Markdown include for example encoding &quot;for mentions&quot;, &quot;emojis&quot; and &quot;issues&quot; that can be placed in the source. These features facilitate interaction with the code repository and are parsed using the host's default parsers. In <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github">some cases</a>, the online Web interface also allows for additional configurations and facilitates the editing of the content.</p>
+<p>There is no standard for Markdown. The closest we have to a standard is <a href="https://daringfireball.net/projects/markdown/syntax">John Gruber’s canonical description of Markdown’s syntax</a>. A good source for a complete description of Markdown (including cheat sheets), is the <a href="https://www.markdownguide.org/">Markdown Guide</a>. Here you can also find a list of <a href="https://www.markdownguide.org/extended-syntax/">extended-syntax</a> versions of the Markdown language that includes for example the <a href="https://commonmark.org/">Commonmark</a> and <a href="https://rmarkdown.rstudio.com/">R</a> Markdown variants.</p>
+<p>It is also possible to add themes, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/adding-a-theme-to-your-github-pages-site-with-the-theme-chooser">for example in GitHub pages</a>, when using Markdown-only sites. Internally, Github pages uses Jekyll. In this case, the HTML files will automatically be created via this static site generator. No need to install or invoke the static site tools. However, to activate and use the theme, it is necessary for you to set up the YAML front matter that specifies the layout of each HTML output.</p>
+<p>Alternatively, one can use a static site generator by incorporating it into the CI/CD workflow<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup> or use it locally to manually create and publish the site's contents to the hosts' website location. We will look at the details in the section on <a href="#static_site_generation">static site generation</a>.</p>
+<h1>Static site generation</h1>
+<p>Static site generators process a set of source files (written, for example, in <a href="[https://en.wikipedia.org/wiki/Markdown]">MarkDown</a>, <a href="https://asciidoc.org/">AsciiDoc</a> (see <a href="https://en.wikipedia.org/wiki/AsciiDoc">AsciiDoc in Wikipedia</a>) and <a href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a>) and generate the HTML content. Usually each source file is converted into a corresponding HTML file. Files in HTML can also be used as sources, but they are usually not processed by the static site generator. In addition to this, these tools also make use of templates (such as <a href="https://freemarker.apache.org/">Freemarker</a> or <a href="https://www.thymeleaf.org/">ThymeLeaf</a>) to define the layout and look of the website.</p>
+<p>The templates let us configure the sites' menus, add headers and footers to the HTML pages, provide social media links, social share menus and 404 error handling for several hosts. They also allow one to place JavaScript in the HTML pages so that additional functionality can be made available. Examples include adding <a href="https://analytics.google.com/">Google Analytics</a> scripts, estimating read times for the posts, show maths expressions (<a href="https://www.mathjax.org/">MathJax</a>, <a href="https://mathjs.org/">MathJS</a>, <a href="https://katex.org/">KaTex</a>), draw flowcharts (<a href="https://mermaid-js.github.io/mermaid/#/">Mermaid-Js</a>, <a href="https://flowchart.js.org/">Flowchart.js</a>), render plots (<a href="https://www.chartjs.org/">ChartJS</a>, <a href="https://plotly.com/javascript/">Plotly</a>, <a href="https://gionkunz.github.io/chartist-js/">Chartist-Js</a>, <a href="https://rawgraphs.io/">RawGraphs.io</a>, <a href="https://d3js.org/">d3js</a>, <a href="https://c3js.org/">c3js</a>, <a href="https://nvd3.org/">nvd3</a>) and use icons (<a href="https://github.com/feathericons/feather">FeatherIcons</a>, <a href="https://ionicons.com/">IonIcons</a>, <a href="https://fontawesome.com/">FontAwesome</a>, <a href="https://github.com/tabler/tabler-icons">Tabler</a>, <a href="http://css.gg/">css.gg</a>).</p>
+<p>There are quite a few static site generators out there. These include for example: <a href="https://docusaurus.io/">Docusaurus.io</a> (<a href="https://github.com/facebook/docusaurus">Docusaurus in Github</a>), <a href="https://jekyllrb.com/">Jekyll</a> (<a href="https://github.com/jekyll/jekyll">Jekyll in Github</a>), <a href="http://sphinx-doc.org/">sphinx-doc</a>, <a href="http://www.foundweekends.org/pamflet/">Pamflet</a> (<a href="https://github.com/foundweekends/pamflet">Pamflet in Github</a>), <a href="https://nanoc.ws/">Nanoc</a>, <a href="https://www.gitbook.com/">GitBook</a>, <a href="https://developer.lightbend.com/docs/paradox/current/">Paradox</a> (<a href="https://github.com/lightbend/paradox">Paradox in Github</a>), <a href="https://gohugo.io/">GoHugo</a> and <a href="http://asciidoctor.org/">AsciiDoctor</a>. Many of these tools are developed in Ruby, Go or Python. I have opted to use JVM based static site generators to make it easy to automate the process - I only depend on the JVM. Maven packages that can be installed via the Ivy package manager and <a href="https://www.javaadvent.com/2021/12/generate-your-static-website-with-java-and-jbake.html">Maven or Gradle plugins</a> to run the necessary tools. No need to deal with operating system package installation once the Java system is installed. This also makes the use of <a href="https://en.wikipedia.org/wiki/CI/CD">CI/CD</a> workflows easier to update a Blog or launch a new software release.</p>
+<p>Some of these static site generators include: <a href="https://jbake.org/">JBake</a> (<a href="https://en.wikipedia.org/wiki/AsciiDoc">JBake in github</a>), <a href="https://planet42.github.io/Laika/">Laika</a> (<a href="https://github.com/planet42/Laika">Laika Github</a>), <a href="http://www.foundweekends.org/pamflet/">Pamflet</a> and <a href="https://developer.lightbend.com/docs/paradox/current/">Paradox</a>. Laika is a interesting case in that it is also capable of generating documents of other formats such as PDF. I also include in this category tools that can be used to generate Java or Scala API documentation. In the case of Java we have <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a>. For <a href="https://docs.scala-lang.org/">Scala</a> we will focus on <a href="https://docs.scala-lang.org/scala3/scaladoc.html">ScalaDoc specifically for Scala3</a> (see the <a href="https://docs.scala-lang.org/scala3/guides/scaladoc/">Scala3 ScalaDoc Guide</a> and <a href="https://dotty.epfl.ch/docs/usage/scaladoc/">Scala3 ScalaDoc Usage</a> webpages). Note that ScalaDoc is part of the <a href="https://github.com/lampepfl/dotty">Scala3</a> compiler, also known as Dotty. The Scala3 ScalaDoc tool is a static site generator in and of itself.</p>
+<p>In addition to the HTML templates, the source files can also be preprocessed prior to conversion. In particular, I am interested in documenting software. The <a href="https://scalameta.org/mdoc/">MDoc</a> (<a href="https://github.com/scalameta/mdoc">MDoc in Github</a>) can be used to compile code snippets embedded in the Markdown sources. Depending on the static site generator we also have build tool plugins for the Scala ecosystem. For example, the <a href="https://www.scala-sbt.org/sbt-site/">Sbt-site</a>(<a href="https://github.com/sbt/sbt-site">Sbt-site Github</a>) plugin can use several generators to create a static website. The <a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill build tool</a> includes plugins for <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_docusaurus_2">Docusaurus</a>, <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">JBake</a> and <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">MDoc plugin</a>.</p>
+<p>I will first show you how to set-up and use a JBake static site. More concretely I will configure, populate and publish a blog. Later I will also describe how to use ScalaDoc and MDoc to document software and keep this documentation up to date with the software repository.</p>
+<h2>Workflow</h2>
+<p>Before getting into the nitty gritty, let's first take a look at what the workflow of publishing a site might look like. To generate a site we basically take a set of sources, for example Markdown files and drawings, and transform them into the website's artifacts. These artifacts are usually HTML files, but may include PDF files and images (for example in the PNG or SVG formats). Usually a single source file is transformed into a single HTML file, but in general this is not a strict requirement. A source file may go through several transformations before the final output is generated. For example a Markdown file may have its code fences compiled by the <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">MDoc plugin</a> resulting in a changed source. This file is then processed by <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">JBake</a> using <a href="https://freemarker.apache.org/">Freemarker</a> templates to produce the final HTML file.</p>
+<p>The various transformations may be applied by several tools, each of which may need their own configuration. For example, we may want to generate HTML pages with a specific layout that may include pre-compiled content, specific menus, headers and footers. <a href="https://freemarker.apache.org/">Freemarker</a> for example allows the use of templates and a domain specific language (DSL) that defines the look and feel of the final HTML page. In this case, the static site generator takes as input a Freemarker template and a Markdown source file to generate the final output. Sometimes the source file itself may include configurations used to tweak the output. For example, the <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">MDoc plugin</a> allows us to tag each code fence to define the type of output we want or, a Markdown file may have a header. It is important to point out that anyone is free to include manually edited HTML pages  to the site's contents. In addition to this, Markdown for example, allows one to embed HTML snippets that will be kept unaltered.</p>
+<p>Compiling a site means taking a set of sources that are located in a given path, transforming these and placing them in the site's final directory. Some files may not be processed at all. For example images may be copied, as is, to the site's destination folder. Generally the location of the source files within the source directory determines how and where the content is made available. For example, blogs may have a directory specifically set aside to contain posts indexed by the publishing date. Usually the transformed files are placed in a local private directory where they can be served and checked locally. Once the content has been checked (or not), it can be published to the final public serving host.</p>
+<p>The compilation of the website is usually done by executing one or more commands of a static site generator tool at the command line. This tool must be configured prior to execution. Such configurations may include the path to the site's sources and transformation workflow to be used. Usually the sources need to be made available in a specified path and with a required directory structure. As I have pointed out, we may also need to configure the use of other tools and their respective configurations.</p>
+<p>The site generator command is usually invoked at the root of the site's sources. However, it may advantageous to invoke the static site generator via a build tool such as <a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill</a>. It allows us to customize our workflow so that we can use several tools including specific preprocessing transformers for our website. We are free to implement our own transformations tasks and embed them into the workflow of our Mill scripts that do source compilation and unit testing. We can also use Mill with CI/CD pipelines to automatically publish new content. Another advantage of using a build tool like Mill is that we only provide a Mill command line script with our sources and a Mill build script. Mill will then download and install itself and any of the required dependencies (such as the JBake tools) before executing the build script. When using CI/CD, we don't have to worry about downloading and installing Mill or any additional tools. In the next section we will use a <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">Mill JBake plugin</a> to generate a static site.</p>
+<h1>JBake</h1>
+<p>So the first question is, why JBake? JBake is a mature Java tool that has good documentation and large user community. So it should provide most of us with what we need or want (analytics, icons, menus, etc.). In particular, JBake has been extensively used to document open software projects and implement blogs and personal sites. Having said this, it does not seem to be as popular as <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">GoHugo</a> but, it is well supported and several templates are available. In particular it can use the Freemarker, <a href="http://www.groovy-lang.org/">Groovy Simple and Markup</a>, Thymeleaf, <a href="https://github.com/neuland/jade4j">Jade</a> and <a href="https://pebbletemplates.io/">Pebble</a> template engines.</p>
+<p>To set up a <a href="https://jbake.org/docs/2.6.7/#quickstart_guide">JBake static site</a> consists of the following steps:</p>
+<ol>
+<li>Download and install the JBake tool;</li>
+<li>Create a directory for the website's source;</li>
+<li>Populate the directory with JBake's default configuration that uses Freemarker templates;</li>
+<li>Customize the templates if this is necessary;</li>
+<li>Add to or change content in the site's sources directory (assets, content, templates);</li>
+<li>Use JBake to generate the website's final output (HTML, XHTML);</li>
+<li>Preview the contents (includes a <em>&quot;watch&quot;</em> mode to automatically preview and update the content);</li>
+<li>Publish the contents.</li>
+</ol>
+<p>To update the website we need only add or change the website's content and repeat the steps that generate the final output and publish the contents. JBake is used via the command line to perform all theses actions. It is also possible to use command line parameters, change configuration files and set environment variables to configure JBake's output. For full details see <a href="https://jbake.org/docs/">JBake's documentation</a>. I strongly suggest you keep the site's sources under version control. Either place these sources in an existing repository that you want to document, or place this in a separate repository where you keep only the website's source code. In this example, we will work on a blog, so we use a separate repository that contains only the site's sources.</p>
+<h2>Installing Mill</h2>
+<p>In this article we will use <a href="https://github.com/lefou/mill-jbake">Mill's JBake plugin</a>. This allows us to download and execute JBake without installing this tool in the host operating system. This is advantageous when using a CI/CD pipeline in a virtual machine. All the static website generation setup and configuration is done as documented in <a href="https://jbake.org/docs/">JBake's site</a>. The execution of JBake however, is done via a Mill build script and the corresponding Mill tasks encoded in that script. So let's start off by installing and writing up our Mill script:</p>
+<p>First place yourself at the site's source repository:</p>
 <pre><code class="language-bash">$ cd ~/VSCodeProjects/blog
-</code></pre> 
-<p>Next, download the <a href="https://github.com/com-lihaoyi/mill/releases">latest release of Mill</a>. Make sure you download the <em>"starter"</em> script (not the assembly). It is named with the Mill version and is less the 2 KBytes large. Here is an example of downloading the script:</p> 
+</code></pre>
+<p>Next, download the <a href="https://github.com/com-lihaoyi/mill/releases">latest release of Mill</a>. Make sure you download the <em>&quot;starter&quot;</em> script (not the assembly). It is named with the Mill version and is less the 2 KBytes large. Here is an example of downloading the script:</p>
 <pre><code class="language-bash">$ wget https://github.com/com-lihaoyi/mill/releases/download/0.10.4/0.10.4
-</code></pre> 
-<p>Next we rename the script to <code>mill</code> and make sure the script has the permission to execute:</p> 
+</code></pre>
+<p>Next we rename the script to <code>mill</code> and make sure the script has the permission to execute:</p>
 <pre><code class="language-bash">$ mv 0.10.4 mill
 $ chmod +x ./mill
-</code></pre> 
-<p>For those of you in Windows, it may be advantageous for you to download and use <a href="https://github.com/lefou/millw"><code>millw</code></a>. It is a drop-in replacement for <code>mill</code> that has a <code>millw.bat</code> version for windows. I also found in the past, that it was able to download and use snapshot versions of Mill, which the original script failed to do.</p> 
+</code></pre>
+<p>For those of you in Windows, it may be advantageous for you to download and use <a href="https://github.com/lefou/millw"><code>millw</code></a>. It is a drop-in replacement for <code>mill</code> that has a <code>millw.bat</code> version for windows. I also found in the past, that it was able to download and use snapshot versions of Mill, which the original script failed to do.</p>
 <pre><code class="language-bash">wget https://raw.githubusercontent.com/lefou/millw/main/millw
 wget https://raw.githubusercontent.com/lefou/millw/main/millw.bat
 chmod +x ./millw
-</code></pre> 
-<p>A this point you should have the scripts ready to run:</p> 
+</code></pre>
+<p>A this point you should have the scripts ready to run:</p>
 <pre><code class="language-bash">$ ls -l
-</code></pre> 
-<p>Output:</p> 
-<blockquote> 
- <pre><code class="language-bash">total 376
+</code></pre>
+<p>Output:</p>
+<blockquote>
+<pre><code class="language-bash">total 376
 -rwxrwxr-x 1 user user   1714 mai  6 11:24 mill
 -rwxrwxr-x 1 user user 187411 mai  7 17:25 millw
 -rw-rw-r-- 1 user user 167228 mai  7 17:26 millw.bat
 -rw-rw-r-- 1 user user     45 abr  7 18:43 README.md
-</code></pre> 
-</blockquote> 
-<p>In this article I am going to use a specific version of Mill. To ensure that you use the correct version, create the <code>.mill-version</code> file and place the Mill version inside this file:</p> 
+</code></pre>
+</blockquote>
+<p>In this article I am going to use a specific version of Mill. To ensure that you use the correct version, create the <code>.mill-version</code> file and place the Mill version inside this file:</p>
 <pre><code class="language-bash">$ touch .mill-version
 $ echo 0.10.4 &gt;&gt; .mill-version 
-</code></pre> 
-<p>We can now check the Mill version using the following command:</p> 
+</code></pre>
+<p>We can now check the Mill version using the following command:</p>
 <pre><code class="language-bash">$ ./mill -i --version
-</code></pre> 
-<p>Output:</p> 
-<blockquote> 
- <pre><code class="language-bash">Mill Build Tool version 0.10.4
+</code></pre>
+<p>Output:</p>
+<blockquote>
+<pre><code class="language-bash">Mill Build Tool version 0.10.4
 Java version: 11.0.15, vendor: Private Build, runtime: /usr/lib/jvm/java-11-openjdk-amd64
 Default locale: en_US, platform encoding: UTF-8
-OS name: "Linux", version: 5.13.0-40-generic, arch: amd64
-</code></pre> 
-</blockquote> 
-<p>Note that when you run this command for the first time, the correct version of Mill will first be downloaded and then used. All subsequent calls to <code>mill</code> or <code>millw</code> will use the installed version. To see what version has already been downloaded, execute:</p> 
+OS name: &quot;Linux&quot;, version: 5.13.0-40-generic, arch: amd64
+</code></pre>
+</blockquote>
+<p>Note that when you run this command for the first time, the correct version of Mill will first be downloaded and then used. All subsequent calls to <code>mill</code> or <code>millw</code> will use the installed version. To see what version has already been downloaded, execute:</p>
 <pre><code class="language-bash">ls /home/use/.cache/mill/download/*
-</code></pre> 
-<h2>Set up the Mill JBake module</h2> 
-<p>Mill scripts provides a set of modules, which are Scala 2 objects, that have several methods (referred to as tasks or targets) that allows one to: compile mixed Java and Scala projects, execute the code's main methods, and run unit tests. These modules can be "mixed" into a single compilation unit when we need to combine several functionalities into a single module. Many useful modules are provided out-of-the-box, but it is not possible to foresee or provide all required modules. Mill therefore allows anyone to distribute their modules as <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html">$3^{rd}$ party plugins</a>. These plugins are provided as Maven artifacts that are downloaded via a <a href="https://get-coursier.io/">Coursier backend</a> using <a href="https://ammonite.io/">Ammonite's</a> <a href="https://ammonite.io/#MagicImports">magic imports</a>. <a href="https://github.com/lefou/mill-jbake">Mill-JBake</a> is one such <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">plugin</a> that can be automatically downloaded, installed and used via Mill.</p> 
-<p>We won't go into details here, but in the next steps I'll describe how to:</p> 
-<ol> 
- <li>Create a Mill script file;</li> 
- <li>Write-up a simple Mill module that uses Mill-JBake to give us access to the JBake tool;</li> 
- <li>Configure the JBake version to use;</li> 
- <li>Execute JBake to initialize the repository.</li> 
-</ol> 
-<p>First create the build script at the projects' root. In our case it is the <code>blog</code> code repository. Do as follows:</p> 
+</code></pre>
+<h2>Set up the Mill JBake module</h2>
+<p>Mill scripts provides a set of modules, which are Scala 2 objects, that have several methods (referred to as tasks or targets) that allows one to: compile mixed Java and Scala projects, execute the code's main methods, and run unit tests. These modules can be &quot;mixed&quot; into a single compilation unit when we need to combine several functionalities into a single module. Many useful modules are provided out-of-the-box, but it is not possible to foresee or provide all required modules. Mill therefore allows anyone to distribute their modules as <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html">$3^{rd}$ party plugins</a>. These plugins are provided as Maven artifacts that are downloaded via a <a href="https://get-coursier.io/">Coursier backend</a> using <a href="https://ammonite.io/">Ammonite's</a> <a href="https://ammonite.io/#MagicImports">magic imports</a>. <a href="https://github.com/lefou/mill-jbake">Mill-JBake</a> is one such <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">plugin</a> that can be automatically downloaded, installed and used via Mill.</p>
+<p>We won't go into details here, but in the next steps I'll describe how to:</p>
+<ol>
+<li>Create a Mill script file;</li>
+<li>Write-up a simple Mill module that uses Mill-JBake to give us access to the JBake tool;</li>
+<li>Configure the JBake version to use;</li>
+<li>Execute JBake to initialize the repository.</li>
+</ol>
+<p>First create the build script at the projects' root. In our case it is the <code>blog</code> code repository. Do as follows:</p>
 <pre><code class="language-bash">$ cd ~/VSCodeProjects/blog
 $ touch build.sc
-</code></pre> 
-<p>Then add the following code to the <code>build.sc</code> file:</p> 
+</code></pre>
+<p>Then add the following code to the <code>build.sc</code> file:</p>
 <pre><code class="language-scala">import mill._
 import $ivy.`de.tototec::de.tobiasroeser.mill.jbake::0.3.0`
 import de.tobiasroeser.mill.jbake._
 
 object site extends JBakeModule {
 
-  def jbakeVersion = "2.6.7"
+  def jbakeVersion = &quot;2.6.7&quot;
 
   // Default in 0.3.0
   override def jbakeProcessMode: JBakeModule.ProcessMode = JBakeModule.SubProcess
 
 }
-</code></pre> 
-<p>Let's take a look at what the code above does. The line shown below uses Ammonite's magic import to download and install the Mill-JBake plugin:</p> 
+</code></pre>
+<p>Let's take a look at what the code above does. The line shown below uses Ammonite's magic import to download and install the Mill-JBake plugin:</p>
 <pre><code class="language-scala">import $ivy.`de.tototec::de.tobiasroeser.mill.jbake::0.3.0`
-</code></pre> 
-<p>These lines import the Mill default modules and the Mill-JBake module:</p> 
+</code></pre>
+<p>These lines import the Mill default modules and the Mill-JBake module:</p>
 <pre><code class="language-scala">import mill._
 import de.tobiasroeser.mill.jbake._
-</code></pre> 
-<p>Next we set the version of the JBake tool that will be downloaded and used:</p> 
-<pre><code class="language-scala">  def jbakeVersion = "2.6.7"
-</code></pre> 
-<p>The following line ensures that JBake is launched in a separate JVM. I have found that for later versions of JBake, using Mill's JVM to execute the commands, results in errors.</p> 
+</code></pre>
+<p>Next we set the version of the JBake tool that will be downloaded and used:</p>
+<pre><code class="language-scala">  def jbakeVersion = &quot;2.6.7&quot;
+</code></pre>
+<p>The following line ensures that JBake is launched in a separate JVM. I have found that for later versions of JBake, using Mill's JVM to execute the commands, results in errors.</p>
 <pre><code class="language-scala">  // Default in 0.3.0
   override def jbakeProcessMode: JBakeModule.ProcessMode = JBakeModule.SubProcess
-</code></pre> 
-<p>The name of the module is set to <code>site</code>. Mill's convention is that a project may have several modules. The source of each module is placed in a directory with the same name located at the project's root. The project's root is where the <code>build.sc</code> file is found. So in our case we first create the module's source directory:</p> 
+</code></pre>
+<p>The name of the module is set to <code>site</code>. Mill's convention is that a project may have several modules. The source of each module is placed in a directory with the same name located at the project's root. The project's root is where the <code>build.sc</code> file is found. So in our case we first create the module's source directory:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ mkdir site
-</code></pre> 
-<p>The <code>site</code> module extends <a href="https://github.com/lefou/mill-jbake/blob/master/jbake/src/de/tobiasroeser/mill/jbake/JBakeModule.scala">de.tobiasroeser.mill.jbake.JBakeModule.</a> that provides us access to the JBake tool via several optional configuration values (such as <code>jbakeVersion</code> shown above) and the JBake commands (such as initializing, compiling (<em>"baking"</em>) and serving content). All the commands we execute for a module is prefixed with the module's name. So in this case, all commands will explicitly start with <code>site.</code> To see what targets are available either of these commands can be used:</p> 
+</code></pre>
+<p>The <code>site</code> module extends <a href="https://github.com/lefou/mill-jbake/blob/master/jbake/src/de/tobiasroeser/mill/jbake/JBakeModule.scala">de.tobiasroeser.mill.jbake.JBakeModule.</a> that provides us access to the JBake tool via several optional configuration values (such as <code>jbakeVersion</code> shown above) and the JBake commands (such as initializing, compiling (<em>&quot;baking&quot;</em>) and serving content). All the commands we execute for a module is prefixed with the module's name. So in this case, all commands will explicitly start with <code>site.</code> To see what targets are available either of these commands can be used:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog./millw -i resolve site._
 ~/VSCodeProjects/blog./mill -i resolve site._
-</code></pre> 
-<p>Output (note that the first time you run this, the output will include a list of the downloaded Mill-JBake Jars):</p> 
-<blockquote> 
- <pre><code class="language-bash">[1/1] resolve
+</code></pre>
+<p>Output (note that the first time you run this, the output will include a list of the downloaded Mill-JBake Jars):</p>
+<blockquote>
+<pre><code class="language-bash">[1/1] resolve
 site.jbake
 site.jbakeClasspath
 site.jbakeDistributionDir
@@ -418,54 +428,54 @@ site.jbakeServe
 site.jbakeVersion
 site.jbakeWorker
 site.sources
-</code></pre> 
-</blockquote> 
-<p>At this point we are ready to create the site's content. Let's start off by <a href="https://jbake.org/docs/2.6.7/#create_a_project">initializing the site</a> with the default Freemarker template:</p> 
+</code></pre>
+</blockquote>
+<p>At this point we are ready to create the site's content. Let's start off by <a href="https://jbake.org/docs/2.6.7/#create_a_project">initializing the site</a> with the default Freemarker template:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./millw -i site.jbakeInit
-</code></pre> 
-<p>Output:</p> 
+</code></pre>
+<p>Output:</p>
 <pre><code class="language-bash">Compiling /home/user/VSCodeProjects/blog/build.sc
 [7/7] site.jbakeInit 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
 Base folder structure successfully created.
-</code></pre> 
-<p>This command sets up an example site using the default FreeMarker template. It adds the required directories and example content. This includes assets such as images, icons, CSS formatting, JavaScript libraries, FreeMarker templates and some AsciiDoc content. We can now take a look at the site's source directory as follows:</p> 
+</code></pre>
+<p>This command sets up an example site using the default FreeMarker template. It adds the required directories and example content. This includes assets such as images, icons, CSS formatting, JavaScript libraries, FreeMarker templates and some AsciiDoc content. We can now take a look at the site's source directory as follows:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ tree site/
-</code></pre> 
-<p>Output:</p> 
+</code></pre>
+<p>Output:</p>
 <pre><code class="language-bash">site/
 └── src
     ├── assets
-    │&nbsp;&nbsp; ├── css
-    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── asciidoctor.css
-    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── base.css
-    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── bootstrap.min.css
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── prettify.css
-    │&nbsp;&nbsp; ├── favicon.ico
-    │&nbsp;&nbsp; ├── fonts
-    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── glyphicons-halflings-regular.eot
-    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── glyphicons-halflings-regular.svg
-    │&nbsp;&nbsp; │&nbsp;&nbsp; ├── glyphicons-halflings-regular.ttf
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── glyphicons-halflings-regular.woff
-    │&nbsp;&nbsp; ├── img
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── beach.jpg
-    │&nbsp;&nbsp; └── js
-    │&nbsp;&nbsp;     ├── bootstrap.min.js
-    │&nbsp;&nbsp;     ├── html5shiv.min.js
-    │&nbsp;&nbsp;     ├── jquery-1.11.1.min.js
-    │&nbsp;&nbsp;     └── prettify.js
+    │   ├── css
+    │   │   ├── asciidoctor.css
+    │   │   ├── base.css
+    │   │   ├── bootstrap.min.css
+    │   │   └── prettify.css
+    │   ├── favicon.ico
+    │   ├── fonts
+    │   │   ├── glyphicons-halflings-regular.eot
+    │   │   ├── glyphicons-halflings-regular.svg
+    │   │   ├── glyphicons-halflings-regular.ttf
+    │   │   └── glyphicons-halflings-regular.woff
+    │   ├── img
+    │   │   └── beach.jpg
+    │   └── js
+    │       ├── bootstrap.min.js
+    │       ├── html5shiv.min.js
+    │       ├── jquery-1.11.1.min.js
+    │       └── prettify.js
     ├── content
-    │&nbsp;&nbsp; ├── about
-    │&nbsp;&nbsp; │&nbsp;&nbsp; └── jbake_logo.png
-    │&nbsp;&nbsp; ├── about.html
-    │&nbsp;&nbsp; └── blog
-    │&nbsp;&nbsp;     └── 2013
-    │&nbsp;&nbsp;         ├── fifth-post.adoc
-    │&nbsp;&nbsp;         ├── first-post.html
-    │&nbsp;&nbsp;         ├── fourth-post.adoc
-    │&nbsp;&nbsp;         ├── second-post.md
-    │&nbsp;&nbsp;         └── third-post.adoc
+    │   ├── about
+    │   │   └── jbake_logo.png
+    │   ├── about.html
+    │   └── blog
+    │       └── 2013
+    │           ├── fifth-post.adoc
+    │           ├── first-post.html
+    │           ├── fourth-post.adoc
+    │           ├── second-post.md
+    │           └── third-post.adoc
     ├── jbake.properties
     └── templates
         ├── archive.ftl
@@ -480,19 +490,20 @@ Base folder structure successfully created.
         └── tags.ftl
 
 11 directories, 32 files
-</code></pre> 
-<p>If you are working in a Git repository, don't forget to add the <code>.gitignore</code> file in the project's root with the following lines:</p> 
+</code></pre>
+<p>If you are working in a Git repository, don't forget to add the <code>.gitignore</code> file in the project's root with the following lines:</p>
 <pre><code>/.metals
 /.vscode
 /out
-</code></pre> 
-<p>The next step is to compile or <em>"bake"</em> the site.</p> 
+</code></pre>
+<p>The next step is to compile or <em>&quot;bake&quot;</em> the site.</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbake
-</code></pre> 
-<details close> <summary>Output of compilation</summary> 
- <br> 
- <blockquote> 
-  <pre><code>[7/7] site.jbake 
+</code></pre>
+<details close>
+<summary>Output of compilation</summary>
+<br>
+<blockquote>
+<pre><code>[7/7] site.jbake 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
 10:16:50.269 INFO  org.jbake.app.Oven - Baking has started...
@@ -508,7 +519,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 10:16:50.550 INFO  c.o.common.jna.ONative - Detected memory limit for current process is 33429823488 B/31881 MB/31 GB
 10:16:50.551 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - JVM can use maximum 7972MB of heap memory
 10:16:50.551 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory
-10:16:50.551 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20&nbsp;083MB (heap=7&nbsp;972MB os=31&nbsp;881MB)
+10:16:50.551 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20 083MB (heap=7 972MB os=31 881MB)
 10:16:50.553 INFO  c.o.o.c.e.l.OEngineLocalPaginated - System is started under an effective user : `user`
 10:16:50.553 INFO  c.o.o.c.e.l.OEngineLocalPaginated - Allocation of 305261 pages.
 10:16:51.226 INFO  c.o.o.c.s.m.ODirectMemoryStorage - Storage 'memory:cache' is created under OrientDB distribution : 3.0.37 - Veloce (build 6a0e4724c10d51a0b19700fca46da8e41ae006f5, branch UNKNOWN)
@@ -554,17 +565,18 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 10:16:54.760 INFO  org.jbake.app.Oven - Baking finished!
 10:16:54.760 INFO  org.jbake.app.Oven - Baked 10 items in 4491ms
 10:16:54.761 INFO  c.o.orient.core.db.OrientDBEmbedded - - shutdown storage: cache...
-</code></pre> 
- </blockquote> 
-</details> 
-<br> 
-<p>And then serve the site at a local address:</p> 
+</code></pre>
+</blockquote>
+</details>
+<br>
+<p>And then serve the site at a local address:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeServe
-</code></pre> 
-<details close> <summary>Output of serving a JBake site</summary> 
- <br> 
- <blockquote> 
-  <pre><code>[8/8] site.jbakeServe 
+</code></pre>
+<details close>
+<summary>Output of serving a JBake site</summary>
+<br>
+<blockquote>
+<pre><code>[8/8] site.jbakeServe 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
 10:19:35.605 INFO  org.jbake.app.Oven - Baking has started...
@@ -580,7 +592,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 10:19:35.871 INFO  c.o.common.jna.ONative - Detected memory limit for current process is 33429823488 B/31881 MB/31 GB
 10:19:35.872 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - JVM can use maximum 7972MB of heap memory
 10:19:35.872 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory
-10:19:35.872 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20&nbsp;083MB (heap=7&nbsp;972MB os=31&nbsp;881MB)
+10:19:35.872 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20 083MB (heap=7 972MB os=31 881MB)
 10:19:35.874 INFO  c.o.o.c.e.l.OEngineLocalPaginated - System is started under an effective user : `user`
 10:19:35.874 INFO  c.o.o.c.e.l.OEngineLocalPaginated - Allocation of 305261 pages.
 10:19:36.562 INFO  c.o.o.c.s.m.ODirectMemoryStorage - Storage 'memory:cache' is created under OrientDB distribution : 3.0.37 - Veloce (build 6a0e4724c10d51a0b19700fca46da8e41ae006f5, branch UNKNOWN)
@@ -629,91 +641,93 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 10:19:40.091 INFO  org.jbake.launcher.BakeWatcher - Watching for (content, template, asset) changes in [/home/user/VSCodeProjects/blog/site/src]
 10:19:40.141 INFO  org.jbake.launcher.JettyServer - Serving out contents of: [/home/user/VSCodeProjects/blog/out/site/jbake.dest] on http://localhost:8820/
 10:19:40.141 INFO  org.jbake.launcher.JettyServer - (To stop server hit CTRL-C)
-</code></pre> 
- </blockquote> 
-</details> 
-<br> 
-<p>You can then preview it in your browser at <a href="http://localhost:8820">this URL</a>. Here is an image of the initial example site (shown using <a href="https://darkreader.org/">Dark Reader</a>):</p> 
-<p><img src="/blog/2020/mill/jbake/screenshot_jbake_example_site.png" alt="Preview in Dark Mode"></p> 
-<p>Note that JBake will monitor changes in the site's source and automatically update the site's content. To stop the automatic update and serving of the website simple press the keys <code>Ctrl-C</code>. The server will terminate as shown below:</p> 
+</code></pre>
+</blockquote>
+</details>
+<br>
+<p>You can then preview it in your browser at <a href="http://localhost:8820">this URL</a>. Here is an image of the initial example site (shown using <a href="https://darkreader.org/">Dark Reader</a>):</p>
+<p><img src="./screenshot_jbake_example_site.png" alt="Preview in Dark Mode" /></p>
+<p>Note that JBake will monitor changes in the site's source and automatically update the site's content. To stop the automatic update and serving of the website simple press the keys <code>Ctrl-C</code>. The server will terminate as shown below:</p>
 <pre><code class="language-bash">^C
 18:50:11.633 WARN  c.o.orient.core.OSignalHandler - Received signal: SIGINT
 18:50:11.635 INFO  c.o.orient.core.Orient - Orient Engine is shutting down...
 18:50:11.749 INFO  c.o.orient.core.Orient - Clearing byte buffer pool
 18:50:11.803 INFO  c.o.orient.core.Orient - OrientDB Engine shutdown complete
-</code></pre> 
-<p>Because we generated a static site, it is also possible for us to simply point our browser to the <code>index.html</code> file. From the output above we can see that the site's index file is located in the following directory:</p> 
+</code></pre>
+<p>Because we generated a static site, it is also possible for us to simply point our browser to the <code>index.html</code> file. From the output above we can see that the site's index file is located in the following directory:</p>
 <pre><code class="language-bash">/home/user/VSCodeProjects/blog/out/site/jbake.dest
-</code></pre> 
-<p>If we open the <code>index.html</code> file, we will get a similar page as above. However, many of the assets will not appear correctly. For example, an image using an absolute link will not be rendered in the browser. This is because all links that absolute, will only resolve to the site's root, if served by an HTTP web server. So, for example, the images in the <code>img</code> directory and cascading style sheets in the <code>css</code> directory will not be found and used correctly, unless served by a web server. This is the reason why one should render the site using a web server.</p> 
-<p>You can now look a the the <a href="https://jbake.org/docs/">JBake documentation</a> do learn how to configure this tool. It is possible to:</p> 
-<ul> 
- <li>Configure the folders where the content, templates and assets are placed;</li> 
- <li>Flag files and folders to be ignored by JBake;</li> 
- <li>Define the default <code>status</code> value used in the metadata headers (<code>draft</code>, <code>published</code>, <code>published-date</code>)</li> 
-</ul> 
-<h1>Publishing</h1> 
-<p>If we use the default publishing source, as we did in the <a href="#getting_started"><em>getting started</em> section</a>, your content is automatically published. You can configure the sources of Github pages to be kept in a specific branch, and place the sources in that branch's root or <code>/doc</code> folder. If you publish to the <code>/docs</code> folder you can also specify the custom domain name of your site in the <code>/docs/CNAME</code> file. Every time you merge changes to the source branch, Github publishes those pages.</p> 
-<p>I have opted to place the source in one repository, and publish the content in another repository. I do this so that I can keep my sources private, which include drafts and notes. We have followed the instructions used for <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">setting up Github pages using Jekyll</a>. At this point, we have already created our source repository, generated a static site and tested it locally using the <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">Mill JBake plugin</a>. We also have our public site <a href="https://github.com/hmf/tech4rd">repository</a> that will hold our static website that anyone can <a href="https://hmf.github.io/tech4rd/">access via Github pages</a>. However, because we are using Github free, we cannot <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-a-repository-for-your-site">publish our content automatically</a>.</p> 
-<p>One way to do this is to simply:</p> 
-<ol> 
- <li>Create and clone your <a href="https://github.com/hmf/tech4rd">public website repository</a>;</li> 
- <li>Configure your public website repository to contain a <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>;</li> 
- <li>Create and clone your <a href="https://github.com/hmf/blog">private source repository</a>;</li> 
- <li>Use the Mill JBake plugin to develop and test the local copy of your static website in your private repository;</li> 
- <li>When you are ready to publish: 
-  <ol> 
-   <li>Delete your <a href="https://github.com/hmf/tech4rd/docs">public website repository's source folder</a> from your <a href="/home/user/VSCodeProjects/tech4rd/docs/">local copy</a>;</li> 
-   <li>Copy the <a href="/home/user/VSCodeProjects/blog/out/site/jbake.dest/">compiled static website from your copy of the private site</a> to your <a href="/home/user/VSCodeProjects/tech4rd/docs/">copy of the public site</a>;</li> 
-   <li>Push and commit the changes of your copy of the <a href="https://github.com/hmf/tech4rd">public website repository</a>;</li> 
-  </ol> </li> 
- <li>Github pages will detect the update and publish your site</li> 
-</ol> 
-<p>Lets take a look at the <code>build.sc</code> Mill script code snippets defined in the <code>site</code> object extends <code>JBakeModule</code>. The set of methods, values and targets allow us to deploy the site as described above. The following line creates a path that point to the public website repository:</p> 
-<pre><code class="language-scala">  def siteDestination: T[os.Path] = T { os.Path("/home/user/VSCodeProjects/tech4rd") }
-</code></pre> 
-<p>The Mill script assumes that the <code>siteDestination</code> path contains a valid git repository. This is the default path where the compiled website is copied to. The next code snipped shows the <code>jbakeCopy</code> target that does the actual copying:</p> 
+</code></pre>
+<p>If we open the <code>index.html</code> file, we will get a similar page as above. However, many of the assets will not appear correctly. For example, an image using an absolute link will not be rendered in the browser. This is because all links that absolute, will only resolve to the site's root, if served by an HTTP web server. So, for example, the images in the <code>img</code> directory and cascading style sheets in the <code>css</code> directory will not be found and used correctly, unless served by a web server. This is the reason why one should render the site using a web server.</p>
+<p>You can now look a the the <a href="https://jbake.org/docs/">JBake documentation</a> do learn how to configure this tool. It is possible to:</p>
+<ul>
+<li>Configure the folders where the content, templates and assets are placed;</li>
+<li>Flag files and folders to be ignored by JBake;</li>
+<li>Define the default <code>status</code> value used in the metadata headers (<code>draft</code>, <code>published</code>, <code>published-date</code>)</li>
+</ul>
+<h1>Publishing</h1>
+<p>If we use the default publishing source, as we did in the <a href="#getting_started"><em>getting started</em> section</a>, your content is automatically published. You can configure the sources of Github pages to be kept in a specific branch, and place the sources in that branch's root or <code>/doc</code> folder. If you publish to the <code>/docs</code> folder you can also specify the custom domain name of your site in the <code>/docs/CNAME</code> file. Every time you merge changes to the source branch, Github publishes those pages.</p>
+<p>I have opted to place the source in one repository, and publish the content in another repository. I do this so that I can keep my sources private, which include drafts and notes. We have followed the instructions used for <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">setting up Github pages using Jekyll</a>. At this point, we have already created our source repository, generated a static site and tested it locally using the <a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">Mill JBake plugin</a>. We also have our public site <a href="https://github.com/hmf/tech4rd">repository</a> that will hold our static website that anyone can <a href="https://hmf.github.io/tech4rd/">access via Github pages</a>. However, because we are using Github free, we cannot <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-a-repository-for-your-site">publish our content automatically</a>.</p>
+<p>One way to do this is to simply:</p>
+<ol>
+<li>Create and clone your <a href="https://github.com/hmf/tech4rd">public website repository</a>;</li>
+<li>Configure your public website repository to contain a <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>;</li>
+<li>Create and clone your <a href="https://github.com/hmf/blog">private source repository</a>;</li>
+<li>Use the Mill JBake plugin to develop and test the local copy of your static website in your private repository;</li>
+<li>When you are ready to publish:
+<ol>
+<li>Delete your <a href="https://github.com/hmf/tech4rd/docs">public website repository's source folder</a> from your <a href="/home/user/VSCodeProjects/tech4rd/docs/">local copy</a>;</li>
+<li>Copy the <a href="/home/user/VSCodeProjects/blog/out/site/jbake.dest/">compiled static website from your copy of the private site</a> to your <a href="/home/user/VSCodeProjects/tech4rd/docs/">copy of the public site</a>;</li>
+<li>Push and commit the changes of your copy of the <a href="https://github.com/hmf/tech4rd">public website repository</a>;</li>
+</ol>
+</li>
+<li>Github pages will detect the update and publish your site</li>
+</ol>
+<p>Lets take a look at the <code>build.sc</code> Mill script code snippets defined in the <code>site</code> object extends <code>JBakeModule</code>. The set of methods, values and targets allow us to deploy the site as described above. The following line creates a path that point to the public website repository:</p>
+<pre><code class="language-scala">  def siteDestination: T[os.Path] = T { os.Path(&quot;/home/user/VSCodeProjects/tech4rd&quot;) }
+</code></pre>
+<p>The Mill script assumes that the <code>siteDestination</code> path contains a valid git repository. This is the default path where the compiled website is copied to. The next code snipped shows the <code>jbakeCopy</code> target that does the actual copying:</p>
 <pre><code class="language-scala">  def jbakeCopy(args: String*) = T.command {
     val outPath = jbake().path
     val destination = if (args.size &gt; 0) os.Path(args(0)) else siteDestination()
-    val dest = destination / "docs"
+    val dest = destination / &quot;docs&quot;
     val exists = os.exists(dest) &amp;&amp; os.isDir(dest)
     if (exists) {
       os.remove.all(dest)
-      T.ctx().log.info(s"Copying site from '$outPath' to '$dest'")
+      T.ctx().log.info(s&quot;Copying site from '$outPath' to '$dest'&quot;)
       os.copy(outPath, dest)
       Some(destination)
     }
     else {
-      T.ctx().log.info(s"Warning: destination does not exist - $dest. Site not deployed.")
+      T.ctx().log.info(s&quot;Warning: destination does not exist - $dest. Site not deployed.&quot;)
       None
     }
   }
-</code></pre> 
-<p>The method above works as follows:</p> 
-<ol> 
- <li>It uses the <code>jbake</code> command to extract the destination folder where the compiled site exists. Note that if the website's sources have changed, <code>jbake</code> will automatically compile these sources;</li> 
- <li>It then gets the destination path where the website's content will be copied to. If no path is passed into this target as a command line argument, then the <code>siteDestination</code> path will be used by default;</li> 
- <li>The <code>jbakeCopy</code> target assumes the destination directory has a <code>docs</code> subfolder where the website's content must be copied to. This will allow us later to copy and publish additional elements, such as code examples or complete projects, that may be referred to in the website. If this subfolder does not exist, the process ends here;</li> 
- <li>If the destination directory <code>docs</code> subfolder exists, then its contents are first deleted, and the new website's compiled content is copied into it;</li> 
- <li>The method then returns the destination path if a copy was performed (<code>Some(destination)</code>) or <code>None</code> to indicate the copy failed.</li> 
-</ol> 
-<p>Next we show how to execute this target on a new site. First place yourself at the <a href="https://github.com/hmf/blog">private source repository's</a> directory:</p> 
+</code></pre>
+<p>The method above works as follows:</p>
+<ol>
+<li>It uses the <code>jbake</code> command to extract the destination folder where the compiled site exists. Note that if the website's sources have changed, <code>jbake</code> will automatically compile these sources;</li>
+<li>It then gets the destination path where the website's content will be copied to. If no path is passed into this target as a command line argument, then the <code>siteDestination</code> path will be used by default;</li>
+<li>The <code>jbakeCopy</code> target assumes the destination directory has a <code>docs</code> subfolder where the website's content must be copied to. This will allow us later to copy and publish additional elements, such as code examples or complete projects, that may be referred to in the website. If this subfolder does not exist, the process ends here;</li>
+<li>If the destination directory <code>docs</code> subfolder exists, then its contents are first deleted, and the new website's compiled content is copied into it;</li>
+<li>The method then returns the destination path if a copy was performed (<code>Some(destination)</code>) or <code>None</code> to indicate the copy failed.</li>
+</ol>
+<p>Next we show how to execute this target on a new site. First place yourself at the <a href="https://github.com/hmf/blog">private source repository's</a> directory:</p>
 <pre><code class="language-bash">$ cd /home/user/VSCodeProjects/blog
-</code></pre> 
-<p>Output:</p> 
-<blockquote> 
- <pre><code class="language-bash">~/VSCodeProjects/blog$ pwd
+</code></pre>
+<p>Output:</p>
+<blockquote>
+<pre><code class="language-bash">~/VSCodeProjects/blog$ pwd
 /home/user/VSCodeProjects/blog
-</code></pre> 
-</blockquote> 
-<p>Next we invoke the <code>jbakeCopy</code> target as follows:</p> 
+</code></pre>
+</blockquote>
+<p>Next we invoke the <code>jbakeCopy</code> target as follows:</p>
 <pre><code>~/VSCodeProjects/blog$ ./mill -i site.jbakeCopy
-</code></pre> 
-<details close> <summary>Output of `jbakeCopy` when website is compiled...</summary> 
- <br> 
- <blockquote> 
-  <pre><code>Compiling /home/user/VSCodeProjects/blog/build.sc
+</code></pre>
+<details close>
+<summary>Output of `jbakeCopy` when website is compiled...</summary>
+<br>
+<blockquote>
+<pre><code>Compiling /home/user/VSCodeProjects/blog/build.sc
 [7/9] site.jbake 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
@@ -730,7 +744,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 18:32:26.017 INFO  c.o.common.jna.ONative - Detected memory limit for current process is 33429823488 B/31881 MB/31 GB
 18:32:26.018 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - JVM can use maximum 7972MB of heap memory
 18:32:26.018 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory
-18:32:26.018 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20&nbsp;083MB (heap=7&nbsp;972MB os=31&nbsp;881MB)
+18:32:26.018 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20 083MB (heap=7 972MB os=31 881MB)
 18:32:26.020 INFO  c.o.o.c.e.l.OEngineLocalPaginated - System is started under an effective user : `user`
 18:32:26.020 INFO  c.o.o.c.e.l.OEngineLocalPaginated - Allocation of 305261 pages.
 18:32:26.714 INFO  c.o.o.c.s.m.ODirectMemoryStorage - Storage 'memory:cache' is created under OrientDB distribution : 3.0.37 - Veloce (build 6a0e4724c10d51a0b19700fca46da8e41ae006f5, branch UNKNOWN)
@@ -777,20 +791,20 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 18:32:30.210 INFO  org.jbake.app.Oven - Baked 10 items in 4496ms
 [9/9] site.jbakeCopy 
 Copying site from '/home/user/VSCodeProjects/blog/out/site/jbake.dest' to '/home/user/VSCodeProjects/tech4rd/docs'
-</code></pre> 
- </blockquote>
-</details>  
-<p><br></p> 
-<p>We can also invoke the <code>jbakeCopy</code> target passing it the <code>/tmp</code> destination path:</p> 
+</code></pre>
+</details>
+</blockquote>
+<p><br></p>
+<p>We can also invoke the <code>jbakeCopy</code> target passing it the <code>/tmp</code> destination path:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeCopy /tmp
-</code></pre> 
-<p>Output:</p> 
-<blockquote> 
- <pre><code class="language-bash">[9/9] site.jbakeCopy 
+</code></pre>
+<p>Output:</p>
+<blockquote>
+<pre><code class="language-bash">[9/9] site.jbakeCopy 
 Copying site from '/home/user/VSCodeProjects/blog/out/site/jbake.dest' to '/tmp/docs'
-</code></pre> 
-</blockquote> 
-<p>To be able to deploy a site in <a href="https://docs.github.com/en/pages">Github pages</a>, we need only commit and push the new content to the <a href="https://github.com/hmf/tech4rd">remote public website repository</a>. The code snippet below shows the <code>jbakeDeploy</code> target that does this:</p> 
+</code></pre>
+</blockquote>
+<p>To be able to deploy a site in <a href="https://docs.github.com/en/pages">Github pages</a>, we need only commit and push the new content to the <a href="https://github.com/hmf/tech4rd">remote public website repository</a>. The code snippet below shows the <code>jbakeDeploy</code> target that does this:</p>
 <pre><code class="language-scala">  def jbakeDeploy( args: String* ): Command[Unit] = T.command {
 
     val wasCopied = jbakeCopy(args:_*)() 
@@ -798,11 +812,11 @@ Copying site from '/home/user/VSCodeProjects/blog/out/site/jbake.dest' to '/tmp/
     if (wasCopied.isDefined){
       // Check if we are in a git repo
       val destination = wasCopied.get 
-      val repo = destination / ".git"
+      val repo = destination / &quot;.git&quot;
       val exists = os.exists(repo) &amp;&amp; os.isDir(repo)
 
-      T.ctx().log.info(s"pushSite: check if Git repo")
-      val isGitRepoCommand = List("git", "rev-parse", "--is-inside-work-tree")
+      T.ctx().log.info(s&quot;pushSite: check if Git repo&quot;)
+      val isGitRepoCommand = List(&quot;git&quot;, &quot;rev-parse&quot;, &quot;--is-inside-work-tree&quot;)
       val isGitRepoRes = os.proc(isGitRepoCommand)
                            .call(
                                  cwd = destination, 
@@ -811,47 +825,48 @@ Copying site from '/home/user/VSCodeProjects/blog/out/site/jbake.dest' to '/tmp/
  
       // Is it a repo?
       val out = isGitRepoRes.out.string.trim
-      val isRepo = out == "true"
+      val isRepo = out == &quot;true&quot;
 
       if (exists &amp;&amp; isRepo){
-        T.ctx().log.info(s"Git command at ${destination}")
-        val addCommand = List("git", "add", ".")
+        T.ctx().log.info(s&quot;Git command at ${destination}&quot;)
+        val addCommand = List(&quot;git&quot;, &quot;add&quot;, &quot;.&quot;)
 
-        val message = if (args.length &gt;=2) args(1) else ""
-        val commitMessage = s"${LocalDateTime.now()}@$millSourcePath/build.sc/pushSite}: ${message}"
-        T.ctx().log.info(s"pushSite: commit message = '$commitMessage'")
-        val commitCommand = List("git", "commit", "-a", "-m", commitMessage)
-        val pushCommand = List("git", "push")
+        val message = if (args.length &gt;=2) args(1) else &quot;&quot;
+        val commitMessage = s&quot;${LocalDateTime.now()}@$millSourcePath/build.sc/pushSite}: ${message}&quot;
+        T.ctx().log.info(s&quot;pushSite: commit message = '$commitMessage'&quot;)
+        val commitCommand = List(&quot;git&quot;, &quot;commit&quot;, &quot;-a&quot;, &quot;-m&quot;, commitMessage)
+        val pushCommand = List(&quot;git&quot;, &quot;push&quot;)
 
-        T.ctx().log.info(s"pushSite: add")
+        T.ctx().log.info(s&quot;pushSite: add&quot;)
         val add = os.proc(addCommand)
                     .call( cwd = destination )
 
-        T.ctx().log.info(s"pushSite: commit")
+        T.ctx().log.info(s&quot;pushSite: commit&quot;)
         val commit = os.proc(commitCommand)
                        .call( cwd = destination )
 
-        T.ctx().log.info(s"pushSite: push")
+        T.ctx().log.info(s&quot;pushSite: push&quot;)
         val push = os.proc(pushCommand)
                     .call( cwd = destination )
       } 
       else {
-        T.ctx().log.info(s"Git not found at ${destination}. No git commands executed.")
+        T.ctx().log.info(s&quot;Git not found at ${destination}. No git commands executed.&quot;)
       }
     }
   }
-</code></pre> 
-<p>In the code snippet above, the <code>jbakeCopy</code> target is first invoked to ensure that the website's source is compiled and then copied to the <a href="https://github.com/hmf/tech4rd">public website repository</a>. If the website's content was successfully generated and copied, then it checks to see if the destination folder is a valid Git repository by executing the Git command:</p> 
+</code></pre>
+<p>In the code snippet above, the <code>jbakeCopy</code> target is first invoked to ensure that the website's source is compiled and then copied to the <a href="https://github.com/hmf/tech4rd">public website repository</a>. If the website's content was successfully generated and copied, then it checks to see if the destination folder is a valid Git repository by executing the Git command:</p>
 <pre><code class="language-bash">git rev-parse --is-inside-work-tree
-</code></pre> 
-<p>If the destination folder is a valid Git repository, then it executes the Git commands <code>add</code>, <code>commit</code> and <code>push</code>. If the destination repository is correctly configured to use Github pages, then the website will be published and made available at the configured <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>. Note that the website will take some time to be published. Here is an example of deploying the site via Github pages using the target above:</p> 
+</code></pre>
+<p>If the destination folder is a valid Git repository, then it executes the Git commands <code>add</code>, <code>commit</code> and <code>push</code>. If the destination repository is correctly configured to use Github pages, then the website will be published and made available at the configured <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>. Note that the website will take some time to be published. Here is an example of deploying the site via Github pages using the target above:</p>
 <pre><code class="language-bash">$ cd /home/user/VSCodeProjects/blog
 $ ~/VSCodeProjects/blog$ ./mill -i site.jbakeDeploy 
-</code></pre> 
-<details close> <summary>Output of the <tt>jbakeCopy</tt> target command...</summary> 
- <br> 
- <blockquote> 
-  <pre><code>Compiling /home/user/VSCodeProjects/blog/build.sc
+</code></pre>
+<details close>
+<summary>Output of the <tt>jbakeCopy</tt> target command...</summary>
+<br>
+<blockquote>
+<pre><code>Compiling /home/user/VSCodeProjects/blog/build.sc
 [7/10] site.jbake 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
@@ -868,7 +883,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 18:31:24.041 INFO  c.o.common.jna.ONative - Detected memory limit for current process is 33429823488 B/31881 MB/31 GB
 18:31:24.042 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - JVM can use maximum 7972MB of heap memory
 18:31:24.042 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory
-18:31:24.043 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20&nbsp;083MB (heap=7&nbsp;972MB os=31&nbsp;881MB)
+18:31:24.043 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20 083MB (heap=7 972MB os=31 881MB)
 18:31:24.044 INFO  c.o.o.c.e.l.OEngineLocalPaginated - System is started under an effective user : `user`
 18:31:24.045 INFO  c.o.o.c.e.l.OEngineLocalPaginated - Allocation of 305261 pages.
 18:31:24.761 INFO  c.o.o.c.s.m.ODirectMemoryStorage - Storage 'memory:cache' is created under OrientDB distribution : 3.0.37 - Veloce (build 6a0e4724c10d51a0b19700fca46da8e41ae006f5, branch UNKNOWN)
@@ -932,16 +947,16 @@ remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
 To https://github.com/hmf/tech4rd.git
    1386894..fe6d585  main -&gt; main
 
-</code></pre> 
- </blockquote> 
-</details> 
-<p><br></p> 
-<p>Just as in the case of the <code>jbakeCopy</code> target, we can also pass the destination path to the <code>jbakeCopy</code> target. Here is an example:</p> 
+</code></pre>
+</blockquote>
+</details>
+<p><br></p>
+<p>Just as in the case of the <code>jbakeCopy</code> target, we can also pass the destination path to the <code>jbakeCopy</code> target. Here is an example:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeDeploy /tmp
-</code></pre> 
-<p>And the output is:</p> 
-<blockquote> 
- <pre><code>[9/10] site.jbakeCopy 
+</code></pre>
+<p>And the output is:</p>
+<blockquote>
+<pre><code>[9/10] site.jbakeCopy 
 Copying site from '/home/user/VSCodeProjects/blog/out/site/jbake.dest' to '/tmp/docs'
 [10/10] site.jbakeDeploy 
 pushSite: check if Git repo
@@ -952,11 +967,11 @@ fatal: not a git repository (or any of the parent directories): .git
     os.proc.call(ProcessOps.scala:85)
     ammonite.$file.build$site$.$anonfun$jbakeDeploy$2(build.sc:94)
     scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
-</code></pre> 
-</blockquote> 
-<p>Note that because the destination folder is not a valid Git repository, the target will fail.</p> 
-<h1>Using a different template</h1> 
-<p>JBake provides a set of <a href="https://jbake.org/docs/2.6.7/#example_project_structures">example projects</a>. These are usually stored in the JBake installation directory. The <a href="https://github.com/lefou/mill-jbake">Mill JBake plugin</a> downloads and places these in the project's <em>"distribution"</em> output directory. Here is a list of those files for the version of JBake we selected:</p> 
+</code></pre>
+</blockquote>
+<p>Note that because the destination folder is not a valid Git repository, the target will fail.</p>
+<h1>Using a different template</h1>
+<p>JBake provides a set of <a href="https://jbake.org/docs/2.6.7/#example_project_structures">example projects</a>. These are usually stored in the JBake installation directory. The <a href="https://github.com/lefou/mill-jbake">Mill JBake plugin</a> downloads and places these in the project's <em>&quot;distribution&quot;</em> output directory. Here is a list of those files for the version of JBake we selected:</p>
 <pre><code class="language-bash">~$ ls -l /~/VSCodeProjects/blog/out/site/jbakeDistributionDir.dest/unpacked/jbake-2.6.7-bin/
 total 3,3M
 drwxrwxr-x 2 user user 4,0K mai 18 18:33 bin
@@ -966,83 +981,84 @@ drwxrwxr-x 2 user user 4,0K mai 18 18:33 bin
 -rw-rw-r-- 1 user user 298K mai 18 18:33 example_project_jade.zip
 -rw-rw-r-- 1 user user 300K mai 18 18:33 example_project_thymeleaf.zip
 drwxrwxr-x 3 user user 4,0K mai 18 18:33 lib
-</code></pre> 
-<p>If you want to change these examples so that you can initialize a site using your own custom structure and templates, you need to extract, change and repack the content of these archives so that the <code>jbakeInit</code> Mill target can use them. When using Mill, this is not the best solution because JBake is installed for each project module you set up. You would have to repeat the process of changing the template archives again. A better alternative is to create and keep your site <em>"theme"</em> in a separate code repository and then automatically download and unpack the contents into the <code>docs</code> folder simply pointing to the URL of that repository. Here is an example of <a href="https://blog.bmarwell.de/2022/03/28/jbake-author-template-released.html#using_the_jbake_author_template">Benjamin Marwell providing</a> the <a href="https://github.com/bmarwell/jbake-blog-template-author">JBake Author template</a>, which is a port of the <a href="https://de.wordpress.org/themes/author/">Wordpress Author theme</a>. Their are other such as:</p> 
-<ol> 
- <li><a href="https://github.com/manikmagar/jbake-future-imperfect-template">JBake Future Imperfect template</a></li> 
- <li><a href="https://github.com/SiddheshRane/jbake-clean-blog-template">JBake Clean Blog theme</a></li> 
- <li><a href="https://github.com/manikmagar/jbake-phlat-theme">JBake Phlat theme</a></li> 
- <li><a href="https://yamane.github.io/bj-demo/">Beautiful-JBake template</a></li> 
-</ol> 
-<p>Preparing one of these template or themes takes time and effort and the results may vary widely in terms of aesthetics and functionality. This is why I have opted to use an existing template. In particular, we will use the <em>JBake Future Imperfect</em> template because it has a pleasing aesthetic and is feature rich. It includes:</p> 
-<ol> 
- <li>Support for <a href="https://disqus.com/">Discus comments</a></li> 
- <li><a href="https://analytics.google.com/analytics/web/provision/#/provision">Google analytics tracking</a></li> 
- <li><a href="https://github.com/michael-lynch/reading-time">Estimation of reading time</a></li> 
- <li>Social links</li> 
- <li>Customized <code>Page not found - 404</code> URL</li> 
- <li>Post featured images</li> 
- <li>Feeds (JSON and RSS XML)</li> 
-</ol> 
-<p>To initialize the JBake site with the contents of the Git URL, the following <code>jbakeGitTemplate</code> target can be used:</p> 
+</code></pre>
+<p>If you want to change these examples so that you can initialize a site using your own custom structure and templates, you need to extract, change and repack the content of these archives so that the <code>jbakeInit</code> Mill target can use them. When using Mill, this is not the best solution because JBake is installed for each project module you set up.  You would have to repeat the process of changing the template archives again. A better alternative is to create and keep your site <em>&quot;theme&quot;</em> in a separate code repository and then automatically download and unpack the contents into the <code>docs</code> folder simply pointing to the URL of that repository. Here is an example of <a href="https://blog.bmarwell.de/2022/03/28/jbake-author-template-released.html#using_the_jbake_author_template">Benjamin Marwell providing</a> the <a href="https://github.com/bmarwell/jbake-blog-template-author">JBake Author template</a>, which is a port of the <a href="https://de.wordpress.org/themes/author/">Wordpress Author theme</a>. Their are other such as:</p>
+<ol>
+<li><a href="https://github.com/manikmagar/jbake-future-imperfect-template">JBake Future Imperfect template</a></li>
+<li><a href="https://github.com/SiddheshRane/jbake-clean-blog-template">JBake Clean Blog theme</a></li>
+<li><a href="https://github.com/manikmagar/jbake-phlat-theme">JBake Phlat theme</a></li>
+<li><a href="https://yamane.github.io/bj-demo/">Beautiful-JBake template</a></li>
+</ol>
+<p>Preparing one of these template or themes takes time and effort and the results may vary widely in terms of aesthetics and functionality. This is why I have opted to use an existing template. In particular, we will use the <em>JBake Future Imperfect</em> template because it has a pleasing aesthetic and is feature rich. It includes:</p>
+<ol>
+<li>Support for <a href="https://disqus.com/">Discus comments</a></li>
+<li><a href="https://analytics.google.com/analytics/web/provision/#/provision">Google analytics tracking</a></li>
+<li><a href="https://github.com/michael-lynch/reading-time">Estimation of reading time</a></li>
+<li>Social links</li>
+<li>Customized <code>Page not found - 404</code> URL</li>
+<li>Post featured images</li>
+<li>Feeds (JSON and RSS XML)</li>
+</ol>
+<p>To initialize the JBake site with the contents of the Git URL, the following <code>jbakeGitTemplate</code> target can be used:</p>
 <pre><code class="language-scala">  def jbakeGitTemplate( args: String* ): Command[Unit] = T.command {
     val srcDir = sources().head.path
     val source: String = if (args.size &gt; 0) 
                    args(0)
                  else 
                    gitTemplateURL()
-    T.ctx().log.info(s"""jbakeGitTemplate: Git source at "${source}" """)
+    T.ctx().log.info(s&quot;&quot;&quot;jbakeGitTemplate: Git source at &quot;${source}&quot; &quot;&quot;&quot;)
     val destination = build.millSourcePath
-    T.ctx().log.info(s"jbakeGitTemplate: check if Git repo at $destination")
+    T.ctx().log.info(s&quot;jbakeGitTemplate: check if Git repo at $destination&quot;)
     val isGit = isGitRepo(destination)
     if (isGit) {
       if (os.exists(srcDir)){
-        T.ctx().log.info(s"""Git command at "${millSourcePath}" remove "$srcDir"""")
+        T.ctx().log.info(s&quot;&quot;&quot;Git command at &quot;${millSourcePath}&quot; remove &quot;$srcDir&quot;&quot;&quot;&quot;)
         os.remove.all(srcDir)      
         os.remove(srcDir)      
       }
       val relative = srcDir.relativeTo(millSourcePath).toString 
-      T.ctx().log.info(s"""Git clone command at "${millSourcePath}" with relative destination to "$relative"""")
-      val cloneCommand = List("git", "clone", source, relative)
+      T.ctx().log.info(s&quot;&quot;&quot;Git clone command at &quot;${millSourcePath}&quot; with relative destination to &quot;$relative&quot;&quot;&quot;&quot;)
+      val cloneCommand = List(&quot;git&quot;, &quot;clone&quot;, source, relative)
       val add = os.proc(cloneCommand)
                   .call( cwd = millSourcePath )
     }
     else {
-      T.ctx().log.info(s"Git not found at ${destination}. No git commands executed.")
+      T.ctx().log.info(s&quot;Git not found at ${destination}. No git commands executed.&quot;)
     }
   }
-</code></pre> 
-<p>This target is equivalent to a <code>jbakeInit</code>. It will delete all of the website's sources, so be careful. It first obtains the public Git URL from the command line parameter. If no URL is provided it defaults to the <code>gitTemplateURL</code> target shown below. You can set the default URL in your Mill script by overriding this target.</p> 
-<pre><code class="language-scala">  def gitTemplateURL: T[String] = T { "https://github.com/manikmagar/jbake-future-imperfect-template.git" }
-</code></pre> 
-<p>To see the default URL that is set in the Mills script, execute the following command:</p> 
+</code></pre>
+<p>This target is equivalent to a <code>jbakeInit</code>. It will delete all of the website's sources, so be careful. It first obtains the public Git URL from the command line parameter. If no URL is provided it defaults to the <code>gitTemplateURL</code> target shown below. You can set the default URL in your Mill script by overriding this target.</p>
+<pre><code class="language-scala">  def gitTemplateURL: T[String] = T { &quot;https://github.com/manikmagar/jbake-future-imperfect-template.git&quot; }
+</code></pre>
+<p>To see the default URL that is set in the Mills script, execute the following command:</p>
 <pre><code class="language-bash">./mill -i show site.gitTemplateURL
-</code></pre> 
-<p>The <code>jbakeGitTemplate</code> then checks if the destination target is a git repository. If it is, then executes a <code>git clone</code> command that copies the remote repository's content into the Mill module's destination folder. In this running example the JBake template sources are placed in the following folder:</p> 
+</code></pre>
+<p>The <code>jbakeGitTemplate</code> then checks if the destination target is a git repository. If it is, then executes a <code>git clone</code> command that copies the remote repository's content into the Mill module's destination folder. In this running example the JBake template sources are placed in the following folder:</p>
 <pre><code class="language-bash">home/user/VSCodeProjects/blog/site/src
-</code></pre> 
-<p>At this point you are ready to contribute content to the template and then <em>bake</em>, serve and/or deploy the website's content as previously described. The following is an example of initializing a JBake template by explicitly providing a Git repository URL:</p> 
+</code></pre>
+<p>At this point you are ready to contribute content to the template and then <em>bake</em>, serve and/or deploy the website's content as previously described. The following is an example of initializing a JBake template by explicitly providing a Git repository URL:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeGitTemplate https://github.com/SiddheshRane/jbake-clean-blog-template
-</code></pre> 
-<p>And here is the output of the command (note the folders where the template's sources are placed):</p> 
+</code></pre>
+<p>And here is the output of the command (note the folders where the template's sources are placed):</p>
 <pre><code class="language-bash">[3/3] site.jbakeGitTemplate 
-jbakeGitTemplate: Git source at "https://github.com/SiddheshRane/jbake-clean-blog-template"
+jbakeGitTemplate: Git source at &quot;https://github.com/SiddheshRane/jbake-clean-blog-template&quot;
 jbakeGitTemplate: check if Git repo at /home/user/VSCodeProjects/blog
-Git command at "/home/user/VSCodeProjects/blog/site" remove "/home/user/VSCodeProjects/blog/site/src"
-Git clone command at "/home/user/VSCodeProjects/blog/site" with relative destination to "src"
+Git command at &quot;/home/user/VSCodeProjects/blog/site&quot; remove &quot;/home/user/VSCodeProjects/blog/site/src&quot;
+Git clone command at &quot;/home/user/VSCodeProjects/blog/site&quot; with relative destination to &quot;src&quot;
 Cloning into 'src'...
 remote: Enumerating objects: 264, done.
 remote: Total 264 (delta 0), reused 0 (delta 0), pack-reused 264
 Receiving objects: 100% (264/264), 3.51 MiB | 3.75 MiB/s, done.
 Resolving deltas: 100% (121/121), done.
-</code></pre> 
-<p>One can now serve and test the website as follows:</p> 
+</code></pre>
+<p>One can now serve and test the website as follows:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeServe
-</code></pre> 
-<details close> <summary>Output of the <tt>site.jbakeServe</tt> target ...</summary> 
- <br> 
- <blockquote> 
-  <pre><code>[8/8] site.jbakeServe 
+</code></pre>
+<details close>
+<summary>Output of the <tt>site.jbakeServe</tt> target ...</summary>
+<br>
+<blockquote>
+<pre><code>[8/8] site.jbakeServe 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
 11:23:06.454 INFO  org.jbake.app.Oven - Baking has started...
@@ -1058,7 +1074,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 11:23:06.738 INFO  c.o.common.jna.ONative - Detected memory limit for current process is 33429815296 B/31881 MB/31 GB
 11:23:06.738 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - JVM can use maximum 7972MB of heap memory
 11:23:06.738 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory
-11:23:06.739 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20&nbsp;083MB (heap=7&nbsp;972MB os=31&nbsp;881MB)
+11:23:06.739 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20 083MB (heap=7 972MB os=31 881MB)
 11:23:06.740 INFO  c.o.o.c.e.l.OEngineLocalPaginated - System is started under an effective user : `user`
 11:23:06.742 INFO  c.o.o.c.e.l.OEngineLocalPaginated - Allocation of 305261 pages.
 11:23:07.450 INFO  c.o.o.c.s.m.ODirectMemoryStorage - Storage 'memory:cache' is created under OrientDB distribution : 3.0.37 - Veloce (build 6a0e4724c10d51a0b19700fca46da8e41ae006f5, branch UNKNOWN)
@@ -1154,18 +1170,19 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 11:23:11.282 INFO  org.jbake.launcher.BakeWatcher - Watching for (content, template, asset) changes in [/home/user/VSCodeProjects/blog/site/src]
 11:23:11.348 INFO  org.jbake.launcher.JettyServer - Serving out contents of: [/home/user/VSCodeProjects/blog/out/site/jbake.dest] on http://localhost:8820/
 11:23:11.348 INFO  org.jbake.launcher.JettyServer - (To stop server hit CTRL-C)
-</code></pre> 
- </blockquote>
-</details>  
-<p><br> If you point your browser to the local URL <a href="http://localhost:8820/">http://localhost:8820/</a>, you should see the website's content similar to what is shown below: <br></p> 
-<p><img src="/blog/2020/mill/jbake/screenshot_jbake_clean_template_localhost.png" alt="Serving JBake Clean template - localhost"></p> 
-<p>When you are ready to publish the website's content to the remote host, execute the following command:</p> 
+</code></pre>
+</details>
+</blockquote>
+<p><br> If you point your browser to the local URL <a href="http://localhost:8820/">http://localhost:8820/</a>, you should see the website's content similar to what is shown below: <br></p>
+<p><img src="./screenshot_jbake_clean_template_localhost.png" alt="Serving JBake Clean template - localhost" /></p>
+<p>When you are ready to publish the website's content to the remote host, execute the following command:</p>
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeDeploy
-</code></pre> 
-<details close> <summary>Output of the <tt>site.jbakeDeploy target ...</tt> </summary> 
- <br> 
- <blockquote> 
-  <pre><code>[7/10] site.jbake 
+</code></pre>
+<details close>
+<summary>Output of the <tt>site.jbakeDeploy target ...</tt> </summary>
+<br>
+<blockquote>
+<pre><code>[7/10] site.jbake 
 JBake v2.6.7 (2021-05-14 21:54:29[GMT+01:00]) [http://jbake.org]
 
 11:21:44.329 INFO  org.jbake.app.Oven - Baking has started...
@@ -1181,7 +1198,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 11:21:44.615 INFO  c.o.common.jna.ONative - Detected memory limit for current process is 33429815296 B/31881 MB/31 GB
 11:21:44.616 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - JVM can use maximum 7972MB of heap memory
 11:21:44.616 INFO  c.o.o.c.e.OMemoryAndLocalPaginatedEnginesInitializer - Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory
-11:21:44.616 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20&nbsp;083MB (heap=7&nbsp;972MB os=31&nbsp;881MB)
+11:21:44.616 INFO  com.orientechnologies - OrientDB auto-config DISKCACHE=20 083MB (heap=7 972MB os=31 881MB)
 11:21:44.617 INFO  c.o.o.c.e.l.OEngineLocalPaginated - System is started under an effective user : `user`
 11:21:44.618 INFO  c.o.o.c.e.l.OEngineLocalPaginated - Allocation of 305261 pages.
 11:21:45.325 INFO  c.o.o.c.s.m.ODirectMemoryStorage - Storage 'memory:cache' is created under OrientDB distribution : 3.0.37 - Veloce (build 6a0e4724c10d51a0b19700fca46da8e41ae006f5, branch UNKNOWN)
@@ -1291,94 +1308,98 @@ Total 92 (delta 14), reused 0 (delta 0)
 remote: Resolving deltas: 100% (14/14), completed with 3 local objects.
 To https://github.com/user/tech4rd.git
    82fbf46..cc57fd4  main -&gt; main
-</code></pre> 
- </blockquote> 
-</details> 
-<p><br></p> 
-<p>If you point your browser to the <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>, you should see the website's content similar to what is shown below: <br></p> 
-<p><img src="/blog/2020/mill/jbake/screenshot_jbake_clean_template.png" alt="Serving JBake Clean template - remote host"></p> 
-<h1>Conclusion</h1> 
-<p>This concludes the first part of this series. You should now be able to publish a website using <a href="https://docs.github.com/en/pages">Github pages</a>. In addition to this and with the help of the Mill script, you can now automate the generation of the website's content from your own private repository and publish it with a single command. In the next part we will set up the JBake Future Imperfect template and publish a first article.</p> 
-<h1>References</h1> 
-<ol> 
- <li><a href="[https://en.wikipedia.org/wiki/Markdown]">Markdown</a></li> 
- <li><a href="https://asciidoc.org/">AsciiDoc site</a></li> 
- <li><a href="https://en.wikipedia.org/wiki/AsciiDoc">AsciiDoc Wikipedia</a></li> 
- <li><a href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a></li> 
- <li><a href="https://freemarker.apache.org/">Freemarker</a></li> 
- <li><a href="https://www.thymeleaf.org/">ThymeLeaf</a></li> 
- <li><a href="https://analytics.google.com/">Google Analytics</a></li> 
- <li><a href="https://www.mathjax.org/">MathJax</a></li> 
- <li><a href="https://mathjs.org/">MathJS</a></li> 
- <li><a href="https://katex.org/">KaTex</a></li> 
- <li><a href="https://mermaid-js.github.io/mermaid/#/">Mermaid-Js</a></li> 
- <li><a href="https://flowchart.js.org/">Flowchart.js</a></li> 
- <li><a href="https://www.chartjs.org/">ChartJS</a></li> 
- <li><a href="https://plotly.com/javascript/">Plotly</a></li> 
- <li><a href="https://gionkunz.github.io/chartist-js/">Chartist-Js</a></li> 
- <li><a href="https://rawgraphs.io/">RawGraphs.io</a></li> 
- <li><a href="https://d3js.org/">d3js</a></li> 
- <li><a href="https://c3js.org/">c3js</a></li> 
- <li><a href="https://nvd3.org/">nvd3</a></li> 
- <li><a href="https://github.com/com-lihaoyi/mill">Mill Github</a></li> 
- <li><a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill Github pages</a></li> 
- <li><a href="https://github.com/feathericons/feather">FeatherIcons</a></li> 
- <li><a href="https://ionicons.com/">IonIcons</a></li> 
- <li><a href="https://fontawesome.com/">FontAwesome</a></li> 
- <li><a href="https://github.com/tabler/tabler-icons">Tabler</a></li> 
- <li><a href="http://css.gg/">css.gg</a></li> 
- <li><a href="https://docusaurus.io/">Docusaurus.io</a></li> 
- <li><a href="https://github.com/facebook/docusaurus">Docusaurus Github</a></li> 
- <li><a href="https://jekyllrb.com/">Jekyll</a></li> 
- <li><a href="https://github.com/jekyll/jekyll">Jekyll Github</a></li> 
- <li><a href="https://github.com/jbake-org/jbake">JBake github</a></li> 
- <li><a href="https://jbake.org/">JBake</a></li> 
- <li><a href="https://planet42.github.io/Laika/">Laika</a></li> 
- <li><a href="https://github.com/planet42/Laika">Laika Github</a></li> 
- <li><a href="https://docs.scala-lang.org/">Scala-lang docs</a></li> 
- <li><a href="https://docs.scala-lang.org/scala3/scaladoc.html">Scala3 ScalaDoc</a></li> 
- <li><a href="https://docs.scala-lang.org/scala3/guides/scaladoc/">Scala3 ScalaDoc Guide</a></li> 
- <li><a href="https://dotty.epfl.ch/docs/usage/scaladoc/">Scala3 ScalaDoc Usage</a></li> 
- <li><a href="https://github.com/lampepfl/dotty">Scala3/Dotty - ScalaDocs github</a></li> 
- <li><a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a></li> 
- <li><a href="https://github.com/sbt/sbt-site">Sbt-site Github</a></li> 
- <li><a href="https://www.scala-sbt.org/sbt-site/">Sbt-site</a></li> 
- <li><a href="http://sphinx-doc.org/">sphinx-doc</a></li> 
- <li><a href="http://www.foundweekends.org/pamflet/">Pamflet</a></li> 
- <li><a href="https://github.com/foundweekends/pamflet">Pamflet Github</a></li> 
- <li><a href="https://nanoc.ws/">Nanoc</a></li> 
- <li><a href="https://www.gitbook.com/">GitBook</a></li> 
- <li><a href="https://developer.lightbend.com/docs/paradox/current/">Paradox</a></li> 
- <li><a href="https://github.com/lightbend/paradox">Github Paradox</a></li> 
- <li><a href="https://gohugo.io/">GoHugo</a></li> 
- <li><a href="http://asciidoctor.org/">AsciiDoctor</a></li> 
- <li><a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill Build tool</a></li> 
- <li><a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_docusaurus_2">Mill Docusaurus plugin</a></li> 
- <li><a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">Mill JBake plugin</a></li> 
- <li><a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">Mill MDoc plugin</a></li> 
- <li><a href="https://scalameta.org/mdoc/">MDoc</a></li> 
- <li><a href="https://github.com/scalameta/mdoc">MDoc in Github</a></li> 
- <li><a href="https://github.com/lefou/mill-jbake">Mill JBake plugin in Github</a></li> 
- <li><a href="https://docs.github.com/en/pages">Github pages</a></li> 
- <li><a href="https://docs.gitlab.com/ee/user/project/pages/">Gitlab pages</a></li> 
- <li><a href="https://github.github.com/gfm/">Github Flavoured Markdown</a></li> 
- <li><a href="https://docs.gitlab.com/ee/user/markdown.html">Gitlab Flavoured Markdown</a></li> 
- <li><a href="https://daringfireball.net/projects/markdown/syntax">John Gruber’s canonical description of Markdown’s syntax</a></li> 
- <li><a href="https://commonmark.org/">Commonmark variant</a></li> 
- <li><a href="https://www.markdownguide.org/">Markdown Guide</a></li> 
- <li><a href="https://www.markdownguide.org/extended-syntax/">Markdown guide extended-syntax</a></li> 
- <li><a href="https://rmarkdown.rstudio.com/">R Markdown variant</a></li> 
- <li><a href="https://jbake.org/docs/">JBake documentation</a></li> 
- <li><a href="https://ammonite.io/">Ammonite</a></li> 
- <li><a href="https://get-coursier.io/">Coursier</a></li> 
- <li><a href="https://github.com/bmarwell/jbake-blog-template-author">JBake Author template</a></li> 
-</ol> 
-<div class="footnotes"> 
- <hr> 
- <ol> 
-  <li id="fn-1"> <p>See for example information provided for the <a href="https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_new_project_template.html">Gitlab pages</a> and the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">Github pages</a>.</p> <a href="#fnref-1" class="footnote-backref">↩</a> </li> 
- </ol> 
+</code></pre>
+</blockquote>
+</details>
+<p><br></p>
+<p>If you point your browser to the <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>, you should see the website's content similar to what is shown below: <br></p>
+<p><img src="./screenshot_jbake_clean_template.png" alt="Serving JBake Clean template - remote host" /></p>
+<h1>Conclusion</h1>
+<p>This concludes the first part of this series. You should now be able to publish a website using <a href="https://docs.github.com/en/pages">Github pages</a>. In addition to this and with the help of the Mill script, you can now automate the generation of the website's content from your own private repository and publish it with a single command. In the next part we will set up the JBake Future Imperfect template and publish a first article.</p>
+<h1>References</h1>
+<ol>
+<li><a href="[https://en.wikipedia.org/wiki/Markdown]">Markdown</a></li>
+<li><a href="https://asciidoc.org/">AsciiDoc site</a></li>
+<li><a href="https://en.wikipedia.org/wiki/AsciiDoc">AsciiDoc Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a></li>
+<li><a href="https://freemarker.apache.org/">Freemarker</a></li>
+<li><a href="https://www.thymeleaf.org/">ThymeLeaf</a></li>
+<li><a href="https://analytics.google.com/">Google Analytics</a></li>
+<li><a href="https://www.mathjax.org/">MathJax</a></li>
+<li><a href="https://mathjs.org/">MathJS</a></li>
+<li><a href="https://katex.org/">KaTex</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/">Mermaid-Js</a></li>
+<li><a href="https://flowchart.js.org/">Flowchart.js</a></li>
+<li><a href="https://www.chartjs.org/">ChartJS</a></li>
+<li><a href="https://plotly.com/javascript/">Plotly</a></li>
+<li><a href="https://gionkunz.github.io/chartist-js/">Chartist-Js</a></li>
+<li><a href="https://rawgraphs.io/">RawGraphs.io</a></li>
+<li><a href="https://d3js.org/">d3js</a></li>
+<li><a href="https://c3js.org/">c3js</a></li>
+<li><a href="https://nvd3.org/">nvd3</a></li>
+<li><a href="https://github.com/com-lihaoyi/mill">Mill Github</a></li>
+<li><a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill Github pages</a></li>
+<li><a href="https://github.com/feathericons/feather">FeatherIcons</a></li>
+<li><a href="https://ionicons.com/">IonIcons</a></li>
+<li><a href="https://fontawesome.com/">FontAwesome</a></li>
+<li><a href="https://github.com/tabler/tabler-icons">Tabler</a></li>
+<li><a href="http://css.gg/">css.gg</a></li>
+<li><a href="https://docusaurus.io/">Docusaurus.io</a></li>
+<li><a href="https://github.com/facebook/docusaurus">Docusaurus Github</a></li>
+<li><a href="https://jekyllrb.com/">Jekyll</a></li>
+<li><a href="https://github.com/jekyll/jekyll">Jekyll Github</a></li>
+<li><a href="https://github.com/jbake-org/jbake">JBake github</a></li>
+<li><a href="https://jbake.org/">JBake</a></li>
+<li><a href="https://planet42.github.io/Laika/">Laika</a></li>
+<li><a href="https://github.com/planet42/Laika">Laika Github</a></li>
+<li><a href="https://docs.scala-lang.org/">Scala-lang docs</a></li>
+<li><a href="https://docs.scala-lang.org/scala3/scaladoc.html">Scala3 ScalaDoc</a></li>
+<li><a href="https://docs.scala-lang.org/scala3/guides/scaladoc/">Scala3 ScalaDoc Guide</a></li>
+<li><a href="https://dotty.epfl.ch/docs/usage/scaladoc/">Scala3 ScalaDoc Usage</a></li>
+<li><a href="https://github.com/lampepfl/dotty">Scala3/Dotty - ScalaDocs github</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a></li>
+<li><a href="https://github.com/sbt/sbt-site">Sbt-site Github</a></li>
+<li><a href="https://www.scala-sbt.org/sbt-site/">Sbt-site</a></li>
+<li><a href="http://sphinx-doc.org/">sphinx-doc</a></li>
+<li><a href="http://www.foundweekends.org/pamflet/">Pamflet</a></li>
+<li><a href="https://github.com/foundweekends/pamflet">Pamflet Github</a></li>
+<li><a href="https://nanoc.ws/">Nanoc</a></li>
+<li><a href="https://www.gitbook.com/">GitBook</a></li>
+<li><a href="https://developer.lightbend.com/docs/paradox/current/">Paradox</a></li>
+<li><a href="https://github.com/lightbend/paradox">Github Paradox</a></li>
+<li><a href="https://gohugo.io/">GoHugo</a></li>
+<li><a href="http://asciidoctor.org/">AsciiDoctor</a></li>
+<li><a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill Build tool</a></li>
+<li><a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_docusaurus_2">Mill Docusaurus plugin</a></li>
+<li><a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake">Mill JBake plugin</a></li>
+<li><a href="https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc">Mill MDoc plugin</a></li>
+<li><a href="https://scalameta.org/mdoc/">MDoc</a></li>
+<li><a href="https://github.com/scalameta/mdoc">MDoc in Github</a></li>
+<li><a href="https://github.com/lefou/mill-jbake">Mill JBake plugin in Github</a></li>
+<li><a href="https://docs.github.com/en/pages">Github pages</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/project/pages/">Gitlab pages</a></li>
+<li><a href="https://github.github.com/gfm/">Github Flavoured Markdown</a></li>
+<li><a href="https://docs.gitlab.com/ee/user/markdown.html">Gitlab Flavoured Markdown</a></li>
+<li><a href="https://daringfireball.net/projects/markdown/syntax">John Gruber’s canonical description of Markdown’s syntax</a></li>
+<li><a href="https://commonmark.org/">Commonmark variant</a></li>
+<li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+<li><a href="https://www.markdownguide.org/extended-syntax/">Markdown guide extended-syntax</a></li>
+<li><a href="https://rmarkdown.rstudio.com/">R Markdown variant</a></li>
+<li><a href="https://jbake.org/docs/">JBake documentation</a></li>
+<li><a href="https://ammonite.io/">Ammonite</a></li>
+<li><a href="https://get-coursier.io/">Coursier</a></li>
+<li><a href="https://github.com/bmarwell/jbake-blog-template-author">JBake Author template</a></li>
+</ol>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn-1">
+<p>See for example information provided for the <a href="https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_new_project_template.html">Gitlab pages</a> and the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">Github pages</a>.</p>
+<a href="#fnref-1" class="footnote-backref">&#8617;</a>
+</li>
+</ol>
 </div>
+
     </div>
 	
 	<section id="social-share">
