@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>http://www.jbake.org</link>
-    <atom:link href="http://www.jbake.org/feed.xml" rel="self" type="application/rss+xml" />
+    <link>hmf.github.io/tech4rd</link>
+    <atom:link href="hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 10 Sep 2022 18:03:42 +0100</pubDate>
-    <lastBuildDate>Sat, 10 Sep 2022 18:03:42 +0100</lastBuildDate>
+    <pubDate>Sat, 10 Sep 2022 18:05:51 +0100</pubDate>
+    <lastBuildDate>Sat, 10 Sep 2022 18:05:51 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog</title>
-      <link>http://www.jbake.org/blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
+      <link>hmf.github.io/tech4rd/blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_1.html</guid>
       	<description>
@@ -446,7 +446,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 &lt;/details&gt; 
 &lt;br&gt; 
 &lt;p&gt;You can then preview it in your browser at &lt;a href=&quot;http://localhost:8820&quot;&gt;this URL&lt;/a&gt;. Here is an image of the initial example site (shown using &lt;a href=&quot;https://darkreader.org/&quot;&gt;Dark Reader&lt;/a&gt;):&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/jbake/screenshot_jbake_example_site.png&quot; alt=&quot;Preview in Dark Mode&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/jbake/screenshot_jbake_example_site.png&quot; alt=&quot;Preview in Dark Mode&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;Note that JBake will monitor changes in the site&apos;s source and automatically update the site&apos;s content. To stop the automatic update and serving of the website simple press the keys &lt;code&gt;Ctrl-C&lt;/code&gt;. The server will terminate as shown below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;^C
 18:50:11.633 WARN  c.o.orient.core.OSignalHandler - Received signal: SIGINT
@@ -970,7 +970,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
  &lt;/blockquote&gt;
 &lt;/details&gt;  
 &lt;p&gt;&lt;br&gt; If you point your browser to the local URL &lt;a href=&quot;http://localhost:8820/&quot;&gt;http://localhost:8820/&lt;/a&gt;, you should see the website&apos;s content similar to what is shown below: &lt;br&gt;&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/jbake/screenshot_jbake_clean_template_localhost.png&quot; alt=&quot;Serving JBake Clean template - localhost&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/jbake/screenshot_jbake_clean_template_localhost.png&quot; alt=&quot;Serving JBake Clean template - localhost&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;When you are ready to publish the website&apos;s content to the remote host, execute the following command:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;~/VSCodeProjects/blog$ ./mill -i site.jbakeDeploy
 &lt;/code&gt;&lt;/pre&gt; 
@@ -1108,7 +1108,7 @@ To https://github.com/user/tech4rd.git
 &lt;/details&gt; 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt; 
 &lt;p&gt;If you point your browser to the &lt;a href=&quot;https://hmf.github.io/tech4rd/&quot;&gt;Github pages URL&lt;/a&gt;, you should see the website&apos;s content similar to what is shown below: &lt;br&gt;&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/jbake/screenshot_jbake_clean_template.png&quot; alt=&quot;Serving JBake Clean template - remote host&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/jbake/screenshot_jbake_clean_template.png&quot; alt=&quot;Serving JBake Clean template - remote host&quot;&gt;&lt;/p&gt; 
 &lt;h1&gt;Conclusion&lt;/h1&gt; 
 &lt;p&gt;This concludes the first part of this series. You should now be able to publish a website using &lt;a href=&quot;https://docs.github.com/en/pages&quot;&gt;Github pages&lt;/a&gt;. In addition to this and with the help of the Mill script, you can now automate the generation of the website&apos;s content from your own private repository and publish it with a single command. In the next part we will set up the JBake Future Imperfect template and publish a first article.&lt;/p&gt; 
 &lt;h1&gt;References&lt;/h1&gt; 
@@ -1195,7 +1195,7 @@ To https://github.com/user/tech4rd.git
     </item>
     <item>
       <title>Tutorial: JavaFX Mill project</title>
-      <link>http://www.jbake.org/blog/2020/mill/javafx/javafx.html</link>
+      <link>hmf.github.io/tech4rd/blog/2020/mill/javafx/javafx.html</link>
       <pubDate>Thu, 9 Jun 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/javafx/javafx.html</guid>
       	<description>
@@ -1573,7 +1573,7 @@ Hello Managed Scala World!
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;/blockquote&gt; 
 &lt;p&gt;and the following JavaFX (OpenJFX) GUI should appear:&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/javafx/managed_run_screenshot.png#center&quot; alt=&quot;GUI from managed.run&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/javafx/managed_run_screenshot.png#center&quot; alt=&quot;GUI from managed.run&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;Mill, by default, executes the application by forking a new JVM. However, one can also execute the application in Mill&apos;s JVM with the following command:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ ./mill managed.runLocal
 &lt;/code&gt;&lt;/pre&gt; 
@@ -1583,7 +1583,7 @@ Hello Managed Scala World!
 $ ./mill -i managed.runMain button.Main
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;The first command above produces the same result as described for the &lt;code&gt;run&lt;/code&gt; target - the default main class is &lt;code&gt;helloworld.HelloWorld&lt;/code&gt;. The &lt;code&gt;button.Main&lt;/code&gt; application opens this dialogue box:&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/javafx/managed_runmain_screenshot.png#center&quot; alt=&quot;Managed runMain Screenshot&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/javafx/managed_runmain_screenshot.png#center&quot; alt=&quot;Managed runMain Screenshot&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;To test the code, we must select the unit test framework to use, prepare those unit tests and then execute them. We have already seen how to setup the &lt;a href=&quot;https://scalameta.org/munit/&quot;&gt;MUnit&lt;/a&gt; framework. Here we show how to execute these tests via the Mill Command line. We won&apos;t go into any detail here. The goal is to have the example serve as a template for your future work. The &lt;code&gt;manage&lt;/code&gt; module has the test source code placed in its inner &lt;code&gt;test&lt;/code&gt; module. I have provided a single test example in the following directory:&lt;/p&gt; 
 &lt;pre&gt;&lt;code&gt;managed/test/src/ExampleSpec.scala
 &lt;/code&gt;&lt;/pre&gt; 
@@ -2212,7 +2212,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 &lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ shotwell /home/user/VSCodeProjects/javaFXMill/out/visualize.dest/out.png
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;The &lt;code&gt;svg&lt;/code&gt; output is shown below:&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/javafx/managed_visualize.svg#center&quot; alt=&quot;./mill show visualize managed._&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/javafx/managed_visualize.svg#center&quot; alt=&quot;./mill show visualize managed._&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;There is also a similar &lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html#_visualizeplan&quot;&gt;&lt;code&gt;visualizePlan&lt;/code&gt;&lt;/a&gt; utility command. Unlike &lt;code&gt;visualize&lt;/code&gt;, it shows all targets, irrespective of whether or not they are resolved by the current target query. These non-resolved tasks, which are &lt;strong&gt;not&lt;/strong&gt; generated by &lt;code&gt;visualise&lt;/code&gt;, are shown with a &lt;strong&gt;dotted&lt;/strong&gt; borderlines. The command below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ ./mill show visualizePlan managed._
 &lt;/code&gt;&lt;/pre&gt; 
@@ -2233,7 +2233,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;/blockquote&gt; 
 &lt;p&gt;The DAG, shown below, is also very similar but if you look closely, the &lt;em&gt;&quot;dotted&quot;&lt;/em&gt; tasks there, do not appear in the previous DAG:&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;http://www.jbake.org/blog/2020/mill/javafx/managed_visualize_plan.svg#center&quot; alt=&quot;./mill show visualizePlan managed._&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;hmf.github.io/tech4rd/blog/2020/mill/javafx/managed_visualize_plan.svg#center&quot; alt=&quot;./mill show visualizePlan managed._&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;I wanted to give you a sense of the complexity these DAGs can have. This is a very small project but the DAG is already substantial. For medium size projects with dependencies between modules (see &lt;code&gt;moduleDeps&lt;/code&gt; configuration task), the DAGs become very large. So be selective in choosing your query targets.&lt;/p&gt; 
 &lt;p&gt;You may also find it easier to view the SVG files, which allow zooming and panning without loss of image quality, unlike the raster images such as &lt;a href=&quot;https://www.w3.org/TR/PNG/&quot;&gt;PNG&lt;/a&gt;. Any web browser should allow you to view these files. In addition to this, I also use &lt;a href=&quot;https://inkscape.org/&quot;&gt;InkScape&lt;/a&gt; to view the files and possibly alter them for publishing. On my Linux distribution I used the following commands to install InkScape:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;$ sudo add-apt-repository ppa:inkscape.dev/stable
@@ -2901,7 +2901,7 @@ $ ./mill -i allOS.runMain button.Main
     </item>
     <item>
       <title>Fourth Post</title>
-      <link>http://www.jbake.org/blog/2013/fourth-post.html</link>
+      <link>hmf.github.io/tech4rd/blog/2013/fourth-post.html</link>
       <pubDate>Thu, 17 Oct 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/fourth-post.html</guid>
       	<description>
@@ -2921,7 +2921,7 @@ $ ./mill -i allOS.runMain button.Main
     </item>
     <item>
       <title>Third Post</title>
-      <link>http://www.jbake.org/blog/2013/third-post.html</link>
+      <link>hmf.github.io/tech4rd/blog/2013/third-post.html</link>
       <pubDate>Thu, 26 Sep 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/third-post.html</guid>
       	<description>
@@ -2941,7 +2941,7 @@ $ ./mill -i allOS.runMain button.Main
     </item>
     <item>
       <title>Second Post</title>
-      <link>http://www.jbake.org/blog/2013/second-post.html</link>
+      <link>hmf.github.io/tech4rd/blog/2013/second-post.html</link>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/second-post.html</guid>
       	<description>
@@ -2955,11 +2955,11 @@ $ ./mill -i allOS.runMain button.Main
     </item>
     <item>
       <title>First Post</title>
-      <link>http://www.jbake.org/blog/2013/first-post.html</link>
+      <link>hmf.github.io/tech4rd/blog/2013/first-post.html</link>
       <pubDate>Wed, 24 Jul 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/first-post.html</guid>
       	<description>
-	&lt;img src=&quot;http://www.jbake.org/blog/2013/../../img/blog/sample-image.jpg&quot;&gt; 
+	&lt;img src=&quot;hmf.github.io/tech4rd/blog/2013/../../img/blog/sample-image.jpg&quot;&gt; 
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel diam purus. Curabitur ut nisi lacus.&lt;/p&gt; 
 &lt;ul&gt; 
  &lt;li&gt;&lt;a href=&quot;http://example.org&quot;&gt;http://example.org&lt;/a&gt;&lt;/li&gt; 
