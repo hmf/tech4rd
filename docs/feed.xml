@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 10 Sep 2022 19:07:39 +0100</pubDate>
-    <lastBuildDate>Sat, 10 Sep 2022 19:07:39 +0100</lastBuildDate>
+    <pubDate>Sat, 10 Sep 2022 19:10:25 +0100</pubDate>
+    <lastBuildDate>Sat, 10 Sep 2022 19:10:25 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog</title>
@@ -447,7 +447,8 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 &lt;br&gt; 
 &lt;p&gt;You can then preview it in your browser at &lt;a href=&quot;http://localhost:8820&quot;&gt;this URL&lt;/a&gt;. Here is an image of the initial example site (shown using &lt;a href=&quot;https://darkreader.org/&quot;&gt;Dark Reader&lt;/a&gt;):&lt;/p&gt; 
 &lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/screenshot_jbake_example_site.png&quot; alt=&quot;Preview in Dark Mode&quot;&gt;&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/img/blog/sample-image.jpg&quot; alt=&quot;Test absolute&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/img/blog/sample-image.jpg&quot; alt=&quot;Test absolute A&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd//img/main/avatar.png&quot; alt=&quot;Test absolute /B&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;Note that JBake will monitor changes in the site&apos;s source and automatically update the site&apos;s content. To stop the automatic update and serving of the website simple press the keys &lt;code&gt;Ctrl-C&lt;/code&gt;. The server will terminate as shown below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;^C
 18:50:11.633 WARN  c.o.orient.core.OSignalHandler - Received signal: SIGINT
