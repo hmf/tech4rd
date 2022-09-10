@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>/</link>
-    <atom:link href="//feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://www.jbake.org</link>
+    <atom:link href="http://www.jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 10 Sep 2022 17:48:06 +0100</pubDate>
-    <lastBuildDate>Sat, 10 Sep 2022 17:48:06 +0100</lastBuildDate>
+    <pubDate>Sat, 10 Sep 2022 17:54:11 +0100</pubDate>
+    <lastBuildDate>Sat, 10 Sep 2022 17:54:11 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog</title>
-      <link>//blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
+      <link>http://www.jbake.org/blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_1.html</guid>
       	<description>
@@ -1216,7 +1216,7 @@ To https://github.com/user/tech4rd.git
     </item>
     <item>
       <title>Tutorial: JavaFX Mill project</title>
-      <link>//blog/2020/mill/javafx/javafx.html</link>
+      <link>http://www.jbake.org/blog/2020/mill/javafx/javafx.html</link>
       <pubDate>Thu, 9 Jun 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/javafx/javafx.html</guid>
       	<description>
@@ -2922,7 +2922,7 @@ $ ./mill -i allOS.runMain button.Main
     </item>
     <item>
       <title>Fourth Post</title>
-      <link>//blog/2013/fourth-post.html</link>
+      <link>http://www.jbake.org/blog/2013/fourth-post.html</link>
       <pubDate>Thu, 17 Oct 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/fourth-post.html</guid>
       	<description>
@@ -2952,7 +2952,7 @@ libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.&lt;/p&gt;
     </item>
     <item>
       <title>Third Post</title>
-      <link>//blog/2013/third-post.html</link>
+      <link>http://www.jbake.org/blog/2013/third-post.html</link>
       <pubDate>Thu, 26 Sep 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/third-post.html</guid>
       	<description>
@@ -2982,7 +2982,7 @@ libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.&lt;/p&gt;
     </item>
     <item>
       <title>Second Post</title>
-      <link>//blog/2013/second-post.html</link>
+      <link>http://www.jbake.org/blog/2013/second-post.html</link>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/second-post.html</guid>
       	<description>
@@ -2997,7 +2997,7 @@ libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.&lt;/p&gt;
     </item>
     <item>
       <title>First Post</title>
-      <link>//blog/2013/first-post.html</link>
+      <link>http://www.jbake.org/blog/2013/first-post.html</link>
       <pubDate>Wed, 24 Jul 2013 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2013/first-post.html</guid>
       	<description>
