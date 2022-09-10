@@ -1,0 +1,1075 @@
+<svg width="5478px" height="908px"
+ viewBox="0.00 0.00 5477.53 908.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 904.0)">
+<title>example1</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-904 5473.53,-904 5473.53,4 -4,4"/>
+<!-- managed.mandatoryIvyDeps -->
+<g id="node1" class="node">
+<title>managed.mandatoryIvyDeps</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="1079.24" cy="-234" rx="113.18" ry="18"/>
+<text text-anchor="middle" x="1079.24" y="-230.3" font-family="Times,serif" font-size="14.00">managed.mandatoryIvyDeps</text>
+</g>
+<!-- managed.mandatoryIvyDeps&#45;&gt;managed.mandatoryIvyDeps -->
+<g id="edge1" class="edge">
+<title>managed.mandatoryIvyDeps&#45;&gt;managed.mandatoryIvyDeps</title>
+<path fill="none" stroke="black" d="M1154.68,-247.42C1184.93,-248.18 1210.33,-243.7 1210.33,-234 1210.33,-225.4 1190.36,-220.9 1164.74,-220.53"/>
+<polygon fill="black" stroke="black" points="1164.66,-217.03 1154.68,-220.58 1164.7,-224.03 1164.66,-217.03"/>
+</g>
+<!-- managed.scalaLibraryIvyDeps -->
+<g id="node4" class="node">
+<title>managed.scalaLibraryIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="2633.24" cy="-162" rx="118.88" ry="18"/>
+<text text-anchor="middle" x="2633.24" y="-158.3" font-family="Times,serif" font-size="14.00">managed.scalaLibraryIvyDeps</text>
+</g>
+<!-- managed.mandatoryIvyDeps&#45;&gt;managed.scalaLibraryIvyDeps -->
+<g id="edge2" class="edge">
+<title>managed.mandatoryIvyDeps&#45;&gt;managed.scalaLibraryIvyDeps</title>
+<path fill="none" stroke="black" d="M1162.41,-221.74C1181.08,-219.54 1200.81,-217.46 1219.24,-216 1692.06,-178.5 2255.98,-167.42 2504.64,-164.23"/>
+<polygon fill="black" stroke="black" points="2504.84,-167.73 2514.8,-164.11 2504.76,-160.73 2504.84,-167.73"/>
+</g>
+<!-- managed.scalaVersion -->
+<g id="node2" class="node">
+<title>managed.scalaVersion</title>
+<ellipse fill="none" stroke="black" cx="4543.24" cy="-18" rx="89.88" ry="18"/>
+<text text-anchor="middle" x="4543.24" y="-14.3" font-family="Times,serif" font-size="14.00">managed.scalaVersion</text>
+</g>
+<!-- managed.scalaOrganization -->
+<g id="node3" class="node">
+<title>managed.scalaOrganization</title>
+<ellipse fill="none" stroke="black" cx="3935.24" cy="-90" rx="108.58" ry="18"/>
+<text text-anchor="middle" x="3935.24" y="-86.3" font-family="Times,serif" font-size="14.00">managed.scalaOrganization</text>
+</g>
+<!-- managed.scalaOrganization&#45;&gt;managed.scalaVersion -->
+<g id="edge3" class="edge">
+<title>managed.scalaOrganization&#45;&gt;managed.scalaVersion</title>
+<path fill="none" stroke="black" d="M4021.71,-79.05C4137.55,-65.71 4341.88,-42.18 4457.4,-28.88"/>
+<polygon fill="black" stroke="black" points="4458.08,-32.33 4467.61,-27.71 4457.28,-25.37 4458.08,-32.33"/>
+</g>
+<!-- managed.scalaLibraryIvyDeps&#45;&gt;managed.scalaOrganization -->
+<g id="edge4" class="edge">
+<title>managed.scalaLibraryIvyDeps&#45;&gt;managed.scalaOrganization</title>
+<path fill="none" stroke="black" d="M2743.13,-155.09C2988.18,-141.92 3577.17,-110.25 3823.73,-97"/>
+<polygon fill="black" stroke="black" points="3823.99,-100.49 3833.78,-96.45 3823.61,-93.5 3823.99,-100.49"/>
+</g>
+<!-- managed.ivyDeps -->
+<g id="node5" class="node">
+<title>managed.ivyDeps</title>
+<ellipse fill="none" stroke="black" cx="1303.24" cy="-234" rx="74.99" ry="18"/>
+<text text-anchor="middle" x="1303.24" y="-230.3" font-family="Times,serif" font-size="14.00">managed.ivyDeps</text>
+</g>
+<!-- managed.allIvyDeps -->
+<g id="node6" class="node">
+<title>managed.allIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="1079.24" cy="-306" rx="83.69" ry="18"/>
+<text text-anchor="middle" x="1079.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.allIvyDeps</text>
+</g>
+<!-- managed.allIvyDeps&#45;&gt;managed.mandatoryIvyDeps -->
+<g id="edge5" class="edge">
+<title>managed.allIvyDeps&#45;&gt;managed.mandatoryIvyDeps</title>
+<path fill="none" stroke="black" d="M1079.24,-287.7C1079.24,-279.98 1079.24,-270.71 1079.24,-262.11"/>
+<polygon fill="black" stroke="black" points="1082.74,-262.1 1079.24,-252.1 1075.74,-262.1 1082.74,-262.1"/>
+</g>
+<!-- managed.allIvyDeps&#45;&gt;managed.ivyDeps -->
+<g id="edge6" class="edge">
+<title>managed.allIvyDeps&#45;&gt;managed.ivyDeps</title>
+<path fill="none" stroke="black" d="M1124.57,-290.83C1160.71,-279.54 1211.42,-263.69 1249.59,-251.77"/>
+<polygon fill="black" stroke="black" points="1251,-254.99 1259.5,-248.67 1248.91,-248.31 1251,-254.99"/>
+</g>
+<!-- managed.mandatoryScalacOptions -->
+<g id="node7" class="node">
+<title>managed.mandatoryScalacOptions</title>
+<ellipse fill="none" stroke="black" cx="4563.24" cy="-378" rx="133.78" ry="18"/>
+<text text-anchor="middle" x="4563.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.mandatoryScalacOptions</text>
+</g>
+<!-- managed.platformSuffix -->
+<g id="node8" class="node">
+<title>managed.platformSuffix</title>
+<ellipse fill="none" stroke="black" cx="3249.24" cy="-306" rx="98.28" ry="18"/>
+<text text-anchor="middle" x="3249.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.platformSuffix</text>
+</g>
+<!-- managed.scalacPluginIvyDeps -->
+<g id="node9" class="node">
+<title>managed.scalacPluginIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="3674.24" cy="-234" rx="119.68" ry="18"/>
+<text text-anchor="middle" x="3674.24" y="-230.3" font-family="Times,serif" font-size="14.00">managed.scalacPluginIvyDeps</text>
+</g>
+<!-- managed.enablePluginScalacOptions -->
+<g id="node10" class="node">
+<title>managed.enablePluginScalacOptions</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="3820.24" cy="-378" rx="141.88" ry="18"/>
+<text text-anchor="middle" x="3820.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.enablePluginScalacOptions</text>
+</g>
+<!-- managed.enablePluginScalacOptions&#45;&gt;managed.scalaOrganization -->
+<g id="edge9" class="edge">
+<title>managed.enablePluginScalacOptions&#45;&gt;managed.scalaOrganization</title>
+<path fill="none" stroke="black" d="M3869.46,-361.07C3887.12,-352.83 3905.34,-340.87 3916.24,-324 3957.63,-259.97 3948.51,-164.44 3940.72,-118.12"/>
+<polygon fill="black" stroke="black" points="3944.15,-117.46 3938.94,-108.23 3937.26,-118.69 3944.15,-117.46"/>
+</g>
+<!-- managed.enablePluginScalacOptions&#45;&gt;managed.platformSuffix -->
+<g id="edge7" class="edge">
+<title>managed.enablePluginScalacOptions&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M3722.08,-364.97C3614.39,-351.76 3443.01,-330.75 3338.84,-317.98"/>
+<polygon fill="black" stroke="black" points="3339.01,-314.48 3328.66,-316.74 3338.16,-321.43 3339.01,-314.48"/>
+</g>
+<!-- managed.enablePluginScalacOptions&#45;&gt;managed.scalacPluginIvyDeps -->
+<g id="edge8" class="edge">
+<title>managed.enablePluginScalacOptions&#45;&gt;managed.scalacPluginIvyDeps</title>
+<path fill="none" stroke="black" d="M3738.72,-363.14C3696.38,-354.1 3650.88,-340.85 3638.24,-324 3623.78,-304.72 3637.14,-278.83 3651.51,-259.94"/>
+<polygon fill="black" stroke="black" points="3654.31,-262.04 3657.86,-252.06 3648.86,-257.64 3654.31,-262.04"/>
+</g>
+<!-- managed.scalacOptions -->
+<g id="node11" class="node">
+<title>managed.scalacOptions</title>
+<ellipse fill="none" stroke="black" cx="4316.24" cy="-378" rx="94.78" ry="18"/>
+<text text-anchor="middle" x="4316.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.scalacOptions</text>
+</g>
+<!-- managed.allScalacOptions -->
+<g id="node12" class="node">
+<title>managed.allScalacOptions</title>
+<ellipse fill="none" stroke="black" cx="3889.24" cy="-450" rx="104.78" ry="18"/>
+<text text-anchor="middle" x="3889.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.allScalacOptions</text>
+</g>
+<!-- managed.allScalacOptions&#45;&gt;managed.mandatoryScalacOptions -->
+<g id="edge10" class="edge">
+<title>managed.allScalacOptions&#45;&gt;managed.mandatoryScalacOptions</title>
+<path fill="none" stroke="black" d="M3978.55,-440.6C4084.11,-430.56 4265.06,-412.97 4420.24,-396 4432.3,-394.68 4444.93,-393.25 4457.47,-391.8"/>
+<polygon fill="black" stroke="black" points="4457.97,-395.27 4467.5,-390.63 4457.17,-388.31 4457.97,-395.27"/>
+</g>
+<!-- managed.allScalacOptions&#45;&gt;managed.enablePluginScalacOptions -->
+<g id="edge11" class="edge">
+<title>managed.allScalacOptions&#45;&gt;managed.enablePluginScalacOptions</title>
+<path fill="none" stroke="black" d="M3872.54,-432.05C3864.1,-423.5 3853.71,-412.96 3844.43,-403.54"/>
+<polygon fill="black" stroke="black" points="3846.78,-400.94 3837.27,-396.28 3841.8,-405.85 3846.78,-400.94"/>
+</g>
+<!-- managed.allScalacOptions&#45;&gt;managed.scalacOptions -->
+<g id="edge12" class="edge">
+<title>managed.allScalacOptions&#45;&gt;managed.scalacOptions</title>
+<path fill="none" stroke="black" d="M3962.16,-437.05C4038.57,-424.52 4158.22,-404.9 4236.94,-392"/>
+<polygon fill="black" stroke="black" points="4237.51,-395.45 4246.81,-390.38 4236.37,-388.55 4237.51,-395.45"/>
+</g>
+<!-- managed.sources -->
+<g id="node13" class="node">
+<title>managed.sources</title>
+<ellipse fill="none" stroke="black" cx="304.24" cy="-306" rx="71.49" ry="18"/>
+<text text-anchor="middle" x="304.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.sources</text>
+</g>
+<!-- managed.generatedSources -->
+<g id="node14" class="node">
+<title>managed.generatedSources</title>
+<ellipse fill="none" stroke="black" cx="107.24" cy="-306" rx="107.48" ry="18"/>
+<text text-anchor="middle" x="107.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.generatedSources</text>
+</g>
+<!-- managed.allSources -->
+<g id="node15" class="node">
+<title>managed.allSources</title>
+<ellipse fill="none" stroke="black" cx="273.24" cy="-378" rx="81.79" ry="18"/>
+<text text-anchor="middle" x="273.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.allSources</text>
+</g>
+<!-- managed.allSources&#45;&gt;managed.sources -->
+<g id="edge13" class="edge">
+<title>managed.allSources&#45;&gt;managed.sources</title>
+<path fill="none" stroke="black" d="M280.74,-360.05C284.27,-352.09 288.56,-342.41 292.5,-333.51"/>
+<polygon fill="black" stroke="black" points="295.74,-334.84 296.59,-324.28 289.34,-332 295.74,-334.84"/>
+</g>
+<!-- managed.allSources&#45;&gt;managed.generatedSources -->
+<g id="edge14" class="edge">
+<title>managed.allSources&#45;&gt;managed.generatedSources</title>
+<path fill="none" stroke="black" d="M237.22,-361.81C212.93,-351.57 180.64,-337.95 154.32,-326.85"/>
+<polygon fill="black" stroke="black" points="155.49,-323.55 144.92,-322.89 152.77,-330 155.49,-323.55"/>
+</g>
+<!-- managed.allSourceFiles -->
+<g id="node16" class="node">
+<title>managed.allSourceFiles</title>
+<ellipse fill="none" stroke="black" cx="363.24" cy="-450" rx="95.58" ry="18"/>
+<text text-anchor="middle" x="363.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.allSourceFiles</text>
+</g>
+<!-- managed.allSourceFiles&#45;&gt;managed.allSources -->
+<g id="edge15" class="edge">
+<title>managed.allSourceFiles&#45;&gt;managed.allSources</title>
+<path fill="none" stroke="black" d="M341.91,-432.41C330.14,-423.26 315.35,-411.76 302.52,-401.77"/>
+<polygon fill="black" stroke="black" points="304.46,-398.85 294.42,-395.47 300.16,-404.37 304.46,-398.85"/>
+</g>
+<!-- managed.resources -->
+<g id="node17" class="node">
+<title>managed.resources</title>
+<ellipse fill="none" stroke="black" cx="1814.24" cy="-378" rx="78.79" ry="18"/>
+<text text-anchor="middle" x="1814.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.resources</text>
+</g>
+<!-- mill.scalalib.ZincWorkerModule.classpath -->
+<g id="node18" class="node">
+<title>mill.scalalib.ZincWorkerModule.classpath</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="2944.24" cy="-378" rx="162.47" ry="18"/>
+<text text-anchor="middle" x="2944.24" y="-374.3" font-family="Times,serif" font-size="14.00">mill.scalalib.ZincWorkerModule.classpath</text>
+</g>
+<!-- mill.scalalib.ZincWorkerModule.worker -->
+<g id="node19" class="node">
+<title>mill.scalalib.ZincWorkerModule.worker</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="2816.24" cy="-450" rx="155.17" ry="18"/>
+<text text-anchor="middle" x="2816.24" y="-446.3" font-family="Times,serif" font-size="14.00">mill.scalalib.ZincWorkerModule.worker</text>
+</g>
+<!-- mill.scalalib.ZincWorkerModule.worker&#45;&gt;mill.scalalib.ZincWorkerModule.classpath -->
+<g id="edge16" class="edge">
+<title>mill.scalalib.ZincWorkerModule.worker&#45;&gt;mill.scalalib.ZincWorkerModule.classpath</title>
+<path fill="none" stroke="black" d="M2846.9,-432.23C2864.19,-422.78 2885.98,-410.86 2904.56,-400.7"/>
+<polygon fill="black" stroke="black" points="2906.29,-403.74 2913.39,-395.87 2902.93,-397.6 2906.29,-403.74"/>
+</g>
+<!-- managed.upstreamCompileOutput -->
+<g id="node20" class="node">
+<title>managed.upstreamCompileOutput</title>
+<ellipse fill="none" stroke="black" cx="3160.24" cy="-450" rx="133.48" ry="18"/>
+<text text-anchor="middle" x="3160.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.upstreamCompileOutput</text>
+</g>
+<!-- managed.transitiveLocalClasspath -->
+<g id="node21" class="node">
+<title>managed.transitiveLocalClasspath</title>
+<ellipse fill="none" stroke="black" cx="1100.24" cy="-378" rx="131.88" ry="18"/>
+<text text-anchor="middle" x="1100.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.transitiveLocalClasspath</text>
+</g>
+<!-- managed.unmanagedClasspath -->
+<g id="node22" class="node">
+<title>managed.unmanagedClasspath</title>
+<ellipse fill="none" stroke="black" cx="1370.24" cy="-378" rx="120.48" ry="18"/>
+<text text-anchor="middle" x="1370.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.unmanagedClasspath</text>
+</g>
+<!-- managed.compileIvyDeps -->
+<g id="node23" class="node">
+<title>managed.compileIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="1613.24" cy="-234" rx="103.98" ry="18"/>
+<text text-anchor="middle" x="1613.24" y="-230.3" font-family="Times,serif" font-size="14.00">managed.compileIvyDeps</text>
+</g>
+<!-- managed.transitiveCompileIvyDeps -->
+<g id="node24" class="node">
+<title>managed.transitiveCompileIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="1613.24" cy="-306" rx="138.38" ry="18"/>
+<text text-anchor="middle" x="1613.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.transitiveCompileIvyDeps</text>
+</g>
+<!-- managed.transitiveCompileIvyDeps&#45;&gt;managed.compileIvyDeps -->
+<g id="edge17" class="edge">
+<title>managed.transitiveCompileIvyDeps&#45;&gt;managed.compileIvyDeps</title>
+<path fill="none" stroke="black" d="M1613.24,-287.7C1613.24,-279.98 1613.24,-270.71 1613.24,-262.11"/>
+<polygon fill="black" stroke="black" points="1616.74,-262.1 1613.24,-252.1 1609.74,-262.1 1616.74,-262.1"/>
+</g>
+<!-- managed.transitiveIvyDeps -->
+<g id="node25" class="node">
+<title>managed.transitiveIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="1289.24" cy="-306" rx="107.78" ry="18"/>
+<text text-anchor="middle" x="1289.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.transitiveIvyDeps</text>
+</g>
+<!-- managed.transitiveIvyDeps&#45;&gt;managed.mandatoryIvyDeps -->
+<g id="edge19" class="edge">
+<title>managed.transitiveIvyDeps&#45;&gt;managed.mandatoryIvyDeps</title>
+<path fill="none" stroke="black" d="M1243.16,-289.64C1211.4,-279.05 1169.01,-264.92 1135.29,-253.68"/>
+<polygon fill="black" stroke="black" points="1136.17,-250.29 1125.58,-250.45 1133.96,-256.93 1136.17,-250.29"/>
+</g>
+<!-- managed.transitiveIvyDeps&#45;&gt;managed.ivyDeps -->
+<g id="edge18" class="edge">
+<title>managed.transitiveIvyDeps&#45;&gt;managed.ivyDeps</title>
+<path fill="none" stroke="black" d="M1292.7,-287.7C1294.24,-279.98 1296.1,-270.71 1297.82,-262.11"/>
+<polygon fill="black" stroke="black" points="1301.29,-262.6 1299.82,-252.1 1294.43,-261.22 1301.29,-262.6"/>
+</g>
+<!-- managed.resolvedIvyDeps -->
+<g id="node26" class="node">
+<title>managed.resolvedIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="1613.24" cy="-378" rx="104.78" ry="18"/>
+<text text-anchor="middle" x="1613.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.resolvedIvyDeps</text>
+</g>
+<!-- managed.resolvedIvyDeps&#45;&gt;managed.platformSuffix -->
+<g id="edge20" class="edge">
+<title>managed.resolvedIvyDeps&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M1685.43,-364.88C1698.96,-362.97 1713,-361.22 1726.24,-360 2255.03,-311.18 2890.87,-306.34 3140.83,-306.52"/>
+<polygon fill="black" stroke="black" points="3140.99,-310.02 3151,-306.53 3141,-303.02 3140.99,-310.02"/>
+</g>
+<!-- managed.resolvedIvyDeps&#45;&gt;managed.transitiveCompileIvyDeps -->
+<g id="edge21" class="edge">
+<title>managed.resolvedIvyDeps&#45;&gt;managed.transitiveCompileIvyDeps</title>
+<path fill="none" stroke="black" d="M1613.24,-359.7C1613.24,-351.98 1613.24,-342.71 1613.24,-334.11"/>
+<polygon fill="black" stroke="black" points="1616.74,-334.1 1613.24,-324.1 1609.74,-334.1 1616.74,-334.1"/>
+</g>
+<!-- managed.resolvedIvyDeps&#45;&gt;managed.transitiveIvyDeps -->
+<g id="edge22" class="edge">
+<title>managed.resolvedIvyDeps&#45;&gt;managed.transitiveIvyDeps</title>
+<path fill="none" stroke="black" d="M1550.77,-363.5C1496.91,-351.87 1419.08,-335.05 1362.33,-322.79"/>
+<polygon fill="black" stroke="black" points="1362.86,-319.33 1352.35,-320.63 1361.38,-326.17 1362.86,-319.33"/>
+</g>
+<!-- managed.compileClasspath -->
+<g id="node27" class="node">
+<title>managed.compileClasspath</title>
+<ellipse fill="none" stroke="black" cx="1565.24" cy="-450" rx="108.58" ry="18"/>
+<text text-anchor="middle" x="1565.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.compileClasspath</text>
+</g>
+<!-- managed.compileClasspath&#45;&gt;managed.resources -->
+<g id="edge24" class="edge">
+<title>managed.compileClasspath&#45;&gt;managed.resources</title>
+<path fill="none" stroke="black" d="M1617.74,-434.24C1658.43,-422.8 1714.74,-406.97 1756.66,-395.19"/>
+<polygon fill="black" stroke="black" points="1757.77,-398.51 1766.44,-392.44 1755.87,-391.77 1757.77,-398.51"/>
+</g>
+<!-- managed.compileClasspath&#45;&gt;managed.transitiveLocalClasspath -->
+<g id="edge23" class="edge">
+<title>managed.compileClasspath&#45;&gt;managed.transitiveLocalClasspath</title>
+<path fill="none" stroke="black" d="M1487.93,-437.36C1407.57,-425.26 1281.68,-406.31 1195.29,-393.31"/>
+<polygon fill="black" stroke="black" points="1195.63,-389.82 1185.22,-391.79 1194.59,-396.74 1195.63,-389.82"/>
+</g>
+<!-- managed.compileClasspath&#45;&gt;managed.unmanagedClasspath -->
+<g id="edge25" class="edge">
+<title>managed.compileClasspath&#45;&gt;managed.unmanagedClasspath</title>
+<path fill="none" stroke="black" d="M1521.96,-433.46C1493.11,-423.11 1454.96,-409.41 1424.14,-398.35"/>
+<polygon fill="black" stroke="black" points="1425,-394.94 1414.41,-394.86 1422.64,-401.53 1425,-394.94"/>
+</g>
+<!-- managed.compileClasspath&#45;&gt;managed.resolvedIvyDeps -->
+<g id="edge26" class="edge">
+<title>managed.compileClasspath&#45;&gt;managed.resolvedIvyDeps</title>
+<path fill="none" stroke="black" d="M1576.86,-432.05C1582.49,-423.84 1589.38,-413.79 1595.65,-404.66"/>
+<polygon fill="black" stroke="black" points="1598.63,-406.5 1601.39,-396.28 1592.85,-402.54 1598.63,-406.5"/>
+</g>
+<!-- managed.javacOptions -->
+<g id="node28" class="node">
+<title>managed.javacOptions</title>
+<ellipse fill="none" stroke="black" cx="3403.24" cy="-450" rx="91.78" ry="18"/>
+<text text-anchor="middle" x="3403.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.javacOptions</text>
+</g>
+<!-- managed.scalaCompilerClasspath -->
+<g id="node29" class="node">
+<title>managed.scalaCompilerClasspath</title>
+<ellipse fill="none" stroke="black" cx="2633.24" cy="-378" rx="130.78" ry="18"/>
+<text text-anchor="middle" x="2633.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.scalaCompilerClasspath</text>
+</g>
+<!-- managed.scalaCompilerClasspath&#45;&gt;managed.scalaLibraryIvyDeps -->
+<g id="edge28" class="edge">
+<title>managed.scalaCompilerClasspath&#45;&gt;managed.scalaLibraryIvyDeps</title>
+<path fill="none" stroke="black" d="M2633.24,-359.85C2633.24,-322.83 2633.24,-235.18 2633.24,-190.39"/>
+<polygon fill="black" stroke="black" points="2636.74,-190.23 2633.24,-180.23 2629.74,-190.23 2636.74,-190.23"/>
+</g>
+<!-- managed.scalaCompilerClasspath&#45;&gt;managed.platformSuffix -->
+<g id="edge27" class="edge">
+<title>managed.scalaCompilerClasspath&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M2727.36,-365.44C2742.69,-363.6 2758.41,-361.73 2773.24,-360 2906.65,-344.47 3061.22,-327.44 3157.13,-316.98"/>
+<polygon fill="black" stroke="black" points="3157.52,-320.46 3167.09,-315.9 3156.77,-313.5 3157.52,-320.46"/>
+</g>
+<!-- managed.scalacPluginClasspath -->
+<g id="node30" class="node">
+<title>managed.scalacPluginClasspath</title>
+<ellipse fill="none" stroke="black" cx="3249.24" cy="-378" rx="124.28" ry="18"/>
+<text text-anchor="middle" x="3249.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.scalacPluginClasspath</text>
+</g>
+<!-- managed.scalacPluginClasspath&#45;&gt;managed.scalaOrganization -->
+<g id="edge30" class="edge">
+<title>managed.scalacPluginClasspath&#45;&gt;managed.scalaOrganization</title>
+<path fill="none" stroke="black" d="M3286.95,-360.74C3307.95,-351.09 3334.21,-338.04 3356.24,-324 3464.24,-255.18 3463.88,-195.24 3581.24,-144 3655.61,-111.53 3746.21,-98.39 3817.14,-93.32"/>
+<polygon fill="black" stroke="black" points="3817.71,-96.79 3827.46,-92.63 3817.24,-89.8 3817.71,-96.79"/>
+</g>
+<!-- managed.scalacPluginClasspath&#45;&gt;managed.platformSuffix -->
+<g id="edge29" class="edge">
+<title>managed.scalacPluginClasspath&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M3249.24,-359.7C3249.24,-351.98 3249.24,-342.71 3249.24,-334.11"/>
+<polygon fill="black" stroke="black" points="3252.74,-334.1 3249.24,-324.1 3245.74,-334.1 3252.74,-334.1"/>
+</g>
+<!-- managed.scalacPluginClasspath&#45;&gt;managed.scalacPluginIvyDeps -->
+<g id="edge31" class="edge">
+<title>managed.scalacPluginClasspath&#45;&gt;managed.scalacPluginIvyDeps</title>
+<path fill="none" stroke="black" d="M3302.92,-361.74C3338.13,-351.53 3385.1,-337.53 3426.24,-324 3494.48,-301.56 3572.31,-273.16 3622.3,-254.56"/>
+<polygon fill="black" stroke="black" points="3623.77,-257.75 3631.91,-250.97 3621.32,-251.19 3623.77,-257.75"/>
+</g>
+<!-- managed.compile -->
+<g id="node31" class="node">
+<title>managed.compile</title>
+<ellipse fill="none" stroke="black" cx="2816.24" cy="-522" rx="74.19" ry="18"/>
+<text text-anchor="middle" x="2816.24" y="-518.3" font-family="Times,serif" font-size="14.00">managed.compile</text>
+</g>
+<!-- managed.compile&#45;&gt;managed.allScalacOptions -->
+<g id="edge37" class="edge">
+<title>managed.compile&#45;&gt;managed.allScalacOptions</title>
+<path fill="none" stroke="black" d="M2887.06,-516.38C3071,-504.38 3564.74,-472.17 3783,-457.93"/>
+<polygon fill="black" stroke="black" points="3783.43,-461.41 3793.18,-457.27 3782.97,-454.43 3783.43,-461.41"/>
+</g>
+<!-- managed.compile&#45;&gt;managed.allSourceFiles -->
+<g id="edge34" class="edge">
+<title>managed.compile&#45;&gt;managed.allSourceFiles</title>
+<path fill="none" stroke="black" d="M2743.16,-518.91C2392.1,-508.9 878.96,-465.72 467.09,-453.96"/>
+<polygon fill="black" stroke="black" points="467.08,-450.46 456.98,-453.67 466.88,-457.46 467.08,-450.46"/>
+</g>
+<!-- managed.compile&#45;&gt;mill.scalalib.ZincWorkerModule.worker -->
+<g id="edge32" class="edge">
+<title>managed.compile&#45;&gt;mill.scalalib.ZincWorkerModule.worker</title>
+<path fill="none" stroke="black" d="M2816.24,-503.7C2816.24,-495.98 2816.24,-486.71 2816.24,-478.11"/>
+<polygon fill="black" stroke="black" points="2819.74,-478.1 2816.24,-468.1 2812.74,-478.1 2819.74,-478.1"/>
+</g>
+<!-- managed.compile&#45;&gt;managed.upstreamCompileOutput -->
+<g id="edge33" class="edge">
+<title>managed.compile&#45;&gt;managed.upstreamCompileOutput</title>
+<path fill="none" stroke="black" d="M2871.13,-509.83C2927.4,-498.38 3015.51,-480.45 3079.68,-467.39"/>
+<polygon fill="black" stroke="black" points="3080.66,-470.77 3089.76,-465.34 3079.27,-463.91 3080.66,-470.77"/>
+</g>
+<!-- managed.compile&#45;&gt;managed.compileClasspath -->
+<g id="edge35" class="edge">
+<title>managed.compile&#45;&gt;managed.compileClasspath</title>
+<path fill="none" stroke="black" d="M2742.5,-520.01C2561.62,-517.04 2081.67,-505.93 1683.24,-468 1672.67,-466.99 1661.6,-465.71 1650.65,-464.3"/>
+<polygon fill="black" stroke="black" points="1651.02,-460.81 1640.65,-462.97 1650.1,-467.75 1651.02,-460.81"/>
+</g>
+<!-- managed.compile&#45;&gt;managed.javacOptions -->
+<g id="edge36" class="edge">
+<title>managed.compile&#45;&gt;managed.javacOptions</title>
+<path fill="none" stroke="black" d="M2884.41,-514.83C2978.57,-506.01 3153.64,-488.59 3302.24,-468 3310.47,-466.86 3319.06,-465.57 3327.6,-464.22"/>
+<polygon fill="black" stroke="black" points="3328.27,-467.66 3337.59,-462.62 3327.16,-460.75 3328.27,-467.66"/>
+</g>
+<!-- managed.compile&#45;&gt;managed.scalaCompilerClasspath -->
+<g id="edge38" class="edge">
+<title>managed.compile&#45;&gt;managed.scalaCompilerClasspath</title>
+<path fill="none" stroke="black" d="M2748.17,-514.83C2714.78,-508.3 2676.6,-494.99 2652.24,-468 2637.23,-451.38 2633.02,-425.87 2632.25,-406.42"/>
+<polygon fill="black" stroke="black" points="2635.75,-406.29 2632.13,-396.33 2628.75,-406.38 2635.75,-406.29"/>
+</g>
+<!-- managed.compile&#45;&gt;managed.scalacPluginClasspath -->
+<g id="edge39" class="edge">
+<title>managed.compile&#45;&gt;managed.scalacPluginClasspath</title>
+<path fill="none" stroke="black" d="M2870.87,-509.83C2904.05,-501.51 2946.4,-488.08 2980.24,-468 3000.25,-456.13 2997.73,-442.99 3018.24,-432 3056.44,-411.53 3102.3,-398.93 3143.06,-391.2"/>
+<polygon fill="black" stroke="black" points="3143.82,-394.62 3153.03,-389.38 3142.56,-387.73 3143.82,-394.62"/>
+</g>
+<!-- managed.localClasspath -->
+<g id="node32" class="node">
+<title>managed.localClasspath</title>
+<ellipse fill="none" stroke="black" cx="1633.24" cy="-594" rx="96.68" ry="18"/>
+<text text-anchor="middle" x="1633.24" y="-590.3" font-family="Times,serif" font-size="14.00">managed.localClasspath</text>
+</g>
+<!-- managed.localClasspath&#45;&gt;managed.compile -->
+<g id="edge40" class="edge">
+<title>managed.localClasspath&#45;&gt;managed.compile</title>
+<path fill="none" stroke="black" d="M1708.31,-582.61C1728.1,-580.15 1749.45,-577.74 1769.24,-576 2126.95,-544.63 2555.17,-530.13 2732.75,-525.13"/>
+<polygon fill="black" stroke="black" points="2732.91,-528.63 2742.81,-524.85 2732.71,-521.63 2732.91,-528.63"/>
+</g>
+<!-- managed.ammoniteVersion -->
+<g id="node33" class="node">
+<title>managed.ammoniteVersion</title>
+<ellipse fill="none" stroke="black" cx="533.24" cy="-306" rx="108.58" ry="18"/>
+<text text-anchor="middle" x="533.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.ammoniteVersion</text>
+</g>
+<!-- managed.runIvyDeps -->
+<g id="node34" class="node">
+<title>managed.runIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="789.24" cy="-306" rx="87.18" ry="18"/>
+<text text-anchor="middle" x="789.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.runIvyDeps</text>
+</g>
+<!-- managed.resolvedAmmoniteReplIvyDeps -->
+<g id="node35" class="node">
+<title>managed.resolvedAmmoniteReplIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="533.24" cy="-378" rx="159.77" ry="18"/>
+<text text-anchor="middle" x="533.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.resolvedAmmoniteReplIvyDeps</text>
+</g>
+<!-- managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.platformSuffix -->
+<g id="edge41" class="edge">
+<title>managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M641.58,-364.75C661.41,-362.88 681.93,-361.18 701.24,-360 1187.24,-330.4 2720.85,-312.52 3141.57,-308.09"/>
+<polygon fill="black" stroke="black" points="3141.64,-311.59 3151.6,-307.98 3141.57,-304.59 3141.64,-311.59"/>
+</g>
+<!-- managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.transitiveIvyDeps -->
+<g id="edge44" class="edge">
+<title>managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.transitiveIvyDeps</title>
+<path fill="none" stroke="black" d="M646.17,-365.19C664.57,-363.37 683.43,-361.58 701.24,-360 910.36,-341.43 963.57,-347.11 1172.24,-324 1182.29,-322.89 1192.8,-321.57 1203.23,-320.18"/>
+<polygon fill="black" stroke="black" points="1203.75,-323.64 1213.18,-318.82 1202.8,-316.7 1203.75,-323.64"/>
+</g>
+<!-- managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.ammoniteVersion -->
+<g id="edge42" class="edge">
+<title>managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.ammoniteVersion</title>
+<path fill="none" stroke="black" d="M533.24,-359.7C533.24,-351.98 533.24,-342.71 533.24,-334.11"/>
+<polygon fill="black" stroke="black" points="536.74,-334.1 533.24,-324.1 529.74,-334.1 536.74,-334.1"/>
+</g>
+<!-- managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.runIvyDeps -->
+<g id="edge43" class="edge">
+<title>managed.resolvedAmmoniteReplIvyDeps&#45;&gt;managed.runIvyDeps</title>
+<path fill="none" stroke="black" d="M591.01,-361.2C632.24,-349.93 687.55,-334.81 729.27,-323.4"/>
+<polygon fill="black" stroke="black" points="730.31,-326.74 739.03,-320.73 728.46,-319.99 730.31,-326.74"/>
+</g>
+<!-- managed.ammoniteReplClasspath -->
+<g id="node36" class="node">
+<title>managed.ammoniteReplClasspath</title>
+<ellipse fill="none" stroke="black" cx="1361.24" cy="-666" rx="131.88" ry="18"/>
+<text text-anchor="middle" x="1361.24" y="-662.3" font-family="Times,serif" font-size="14.00">managed.ammoniteReplClasspath</text>
+</g>
+<!-- managed.ammoniteReplClasspath&#45;&gt;managed.localClasspath -->
+<g id="edge45" class="edge">
+<title>managed.ammoniteReplClasspath&#45;&gt;managed.localClasspath</title>
+<path fill="none" stroke="black" d="M1420.26,-649.81C1464.13,-638.52 1523.93,-623.13 1569,-611.53"/>
+<polygon fill="black" stroke="black" points="1570.15,-614.85 1578.96,-608.97 1568.4,-608.07 1570.15,-614.85"/>
+</g>
+<!-- managed.ammoniteReplClasspath&#45;&gt;managed.resolvedAmmoniteReplIvyDeps -->
+<g id="edge46" class="edge">
+<title>managed.ammoniteReplClasspath&#45;&gt;managed.resolvedAmmoniteReplIvyDeps</title>
+<path fill="none" stroke="black" d="M1315.25,-649.11C1173.77,-600.25 745.25,-452.23 590.1,-398.64"/>
+<polygon fill="black" stroke="black" points="590.87,-395.2 580.28,-395.25 588.59,-401.82 590.87,-395.2"/>
+</g>
+<!-- managed.artifactName -->
+<g id="node37" class="node">
+<title>managed.artifactName</title>
+<ellipse fill="none" stroke="black" cx="5175.24" cy="-378" rx="91.78" ry="18"/>
+<text text-anchor="middle" x="5175.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.artifactName</text>
+</g>
+<!-- managed.crossFullScalaVersion -->
+<g id="node38" class="node">
+<title>managed.crossFullScalaVersion</title>
+<ellipse fill="none" stroke="black" cx="5060.24" cy="-234" rx="123.48" ry="18"/>
+<text text-anchor="middle" x="5060.24" y="-230.3" font-family="Times,serif" font-size="14.00">managed.crossFullScalaVersion</text>
+</g>
+<!-- managed.artifactScalaVersion -->
+<g id="node39" class="node">
+<title>managed.artifactScalaVersion</title>
+<ellipse fill="none" stroke="black" cx="5211.24" cy="-306" rx="116.18" ry="18"/>
+<text text-anchor="middle" x="5211.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.artifactScalaVersion</text>
+</g>
+<!-- managed.artifactScalaVersion&#45;&gt;managed.scalaVersion -->
+<g id="edge48" class="edge">
+<title>managed.artifactScalaVersion&#45;&gt;managed.scalaVersion</title>
+<path fill="none" stroke="black" d="M5212.41,-287.96C5212.8,-268.15 5210.31,-235.66 5192.24,-216 5048.88,-60 4786.43,-25.97 4643.12,-19.52"/>
+<polygon fill="black" stroke="black" points="4643.15,-16.02 4633.01,-19.11 4642.86,-23.02 4643.15,-16.02"/>
+</g>
+<!-- managed.artifactScalaVersion&#45;&gt;managed.crossFullScalaVersion -->
+<g id="edge47" class="edge">
+<title>managed.artifactScalaVersion&#45;&gt;managed.crossFullScalaVersion</title>
+<path fill="none" stroke="black" d="M5176.22,-288.76C5154.85,-278.86 5127.35,-266.11 5104.49,-255.51"/>
+<polygon fill="black" stroke="black" points="5105.88,-252.3 5095.33,-251.27 5102.93,-258.65 5105.88,-252.3"/>
+</g>
+<!-- managed.artifactSuffix -->
+<g id="node40" class="node">
+<title>managed.artifactSuffix</title>
+<ellipse fill="none" stroke="black" cx="5377.24" cy="-378" rx="92.08" ry="18"/>
+<text text-anchor="middle" x="5377.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.artifactSuffix</text>
+</g>
+<!-- managed.artifactSuffix&#45;&gt;managed.artifactScalaVersion -->
+<g id="edge49" class="edge">
+<title>managed.artifactSuffix&#45;&gt;managed.artifactScalaVersion</title>
+<path fill="none" stroke="black" d="M5340.4,-361.46C5316.32,-351.31 5284.65,-337.96 5258.7,-327.01"/>
+<polygon fill="black" stroke="black" points="5259.99,-323.76 5249.42,-323.1 5257.27,-330.21 5259.99,-323.76"/>
+</g>
+<!-- managed.artifactId -->
+<g id="node41" class="node">
+<title>managed.artifactId</title>
+<ellipse fill="none" stroke="black" cx="5276.24" cy="-450" rx="77.19" ry="18"/>
+<text text-anchor="middle" x="5276.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.artifactId</text>
+</g>
+<!-- managed.artifactId&#45;&gt;managed.artifactName -->
+<g id="edge50" class="edge">
+<title>managed.artifactId&#45;&gt;managed.artifactName</title>
+<path fill="none" stroke="black" d="M5252.82,-432.76C5239.37,-423.45 5222.29,-411.61 5207.58,-401.41"/>
+<polygon fill="black" stroke="black" points="5209.45,-398.45 5199.24,-395.63 5205.47,-404.21 5209.45,-398.45"/>
+</g>
+<!-- managed.artifactId&#45;&gt;managed.artifactSuffix -->
+<g id="edge51" class="edge">
+<title>managed.artifactId&#45;&gt;managed.artifactSuffix</title>
+<path fill="none" stroke="black" d="M5299.67,-432.76C5313.11,-423.45 5330.19,-411.61 5344.9,-401.41"/>
+<polygon fill="black" stroke="black" points="5347.02,-404.21 5353.24,-395.63 5343.03,-398.45 5347.02,-404.21"/>
+</g>
+<!-- managed.mainClass -->
+<g id="node42" class="node">
+<title>managed.mainClass</title>
+<ellipse fill="none" stroke="black" cx="1861.24" cy="-594" rx="82.59" ry="18"/>
+<text text-anchor="middle" x="1861.24" y="-590.3" font-family="Times,serif" font-size="14.00">managed.mainClass</text>
+</g>
+<!-- managed.finalMainClassOpt -->
+<g id="node43" class="node">
+<title>managed.finalMainClassOpt</title>
+<ellipse fill="none" stroke="black" cx="1861.24" cy="-666" rx="112.38" ry="18"/>
+<text text-anchor="middle" x="1861.24" y="-662.3" font-family="Times,serif" font-size="14.00">managed.finalMainClassOpt</text>
+</g>
+<!-- managed.finalMainClassOpt&#45;&gt;managed.compile -->
+<g id="edge53" class="edge">
+<title>managed.finalMainClassOpt&#45;&gt;managed.compile</title>
+<path fill="none" stroke="black" d="M1940.61,-653.2C2123.06,-626.07 2570.02,-559.61 2744.66,-533.64"/>
+<polygon fill="black" stroke="black" points="2745.39,-537.07 2754.77,-532.14 2744.36,-530.15 2745.39,-537.07"/>
+</g>
+<!-- managed.finalMainClassOpt&#45;&gt;managed.mainClass -->
+<g id="edge52" class="edge">
+<title>managed.finalMainClassOpt&#45;&gt;managed.mainClass</title>
+<path fill="none" stroke="black" d="M1861.24,-647.7C1861.24,-639.98 1861.24,-630.71 1861.24,-622.11"/>
+<polygon fill="black" stroke="black" points="1864.74,-622.1 1861.24,-612.1 1857.74,-622.1 1864.74,-622.1"/>
+</g>
+<!-- managed.manifest -->
+<g id="node44" class="node">
+<title>managed.manifest</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="1843.24" cy="-738" rx="76.09" ry="18"/>
+<text text-anchor="middle" x="1843.24" y="-734.3" font-family="Times,serif" font-size="14.00">managed.manifest</text>
+</g>
+<!-- managed.manifest&#45;&gt;managed.finalMainClassOpt -->
+<g id="edge55" class="edge">
+<title>managed.manifest&#45;&gt;managed.finalMainClassOpt</title>
+<path fill="none" stroke="black" d="M1847.69,-719.7C1849.7,-711.9 1852.11,-702.51 1854.34,-693.83"/>
+<polygon fill="black" stroke="black" points="1857.74,-694.66 1856.84,-684.1 1850.96,-692.92 1857.74,-694.66"/>
+</g>
+<!-- managed.manifest&#45;&gt;managed.manifest -->
+<g id="edge54" class="edge">
+<title>managed.manifest&#45;&gt;managed.manifest</title>
+<path fill="none" stroke="black" d="M1894.99,-751.31C1917.72,-752.49 1937.28,-748.05 1937.28,-738 1937.28,-729.48 1923.23,-724.99 1905.1,-724.54"/>
+<polygon fill="black" stroke="black" points="1904.93,-721.04 1894.99,-724.69 1905.04,-728.04 1904.93,-721.04"/>
+</g>
+<!-- managed.resolvedRunIvyDeps -->
+<g id="node45" class="node">
+<title>managed.resolvedRunIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="830.24" cy="-378" rx="119.68" ry="18"/>
+<text text-anchor="middle" x="830.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.resolvedRunIvyDeps</text>
+</g>
+<!-- managed.resolvedRunIvyDeps&#45;&gt;managed.platformSuffix -->
+<g id="edge56" class="edge">
+<title>managed.resolvedRunIvyDeps&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M912.34,-364.83C927.88,-362.91 944.04,-361.17 959.24,-360 1391.31,-326.63 2747.44,-311.66 3141.1,-307.95"/>
+<polygon fill="black" stroke="black" points="3141.38,-311.45 3151.35,-307.86 3141.32,-304.45 3141.38,-311.45"/>
+</g>
+<!-- managed.resolvedRunIvyDeps&#45;&gt;managed.transitiveIvyDeps -->
+<g id="edge58" class="edge">
+<title>managed.resolvedRunIvyDeps&#45;&gt;managed.transitiveIvyDeps</title>
+<path fill="none" stroke="black" d="M910.98,-364.69C992.68,-352.23 1118.56,-333.03 1202.38,-320.25"/>
+<polygon fill="black" stroke="black" points="1203.03,-323.69 1212.39,-318.72 1201.98,-316.77 1203.03,-323.69"/>
+</g>
+<!-- managed.resolvedRunIvyDeps&#45;&gt;managed.runIvyDeps -->
+<g id="edge57" class="edge">
+<title>managed.resolvedRunIvyDeps&#45;&gt;managed.runIvyDeps</title>
+<path fill="none" stroke="black" d="M820.32,-360.05C815.55,-351.92 809.74,-342 804.44,-332.94"/>
+<polygon fill="black" stroke="black" points="807.43,-331.14 799.36,-324.28 801.39,-334.67 807.43,-331.14"/>
+</g>
+<!-- managed.upstreamAssemblyClasspath -->
+<g id="node46" class="node">
+<title>managed.upstreamAssemblyClasspath</title>
+<ellipse fill="none" stroke="black" cx="1201.24" cy="-450" rx="147.57" ry="18"/>
+<text text-anchor="middle" x="1201.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.upstreamAssemblyClasspath</text>
+</g>
+<!-- managed.upstreamAssemblyClasspath&#45;&gt;managed.transitiveLocalClasspath -->
+<g id="edge59" class="edge">
+<title>managed.upstreamAssemblyClasspath&#45;&gt;managed.transitiveLocalClasspath</title>
+<path fill="none" stroke="black" d="M1177.05,-432.23C1163.9,-423.12 1147.46,-411.72 1133.16,-401.82"/>
+<polygon fill="black" stroke="black" points="1134.8,-398.69 1124.59,-395.87 1130.81,-404.45 1134.8,-398.69"/>
+</g>
+<!-- managed.upstreamAssemblyClasspath&#45;&gt;managed.unmanagedClasspath -->
+<g id="edge60" class="edge">
+<title>managed.upstreamAssemblyClasspath&#45;&gt;managed.unmanagedClasspath</title>
+<path fill="none" stroke="black" d="M1240.86,-432.59C1265.09,-422.56 1296.24,-409.65 1321.91,-399.02"/>
+<polygon fill="black" stroke="black" points="1323.55,-402.13 1331.45,-395.07 1320.87,-395.66 1323.55,-402.13"/>
+</g>
+<!-- managed.upstreamAssemblyClasspath&#45;&gt;managed.resolvedRunIvyDeps -->
+<g id="edge61" class="edge">
+<title>managed.upstreamAssemblyClasspath&#45;&gt;managed.resolvedRunIvyDeps</title>
+<path fill="none" stroke="black" d="M1124.82,-434.58C1062.7,-422.86 975.28,-406.37 911.82,-394.39"/>
+<polygon fill="black" stroke="black" points="912.32,-390.92 901.84,-392.51 911.02,-397.8 912.32,-390.92"/>
+</g>
+<!-- managed.runClasspath -->
+<g id="node47" class="node">
+<title>managed.runClasspath</title>
+<ellipse fill="none" stroke="black" cx="1602.24" cy="-666" rx="90.98" ry="18"/>
+<text text-anchor="middle" x="1602.24" y="-662.3" font-family="Times,serif" font-size="14.00">managed.runClasspath</text>
+</g>
+<!-- managed.runClasspath&#45;&gt;managed.localClasspath -->
+<g id="edge62" class="edge">
+<title>managed.runClasspath&#45;&gt;managed.localClasspath</title>
+<path fill="none" stroke="black" d="M1609.74,-648.05C1613.27,-640.09 1617.56,-630.41 1621.5,-621.51"/>
+<polygon fill="black" stroke="black" points="1624.74,-622.84 1625.59,-612.28 1618.34,-620 1624.74,-622.84"/>
+</g>
+<!-- managed.runClasspath&#45;&gt;managed.upstreamAssemblyClasspath -->
+<g id="edge63" class="edge">
+<title>managed.runClasspath&#45;&gt;managed.upstreamAssemblyClasspath</title>
+<path fill="none" stroke="black" d="M1572.1,-648.92C1500.81,-610.87 1321.78,-515.33 1241.4,-472.43"/>
+<polygon fill="black" stroke="black" points="1243.03,-469.33 1232.56,-467.71 1239.73,-475.51 1243.03,-469.33"/>
+</g>
+<!-- managed.forkArgs -->
+<g id="node48" class="node">
+<title>managed.forkArgs</title>
+<ellipse fill="none" stroke="black" cx="1388.24" cy="-738" rx="77.19" ry="18"/>
+<text text-anchor="middle" x="1388.24" y="-734.3" font-family="Times,serif" font-size="14.00">managed.forkArgs</text>
+</g>
+<!-- managed.forkArgs&#45;&gt;managed.runClasspath -->
+<g id="edge64" class="edge">
+<title>managed.forkArgs&#45;&gt;managed.runClasspath</title>
+<path fill="none" stroke="black" d="M1431.03,-723C1464.48,-712.06 1511.21,-696.78 1547.4,-684.94"/>
+<polygon fill="black" stroke="black" points="1548.89,-688.13 1557.31,-681.7 1546.72,-681.48 1548.89,-688.13"/>
+</g>
+<!-- managed.prependShellScript -->
+<g id="node49" class="node">
+<title>managed.prependShellScript</title>
+<ellipse fill="none" stroke="black" cx="1178.24" cy="-810" rx="112.38" ry="18"/>
+<text text-anchor="middle" x="1178.24" y="-806.3" font-family="Times,serif" font-size="14.00">managed.prependShellScript</text>
+</g>
+<!-- managed.prependShellScript&#45;&gt;managed.finalMainClassOpt -->
+<g id="edge65" class="edge">
+<title>managed.prependShellScript&#45;&gt;managed.finalMainClassOpt</title>
+<path fill="none" stroke="black" d="M1195.34,-792.04C1217.75,-771.01 1259.27,-735.98 1302.24,-720 1469.54,-657.76 1524.6,-701.49 1702.24,-684 1721.3,-682.12 1741.63,-680.02 1761.16,-677.96"/>
+<polygon fill="black" stroke="black" points="1761.72,-681.42 1771.29,-676.88 1760.98,-674.46 1761.72,-681.42"/>
+</g>
+<!-- managed.prependShellScript&#45;&gt;managed.forkArgs -->
+<g id="edge66" class="edge">
+<title>managed.prependShellScript&#45;&gt;managed.forkArgs</title>
+<path fill="none" stroke="black" d="M1224.59,-793.55C1257.57,-782.56 1301.91,-767.78 1336.13,-756.37"/>
+<polygon fill="black" stroke="black" points="1337.56,-759.58 1345.94,-753.1 1335.35,-752.94 1337.56,-759.58"/>
+</g>
+<!-- managed.upstreamAssembly -->
+<g id="node50" class="node">
+<title>managed.upstreamAssembly</title>
+<ellipse fill="none" stroke="black" cx="1591.24" cy="-810" rx="113.98" ry="18"/>
+<text text-anchor="middle" x="1591.24" y="-806.3" font-family="Times,serif" font-size="14.00">managed.upstreamAssembly</text>
+</g>
+<!-- managed.upstreamAssembly&#45;&gt;managed.manifest -->
+<g id="edge68" class="edge">
+<title>managed.upstreamAssembly&#45;&gt;managed.manifest</title>
+<path fill="none" stroke="black" d="M1644.99,-794.07C1686.48,-782.55 1743.74,-766.64 1786.06,-754.88"/>
+<polygon fill="black" stroke="black" points="1787.24,-758.19 1795.94,-752.14 1785.37,-751.44 1787.24,-758.19"/>
+</g>
+<!-- managed.upstreamAssembly&#45;&gt;managed.upstreamAssemblyClasspath -->
+<g id="edge67" class="edge">
+<title>managed.upstreamAssembly&#45;&gt;managed.upstreamAssemblyClasspath</title>
+<path fill="none" stroke="black" d="M1513.03,-796.86C1434.03,-784.24 1321.04,-765.1 1302.24,-756 1248.39,-729.92 1201.24,-726.83 1201.24,-667 1201.24,-667 1201.24,-667 1201.24,-593 1201.24,-553 1201.24,-506.65 1201.24,-478.08"/>
+<polygon fill="black" stroke="black" points="1204.74,-478.05 1201.24,-468.05 1197.74,-478.05 1204.74,-478.05"/>
+</g>
+<!-- managed.assembly -->
+<g id="node51" class="node">
+<title>managed.assembly</title>
+<ellipse fill="none" stroke="black" cx="1384.24" cy="-882" rx="78.79" ry="18"/>
+<text text-anchor="middle" x="1384.24" y="-878.3" font-family="Times,serif" font-size="14.00">managed.assembly</text>
+</g>
+<!-- managed.assembly&#45;&gt;managed.prependShellScript -->
+<g id="edge69" class="edge">
+<title>managed.assembly&#45;&gt;managed.prependShellScript</title>
+<path fill="none" stroke="black" d="M1342.06,-866.67C1310.77,-856.04 1267.83,-841.44 1233.76,-829.86"/>
+<polygon fill="black" stroke="black" points="1234.54,-826.43 1223.95,-826.53 1232.29,-833.06 1234.54,-826.43"/>
+</g>
+<!-- managed.assembly&#45;&gt;managed.upstreamAssembly -->
+<g id="edge70" class="edge">
+<title>managed.assembly&#45;&gt;managed.upstreamAssembly</title>
+<path fill="none" stroke="black" d="M1426.38,-866.75C1457.8,-856.13 1501.02,-841.51 1535.32,-829.91"/>
+<polygon fill="black" stroke="black" points="1536.85,-833.09 1545.2,-826.57 1534.61,-826.46 1536.85,-833.09"/>
+</g>
+<!-- managed.bspCompileClassesPath -->
+<g id="node52" class="node">
+<title>managed.bspCompileClassesPath</title>
+<ellipse fill="none" stroke="black" cx="2354.24" cy="-378" rx="129.98" ry="18"/>
+<text text-anchor="middle" x="2354.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.bspCompileClassesPath</text>
+</g>
+<!-- managed.bspTransitiveLocalClasspath -->
+<g id="node53" class="node">
+<title>managed.bspTransitiveLocalClasspath</title>
+<ellipse fill="none" stroke="black" cx="2058.24" cy="-378" rx="147.57" ry="18"/>
+<text text-anchor="middle" x="2058.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.bspTransitiveLocalClasspath</text>
+</g>
+<!-- managed.bspCompileClasspath -->
+<g id="node54" class="node">
+<title>managed.bspCompileClasspath</title>
+<ellipse fill="none" stroke="black" cx="1814.24" cy="-450" rx="122.38" ry="18"/>
+<text text-anchor="middle" x="1814.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.bspCompileClasspath</text>
+</g>
+<!-- managed.bspCompileClasspath&#45;&gt;managed.resources -->
+<g id="edge72" class="edge">
+<title>managed.bspCompileClasspath&#45;&gt;managed.resources</title>
+<path fill="none" stroke="black" d="M1814.24,-431.7C1814.24,-423.98 1814.24,-414.71 1814.24,-406.11"/>
+<polygon fill="black" stroke="black" points="1817.74,-406.1 1814.24,-396.1 1810.74,-406.1 1817.74,-406.1"/>
+</g>
+<!-- managed.bspCompileClasspath&#45;&gt;managed.unmanagedClasspath -->
+<g id="edge73" class="edge">
+<title>managed.bspCompileClasspath&#45;&gt;managed.unmanagedClasspath</title>
+<path fill="none" stroke="black" d="M1734.09,-436.36C1656.84,-424.18 1540.16,-405.79 1459.87,-393.13"/>
+<polygon fill="black" stroke="black" points="1460.19,-389.64 1449.77,-391.54 1459.1,-396.55 1460.19,-389.64"/>
+</g>
+<!-- managed.bspCompileClasspath&#45;&gt;managed.resolvedIvyDeps -->
+<g id="edge74" class="edge">
+<title>managed.bspCompileClasspath&#45;&gt;managed.resolvedIvyDeps</title>
+<path fill="none" stroke="black" d="M1768.88,-433.2C1738.66,-422.68 1698.81,-408.8 1666.99,-397.72"/>
+<polygon fill="black" stroke="black" points="1667.99,-394.36 1657.4,-394.38 1665.69,-400.97 1667.99,-394.36"/>
+</g>
+<!-- managed.bspCompileClasspath&#45;&gt;managed.bspTransitiveLocalClasspath -->
+<g id="edge71" class="edge">
+<title>managed.bspCompileClasspath&#45;&gt;managed.bspTransitiveLocalClasspath</title>
+<path fill="none" stroke="black" d="M1867.49,-433.72C1904.59,-423.08 1954.28,-408.82 1993.65,-397.53"/>
+<polygon fill="black" stroke="black" points="1994.77,-400.85 2003.42,-394.73 1992.84,-394.12 1994.77,-400.85"/>
+</g>
+<!-- managed.bspLocalClasspath -->
+<g id="node55" class="node">
+<title>managed.bspLocalClasspath</title>
+<ellipse fill="none" stroke="black" cx="2210.24" cy="-450" rx="111.58" ry="18"/>
+<text text-anchor="middle" x="2210.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.bspLocalClasspath</text>
+</g>
+<!-- managed.bspLocalClasspath&#45;&gt;managed.resources -->
+<g id="edge75" class="edge">
+<title>managed.bspLocalClasspath&#45;&gt;managed.resources</title>
+<path fill="none" stroke="black" d="M2135.23,-436.63C2072.6,-426.19 1981.01,-410.63 1901.24,-396 1894.98,-394.85 1888.48,-393.63 1881.97,-392.39"/>
+<polygon fill="black" stroke="black" points="1882.25,-388.88 1871.77,-390.44 1880.93,-395.76 1882.25,-388.88"/>
+</g>
+<!-- managed.bspLocalClasspath&#45;&gt;managed.bspCompileClassesPath -->
+<g id="edge76" class="edge">
+<title>managed.bspLocalClasspath&#45;&gt;managed.bspCompileClassesPath</title>
+<path fill="none" stroke="black" d="M2243.64,-432.76C2263.85,-422.94 2289.82,-410.32 2311.52,-399.77"/>
+<polygon fill="black" stroke="black" points="2313.06,-402.91 2320.52,-395.39 2310,-396.61 2313.06,-402.91"/>
+</g>
+<!-- managed.forkEnv -->
+<g id="node56" class="node">
+<title>managed.forkEnv</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="2063.24" cy="-738" rx="74.19" ry="18"/>
+<text text-anchor="middle" x="2063.24" y="-734.3" font-family="Times,serif" font-size="14.00">managed.forkEnv</text>
+</g>
+<!-- managed.forkEnv&#45;&gt;managed.forkEnv -->
+<g id="edge77" class="edge">
+<title>managed.forkEnv&#45;&gt;managed.forkEnv</title>
+<path fill="none" stroke="black" d="M2113.45,-751.29C2135.91,-752.55 2155.33,-748.12 2155.33,-738 2155.33,-729.46 2141.5,-724.97 2123.69,-724.53"/>
+<polygon fill="black" stroke="black" points="2123.39,-721.04 2113.45,-724.71 2123.51,-728.04 2123.39,-721.04"/>
+</g>
+<!-- managed.forkWorkingDir -->
+<g id="node57" class="node">
+<title>managed.forkWorkingDir</title>
+<ellipse fill="none" stroke="black" cx="2276.24" cy="-738" rx="102.88" ry="18"/>
+<text text-anchor="middle" x="2276.24" y="-734.3" font-family="Times,serif" font-size="14.00">managed.forkWorkingDir</text>
+</g>
+<!-- managed.console -->
+<g id="node58" class="node">
+<title>managed.console</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="2097.24" cy="-810" rx="72.29" ry="18"/>
+<text text-anchor="middle" x="2097.24" y="-806.3" font-family="Times,serif" font-size="14.00">managed.console</text>
+</g>
+<!-- managed.console&#45;&gt;managed.forkArgs -->
+<g id="edge78" class="edge">
+<title>managed.console&#45;&gt;managed.forkArgs</title>
+<path fill="none" stroke="black" d="M2046.44,-797.21C2036.47,-795.21 2026.06,-793.35 2016.24,-792 1780.6,-759.49 1718.31,-785.21 1482.24,-756 1473.51,-754.92 1464.36,-753.56 1455.35,-752.08"/>
+<polygon fill="black" stroke="black" points="1455.7,-748.59 1445.25,-750.36 1454.52,-755.49 1455.7,-748.59"/>
+</g>
+<!-- managed.console&#45;&gt;managed.forkEnv -->
+<g id="edge79" class="edge">
+<title>managed.console&#45;&gt;managed.forkEnv</title>
+<path fill="none" stroke="black" d="M2089.01,-792.05C2085.14,-784.09 2080.44,-774.41 2076.12,-765.51"/>
+<polygon fill="black" stroke="black" points="2079.15,-763.74 2071.63,-756.28 2072.85,-766.8 2079.15,-763.74"/>
+</g>
+<!-- managed.console&#45;&gt;managed.forkWorkingDir -->
+<g id="edge80" class="edge">
+<title>managed.console&#45;&gt;managed.forkWorkingDir</title>
+<path fill="none" stroke="black" d="M2134.33,-794.5C2161.01,-784.06 2197.29,-769.88 2226.48,-758.46"/>
+<polygon fill="black" stroke="black" points="2228.05,-761.6 2236.09,-754.7 2225.5,-755.09 2228.05,-761.6"/>
+</g>
+<!-- managed.scalaDocClasspath -->
+<g id="node59" class="node">
+<title>managed.scalaDocClasspath</title>
+<ellipse fill="none" stroke="black" cx="4091.24" cy="-378" rx="111.58" ry="18"/>
+<text text-anchor="middle" x="4091.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.scalaDocClasspath</text>
+</g>
+<!-- managed.scalaDocClasspath&#45;&gt;managed.scalaOrganization -->
+<g id="edge82" class="edge">
+<title>managed.scalaDocClasspath&#45;&gt;managed.scalaOrganization</title>
+<path fill="none" stroke="black" d="M4081.95,-359.97C4055.67,-311.78 3980.67,-174.28 3949.3,-116.78"/>
+<polygon fill="black" stroke="black" points="3952.34,-115.05 3944.48,-107.94 3946.2,-118.4 3952.34,-115.05"/>
+</g>
+<!-- managed.scalaDocClasspath&#45;&gt;managed.platformSuffix -->
+<g id="edge81" class="edge">
+<title>managed.scalaDocClasspath&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M4012.91,-365.13C3999.05,-363.25 3984.73,-361.45 3971.24,-360 3751.49,-336.4 3492.96,-320.21 3352.62,-312.39"/>
+<polygon fill="black" stroke="black" points="3352.49,-308.88 3342.31,-311.82 3352.1,-315.87 3352.49,-308.88"/>
+</g>
+<!-- managed.scalaDocPluginIvyDeps -->
+<g id="node60" class="node">
+<title>managed.scalaDocPluginIvyDeps</title>
+<ellipse fill="none" stroke="black" cx="3777.24" cy="-306" rx="129.98" ry="18"/>
+<text text-anchor="middle" x="3777.24" y="-302.3" font-family="Times,serif" font-size="14.00">managed.scalaDocPluginIvyDeps</text>
+</g>
+<!-- managed.scalaDocPluginIvyDeps&#45;&gt;managed.scalacPluginIvyDeps -->
+<g id="edge83" class="edge">
+<title>managed.scalaDocPluginIvyDeps&#45;&gt;managed.scalacPluginIvyDeps</title>
+<path fill="none" stroke="black" d="M3752.57,-288.23C3738.94,-278.97 3721.83,-267.34 3707.08,-257.32"/>
+<polygon fill="black" stroke="black" points="3708.95,-254.36 3698.71,-251.63 3705.01,-260.15 3708.95,-254.36"/>
+</g>
+<!-- managed.enableScalaDocPluginScalacOptions -->
+<g id="node61" class="node">
+<title>managed.enableScalaDocPluginScalacOptions</title>
+<ellipse fill="none" stroke="black" stroke-dasharray="1,5" cx="4890.24" cy="-378" rx="175.47" ry="18"/>
+<text text-anchor="middle" x="4890.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.enableScalaDocPluginScalacOptions</text>
+</g>
+<!-- managed.enableScalaDocPluginScalacOptions&#45;&gt;managed.scalaOrganization -->
+<g id="edge86" class="edge">
+<title>managed.enableScalaDocPluginScalacOptions&#45;&gt;managed.scalaOrganization</title>
+<path fill="none" stroke="black" d="M4836.16,-360.8C4670.21,-311.1 4168.97,-161 3995.27,-108.98"/>
+<polygon fill="black" stroke="black" points="3996.12,-105.58 3985.53,-106.06 3994.11,-112.28 3996.12,-105.58"/>
+</g>
+<!-- managed.enableScalaDocPluginScalacOptions&#45;&gt;managed.platformSuffix -->
+<g id="edge84" class="edge">
+<title>managed.enableScalaDocPluginScalacOptions&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M4770.06,-364.88C4748.82,-363.03 4726.89,-361.3 4706.24,-360 4232.24,-330.14 4112.82,-342.37 3638.24,-324 3541.76,-320.27 3431.84,-315.41 3353.51,-311.84"/>
+<polygon fill="black" stroke="black" points="3353.31,-308.33 3343.16,-311.37 3352.99,-315.32 3353.31,-308.33"/>
+</g>
+<!-- managed.enableScalaDocPluginScalacOptions&#45;&gt;managed.scalaDocPluginIvyDeps -->
+<g id="edge85" class="edge">
+<title>managed.enableScalaDocPluginScalacOptions&#45;&gt;managed.scalaDocPluginIvyDeps</title>
+<path fill="none" stroke="black" d="M4767.56,-365.06C4747.09,-363.24 4726.08,-361.48 4706.24,-360 4422.04,-338.77 4088.37,-321.63 3908.37,-313.03"/>
+<polygon fill="black" stroke="black" points="3908.48,-309.53 3898.33,-312.55 3908.15,-316.52 3908.48,-309.53"/>
+</g>
+<!-- managed.scalaDocOptions -->
+<g id="node62" class="node">
+<title>managed.scalaDocOptions</title>
+<ellipse fill="none" stroke="black" cx="4563.24" cy="-450" rx="105.08" ry="18"/>
+<text text-anchor="middle" x="4563.24" y="-446.3" font-family="Times,serif" font-size="14.00">managed.scalaDocOptions</text>
+</g>
+<!-- managed.scalaDocOptions&#45;&gt;managed.mandatoryScalacOptions -->
+<g id="edge88" class="edge">
+<title>managed.scalaDocOptions&#45;&gt;managed.mandatoryScalacOptions</title>
+<path fill="none" stroke="black" d="M4563.24,-431.7C4563.24,-423.98 4563.24,-414.71 4563.24,-406.11"/>
+<polygon fill="black" stroke="black" points="4566.74,-406.1 4563.24,-396.1 4559.74,-406.1 4566.74,-406.1"/>
+</g>
+<!-- managed.scalaDocOptions&#45;&gt;managed.scalacOptions -->
+<g id="edge90" class="edge">
+<title>managed.scalaDocOptions&#45;&gt;managed.scalacOptions</title>
+<path fill="none" stroke="black" d="M4511.46,-434.33C4472.04,-423.15 4417.7,-407.75 4376.36,-396.04"/>
+<polygon fill="black" stroke="black" points="4377.26,-392.66 4366.68,-393.3 4375.35,-399.39 4377.26,-392.66"/>
+</g>
+<!-- managed.scalaDocOptions&#45;&gt;managed.artifactName -->
+<g id="edge87" class="edge">
+<title>managed.scalaDocOptions&#45;&gt;managed.artifactName</title>
+<path fill="none" stroke="black" d="M4655.3,-441.22C4757.77,-432.15 4928.19,-415.84 5074.24,-396 5082.54,-394.87 5091.2,-393.59 5099.81,-392.23"/>
+<polygon fill="black" stroke="black" points="5100.54,-395.66 5109.86,-390.63 5099.44,-388.75 5100.54,-395.66"/>
+</g>
+<!-- managed.scalaDocOptions&#45;&gt;managed.enableScalaDocPluginScalacOptions -->
+<g id="edge89" class="edge">
+<title>managed.scalaDocOptions&#45;&gt;managed.enableScalaDocPluginScalacOptions</title>
+<path fill="none" stroke="black" d="M4626.29,-435.5C4678.03,-424.43 4751.67,-408.66 4808.03,-396.6"/>
+<polygon fill="black" stroke="black" points="4808.94,-399.98 4817.99,-394.47 4807.47,-393.14 4808.94,-399.98"/>
+</g>
+<!-- managed.docResources -->
+<g id="node63" class="node">
+<title>managed.docResources</title>
+<ellipse fill="none" stroke="black" cx="3969.24" cy="-594" rx="94.48" ry="18"/>
+<text text-anchor="middle" x="3969.24" y="-590.3" font-family="Times,serif" font-size="14.00">managed.docResources</text>
+</g>
+<!-- managed.docSources -->
+<g id="node64" class="node">
+<title>managed.docSources</title>
+<ellipse fill="none" stroke="black" cx="3351.24" cy="-594" rx="85.59" ry="18"/>
+<text text-anchor="middle" x="3351.24" y="-590.3" font-family="Times,serif" font-size="14.00">managed.docSources</text>
+</g>
+<!-- managed.docSources&#45;&gt;managed.compile -->
+<g id="edge91" class="edge">
+<title>managed.docSources&#45;&gt;managed.compile</title>
+<path fill="none" stroke="black" d="M3280.47,-583.74C3178.92,-570.45 2992.77,-546.1 2889.73,-532.62"/>
+<polygon fill="black" stroke="black" points="2890.09,-529.13 2879.72,-531.31 2889.18,-536.07 2890.09,-529.13"/>
+</g>
+<!-- managed.docJar -->
+<g id="node65" class="node">
+<title>managed.docJar</title>
+<ellipse fill="none" stroke="black" cx="4030.24" cy="-666" rx="68.49" ry="18"/>
+<text text-anchor="middle" x="4030.24" y="-662.3" font-family="Times,serif" font-size="14.00">managed.docJar</text>
+</g>
+<!-- managed.docJar&#45;&gt;managed.scalaDocClasspath -->
+<g id="edge92" class="edge">
+<title>managed.docJar&#45;&gt;managed.scalaDocClasspath</title>
+<path fill="none" stroke="black" d="M4047.53,-648.52C4056.55,-638.81 4066.81,-625.76 4072.24,-612 4099.9,-541.89 4097.43,-450.9 4093.99,-406.21"/>
+<polygon fill="black" stroke="black" points="4097.46,-405.8 4093.13,-396.13 4090.49,-406.4 4097.46,-405.8"/>
+</g>
+<!-- managed.docJar&#45;&gt;managed.scalaDocOptions -->
+<g id="edge93" class="edge">
+<title>managed.docJar&#45;&gt;managed.scalaDocOptions</title>
+<path fill="none" stroke="black" d="M4066.04,-650.63C4159.07,-613.28 4408.55,-513.11 4514.53,-470.56"/>
+<polygon fill="black" stroke="black" points="4516.05,-473.72 4524.03,-466.74 4513.45,-467.22 4516.05,-473.72"/>
+</g>
+<!-- managed.docJar&#45;&gt;managed.docResources -->
+<g id="edge94" class="edge">
+<title>managed.docJar&#45;&gt;managed.docResources</title>
+<path fill="none" stroke="black" d="M4015.47,-648.05C4007.98,-639.46 3998.74,-628.86 3990.5,-619.4"/>
+<polygon fill="black" stroke="black" points="3993.08,-617.03 3983.87,-611.79 3987.8,-621.63 3993.08,-617.03"/>
+</g>
+<!-- managed.docJar&#45;&gt;managed.docSources -->
+<g id="edge95" class="edge">
+<title>managed.docJar&#45;&gt;managed.docSources</title>
+<path fill="none" stroke="black" d="M3967.88,-658.57C3845.78,-645.98 3575.04,-618.07 3436.51,-603.79"/>
+<polygon fill="black" stroke="black" points="3436.66,-600.29 3426.36,-602.74 3435.95,-607.25 3436.66,-600.29"/>
+</g>
+<!-- managed.docJarUseArgsFile -->
+<g id="node66" class="node">
+<title>managed.docJarUseArgsFile</title>
+<ellipse fill="none" stroke="black" cx="1593.24" cy="-882" rx="112.38" ry="18"/>
+<text text-anchor="middle" x="1593.24" y="-878.3" font-family="Times,serif" font-size="14.00">managed.docJarUseArgsFile</text>
+</g>
+<!-- managed.finalMainClass -->
+<g id="node67" class="node">
+<title>managed.finalMainClass</title>
+<ellipse fill="none" stroke="black" cx="1590.24" cy="-738" rx="99.38" ry="18"/>
+<text text-anchor="middle" x="1590.24" y="-734.3" font-family="Times,serif" font-size="14.00">managed.finalMainClass</text>
+</g>
+<!-- managed.finalMainClass&#45;&gt;managed.finalMainClassOpt -->
+<g id="edge96" class="edge">
+<title>managed.finalMainClass&#45;&gt;managed.finalMainClassOpt</title>
+<path fill="none" stroke="black" d="M1644.76,-722.92C1687.95,-711.76 1748.5,-696.12 1794.58,-684.22"/>
+<polygon fill="black" stroke="black" points="1795.67,-687.55 1804.48,-681.66 1793.92,-680.77 1795.67,-687.55"/>
+</g>
+<!-- managed.ideaCompileOutput -->
+<g id="node68" class="node">
+<title>managed.ideaCompileOutput</title>
+<ellipse fill="none" stroke="black" cx="1838.24" cy="-882" rx="115.08" ry="18"/>
+<text text-anchor="middle" x="1838.24" y="-878.3" font-family="Times,serif" font-size="14.00">managed.ideaCompileOutput</text>
+</g>
+<!-- managed.jar -->
+<g id="node69" class="node">
+<title>managed.jar</title>
+<ellipse fill="none" stroke="black" cx="1777.24" cy="-810" rx="54.69" ry="18"/>
+<text text-anchor="middle" x="1777.24" y="-806.3" font-family="Times,serif" font-size="14.00">managed.jar</text>
+</g>
+<!-- managed.jar&#45;&gt;managed.localClasspath -->
+<g id="edge97" class="edge">
+<title>managed.jar&#45;&gt;managed.localClasspath</title>
+<path fill="none" stroke="black" d="M1770.49,-791.9C1755.93,-755.52 1721.39,-671.88 1702.24,-648 1692.89,-636.34 1680.45,-625.77 1668.72,-617.19"/>
+<polygon fill="black" stroke="black" points="1670.54,-614.2 1660.35,-611.31 1666.52,-619.93 1670.54,-614.2"/>
+</g>
+<!-- managed.jar&#45;&gt;managed.manifest -->
+<g id="edge98" class="edge">
+<title>managed.jar&#45;&gt;managed.manifest</title>
+<path fill="none" stroke="black" d="M1792.88,-792.41C1801.06,-783.73 1811.23,-772.95 1820.29,-763.34"/>
+<polygon fill="black" stroke="black" points="1822.94,-765.63 1827.25,-755.96 1817.85,-760.83 1822.94,-765.63"/>
+</g>
+<!-- managed.javadocOptions -->
+<g id="node70" class="node">
+<title>managed.javadocOptions</title>
+<ellipse fill="none" stroke="black" cx="2072.24" cy="-882" rx="100.98" ry="18"/>
+<text text-anchor="middle" x="2072.24" y="-878.3" font-family="Times,serif" font-size="14.00">managed.javadocOptions</text>
+</g>
+<!-- managed.launcher -->
+<g id="node71" class="node">
+<title>managed.launcher</title>
+<ellipse fill="none" stroke="black" cx="1384.24" cy="-810" rx="75.29" ry="18"/>
+<text text-anchor="middle" x="1384.24" y="-806.3" font-family="Times,serif" font-size="14.00">managed.launcher</text>
+</g>
+<!-- managed.launcher&#45;&gt;managed.forkArgs -->
+<g id="edge100" class="edge">
+<title>managed.launcher&#45;&gt;managed.forkArgs</title>
+<path fill="none" stroke="black" d="M1385.23,-791.7C1385.67,-783.98 1386.2,-774.71 1386.69,-766.11"/>
+<polygon fill="black" stroke="black" points="1390.19,-766.29 1387.26,-756.1 1383.2,-765.89 1390.19,-766.29"/>
+</g>
+<!-- managed.launcher&#45;&gt;managed.finalMainClass -->
+<g id="edge99" class="edge">
+<title>managed.launcher&#45;&gt;managed.finalMainClass</title>
+<path fill="none" stroke="black" d="M1425.93,-794.83C1457.6,-784.07 1501.44,-769.18 1535.86,-757.48"/>
+<polygon fill="black" stroke="black" points="1537.42,-760.64 1545.76,-754.11 1535.17,-754.02 1537.42,-760.64"/>
+</g>
+<!-- managed.runUseArgsFile -->
+<g id="node72" class="node">
+<title>managed.runUseArgsFile</title>
+<ellipse fill="none" stroke="black" cx="2292.24" cy="-882" rx="101.28" ry="18"/>
+<text text-anchor="middle" x="2292.24" y="-878.3" font-family="Times,serif" font-size="14.00">managed.runUseArgsFile</text>
+</g>
+<!-- managed.scalaDocPluginClasspath -->
+<g id="node73" class="node">
+<title>managed.scalaDocPluginClasspath</title>
+<ellipse fill="none" stroke="black" cx="3526.24" cy="-378" rx="134.58" ry="18"/>
+<text text-anchor="middle" x="3526.24" y="-374.3" font-family="Times,serif" font-size="14.00">managed.scalaDocPluginClasspath</text>
+</g>
+<!-- managed.scalaDocPluginClasspath&#45;&gt;managed.scalaOrganization -->
+<g id="edge102" class="edge">
+<title>managed.scalaDocPluginClasspath&#45;&gt;managed.scalaOrganization</title>
+<path fill="none" stroke="black" d="M3522.77,-359.66C3517.37,-327.42 3510.88,-257.71 3545.24,-216 3611.84,-135.15 3730.94,-105.96 3820.07,-95.74"/>
+<polygon fill="black" stroke="black" points="3820.67,-99.2 3830.23,-94.65 3819.91,-92.24 3820.67,-99.2"/>
+</g>
+<!-- managed.scalaDocPluginClasspath&#45;&gt;managed.platformSuffix -->
+<g id="edge101" class="edge">
+<title>managed.scalaDocPluginClasspath&#45;&gt;managed.platformSuffix</title>
+<path fill="none" stroke="black" d="M3466.14,-361.81C3421.37,-350.5 3360.3,-335.07 3314.37,-323.46"/>
+<polygon fill="black" stroke="black" points="3315.07,-320.03 3304.52,-320.97 3313.36,-326.81 3315.07,-320.03"/>
+</g>
+<!-- managed.scalaDocPluginClasspath&#45;&gt;managed.scalaDocPluginIvyDeps -->
+<g id="edge103" class="edge">
+<title>managed.scalaDocPluginClasspath&#45;&gt;managed.scalaDocPluginIvyDeps</title>
+<path fill="none" stroke="black" d="M3581.63,-361.55C3620.18,-350.8 3671.71,-336.43 3712.21,-325.14"/>
+<polygon fill="black" stroke="black" points="3713.3,-328.47 3721.99,-322.41 3711.42,-321.72 3713.3,-328.47"/>
+</g>
+<!-- managed.sourceJar -->
+<g id="node74" class="node">
+<title>managed.sourceJar</title>
+<ellipse fill="none" stroke="black" cx="1928.24" cy="-810" rx="78.79" ry="18"/>
+<text text-anchor="middle" x="1928.24" y="-806.3" font-family="Times,serif" font-size="14.00">managed.sourceJar</text>
+</g>
+<!-- managed.sourceJar&#45;&gt;managed.manifest -->
+<g id="edge104" class="edge">
+<title>managed.sourceJar&#45;&gt;managed.manifest</title>
+<path fill="none" stroke="black" d="M1908.1,-792.41C1897.09,-783.34 1883.28,-771.97 1871.24,-762.06"/>
+<polygon fill="black" stroke="black" points="1873.18,-759.13 1863.24,-755.47 1868.73,-764.53 1873.18,-759.13"/>
+</g>
+</g>
+</svg>

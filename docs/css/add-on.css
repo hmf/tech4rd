@@ -1,5 +1,6 @@
+
 body, input, select, textarea, b, strong {
-    color: #000000;
+    color: var(--foreground);
 }
 
 pre {
@@ -23,7 +24,7 @@ pre {
 }
 
     #header .main ul li > a {
-        color: #000000;
+        color: var(--foreground);
         /* Theoretically for IE 8 & 9 (more valid) */
         /* ...but not required as filter works too */
         /* should come BEFORE filter */
@@ -38,7 +39,7 @@ pre {
     }
 
         #header .main .search input {
-            color: #000000;
+            color: var(--foreground);
         }
 
 #intro p,
@@ -93,7 +94,7 @@ article.post footer .stats {
     article.post h2,
     article.post h3,
     article.post h4 {
-        color: #000000;
+        color: var(--foreground);
         /* Theoretically for IE 8 & 9 (more valid) */
         /* ...but not required as filter works too */
         /* should come BEFORE filter */
@@ -127,6 +128,8 @@ article.post footer .stats {
 
 #intro .intro-circle {
     border-radius: 50%;
+    background-color: var(--intro_logo_color);
+    /*color: var(--green); no effect */
 }
 
 .post > header .title h1 {
@@ -162,7 +165,7 @@ blockquote p {
         }
 
 .pagination .button {
-    background: white;
+    background: var(--background);
 }
 
 /** Social Share Button CSS **/
@@ -190,47 +193,47 @@ blockquote p {
 }
 
 #social-share-nav .share-btn h3{
-    color: #ffffff;
+    color: var(--background);
 }
 
 .share-btn {
     display: inline-block;
-    color: #ffffff;
+    color: var(--background);
     border: none;
     border-radius: 4px;
-    box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 0 0 var(--share_btn);
     outline: none;
     text-align: center;
     text-decoration: none;
 }
 
 .share-btn:hover {
-    color: #ffffff !important;
+    color: var(--background) !important;
 }
 
 .share-btn:active {
     position: relative;
     top: 2px;
     box-shadow: none;
-    color: #e2e2e2;
+    color: var(--active_button);
     outline: none;
 }
 
-.share-btn.twitter     { background: #55acee; }
-.share-btn.google-plus { background: #dd4b39; }
-.share-btn.facebook    { background: #3B5998; }
-.share-btn.linkedin    { background: #4875B4; }
-.share-btn.stumbleupon { background: #EB4823; }
-.share-btn.reddit      { background: #ff5700; }
-.share-btn.email       { background: #444444; }
+.share-btn.twitter     { background: var(--btn_twitter); }
+.share-btn.google-plus { background: var(--btn_google-plus); }
+.share-btn.facebook    { background: var(--btn_facebook); }
+.share-btn.linkedin    { background: var(--btn_linkedin); }
+.share-btn.stumbleupon { background: var(--btn_stumbleupon); }
+.share-btn.reddit      { background: var(--btn_reddit); }
+.share-btn.email       { background: var(--btn_email_hover); }
 
-.share-btn.twitter:hover     { background: #4c9ad6 }
-.share-btn.google-plus:hover { background: #c64333; }
-.share-btn.facebook:hover    { background: #2f4779; }
-.share-btn.linkedin:hover    { background: #4069a2; }
-.share-btn.stumbleupon:hover { background: #d3401f; }
-.share-btn.reddit:hover      { background: #e54e00; }
-.share-btn.email:hover       { background: #363636; }
+.share-btn.twitter:hover     { background: var(--btn_twitter_hover) }
+.share-btn.google-plus:hover { background: var(--btn_google-plus_hover); }
+.share-btn.facebook:hover    { background: var(--btn_facebook_hover); }
+.share-btn.linkedin:hover    { background: var(--btn_linkedin_hover); }
+.share-btn.stumbleupon:hover { background: var(--btn_stumbleupon_hover); }
+.share-btn.reddit:hover      { background: var(--btn_reddit_hover); }
+.share-btn.email:hover       { background: var(--btn_email_hover); }
 
 /* Share Menu */
 body.is-share-visible #wrapper {
@@ -247,8 +250,8 @@ body.is-share-visible #wrapper {
 		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
-		border-left: solid 1px rgba(160, 160, 160, 0.3);
+		background: var(--background);
+		border-left: solid 1px var(--dark_gray_alpha);
 		box-shadow: none;
 		height: 100%;
 		max-width: 80%;
@@ -262,7 +265,7 @@ body.is-share-visible #wrapper {
 	}
 
 		#share-menu > * {
-			border-top: solid 1px rgba(160, 160, 160, 0.3);
+			border-top: solid 1px var(--dark_gray_alpha);
 			padding: 3em;
 		}
 
@@ -281,7 +284,7 @@ body.is-share-visible #wrapper {
 
 			#share-menu .links > li {
 				border: 0;
-				border-top: dotted 1px rgba(160, 160, 160, 0.3);
+				border-top: dotted 1px var(--dark_gray_alpha);
 				margin: 0.7em 0 0 0;
 				padding: 1em 0 0 0;
 			}
@@ -310,7 +313,7 @@ body.is-share-visible #wrapper {
 					}
 
 					#share-menu .links > li a:hover h3 {
-						color: #ffffff;
+						color: var(--background);
 					}
 
 				#share-menu .links > li:first-child {
@@ -339,12 +342,23 @@ body.is-share-visible #wrapper {
     margin: 0 0 2em 0;
 }
 
+    #content img[src*='#left'] {
+        float: left;
+    }
+    #content img[src*='#right'] {
+        float: right;
+    }
+    #content img[src*='#center'] {
+        display: block;
+        margin: auto;
+    }
+
     #content img {
         max-width: 100%;
     }
-
+    
     #content p a, #content ul li a {
-        border-bottom: dotted 2px rgba(160,160,160,.65);
+        border-bottom: dotted 2px var(--content_border);
     }
 
         #content p a:hover {
@@ -355,6 +369,11 @@ body.is-share-visible #wrapper {
         margin: 0 0 1em;
     }
 
+    article > div#content > p,
+    article > div#content .paragraph > p {
+        text-align: justify;
+    }
+  
 ul.pagination li {
     padding-top: 1em;
 }
@@ -368,9 +387,9 @@ ul.pagination li {
     }
 
 #back-to-top {
-    background-color: white;
+    background-color: var(--background);
     bottom: 5px;
-    color: #aaaaaa;
+    color: var(--mid_ground);
     display: none;
     position: fixed;
     right: 5px;

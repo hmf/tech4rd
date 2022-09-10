@@ -1,0 +1,277 @@
+/* 
+  cSpell:ignore stumbleupon, youtube, iphone
+
+  https://www.w3.org/wiki/CSS/Properties/color/keywords 
+  https://www.freecodecamp.org/news/learn-css-variables-in-5-minutes-80cf63b4025d/
+  https://blog.logrocket.com/how-to-use-css-variables-like-a-pro/
+
+  css color scheme dark palette
+  https://www.reddit.com/r/css/comments/nkjeyb/6_dark_mode_color_palettes_with_examples_css_and/
+  https://www.indiehackers.com/post/6-dark-mode-color-palettes-with-examples-css-and-the-figma-file-posted-here-not-external-5655895aa0
+  https://colorhunt.co/palettes/dark
+  https://blog.karenying.com/posts/50-shades-of-dark-mode-gray
+
+Material design:
+  https://material.io/design/color/dark-theme.html#ui-application
+  https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+
+
+BigMail:
+
+--eerie-black: #141414ff;
+--jet: #373737ff;
+--white: #ffffffff;
+--rajah: #faa549ff;
+--tart-orange: #f2564fff;
+--light-steel-blue: #b7d0f1ff;
+
+Hourly App
+--rich-black-fogra-39: #0a0a0aff;
+--eerie-black: #1a181aff;
+--davys-grey: #505050ff;
+--persian-red: #d1342fff;
+--black-olive: #434038ff;
+--dutch-white: #eee3c1ff;
+
+Versel
+--black: #000000ff;
+--rich-black-fogra-39: #111111ff;
+--jet: #333333ff;
+--white: #ffffffff;
+--flickr-blue: #0761d1ff;
+--french-rose: #ea558dff;
+
+wickedtemplates
+--rich-black-fogra-39: #111213ff;
+--eerie-black: #212224ff;
+--quick-silver: #a1a1a1ff;
+--white: #ffffffff;
+--blue-crayola: #2f71e8ff;
+--cyan-process: #29b9f0ff;
+
+Laws Of UX
+--rich-black-fogra-39: #0c0c0fff;
+--rich-black-fogra-39-2: #101014ff;
+--white: #ffffffff;
+--independence: #475977ff;
+--magenta-haze: #963d72ff;
+--sap-green: #537a34ff;
+
+RemoteCamp
+--oxford-blue: #080c24ff;
+--oxford-blue-2: #151e34ff;
+--blue-crayola: #3071e8ff;
+--white: #ffffffff;
+--maximum-blue-purple: #a6b2ebff;
+--celadon-blue: #1f7ea7ff;
+
+.embedded-comments .comment-box .comment-box__save-button {
+  background-image: linear-gradient(to right, rgb(147, 26, 93), rgb(162, 35, 12));
+  color: rgb(232, 230, 227);
+}
+
+*/
+
+/* 
+  https://opensource.com/article/21/10/dark-themes-websites
+  https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
+  https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+  https://ionicframework.com/docs/theming/dark-mode
+*/
+
+/*@import url("css/hljs_googlecode.min.css"); fails */
+/*@import url("hljs_googlecode.min.css"); ok, must be the first rule */
+
+/* Assume light mode by default */
+/*@import "hljs_googlecode.min.css" screen;*/
+/* Supersede dark mode when applicable but does not use darkmode.js light-theme/dark-theme class */  
+/*@import "hljs_lioshi.min.css" screen and (prefers-color-scheme: dark);*/
+
+:root,
+:root.light-theme {
+
+    --red         : #ff0000;
+    --persian-red : #d1342fff;
+    --green       : #00ff00;
+    --greenyellow : #ADFF2F;
+
+    --foreground           : var(--blue_primary_text);   /* text in posts, about, arquive list                */
+    --mid_ground           : var(--blue_secondary_text); /* back to top button on left bottom (#back-to-top) + side bar footer (#footer .copyright) + next and previous buttons */
+    --background           : var(--blue_background);     /* Top menu + content area - facebook background     */
+    --background_body      : var(--blue_card);           /* Side bar with icon, title, social media links, recent posts, tags, about */
+    --dark_gray            : var(--blue_hover);          /* ?                                                 */
+    --dark_gray_2          : var(--blue_secondary_text); /* bold, strong for titles and subtitles in side bar */
+    --dark_gray_alpha      : var(--blue_hover);          /* borders and separators                            */
+    --dark_gray_alpha_2    : var(--blue_hover_light);    /* background of search boxes, code                  */
+    --active_button        : var(--blue_hover);          /* share icon buttons - .share-btn:active            */
+    --share_btn            : var(--blue_hover);          /* border below share buttons - box-shadow           */
+    --content_border       : var(--mask_red_3);          /* links and author name                             */
+    --hover_alpha          : var(--blue_hover);          /* selection background of button pressed            */
+    --hover                : var(--mask_red_3);          /* button and link hover, text area borders          */
+
+    --btn_twitter          : #55acee;
+    --btn_google-plus      : #dd4b39;
+    --btn_facebook         : #3B5998;
+    --btn_linkedin         : #4875B4;
+    --btn_stumbleupon      : #EB4823;
+    --btn_reddit           : #ff5700;
+    --btn_email            : #444444;
+    --btn_twitter_hover    : #4c9ad6; 
+    --btn_google-plus_hover: #c64333;
+    --btn_facebook_hover   : #2f4779;
+    --btn_linkedin_hover   : #4069a2;
+    --btn_stumbleupon_hover: #d3401f;
+    --btn_reddit_hover     : #e54e00;
+    --btn_email_hover      : #363636;
+
+    /* fixed icon size: #intro .logo img */
+    /* #intro .logo:before */
+    /* for testing */
+    /*--intro_logo_shape: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%23ff0000' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75' style='fill:%23ff0000' /%3E%3C/svg%3E");*/
+    --intro_logo_shape: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%230000ff' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75' style='fill:%230000ff' /%3E%3C/svg%3E");
+    /*--intro_logo_shape: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%23f4f4f4' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75' style='fill:%23f4f4f4' /%3E%3C/svg%3E");*/
+    /* #intro .intro-circle */
+    --intro_logo_color: var(--red);
+    
+    /* Icon mask + Dark reader colours */
+    --mask_red_0           : #e494fc;
+    --mask_red_1           : #cf3eff;
+    --mask_red_2           : #9e41ef;
+    --mask_red_3           : #7d4dfb;
+    --mask_red_4           : #525afb;
+    --mask_red_5           : #2e72ff;
+    --mask_red_6           : #3262f6;
+    --mask_red_7           : #23438f;
+    --light_background     : #1e2122;
+    --dark_background_0    : #181a1b;
+    --dark_background_1    : #191b1c;
+    --light_foreground_0   : #e8e6e3;
+    --light_foreground_1   : #cdcbc9;
+    --dark_foreground      : #979796;
+    
+
+    /* https://colorswall.com/palette/8 */
+    /* https://www.schemecolor.com/css-family-blue.php */
+    --blue_background         : #bfd9ec; /* water        : #d5f3fe  */
+    --blue_card               : #8fb9d7; /* Maya         : #66d3fa  */
+    --blue_hover              : #a3bacb; /* Tufts        : #3c99dc  */
+    --blue_hover_light        : #a3bacb64; /* Tufts        : #3c99dc; 80 = 50%, C0 = 75%, 64 = 25% */
+    --blue_primary_text       : #153f6f; /* Lapis_Lazuli : #2565ae  */
+    --blue_secondary_text     : #0c4480; /* blue_Yale    : #0f5298  */
+
+    --mask_b_red_0           : #c3848f;
+    --mask_b_red_1           : #b46572;
+    --mask_b_red_2           : #a84858;
+
+    /* https://www.sliderrevolution.com/design/website-color-schemes/ */
+
+
+    /* https://blog.karenying.com/posts/50-shades-of-dark-mode-gray */
+    --spotify_background      : #121212;
+    --spotify_menu_bar        : #181818;
+    --spotify_top_gradient    : #404040;
+    --spotify_bottom_gradient : #282828;
+    --spotify_primary_text    : #ffffff;
+    --spotify_secondary_text  : #b3b3b3;
+
+    --twitter_background      : #15202b;
+    --twitter_card            : #192734;
+    --twitter_hover           : #22303c;
+    --twitter_primary_text    : #ffffff;
+    --twitter_secondary_text  : #8899a6;
+
+    --facebook_background     : #18191a;
+    --facebook_card           : #242526;
+    --facebook_hover          : #3a3b3c;
+    --facebook_hover_light    : #3a3b3c64;
+    --facebook_primary_text   : #e4e6eb;
+    --facebook_secondary_text : #b0b3b8;
+
+    --youtube_background      : #181818;
+    --youtube_menu            : #212121;
+    --youtube_hover           : #3d3d3d;
+    --youtube_primary_text    : #ffffff;
+    --youtube_secondary_text  : #aaaaaa;
+
+    --medium_background       : #0a0a0a;
+    --medium_menu             : #212121;
+    --medium_primary_text     : #ffffff;
+    --medium_secondary_text   : #aaaaaa;
+
+    --iphone_background       : #000000;
+    --iphone_card_1           : #161618;
+    --iphone_card_2           : #212124;
+    --iphone_primary_text     : #ffffff;
+    --iphone_secondary_text   : #818181;
+    
+}
+
+:root.dark-theme {
+
+  --foreground           : var(--facebook_primary_text);   /* text in posts, about, arquive list                */
+  --mid_ground           : var(--facebook_secondary_text); /* back to top button on left bottom (#back-to-top) + side bar footer (#footer .copyright) + next and previous buttons */
+  --background           : var(--facebook_background);     /* Top menu + content area - facebook background     */
+  --background_body      : var(--facebook_card);           /* Side bar with icon, title, social media links, recent posts, tags, about */
+  --dark_gray            : var(--facebook_hover);          /* ?                                                 */
+  --dark_gray_2          : var(--facebook_secondary_text); /* bold, strong for titles and subtitles in side bar */
+  --dark_gray_alpha      : var(--facebook_hover);          /* borders and separators                            */
+  --dark_gray_alpha_2    : var(--facebook_hover_light);          /* background of search boxes, code                  */
+  --active_button        : var(--facebook_hover);          /* share icon buttons - .share-btn:active            */
+  --share_btn            : var(--facebook_hover);          /* border below share buttons - box-shadow           */
+  --content_border       : var(--mask_red_1);              /* links and author name                             */
+  --hover_alpha          : var(--facebook_hover);          /* selection background of button pressed            */
+  --hover                : var(--mask_red_0);              /* button and link hover                             */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root, :root.dark-theme {
+
+    --foreground           : var(--facebook_primary_text);   /* text in posts, about, arquive list                */
+    --mid_ground           : var(--facebook_secondary_text); /* back to top button on left bottom (#back-to-top) + side bar footer (#footer .copyright) + next and previous buttons */
+    --background           : var(--facebook_background);     /* Top menu + content area - facebook background     */
+    --background_body      : var(--facebook_card);           /* Side bar with icon, title, social media links, recent posts, tags, about */
+    --dark_gray            : var(--facebook_hover);          /* ?                                                 */
+    --dark_gray_2          : var(--facebook_secondary_text); /* bold, strong for titles and subtitles in side bar */
+    --dark_gray_alpha      : var(--facebook_hover);          /* borders and separators                            */
+    --dark_gray_alpha_2    : var(--facebook_hover_light);          /* background of search boxes, code                  */
+    --active_button        : var(--facebook_hover);          /* share icon buttons - .share-btn:active            */
+    --share_btn            : var(--facebook_hover);          /* border below share buttons - box-shadow           */
+    --content_border       : var(--mask_red_1);              /* links and author name                             */
+    --hover_alpha          : var(--facebook_hover);          /* selection background of button pressed            */
+    --hover                : var(--mask_red_0);              /* button and link hover                             */
+  }
+}
+
+/* Original  
+  :root {
+    --foreground           : #000000;
+    --mid_ground           : #aaaaaa;
+    --background           : #ffffff;
+    --background_body      : #f4f4f4;                     * change to background *
+    --dark_gray            : #646464;
+    --dark_gray_2          : #3c3b3b;                     * bold, strong *
+    --dark_gray_alpha      : rgba(160, 160, 160, 0.3);
+    --dark_gray_alpha_2    : rgba(160, 160, 160, 0.075);
+    --active_button        : #e2e2e2;
+    --hover_alpha          : rgba(46, 186, 174, 0.05);
+    --hover                : #2ebaae;
+    --btn_twitter          : #55acee;
+    --btn_google-plus      : #dd4b39;
+    --btn_facebook         : #3B5998;
+    --btn_linkedin         : #4875B4;
+    --btn_stumbleupon      : #EB4823;
+    --btn_reddit           : #ff5700;
+    --btn_email            : #444444;
+    --btn_twitter_hover    : #4c9ad6; 
+    --btn_google-plus_hover: #c64333;
+    --btn_facebook_hover   : #2f4779;
+    --btn_linkedin_hover   : #4069a2;
+    --btn_stumbleupon_hover: #d3401f;
+    --btn_reddit_hover     : #e54e00;
+    --btn_email_hover      : #363636;
+    --share_btn            : rgba(0,0,0,0.2);
+    --content_border       : rgba(160,160,160,.65);       * change to dark_gray or dark_gray_alpha_2?*
+    
+  }
+*/
