@@ -6,11 +6,704 @@
     <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 10 Sep 2022 19:24:59 +0100</pubDate>
-    <lastBuildDate>Sat, 10 Sep 2022 19:24:59 +0100</lastBuildDate>
+    <pubDate>Sun, 9 Oct 2022 12:33:03 +0100</pubDate>
+    <lastBuildDate>Sun, 9 Oct 2022 12:33:03 +0100</lastBuildDate>
 
     <item>
-      <title>Tutorial: Publishing your own Github blog</title>
+      <title>Tutorial: Publishing your own Github blog (Part 2)</title>
+      <link>https://hmf.github.io/tech4rd//blog/2020/mill/jbake/mill_mdoc_part_2.html</link>
+      <pubDate>Sun, 9 Oct 2022 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_2.html</guid>
+      	<description>
+	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir, Fontawesome, stackoverflow ---&gt; &lt;!--  cSpell:ignore stumbleupon, darkmode, rootpath ---&gt; &lt;!-- https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown --&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; 
+&lt;style&gt;
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+b { color: Blue }
+&lt;/style&gt; 
+&lt;h1&gt;Introduction&lt;/h1&gt; 
+&lt;p&gt;In the &lt;a href=&quot;./mill_mdoc_part_1.md&quot;&gt;first part of this series&lt;/a&gt; of articles we looked at how to setup a &lt;a href=&quot;https://jbake.org/&quot;&gt;JBake&lt;/a&gt; site using the &lt;a href=&quot;https://github.com/com-lihaoyi/mill&quot;&gt;Mill&lt;/a&gt; build tool (&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill documentation&lt;/a&gt;) to develop and execute the required scripts to generate and publish the content. The goal now is to prepare the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt; that is not one of the default templates of JBake. After reading this article, you will able to use other templates that are freely available in the Internet. In this article, I assume you have read and worked through the previous post. In particular, you have a &lt;a href=&quot;https://github.com/hmf/blog&quot;&gt;private Github repository&lt;/a&gt; that holds your website&apos;s sources, a &lt;a href=&quot;https://github.com/hmf/tech4rd&quot;&gt;public Github repository&lt;/a&gt; configured with its own &lt;a href=&quot;https://hmf.github.io/tech4rd/&quot;&gt;Github pages URL&lt;/a&gt; and a Mill &lt;code&gt;build.sc&lt;/code&gt; script with the &lt;code&gt;site&lt;/code&gt; module and respective Mill targets to copy, &lt;em&gt;&quot;bake&quot;&lt;/em&gt; and deploy your website&apos;s sources.&lt;/p&gt; 
+&lt;h1&gt;Getting started&lt;/h1&gt; 
+&lt;p&gt;We will first initialize our source repository to hold a copy of the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt; executing the following command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;~/VSCodeProjects/blog$ ./mill -i site.jbakeGitTemplate
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Output&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;[3/3] site.jbakeGitTemplate 
+jbakeGitTemplate: Git source at &quot;https://github.com/manikmagar/jbake-future-imperfect-template.git&quot;
+jbakeGitTemplate: check if Git repo at /home/user/VSCodeProjects/blog
+Git command at &quot;/home/user/VSCodeProjects/blog/site&quot; remove &quot;/home/user/VSCodeProjects/blog/site/src&quot;
+Git clone command at &quot;/home/user/VSCodeProjects/blog/site&quot; with relative destination to &quot;src&quot;
+Cloning into &apos;src&apos;...
+remote: Enumerating objects: 775, done.
+remote: Total 775 (delta 0), reused 0 (delta 0), pack-reused 775
+Receiving objects: 100% (775/775), 2.19 MiB | 2.06 MiB/s, done.
+Resolving deltas: 100% (470/470), done.
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;We can then serve the website&apos;s pages locally and see the site&apos;s content with this command:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;~/VSCodeProjects/blog$ ./mill -i site.jbakeServe
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Next we &lt;em&gt;bake&lt;/em&gt; and publish the content to the &lt;a href=&quot;https://github.com/hmf/tech4rd&quot;&gt;public Github repository&lt;/a&gt; as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;~/VSCodeProjects/blog$ ./mill -i site.jbakeDeploy
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Output:&lt;/p&gt; 
+&lt;blockquote&gt; 
+ &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;[9/10] site.jbakeCopy 
+Copying site from &apos;/home/user/VSCodeProjects/blog/out/site/jbake.dest&apos; to &apos;/home/user/VSCodeProjects/tech4rd/docs&apos;
+[10/10] site.jbakeDeploy 
+Git command at /home/user/VSCodeProjects/tech4rd
+pushSite: commit message = &apos;2022-05-21T14:37:16.591502@/home/user/VSCodeProjects/blog/site/build.sc/pushSite}: &apos;
+pushSite: add
+pushSite: commit
+pushSite: push
+Enumerating objects: 47, done.
+Counting objects: 100% (47/47), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (24/24), 3.19 KiB | 1.06 MiB/s, done.
+Total 24 (delta 16), reused 0 (delta 0)
+remote: Resolving deltas: 100% (16/16), completed with 15 local objects.
+To https://github.com/hmf/tech4rd.git
+   c4254b3..10424e6  main -&amp;gt; main
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;/blockquote&gt; 
+&lt;p&gt;and view them in the remote &lt;a href=&quot;https://hmf.github.io/tech4rd/&quot;&gt;Github pages&lt;/a&gt;. It is best to modify and check your website&apos;s content locally. Only when all is correct, do we publish to the remote public site. I will use the following workflow:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Execute the &lt;code&gt;./mill -i site.jbakeServe&lt;/code&gt;;&lt;/li&gt; 
+ &lt;li&gt;Open your browser at the &lt;a href=&quot;http://localhost:8820/&quot;&gt;local URL&lt;/a&gt;:&lt;/li&gt; 
+ &lt;li&gt;Make sure to clear the browser&apos;s cache to see the latest changes;&lt;/li&gt; 
+ &lt;li&gt;Check that the website content is correct;&lt;/li&gt; 
+ &lt;li&gt;If the content is not correct, change the site&apos;s sources. These will be automatically compiled and copied to the local HTTP browser&apos;s folder. The web server will detect the changes and serve the new content;&lt;/li&gt; 
+ &lt;li&gt;Repeat the above process until you have what you want. At this point you can execute the &lt;code&gt;./mill -i site.jbakeDeploy&lt;/code&gt; command;&lt;/li&gt; 
+ &lt;li&gt;You can now confirm that the content has been correctly published in the remote public website.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Just a note on cleaning the cache. I use the &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/browsers/&quot;&gt;Firefox browser&lt;/a&gt;. To &lt;a href=&quot;https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox&quot;&gt;clear the cache&lt;/a&gt;, I select the striped menu icon on the top right corner of the window. I then select &lt;code&gt;history&lt;/code&gt;, followed by &lt;code&gt;clear recent history&lt;/code&gt;. A dialogue box will open. Select the option &lt;code&gt;time range to clear&lt;/code&gt; to &lt;code&gt;last hour&lt;/code&gt; and click &lt;code&gt;Ok&lt;/code&gt;. You will have to repeat this process every time you make changes to the website&apos;s content.&lt;/p&gt; 
+&lt;p&gt;We are now ready to configure and contribute content to the site.&lt;/p&gt; 
+&lt;h1&gt;Initial housekeeping&lt;/h1&gt; 
+&lt;p&gt;The template comes with a number of assets such as icons, images, cascading style sheets (CSS) and FreeMarker templates that gives the site its look and feel. It also provides a set of menu options and default entries, including social media links and an &lt;em&gt;&quot;about&quot;&lt;/em&gt; page that need to be changed, so that, it contains the information relevant to the website&apos;s content. We must first change these in order to &quot;brand&quot; our site with a specific look and feel.&lt;/p&gt; 
+&lt;h2&gt;Icons and avatars&lt;/h2&gt; 
+&lt;p&gt;The first step in branding your site is to change the icons. For my public site, I searched for an icon of my liking in several free online resources. I found the &lt;a href=&quot;https://icons8.com/icon/4MRMs77EDvrv/iron-man&quot;&gt;Iron Man&lt;/a&gt; icon by &lt;a href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt; to be a good choice. You should select or design you own icons with a size of at least 128 x 128 pixels. There are 3 icons one should change. The first is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Favicon&quot;&gt;favicon&lt;/a&gt; that is located in the &lt;code&gt;site/src/assets/img/favicon/favicon.png&lt;/code&gt; file.&lt;/p&gt; 
+&lt;p&gt;Originally is was a 75 x 75 PNG image. I downloaded the icon, scaled it from 512 x 512 pixels down to a 75 x 75 pixel image and replaced the original file indicated above. If you refresh your browser, you should see the new icon, shown below, in your browser&apos;s tab:&lt;/p&gt; &lt;!-- Use a copy of the assets in case we change the site. Retains validity of article --&gt; &lt;!-- Following link ok for local and remote host servers                              --&gt; &lt;!-- ![site/src/assets/img/main/favicon.png](./../../../../img/favicon/favicon.png)   --&gt; &lt;!-- Net URL fails in JBake&apos;s served localhost because the double slash is not handled 
+     by JBake&apos;s HTTP server. Some servers are configured to collapse duplicate forward 
+     slashes to a single one. So this is not an issue                                 --&gt; &lt;!-- ![site/src/assets/img/main/favicon.png](./assets/img/favicon/favicon.png)        --&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/favicon/favicon.png&quot; alt=&quot;site/src/assets/img/main/favicon.png&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;The next icon is used for the the small image located on the top right of each post. The source image is found in the &lt;code&gt;site/src/assets/img/main/icon.png&lt;/code&gt; file. This is also a 75 x 75 PNG image, so I simply removed the original, copied my favicon to the folder and renamed it to &lt;code&gt;avatar.png&lt;/code&gt;. You should now see the icon below appear on each post (remember to clear the cache first):&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/avatar.png&quot; alt=&quot;site/src/assets/img/main/avatar.png&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;The final image is the larger avatar found in the left sidebar just above the blog&apos;s title. This was originally a 128 x 128 PNG image. I took the same icon, scaled it from 512 x 512 pixels down to a 128 x 128 pixel image and replaced the original file named &lt;code&gt;icon.png&lt;/code&gt;. If you refresh your browser, you should see the new icon, shown below, in your browser&apos;s tab (remember to clear the cache first):&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/icon.png&quot; alt=&quot;site/src/assets/img/main/icon.png&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;Our next stop is the JBake configuration file:&lt;/p&gt; 
+&lt;p&gt;&lt;a href=&quot;./jbake.properties&quot;&gt;site/src/jbake.properties&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The template uses many of the Jbake default properties found in this file. This configuration file also includes many other properties used by the FreeMarker templates. Changes to the Jbake configuration (properties) file are not detected by the JBake serve command. Whenever you make changes to this file you have to restart the &lt;code&gt;jbakeServe&lt;/code&gt; command. Use the &lt;code&gt;Ctrl-C&lt;/code&gt; key combination to stop the HTTP server and repeat the JBake serve command.&lt;/p&gt; 
+&lt;p&gt;We will start off by changing the sites URL, title, author name and avatar icon as shown below:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;site.host=https://hmf.github.io/tech4rd/
+site.title=Tech 4 R&amp;amp;D
+
+site.author=Hugo Ferreira
+site.author.avatar=img/main/avatar.png
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;site.host&lt;/code&gt; is automatically replaced when local serving is used with the &lt;code&gt;http://localhost:8820/&lt;/code&gt; URL.&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;site.title&lt;/code&gt; is the title that appears on the top left corner (left of the menu option).&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We don&apos;t change any of the menu&apos;s or their respective &lt;a href=&quot;https://fontawesome.com/&quot;&gt;Fontawesome icons&lt;/a&gt;. For example, the &lt;a href=&quot;https://fontawesome.com/v4/icon/user&quot;&gt;user icon&lt;/a&gt; is used in the &quot;about&quot; menu option.&lt;/p&gt; 
+&lt;p&gt;The side bar icon (&lt;code&gt;icon.png&lt;/code&gt;) referred to above, can be placed either in a circle or a hexagonal shape. One can set the JBake properties to use one of these shapes or none, by changing several variables. These variables, shown in the section below, are used in the &lt;a href=&quot;./local_templates/commons/sidebar.ftl&quot;&gt;sidebar.ftl&lt;/a&gt; template. Here are the values I set:&lt;/p&gt; 
+&lt;pre&gt;&lt;code&gt;sidebar.intro.pic.src = img/main/icon.png
+# modify your picture in the shape of a circle or
+# future imperfect&apos;s hexagonal shape
+sidebar.intro.pic.circle    = false
+sidebar.intro.pic.imperfect = false
+sidebar.intro.pic.width     = 75px
+sidebar.intro.pic.alt       = Tech 4 R&amp;amp;D
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;If we opt to use either one of these shapes, then the icon is set as a link to the site&apos;s root. If not, then only the image is used. The &lt;a href=&quot;./local_templates/commons/sidebar.ftl&quot;&gt;&lt;code&gt;sidebar.ftl&lt;/code&gt;&lt;/a&gt; uses, for example, the &lt;code&gt;intro-circle&lt;/code&gt; property that is defined in the &lt;a href=&quot;./copy_assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; CSS file. This property sets the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius&quot;&gt;border-radius&lt;/a&gt;. Note that besides the circle&apos;s background colour, an SVG image of a hexagon (future imperfect&apos;s hexagonal shape) is also set behind the icon. When setting the colours we can also set both these background colours. Below, I provide additional information on this. However, for a simple dark mode colour scheme, I have opted to use no background shapes.&lt;/p&gt; 
+&lt;p&gt;I did notice the following though:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;The picture width has no effect if either or both &lt;code&gt;pic.circle&lt;/code&gt; and &lt;code&gt;pic.imperfect&lt;/code&gt; are set to true (see &lt;code&gt;#intro .logo img&lt;/code&gt; in &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt;);&lt;/li&gt; 
+ &lt;li&gt;If you set &lt;code&gt;pic.circle&lt;/code&gt; to true then &lt;code&gt;pic.imperfect&lt;/code&gt; will automatically be activated, even if you set it to false;&lt;/li&gt; 
+ &lt;li&gt;Because you cannot change the icon size, if the image covers most of the square, then the background can make the image less aesthetically pleasing.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;The icon&apos;s size is set in the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file via the following CSS snippet:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;		#intro .logo img {
+			display: block;
+			margin-left: -0.25em;
+			width: 4.5em;
+		}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;One could of course tweak the size by using a variable for &lt;code&gt;width&lt;/code&gt;, but at this point I left it as it was.&lt;/p&gt; 
+&lt;p&gt;Below the icon we have a title, subtitle and &lt;em&gt;&quot;about&quot;&lt;/em&gt; blurb that can also be set in the configuration file. Here are the values I have set:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;sidebar.intro.header =Tech 4 R&amp;amp;D
+sidebar.intro.summary =A technical blog on all things software and hardware.
+sidebar.intro.about =A blog with technical articles on programming\\, software engineering\\, artificial intelligence and electronics.
+sidebar.intro.about.learnMore=about.html
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that we need to &lt;a href=&quot;https://stackoverflow.com/questions/67482008/jbake-freemarker-errror-this-has-evaluated-to-a-sequence-wrapper-f-t-simplese&quot;&gt;escape the commas&lt;/a&gt; with the double backslash (&lt;code&gt;\\,&lt;/code&gt;), otherwise the parsing fails.&lt;/p&gt; 
+&lt;p&gt;The next step is to fill in your &lt;a href=&quot;/about.html&quot;&gt;&lt;em&gt;&quot;about&quot;&lt;/em&gt; page&lt;/a&gt;, which is a raw HTML file. As per the JBake documentation, all raw HTML or Markdown files must have a &lt;a href=&quot;https://jbake.org/docs/2.6.7/#metadata_header&quot;&gt;metadata header&lt;/a&gt; that looks something like this:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;title=Weekly Links #2
+date=2013-02-01
+type=post
+tags=weekly links, java
+status=published
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that we must have at least the &lt;code&gt;status&lt;/code&gt; and &lt;code&gt;type&lt;/code&gt; fields in the header. If you have defined a default &lt;code&gt;status&lt;/code&gt; value in your configuration file, then you need not add it to the header. Here is an example of the header I used:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;title=About
+date=2022-05-25
+type=page
+status=published
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;A small note on the content of the &lt;em&gt;&quot;about&quot;&lt;/em&gt; file. Because it is raw HTML (we could have used another format such as Markdown or AsciiDoc by simply changing the &lt;code&gt;sidebar.intro.about.learnMore&lt;/code&gt; configuration value), the contents may be any HTML snippet you want. The original was just text. I opted to write several paragraphs and so used the following HTML snippet to correctly justify the paragraphs:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;p style=&quot;text-align: justify;&quot;&amp;gt;
+  Example text in a formatted paragraph.
+&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Social media&lt;/h2&gt; 
+&lt;p&gt;The port of the &lt;em&gt;Future Imperfect&apos;s&lt;/em&gt; &lt;a href=&quot;http://html5up.net/&quot;&gt;HTML5 UP&lt;/a&gt; template also provides links with icons to several well-known social media outlets that can be set via the configuration file. Here are the values I used in my case:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;sidebar.social.github          = hmf
+sidebar.social.medium          = hugo6ferreira
+sidebar.social.linkedin        = hugo-ferreira-289a4251
+sidebar.social.stackoverflow   = 2051561
+sidebar.social.reddit          =
+sidebar.social.twitter         = 
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that we should only provide the user&apos;s identifier. The correct URL will be used by the template.&lt;/p&gt; 
+&lt;h1&gt;Color scheme&lt;/h1&gt; 
+&lt;p&gt;Setting up your colour scheme or pallet for your site is important for branding. It sets the look and feel of the website. If you look through the CSS files in the assets folder, you will see many colours defined by value. This makes adapting the current template difficult and time consuming. So the first step was to define a set of colours in a separate CSS file named &lt;a href=&quot;./copy_assets/css/theme.css&quot;&gt;&lt;code&gt;theme.css&lt;/code&gt;&lt;/a&gt; with all the existing colours found in the other CSS files. These were defined using CSS variables. I then replaced each and every colour in the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;main.css&lt;/a&gt; and &lt;a href=&quot;./copy_assets/css/add-on.css&quot;&gt;add-on.css&lt;/a&gt; files, with the corresponding variables of the &lt;code&gt;theme.css&lt;/code&gt; file. Here is an example of the variables that I used:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;:root {
+    --red         : #ff0000;
+    --persian-red : #d1342fff;
+    --green       : #00ff00;
+    --greenyellow : #ADFF2F;
+
+
+    /* text in posts, about, arquive list                */
+    --foreground           : var(--blue_primary_text);
+    /* back to top button on left bottom (#back-to-top), side bar footer (#footer .copyright), next and previous buttons */
+    --mid_ground           : var(--blue_secondary_text);
+    /* Top menu + content area - facebook background     */
+    --background           : var(--blue_background);    
+    /* Side bar with icon, title, social media links, recent posts, tags, about */
+    --background_body      : var(--blue_card);          
+    /* ?                                                 */
+    --dark_gray            : var(--blue_hover);         
+    /* bold, strong for titles and subtitles in side bar */
+    --dark_gray_2          : var(--blue_secondary_text);
+    /* borders and separators                            */
+    --dark_gray_alpha      : var(--blue_hover);          
+    /* background of search boxes                        */
+    --dark_gray_alpha_2    : var(--blue_hover);          
+    /* share icon buttons - .share-btn:active            */
+    --active_button        : var(--blue_hover);          
+    /* border below share buttons - box-shadow           */
+    --share_btn            : var(--blue_hover);          
+    /* links and author name                             */
+    --content_border       : var(--mask_b_red_1);        
+    /* selection background of button pressed            */
+    --hover_alpha          : var(--blue_hover);          
+    /* button and link hover, text area borders          */
+    --hover                : var(--mask_b_red_2);        
+
+    /* share links */
+    --btn_twitter          : #55acee;
+    --btn_google-plus      : #dd4b39;
+    --btn_facebook         : #3B5998;
+    --btn_linkedin         : #4875B4;
+    --btn_stumbleupon      : #EB4823;
+    --btn_reddit           : #ff5700;
+    --btn_email            : #444444;
+    --btn_twitter_hover    : #4c9ad6; 
+    --btn_google-plus_hover: #c64333;
+    --btn_facebook_hover   : #2f4779;
+    --btn_linkedin_hover   : #4069a2;
+    --btn_stumbleupon_hover: #d3401f;
+    --btn_reddit_hover     : #e54e00;
+    --btn_email_hover      : #363636;
+    
+    /* Icon mask + Dark reader colours */
+    --mask_red_0           : #e494fc;
+    --mask_red_1           : #cf3eff;
+    --mask_red_2           : #9e41ef;
+    --mask_red_3           : #7d4dfb;
+    --mask_red_4           : #525afb;
+    --mask_red_5           : #2e72ff;
+    --mask_red_6           : #3262f6;
+    --mask_red_7           : #23438f;
+    --light_background     : #1e2122;
+    --dark_background_0    : #181a1b;
+    --dark_background_1    : #191b1c;
+    --light_foreground_0   : #e8e6e3;
+    --light_foreground_1   : #cdcbc9;
+    --dark_foreground      : #979796;
+
+    /* Blue pallet */
+    /* 5 */
+    --blue_background         : #bfd9ec; 
+    --blue_card               : #8fb9d7; 
+    --blue_hover              : #a3bacb; 
+    --blue_primary_text       : #153f6f; 
+    --blue_secondary_text     : #0c4480; 
+    /* +2 */
+    --mask_b_red_0           : #c3848f;
+    --mask_b_red_1           : #b46572;
+    --mask_b_red_2           : #a84858;
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that some of the variables are defined indirectly via another set of variables. More concretely one can observe, for example, that the &lt;code&gt;--foreground&lt;/code&gt; variable that is used in the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file, is set to the value of the variable &lt;code&gt;--blue_primary_text&lt;/code&gt;. This has allowed me use simple colour schemes of 5 + 2 colours defined in the &lt;a href=&quot;./copy_assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; and map only those to a larger set of colours that were used in the original template. To set up your own pallet, just define and map those variables to the colour combination of your choice. Note that the &lt;em&gt;&quot;+2&quot;&lt;/em&gt; colours set the borders that signal selected components via clicks (&lt;code&gt;--content_border&lt;/code&gt;) or hovering (&lt;code&gt;--hover&lt;/code&gt;). I kept the original colours of the &quot;share link&quot; icons.&lt;/p&gt; 
+&lt;p&gt;One functionality I added to the template, was the automated selection of a &lt;em&gt;&quot;dark mode&quot;&lt;/em&gt; colour scheme based on the user&apos;s preference. A problem with this, is that the colours visibility and user&apos;s perception of these colours will change based on the contrast provided by the selected colour schemes. Even though it is advisable to change several other properties to solve possible issues with the &lt;em&gt;&quot;dark mode&quot;&lt;/em&gt; colour pallets, I only encountered problems with the underlining of the links and author name. To make these more visible I simply increase the line&apos;s thickness from &lt;code&gt;1px&lt;/code&gt; to &lt;code&gt;2px&lt;/code&gt; in the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file. Here are the changes I made:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;		.author .name {
+			-moz-transition: border-bottom-color 0.2s ease;
+			-webkit-transition: border-bottom-color 0.2s ease;
+			-ms-transition: border-bottom-color 0.2s ease;
+			transition: border-bottom-color 0.2s ease;
+			border-bottom: dotted 2px var(--content_border);
+			display: block;
+			margin: 0 1.5em 0 0;
+		}
+
+
+	a {
+		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+		transition: color 0.2s ease, border-bottom-color 0.2s ease;
+		border-bottom: dotted 2px var(--content_border);
+		color: inherit;
+		text-decoration: none;
+	}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Recall that we can set the side bar icon (&lt;code&gt;icon.png&lt;/code&gt;) via the Jbake properties file. This allows us to place either a circle or a hexagonal shape under the icon. The colours of the shape are defined in two places. The first is set by the &lt;code&gt;.intro-circle&lt;/code&gt; class that is configured in the &lt;a href=&quot;./copy_assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;#intro .intro-circle {
+    border-radius: 50%;
+}
+
+#intro .intro-circle {
+    border-radius: 50%;
+    background-color: var(--intro_logo_color);
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;In this case I created and used the &lt;code&gt;--intro_logo_color&lt;/code&gt; variable. The second is set by the &lt;code&gt;.logo:before&lt;/code&gt; class defined in the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;		#intro .logo:before {
+			background-image: url(&quot;data:image/svg+xml;charset=utf8,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; width=&apos;100px&apos; height=&apos;100px&apos; viewBox=&apos;0 0 100 100&apos; preserveAspectRatio=&apos;none&apos; zoomAndPan=&apos;disable&apos;%3E%3Cpolygon points=&apos;0,0 100,0 100,25 50,0 0,25&apos; style=&apos;fill:%23f4f4f4&apos; /%3E%3Cpolygon points=&apos;0,100 100,100 100,75 50,100 0,75&apos; style=&apos;fill:%23f4f4f4&apos; /%3E%3C/svg%3E&quot;);
+			background-position: top left;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			content: &apos;&apos;;
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that the hexagon&apos;s &lt;code&gt;background-image&lt;/code&gt; colour is hardcoded to &lt;code&gt;#f4f4f4&lt;/code&gt;. To be able to change the colour dynamically, I defined the &lt;code&gt;--intro_logo_shape&lt;/code&gt; variable in the &lt;a href=&quot;./copy_assets/css/theme.css&quot;&gt;&lt;code&gt;theme.css&lt;/code&gt;&lt;/a&gt; file as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;  :root{
+
+      --intro_logo_shape: url(&quot;data:image/svg+xml;charset=utf8,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; width=&apos;100px&apos; height=&apos;100px&apos; viewBox=&apos;0 0 100 100&apos; preserveAspectRatio=&apos;none&apos; zoomAndPan=&apos;disable&apos;%3E%3Cpolygon points=&apos;0,0 100,0 100,25 50,0 0,25&apos; style=&apos;fill:%230000ff&apos; /%3E%3Cpolygon points=&apos;0,100 100,100 100,75 50,100 0,75&apos; style=&apos;fill:%230000ff&apos; /%3E%3C/svg%3E&quot;);
+
+  }
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;and then used that variable in the in the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file as follows:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;		#intro .logo:before {
+			background-image: var(--intro_logo_shape);
+			background-position: top left;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			content: &apos;&apos;;
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;So now, by setting the appropriate colours in the &lt;a href=&quot;./copy_assets/css/theme.css&quot;&gt;&lt;code&gt;theme.css&lt;/code&gt;&lt;/a&gt; file, we can have the desired background behind the logo. I finally decided &lt;strong&gt;not&lt;/strong&gt; to do it because: a) I could not find a good combination of colours for the pallets I selected and b) the hexagon shape is too &quot;tight&quot; and the result is less aesthetically appealing (maybe I could increase the &lt;code&gt;background-size&lt;/code&gt; to solve this). However, you are free to change the template as you wish.&lt;/p&gt; 
+&lt;h2&gt;Dark Mode&lt;/h2&gt; 
+&lt;p&gt;Dark mode allows one to select a colour pallet that uses a dark background and light foreground. A user may opt for the dark mode in the following 3 ways:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Select the dark mode in operating system;&lt;/li&gt; 
+ &lt;li&gt;Select the dark mode in the web browser;&lt;/li&gt; 
+ &lt;li&gt;Select the dark mode in the web application;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;The web browser (also referred to as an agent) can detect whether the dark mode has been selected in the operating system or in the web browser. This option can be detected via the CSS media feature &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme&quot;&gt;&lt;code&gt;prefers-color-scheme&lt;/code&gt;&lt;/a&gt;. With this feature we can automatically activate the dark mode according to the user&apos;s choice. So how does this work? This solution is based on some other examples I came across in the Internet (&lt;a href=&quot;https://codepen.io/adhuham/pen/BaNroxd&quot;&gt;example1&lt;/a&gt;, &lt;a href=&quot;https://codepen.io/tutsplus/pen/MWpwZZZ&quot;&gt;example2&lt;/a&gt;. See &lt;a href=&quot;https://tutsplus.com/authors/jemima-abu&quot;&gt;Jemima Abu&apos;s&lt;/a&gt; good &lt;a href=&quot;https://webdesign.tutsplus.com/tutorials/color-schemes-with-css-variables-and-javascript--cms-36989&quot;&gt;article&lt;/a&gt; for more details.&lt;/p&gt; 
+&lt;p&gt;Let&apos;s work work through a simple example. Assume we have the following HTML snippet that we want to show via light mode or dark mode:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;button class=&quot;btn-toggle&quot;&amp;gt;Toggle Dark-Mode&amp;lt;/button&amp;gt;
+&amp;lt;h1&amp;gt;Hey there! This is just a title&amp;lt;/h2&amp;gt;
+  &amp;lt;p&amp;gt;I am just a boring text, existing here solely for the purpose of this demo&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;And I am just another one like the one above me, because two is better than having only one&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;To be able to select the dark mode we need only use the following CSS file:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;:root {
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bkg-color);
+}
+
+h1,
+p {
+  color: var(--text-color);
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/:root&quot;&gt;&lt;code&gt;:root&lt;/code&gt;&lt;/a&gt; is a pseudo-class that matches the root element of the document. This means that &lt;code&gt;:root&lt;/code&gt; represents the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; elements with a &lt;code&gt;html&lt;/code&gt; selector. Because it has the highest specificity, all elements within the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element will be selected unless overridden by a more specific selector. This selector is also visible to all other selectors in the CSS files. So in the case above, the variables &lt;code&gt;--text-color&lt;/code&gt; and &lt;code&gt;--bkg-color&lt;/code&gt; will be assigned to the &lt;code&gt;body&lt;/code&gt;, &lt;code&gt;h1&lt;/code&gt; and &lt;code&gt;p&lt;/code&gt; selectors. As a result, all of the matched elements in the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element and its descendants, will be selected, and hence the colours defined by these variables will be used by default.&lt;/p&gt; 
+&lt;p&gt;If a user selects the dark mode, we need only redefine the &lt;code&gt;:root&lt;/code&gt; pseudo-class with new content. The &lt;code&gt;@media (prefers-color-scheme: dark)&lt;/code&gt; simply checks if the dark mode has been selected and redefines the colour variables. The selectors thereafter will automatically use the new dark mode colour scheme. So the HTML file is always rendered with the &lt;code&gt;:root&lt;/code&gt; variables, but the values of those variables will changed according to the user&apos;s preference in the operating system or web browser.&lt;/p&gt; 
+&lt;p&gt;In the &lt;a href=&quot;./copy_assets/css/theme.css&quot;&gt;&lt;code&gt;theme.css&lt;/code&gt;&lt;/a&gt; file I initially used this strategy. However, I later added the possibility for the user to interactively set this option in the web application - the static website. This required some minor changes and is explained in the next section. Here is an example of overriding the colour scheme to use dark mode when selected by the OS or web browser:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    /* text in posts, about, arquive list                */
+    --foreground           : var(--facebook_primary_text);   
+    /* back to top button on left bottom (#back-to-top), side bar footer (#footer .copyright), next and previous buttons */
+    --mid_ground           : var(--facebook_secondary_text); 
+    /* Top menu + content area - facebook background     */
+    --background           : var(--facebook_background);    
+     /* Side bar with icon, title, social media links, recent posts, tags, about */ 
+    --background_body      : var(--facebook_card);          
+    /* ?                                                 */
+    --dark_gray            : var(--facebook_hover);          
+    /* bold, strong for titles and subtitles in side bar */
+    --dark_gray_2          : var(--facebook_secondary_text); 
+    /* borders and separators                            */
+    --dark_gray_alpha      : var(--facebook_hover);          
+    /* background of search boxes                        */
+    --dark_gray_alpha_2    : var(--facebook_hover);          
+    /* share icon buttons - .share-btn:active            */
+    --active_button        : var(--facebook_hover);          
+    /* border below share buttons - box-shadow           */
+    --share_btn            : var(--facebook_hover);          
+    /* links and author name                             */
+    --content_border       : var(--mask_red_1);              
+    /* selection background of button pressed            */
+    --hover_alpha          : var(--facebook_hover);          
+    /* button and link hover                             */
+    --hover                : var(--mask_red_0);              
+  }
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h2&gt;Adding a Dark Mode application selector&lt;/h2&gt; 
+&lt;p&gt;Some users are not aware of the dark mode option, don&apos;t want to have the trouble to change it, or simply want to use the dark mode at the application level. To change this at the application level, I added a checkbox on the top menu and a script, which checks for events on this checkbox and changes the colour pallet accordingly. All of the JS scripts used by the website are added by the &lt;a href=&quot;./local_templates/footer.ftl&quot;&gt;&lt;code&gt;footer.ftl&lt;/code&gt;&lt;/a&gt; template file. The idea is to load the script when the rest of the page content has loaded. The user will have the perception that the page has finished loading, when indeed it is still loading the scripts. Here is the line I added:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;		&amp;lt;script src=&quot;&amp;lt;#if (content.rootpath)??&amp;gt;${content.rootpath}&amp;lt;#else&amp;gt;&amp;lt;/#if&amp;gt;js/darkmode.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Then I added the following code to the &lt;a href=&quot;./copy_assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;$(function(){
+	const btn = document.getElementById(&quot;mode_checkbox&quot;);
+	const btn = document.getElementById(&quot;mode_checkbox&quot;);
+	const prefersDarkScheme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+	
+	const currentTheme = localStorage.getItem(&quot;theme&quot;);
+	if (currentTheme == &quot;dark&quot;) {
+		document.documentElement.className = &quot;dark-theme&quot;;
+	} else if (currentTheme == &quot;light&quot;) {
+		document.documentElement.className = &quot;light-theme&quot;;
+	}
+	else {
+		// default
+		if (prefersDarkScheme.matches)
+			document.documentElement.className = &quot;dark-theme&quot;;  
+		else
+		  document.documentElement.className = &quot;light-theme&quot;;  
+	}
+	
+	btn.addEventListener(&quot;click&quot;, function () {
+		// Toggle
+		var theme = (document.documentElement.className == &quot;light-theme&quot;)
+				? &quot;dark&quot;
+				: &quot;light&quot;;
+		// Set new class
+		if (theme == &quot;light&quot;)
+			document.documentElement.className = &quot;light-theme&quot;;
+		else
+			document.documentElement.className = &quot;dark-theme&quot;;
+
+	  // Store mode
+		localStorage.setItem(&quot;theme&quot;, theme);
+	});
+		
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;The next step was to add the checkbox to the static website. The &lt;a href=&quot;./local_templates/menu.ftl&quot;&gt;&lt;code&gt;menu.ftl&lt;/code&gt;&lt;/a&gt; template sets up the top menu bar of the website. I changed one of the &lt;code&gt;nav&lt;/code&gt; elements to include this checkbox. Here is a snippet of the code I changed (&lt;code&gt;id==&quot;mode_checkbox&quot;&lt;/code&gt;):&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;    &amp;lt;nav class=&quot;main&quot;&amp;gt;
+        &amp;lt;ul&amp;gt;
+            &amp;lt;li&amp;gt;
+                &amp;lt;div&amp;gt;
+                    &amp;lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;mode_checkbox&quot;&amp;gt;
+                    &amp;lt;label for=&quot;mode_checkbox&quot; class=&quot;label&quot;&amp;gt;
+                        &amp;lt;div class=&apos;ball&apos;&amp;gt;
+                    &amp;lt;/label&amp;gt;
+                &amp;lt;/div&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;#if content.shareNav??&amp;gt;
+            &amp;lt;li id=&quot;share-nav&quot; class=&quot;share-menu&quot; style=&quot;display:none;&quot;&amp;gt;
+                &amp;lt;a class=&quot;fa-share-alt&quot; href=&quot;#share-menu&quot;&amp;gt;Share&amp;lt;/a&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;/#if&amp;gt;
+            &amp;lt;li class=&quot;search&quot;&amp;gt;
+                &amp;lt;a class=&quot;fa-search&quot; href=&quot;#search&quot;&amp;gt;Search&amp;lt;/a&amp;gt;
+                &amp;lt;form id=&quot;search&quot; method=&quot;get&quot; action=&quot;//google.com/search&quot;&amp;gt;
+                    &amp;lt;input type=&quot;text&quot; name=&quot;q&quot; placeholder=&quot;Search&quot; /&amp;gt;
+                    &amp;lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:${config.site_host}&quot;&amp;gt;
+                &amp;lt;/form&amp;gt;
+            &amp;lt;/li&amp;gt;
+            &amp;lt;li class=&quot;menu&quot;&amp;gt;
+                &amp;lt;a class=&quot;fa-bars&quot; href=&quot;#menu&quot;&amp;gt;Menu&amp;lt;/a&amp;gt;
+            &amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+    &amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;As a side note, I was unable to use the checkbox with the light/dark icons due to spacing and formatting issues. For the same reasons I was also unable to add a label. In addition to this, the checkbox was not centred correctly. I ended up leaving the default tick icon and changed the &lt;a href=&quot;./copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file slightly by removing the &lt;code&gt;margin-right&lt;/code&gt; property of the &lt;code&gt;input[type=&quot;checkbox&quot;]&lt;/code&gt; selector. Here is a snippet with the changes made:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;	input[type=&quot;checkbox&quot;],
+	input[type=&quot;radio&quot;] {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		display: block;
+		float: left;
+		/*margin-right: -2em;*/
+		opacity: 0;
+		width: 1em;
+		z-index: -1;
+	}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;As a result here is a preliminary version of the website with the original example content and the light color scheme that I selected. Note how the checkbox on the menu&apos;s right is selected:&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/screenshot_jbake_light_mode.png&quot; alt=&quot;light mode&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;This is the same website using the alternate dark mode colour pallet I selected. Note how the checkbox on the menu&apos;s right is not selected:&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/screenshot_jbake_dark_mode.png&quot; alt=&quot;dark mode&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;We will look at the details of how the script works by extending the simple example we used above. To recap, we want to change the colour scheme of the following HTML document:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;button class=&quot;btn-toggle&quot;&amp;gt;Toggle Dark-Mode&amp;lt;/button&amp;gt;
+&amp;lt;h1&amp;gt;Hey there! This is just a title&amp;lt;/h2&amp;gt;
+  &amp;lt;p&amp;gt;I am just a boring text, existing here solely for the purpose of this demo&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;And I am just another one like the one above me, because two is better than having only one&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;We now change the previous CSS file by adding the following two new &lt;code&gt;:root&lt;/code&gt; pseudo-classes:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;code&gt;:root.light-theme&lt;/code&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;:root.dark-theme&lt;/code&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;and have:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;:root,
+:root.light-theme {
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bkg-color);
+}
+
+h1,
+p {
+  color: var(--text-color);
+}
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Note that we still keep the default &lt;code&gt;:root&lt;/code&gt; so that even with no root class name, we still have a colour scheme.&lt;/p&gt; 
+&lt;p&gt;Essentially, I have added a &quot;selector&quot; to the pseudo-class. Note that the &lt;code&gt;:root&lt;/code&gt; selects the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; root and all its descendants. The &lt;code&gt;:root.filter&lt;/code&gt; simply adds &lt;code&gt;filter&lt;/code&gt; as the class of the root &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element. The code below allows the user to toggle between light and dark mode. Lets look at how it works.&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+const btn = document.querySelector(&quot;.btn-toggle&quot;);
+	const btn = document.getElementById(&quot;mode_checkbox&quot;);
+	const prefersDarkScheme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+	
+	const currentTheme = localStorage.getItem(&quot;theme&quot;);
+	if (currentTheme == &quot;dark&quot;) {
+		document.documentElement.className = &quot;dark-theme&quot;;
+	} else if (currentTheme == &quot;light&quot;) {
+		document.documentElement.className = &quot;light-theme&quot;;
+	}
+	else {
+		// default
+		if (prefersDarkScheme.matches)
+			document.documentElement.className = &quot;dark-theme&quot;;  
+		else
+		  document.documentElement.className = &quot;light-theme&quot;;  
+	}
+
+btn.addEventListener(&quot;click&quot;, function () {
+  // Toggle
+  var theme = (document.documentElement.className == &quot;light-theme&quot;)
+      ? &quot;dark&quot;
+      : &quot;light&quot;;
+  // Set new class
+  if (theme == &quot;light&quot;)
+    document.documentElement.className = &quot;light-theme&quot;;
+  else
+    document.documentElement.className = &quot;dark-theme&quot;;
+
+  // Store mode
+  localStorage.setItem(&quot;theme&quot;, theme);
+});
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;I have assigned a higher priority to the user&apos;s colour mode selection for the web application than that of the OS and browser options. The script first obtains the preferred colour scheme from the OS or browser. It then checks if the user had previously set a colour scheme option using the checkbox. If this was so, the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; class name is either set to &lt;code&gt;&quot;dark-theme&quot;&lt;/code&gt; or &lt;code&gt;&quot;light-theme&quot;&lt;/code&gt; depending on the saved option. If no option was saved, it either sets the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; class name to &lt;code&gt;&quot;dark-theme&quot;&lt;/code&gt; (if this was set at the OS or browser level) or &lt;code&gt;&quot;light-theme&quot;&lt;/code&gt; (if otherwise).&lt;/p&gt; 
+&lt;p&gt;The second part of the code sets up an event listener for the checkbox. It simply toggles the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; class name to the opposite colour scheme and saves the new option. If you run the example above and toggle back and forth, you will see how the document root&apos;s class name changed. Here is an example of the light mode selected:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;html class=&quot;dark-theme&quot; lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;
+
+  &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+  &amp;lt;title&amp;gt;CodePen Demo&amp;lt;/title&amp;gt;
+
+  &amp;lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&amp;gt;
+  
+  &amp;lt;body&amp;gt;
+    &amp;lt;button class=&quot;btn-toggle&quot;&amp;gt;Toggle Dark-Mode&amp;lt;/button&amp;gt;
+  &amp;lt;h1&amp;gt;Hey there! This is just a title&amp;lt;/h1&amp;gt;
+    &amp;lt;p&amp;gt;I am just a boring text, existing here solely for the purpose of this demo&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;And I am just another one like the one above me, because two is better than having only one&amp;lt;/p&amp;gt;
+
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;Here is an example of the dark mode selected:&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;html class=&quot;light-theme&quot; lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;
+
+  &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;
+  &amp;lt;title&amp;gt;CodePen Demo&amp;lt;/title&amp;gt;
+
+  &amp;lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&amp;gt;
+
+  &amp;lt;body&amp;gt;
+    &amp;lt;button class=&quot;btn-toggle&quot;&amp;gt;Toggle Dark-Mode&amp;lt;/button&amp;gt;
+  &amp;lt;h1&amp;gt;Hey there! This is just a title&amp;lt;/h1&amp;gt;
+    &amp;lt;p&amp;gt;I am just a boring text, existing here solely for the purpose of this demo&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;And I am just another one like the one above me, because two is better than having only one&amp;lt;/p&amp;gt;
+
+
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;h1&gt;Conclusion&lt;/h1&gt; 
+&lt;p&gt;This concludes our second part of the series. With this information you can quickly brand the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt; to suite your needs. This includes setting up social medial links, logo and colour scheme. Of course, you are free to change the templates further for more customization. In the next part of this series, we will look at how to create and publish posts and pages using the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt;, the &lt;a href=&quot;https://github.com/lefou/mill-jbake&quot;&gt;Mill JBake plugin in Github&lt;/a&gt; and additional Mill targets I have prepared.&lt;/p&gt; 
+&lt;h1&gt;References&lt;/h1&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href=&quot;[https://en.wikipedia.org/wiki/Markdown]&quot;&gt;Markdown&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://asciidoc.org/&quot;&gt;AsciiDoc site&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/AsciiDoc&quot;&gt;AsciiDoc Wikipedia&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ReStructuredText&quot;&gt;ReStructuredText&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://freemarker.apache.org/&quot;&gt;Freemarker&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.thymeleaf.org/&quot;&gt;ThymeLeaf&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://analytics.google.com/&quot;&gt;Google Analytics&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.mathjax.org/&quot;&gt;MathJax&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://mathjs.org/&quot;&gt;MathJS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://katex.org/&quot;&gt;KaTex&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://mermaid-js.github.io/mermaid/#/&quot;&gt;Mermaid-Js&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://flowchart.js.org/&quot;&gt;Flowchart.js&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.chartjs.org/&quot;&gt;ChartJS&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://plotly.com/javascript/&quot;&gt;Plotly&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://gionkunz.github.io/chartist-js/&quot;&gt;Chartist-Js&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://rawgraphs.io/&quot;&gt;RawGraphs.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://d3js.org/&quot;&gt;d3js&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://c3js.org/&quot;&gt;c3js&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://nvd3.org/&quot;&gt;nvd3&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/com-lihaoyi/mill&quot;&gt;Mill Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill Github pages&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/feathericons/feather&quot;&gt;FeatherIcons&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://ionicons.com/&quot;&gt;IonIcons&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://fontawesome.com/&quot;&gt;FontAwesome&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/tabler/tabler-icons&quot;&gt;Tabler&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;http://css.gg/&quot;&gt;css.gg&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docusaurus.io/&quot;&gt;Docusaurus.io&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/facebook/docusaurus&quot;&gt;Docusaurus Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/jbake-org/jbake&quot;&gt;JBake github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://jbake.org/&quot;&gt;JBake&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://planet42.github.io/Laika/&quot;&gt;Laika&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/planet42/Laika&quot;&gt;Laika Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docs.scala-lang.org/&quot;&gt;Scala-lang docs&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docs.scala-lang.org/scala3/scaladoc.html&quot;&gt;Scala3 ScalaDoc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docs.scala-lang.org/scala3/guides/scaladoc/&quot;&gt;Scala3 ScalaDoc Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://dotty.epfl.ch/docs/usage/scaladoc/&quot;&gt;Scala3 ScalaDoc Usage&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/lampepfl/dotty&quot;&gt;Scala3/Dotty - ScalaDocs github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Javadoc&quot;&gt;Javadoc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/sbt/sbt-site&quot;&gt;Sbt-site Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.scala-sbt.org/sbt-site/&quot;&gt;Sbt-site&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;http://sphinx-doc.org/&quot;&gt;sphinx-doc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;http://www.foundweekends.org/pamflet/&quot;&gt;Pamflet&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/foundweekends/pamflet&quot;&gt;Pamflet Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://nanoc.ws/&quot;&gt;Nanoc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.gitbook.com/&quot;&gt;GitBook&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://developer.lightbend.com/docs/paradox/current/&quot;&gt;Paradox&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/lightbend/paradox&quot;&gt;Github Paradox&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://gohugo.io/&quot;&gt;GoHugo&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;http://asciidoctor.org/&quot;&gt;AsciiDoctor&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill Build tool&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_docusaurus_2&quot;&gt;Mill Docusaurus plugin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_jbake&quot;&gt;Mill JBake plugin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Thirdparty_Plugins.html#_mdoc&quot;&gt;Mill MDoc plugin&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://scalameta.org/mdoc/&quot;&gt;MDoc&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/scalameta/mdoc&quot;&gt;MDoc in Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/lefou/mill-jbake&quot;&gt;Mill JBake plugin in Github&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docs.github.com/en/pages&quot;&gt;Github pages&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/user/project/pages/&quot;&gt;Gitlab pages&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.github.com/gfm/&quot;&gt;Github Flavoured Markdown&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://docs.gitlab.com/ee/user/markdown.html&quot;&gt;Gitlab Flavoured Markdown&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://daringfireball.net/projects/markdown/syntax&quot;&gt;John Gruber’s canonical description of Markdown’s syntax&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://commonmark.org/&quot;&gt;Commonmark variant&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.markdownguide.org/&quot;&gt;Markdown Guide&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://www.markdownguide.org/extended-syntax/&quot;&gt;Markdown guide extended-syntax&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://rmarkdown.rstudio.com/&quot;&gt;R Markdown variant&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://jbake.org/docs/&quot;&gt;JBake documentation&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://ammonite.io/&quot;&gt;Ammonite&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://get-coursier.io/&quot;&gt;Coursier&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/bmarwell/jbake-blog-template-author&quot;&gt;JBake Author template&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;https://typista.org/&lt;/p&gt; 
+&lt;hr&gt; 
+&lt;details close&gt; &lt;summary&gt;Want to ruin the surprise?&lt;/summary&gt; 
+ &lt;br&gt; Well, you asked for it! 
+&lt;/details&gt; 
+&lt;details open&gt; &lt;summary&gt;Want to ruin the surprise?&lt;/summary&gt; 
+ &lt;br&gt; Well, you asked for it! 
+&lt;/details&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; 
+&lt;style&gt;
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+&lt;/style&gt; 
+&lt;h1&gt;TODOs:&lt;/h1&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;
+  &lt;r&gt;
+   TODO:
+  &lt;/r&gt; Important thing to do&lt;/li&gt; 
+ &lt;li&gt;
+  &lt;o&gt;
+   TODO:
+  &lt;/o&gt; Less important thing to do&lt;/li&gt; 
+ &lt;li&gt;
+  &lt;g&gt;
+   DONE:
+  &lt;/g&gt; Breath deeply and improve karma&lt;/li&gt; 
+&lt;/ul&gt;
+	</description>
+    </item>
+    <item>
+      <title>Tutorial: Publishing your own Github blog (Part 1)</title>
       <link>https://hmf.github.io/tech4rd//blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_1.html</guid>

@@ -1,0 +1,404 @@
+
+body, input, select, textarea, b, strong {
+    color: var(--foreground);
+}
+
+pre {
+    display: table;
+    table-layout: fixed;
+    width: 100%
+}
+
+#header .links a {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=65);
+
+    /* Modern Browsers */
+    opacity: 0.65;
+}
+
+    #header .main ul li > a {
+        color: var(--foreground);
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=35);
+
+        /* Modern Browsers */
+        opacity: 0.35;
+    }
+
+        #header .main .search input {
+            color: var(--foreground);
+        }
+
+#intro p,
+#intro .icons a {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=60);
+
+    /* Modern Browsers */
+    opacity: 0.6;
+}
+
+    #sidebar #recent-posts ul.posts time,
+    #sidebar #categories ul.posts li header,
+    #sidebar .blurb p {
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=65);
+
+        /* Modern Browsers */
+        opacity: 0.65;
+    }
+
+article.post header .title p,
+article.post header .meta p,
+article.post header .meta span,
+article.post footer .stats {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=70);
+
+    /* Modern Browsers */
+    opacity: 0.70;
+}
+
+    article.post p,
+    article.post h2,
+    article.post h3,
+    article.post h4 {
+        color: var(--foreground);
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=87)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=87);
+
+        /* Modern Browsers */
+        opacity: 0.87;
+    }
+
+#header h2 {
+    font-size: inherit;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 0 0 1.5em;
+    white-space: nowrap;
+}
+
+    #header h2 a {
+        font-size: 0.7em;
+    }
+
+    @media screen and (max-width: 736px) {
+        #header h2 {
+            padding: 0 0 0 1em;
+        }
+    }
+
+#intro .intro-circle {
+    border-radius: 50%;
+    background-color: var(--intro_logo_color);
+    /*color: var(--green); no effect */
+}
+
+.post > header .title h1 {
+    font-weight: 900;
+    font-size: 1.5em;
+}
+    @media screen and (max-width: 736px) {
+        .post > header .title h1 {
+            font-size: 1.1em;
+        }
+    }
+
+@media screen and (max-width: 480px) {
+    .post > .image.featured {
+        margin-top: 0;
+    }
+}
+
+blockquote p {
+    margin-bottom: 0;
+}
+
+.image.center-image {
+    max-width: 50%;
+}
+    .image.center-image img {
+        width: 100%;
+    }
+        .image.center-image {
+            display: block;
+            margin: auto;
+            clear: both;
+        }
+
+.pagination .button {
+    background: var(--background);
+}
+
+/** Social Share Button CSS **/
+#social-share {
+    position: relative;
+    top: -0.5em;
+}
+
+#social-share ul {
+    margin: 0;
+}
+
+#social-share .icons li {
+    padding: 0 !important;
+    padding-bottom: 10px !important;
+}
+
+#social-share ul li p {
+    display: none;
+}
+
+#social-share .share-btn {
+    padding: 0.5em;
+    width: 4em;
+}
+
+#social-share-nav .share-btn h3{
+    color: var(--background);
+}
+
+.share-btn {
+    display: inline-block;
+    color: var(--background);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 0 0 var(--share_btn);
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.share-btn:hover {
+    color: var(--background) !important;
+}
+
+.share-btn:active {
+    position: relative;
+    top: 2px;
+    box-shadow: none;
+    color: var(--active_button);
+    outline: none;
+}
+
+.share-btn.twitter     { background: var(--btn_twitter); }
+.share-btn.google-plus { background: var(--btn_google-plus); }
+.share-btn.facebook    { background: var(--btn_facebook); }
+.share-btn.linkedin    { background: var(--btn_linkedin); }
+.share-btn.stumbleupon { background: var(--btn_stumbleupon); }
+.share-btn.reddit      { background: var(--btn_reddit); }
+.share-btn.email       { background: var(--btn_email_hover); }
+
+.share-btn.twitter:hover     { background: var(--btn_twitter_hover) }
+.share-btn.google-plus:hover { background: var(--btn_google-plus_hover); }
+.share-btn.facebook:hover    { background: var(--btn_facebook_hover); }
+.share-btn.linkedin:hover    { background: var(--btn_linkedin_hover); }
+.share-btn.stumbleupon:hover { background: var(--btn_stumbleupon_hover); }
+.share-btn.reddit:hover      { background: var(--btn_reddit_hover); }
+.share-btn.email:hover       { background: var(--btn_email_hover); }
+
+/* Share Menu */
+body.is-share-visible #wrapper {
+    opacity: 0.15;
+}
+
+	#share-menu {
+		-moz-transform: translateX(25em);
+		-webkit-transform: translateX(25em);
+		-ms-transform: translateX(25em);
+		transform: translateX(25em);
+		-moz-transition: -moz-transform 0.5s ease, visibility 0.5s;
+		-webkit-transition: -webkit-transform 0.5s ease, visibility 0.5s;
+		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
+		transition: transform 0.5s ease, visibility 0.5s;
+		-webkit-overflow-scrolling: touch;
+		background: var(--background);
+		border-left: solid 1px var(--dark_gray_alpha);
+		box-shadow: none;
+		height: 100%;
+		max-width: 80%;
+		overflow-y: auto;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: 25em;
+		z-index: 10002;
+	}
+
+		#share-menu > * {
+			border-top: solid 1px var(--dark_gray_alpha);
+			padding: 3em;
+		}
+
+			#share-menu > * > :last-child {
+				margin-bottom: 0;
+			}
+
+		#share-menu > :first-child {
+			border-top: 0;
+		}
+
+		#share-menu .links {
+			list-style: none;
+			padding: 0;
+		}
+
+			#share-menu .links > li {
+				border: 0;
+				border-top: dotted 1px var(--dark_gray_alpha);
+				margin: 0.7em 0 0 0;
+				padding: 1em 0 0 0;
+			}
+
+				#share-menu .links > li a {
+					display: block;
+					border-bottom: 0;
+				}
+
+					#share-menu .links > li a h3 {
+						-moz-transition: color 0.2s ease;
+						-webkit-transition: color 0.2s ease;
+						-ms-transition: color 0.2s ease;
+						transition: color 0.2s ease;
+						font-size: 0.7em;
+					}
+
+					#share-menu .links > li a p {
+						font-family: "Raleway", Helvetica, sans-serif;
+						font-size: 0.6em;
+						font-weight: 400;
+						letter-spacing: 0.25em;
+						margin-bottom: 0;
+						text-decoration: none;
+						text-transform: uppercase;
+					}
+
+					#share-menu .links > li a:hover h3 {
+						color: var(--background);
+					}
+
+				#share-menu .links > li:first-child {
+					border-top: 0;
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+		body.is-share-visible #share-menu {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			visibility: visible;
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#share-menu > * {
+				padding: 1.5em;
+			}
+
+		}
+
+.post {
+    margin: 0 0 2em 0;
+}
+
+    #content img[src*='#left'] {
+        float: left;
+    }
+    #content img[src*='#right'] {
+        float: right;
+    }
+    #content img[src*='#center'] {
+        display: block;
+        margin: auto;
+    }
+
+    #content img {
+        max-width: 100%;
+    }
+    
+    #content p a, #content ul li a {
+        border-bottom: dotted 2px var(--content_border);
+    }
+
+        #content p a:hover {
+            border-bottom-color: transparent;
+        }
+
+    #content blockquote, #content p, #content ul{
+        margin: 0 0 1em;
+    }
+
+    article > div#content > p,
+    article > div#content .paragraph > p {
+        text-align: justify;
+    }
+  
+ul.pagination li {
+    padding-top: 1em;
+}
+
+    ul.pagination .button {
+        line-height: 2.5em;
+        height: auto;
+        white-space: normal;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+#back-to-top {
+    background-color: var(--background);
+    bottom: 5px;
+    color: var(--mid_ground);
+    display: none;
+    position: fixed;
+    right: 5px;
+}
+
+    #back-to-top.btt-fade-out {
+        /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+        -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+        -moz-transition: opacity .3s 0s, visibility 0s 0s;
+        transition: opacity .3s 0s, visibility 0s 0s;
+        opacity: .5;
+    }
