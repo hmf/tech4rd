@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 07:34:44 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 07:34:44 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 07:42:14 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 07:42:14 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -995,7 +995,7 @@ sidebar.intro.about =A blog with technical articles on programming\\, software e
 sidebar.intro.about.learnMore=about.html
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;Note that we need to &lt;a href=&quot;https://stackoverflow.com/questions/67482008/jbake-freemarker-errror-this-has-evaluated-to-a-sequence-wrapper-f-t-simplese&quot;&gt;escape the commas&lt;/a&gt; with the double backslash (&lt;code&gt;\\,&lt;/code&gt;), otherwise the parsing fails.&lt;/p&gt; 
-&lt;p&gt;The next step is to fill in your &lt;a href=&quot;/about.html&quot;&gt;&lt;em&gt;&quot;about&quot;&lt;/em&gt; page&lt;/a&gt;, which is a raw HTML file. As per the JBake documentation, all raw HTML or Markdown files must have a &lt;a href=&quot;https://jbake.org/docs/2.6.7/#metadata_header&quot;&gt;metadata header&lt;/a&gt; that looks something like this:&lt;/p&gt; 
+&lt;p&gt;The next step is to fill in your &lt;a href=&quot;about.html&quot;&gt;&lt;em&gt;&quot;about&quot;&lt;/em&gt; page&lt;/a&gt;, which is a raw HTML file. As per the JBake documentation, all raw HTML or Markdown files must have a &lt;a href=&quot;https://jbake.org/docs/2.6.7/#metadata_header&quot;&gt;metadata header&lt;/a&gt; that looks something like this:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;title=Weekly Links #2
 date=2013-02-01
 type=post
