@@ -700,7 +700,7 @@ img[src*='#center'] {
       text-align: justify;
     }
 </code></pre> 
-<p>I did not find any use of the <code>paragraph</code> class, except in the case of the latest JBake example <a href="[asciidoctor.css](../../testsite/src/assets/css/asciidoctor.css)">AsciiDoctor</a> template:</p> 
+<p>I did not find any use of the <code>paragraph</code> class, except in the case of the latest JBake example <a href="[asciidoctor.css](testsite/src/assets/css/asciidoctor.css)">AsciiDoctor</a> template:</p> 
 <pre><code class="language-css">p.lead, .paragraph.lead &gt; p, #preamble &gt; .sectionbody &gt; .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
 </code></pre> 
 <p>Even so, I opted to add it. So the final solution is:</p> 
@@ -1123,7 +1123,7 @@ g { color: Green }
 	                class="disabled  button big previous">PREVIOUS</a></li>
 	   
 	    	<li><span
-	                class="button big"> 1 of 4 </span></li>
+	                class="button big"> 1 of 6 </span></li>
 	                
 	        <li><a href="2/" 
 	                class=" button big next">NEXT</a></li>
@@ -1230,6 +1230,15 @@ g { color: Green }
                     <li>
                         <article>
                             <header>
+                                <a href="tags/asciidoc.html">asciidoc</a>
+                                <!-- JBake 2.5.1 Issue#357 prevents accessing db, If you are using 2.5.1 or earlier comment below SPAN element. -->
+                                <span style="float:right;"> 2 </span>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
                                 <a href="tags/JBake.html">JBake</a>
                                 <!-- JBake 2.5.1 Issue#357 prevents accessing db, If you are using 2.5.1 or earlier comment below SPAN element. -->
                                 <span style="float:right;"> 3 </span>
@@ -1260,6 +1269,15 @@ g { color: Green }
                                 <a href="tags/Mill.html">Mill</a>
                                 <!-- JBake 2.5.1 Issue#357 prevents accessing db, If you are using 2.5.1 or earlier comment below SPAN element. -->
                                 <span style="float:right;"> 4 </span>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <a href="tags/blog.html">blog</a>
+                                <!-- JBake 2.5.1 Issue#357 prevents accessing db, If you are using 2.5.1 or earlier comment below SPAN element. -->
+                                <span style="float:right;"> 2 </span>
                             </header>
                         </article>
                     </li>
