@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 07:15:13 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 07:15:13 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 07:23:00 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 07:23:00 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -36,16 +36,16 @@ b { color: Blue }
 &lt;p&gt;In a final phase, JBake processes a set of &lt;a href=&quot;https://jbake.org/docs/2.6.7/#default_templates&quot;&gt;default templates&lt;/a&gt; that don&apos;t require any content (&lt;code&gt;index&lt;/code&gt;, &lt;code&gt;archive&lt;/code&gt;, &lt;code&gt;feed&lt;/code&gt;, &lt;code&gt;tag&lt;/code&gt; and &lt;code&gt;sitemap&lt;/code&gt;) and the &lt;a href=&quot;../../site/src/templates/index.ftl&quot;&gt;&lt;code&gt;index.ftl&lt;/code&gt;&lt;/a&gt; template that processes the site&apos;s content. JBake expects the content to be placed in a well defined path. It uses this information to generate the index, archive, tag and sitemap links. More concretely we must place the content in the &lt;a href=&quot;../../site/src/content/&quot;&gt;&lt;code&gt;site/src/content&lt;/code&gt;&lt;/a&gt; directory. We will now explore how to add and publish content.&lt;/p&gt; 
 &lt;h1&gt;Adding your articles&lt;/h1&gt; 
 &lt;p&gt;To add a blog post we must add its sources to the &lt;a href=&quot;https://jbake.org/docs/2.6.7/#content_directory&quot;&gt;content directory&lt;/a&gt;. You can use any folder structure you want to store your content files. JBake examples use a &lt;code&gt;blog&lt;/code&gt; root and then have a single folder for each year. Depending on the number of articles you publish, you can use alternate structures as per your requirements. For example, you can create folders using month, trimester or even topic names. I am currently using a year and then topic sub-structure.&lt;/p&gt; 
-&lt;p&gt;Your content may include text made available via raw HTML, Markdown or AsciiDoc files. You may also include any other files required to generate your HTML content. These may include images, cascading stylesheets (CSS), fonts and even JavaScript libraries and functions. Technically you can place these files anywhere within the website&apos;s sources. In this tutorial&apos;s running example, that would be the project&apos;s root folder &lt;code&gt;site/src&lt;/code&gt; (see &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md&quot;&gt;part 1&lt;/a&gt; for more details on this). However, JBake has the dedicated &lt;code&gt;assets&lt;/code&gt; directory that contains the following folders for sharing specific kinds of content:&lt;/p&gt; 
+&lt;p&gt;Your content may include text made available via raw HTML, Markdown or AsciiDoc files. You may also include any other files required to generate your HTML content. These may include images, cascading stylesheets (CSS), fonts and even JavaScript libraries and functions. Technically you can place these files anywhere within the website&apos;s sources. In this tutorial&apos;s running example, that would be the project&apos;s root folder &lt;code&gt;site/src&lt;/code&gt; (see &lt;a href=&quot;./mill_mdoc_part_1&quot;&gt;part 1&lt;/a&gt; for more details on this). However, JBake has the dedicated &lt;code&gt;assets&lt;/code&gt; directory that contains the following folders for sharing specific kinds of content:&lt;/p&gt; 
 &lt;ul&gt; 
- &lt;li&gt;&lt;code&gt;css&lt;/code&gt;: cascade style sheets used for configuring the look and feel of the website (see &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md&quot;&gt;part 2&lt;/a&gt; for details on how they were used);&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;css&lt;/code&gt;: cascade style sheets used for configuring the look and feel of the website (see &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;part 2&lt;/a&gt; for details on how they were used);&lt;/li&gt; 
  &lt;li&gt;&lt;code&gt;fonts&lt;/code&gt;: fonts used by JavaScript libraries and CSS files;&lt;/li&gt; 
- &lt;li&gt;&lt;code&gt;img&lt;/code&gt;: image files (see &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md&quot;&gt;part 2&lt;/a&gt; for details on how they were used);&lt;/li&gt; 
- &lt;li&gt;&lt;code&gt;js&lt;/code&gt;: JavaScript (see &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md&quot;&gt;part 2&lt;/a&gt; for details on how they were used).&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;img&lt;/code&gt;: image files (see &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;part 2&lt;/a&gt; for details on how they were used);&lt;/li&gt; 
+ &lt;li&gt;&lt;code&gt;js&lt;/code&gt;: JavaScript (see &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;part 2&lt;/a&gt; for details on how they were used).&lt;/li&gt; 
 &lt;/ul&gt; 
 &lt;p&gt;I only use the above folders if an asset is used by at least 2 content files. In all other cases, I collocate the assets with the content file were it is used.&lt;/p&gt; 
 &lt;h2&gt;Metadata header&lt;/h2&gt; 
-&lt;p&gt;All content files, including those that use raw HTML, must have a metadata header (see &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md&quot;&gt;part 2&lt;/a&gt; for more details). Here is an example:&lt;/p&gt; 
+&lt;p&gt;All content files, including those that use raw HTML, must have a metadata header (see &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;part 2&lt;/a&gt; for more details). Here is an example:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-.properties&quot;&gt;title=Tutorial: Publishing your own Github blog 
 date=2022-06-24
 last_updated=2022-06-25
@@ -70,7 +70,7 @@ description=Part 1: how to easily to set up and manage your own blog
 &lt;h2&gt;Add and post your content&lt;/h2&gt; 
 &lt;p&gt;You can now add your blog posts and use the Mill commands described in &lt;a href=&quot;(../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md)&quot;&gt;parts 1&lt;/a&gt; and &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_2.md&quot;&gt;2&lt;/a&gt; to serve your content locally or on your project&apos;s github pages. If you don&apos;t see the expected changes, refresh the page. If that does not work, try to clean the browser&apos;s cache. You are also free to change any of the other assets of your website. Below I describe what changes I did to these assets in order to tweak my site to my liking.&lt;/p&gt; 
 &lt;h1&gt;Formatting and processing issues&lt;/h1&gt; 
-&lt;p&gt;When testing the rendered content I found the following issues that required additional changes to the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt; (see &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_2.md&quot;&gt;part 2&lt;/a&gt; for more details):&lt;/p&gt; 
+&lt;p&gt;When testing the rendered content I found the following issues that required additional changes to the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt; (see &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;part 2&lt;/a&gt; for more details):&lt;/p&gt; 
 &lt;ol&gt; 
  &lt;li&gt;Github style footnotes did not work;&lt;/li&gt; 
  &lt;li&gt;Scala syntax highlighting in the code fence did not work (but other languages did);&lt;/li&gt; 
@@ -745,7 +745,7 @@ header.separator=---------
 &lt;p&gt;I tried to solve the &lt;a href=&quot;https://en.wikipedia.org/wiki/Flash_of_unstyled_content&quot;&gt;flash of unstyled content&lt;/a&gt; by placing the darkmode JavaScript in several places of the HTML &lt;a href=&quot;https://blog.maximeheckel.com/posts/switching-off-the-lights-part-2-fixing-dark-mode-flashing-on-servered-rendered-website/&quot;&gt;header&lt;/a&gt; and &lt;a href=&quot;https://stackoverflow.com/questions/71799083/white-flash-on-dark-mode-on-refreshing-page&quot;&gt;body&lt;/a&gt;. However, this did not work. If you know how to solve this, please provide feedback.&lt;/p&gt; 
 &lt;h1&gt;Conclusion&lt;/h1&gt; 
 &lt;p&gt;This concludes the third instalment of this series. With this information you should have a working understanding of how JBake generates the site&apos;s static content and can now add content to your website. The content can be provided as raw HTML or as Markdown and AsciiDoc sources that are then converted to HTML. I have also provided you with some useful information on tweaking of the existing &lt;a href=&quot;https://freemarker.apache.org/&quot;&gt;Freemarker&lt;/a&gt; templates and cascading style sheets to format the final HTML output. Finally, I also described how to activate some &lt;a href=&quot;https://github.com/vsch/flexmark-java&quot;&gt;Flexmark&lt;/a&gt; extensions that may be required by you. The example I provided was for the footnotes extension&lt;sup id=&quot;fnref-3&quot;&gt;&lt;a class=&quot;footnote-ref&quot; href=&quot;#fn-3&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. In the next article we will delve into some details regarding documenting software code.&lt;/p&gt; 
-&lt;p&gt;You can also find the &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_1.md&quot;&gt;first&lt;/a&gt; and &lt;a href=&quot;../../site/src/content/blog/2020/mill/jbake/mill_mdoc_part_2.md&quot;&gt;second&lt;/a&gt; parts of this series in this website.&lt;/p&gt; 
+&lt;p&gt;You can also find the &lt;a href=&quot;./mill_mdoc_part_1&quot;&gt;first&lt;/a&gt; and &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;second&lt;/a&gt; parts of this series in this website.&lt;/p&gt; 
 &lt;h1&gt;References&lt;/h1&gt; 
 &lt;ol&gt; 
  &lt;li&gt;&lt;a href=&quot;[https://en.wikipedia.org/wiki/Markdown]&quot;&gt;Markdown&lt;/a&gt;&lt;/li&gt; 
