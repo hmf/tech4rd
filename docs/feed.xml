@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 19:17:00 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 19:17:00 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 19:19:57 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 19:19:57 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -511,7 +511,7 @@ img[src*=&apos;#center&apos;] {
       text-align: justify;
     }
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;I did not find any use of the &lt;code&gt;paragraph&lt;/code&gt; class, except in the case of the latest JBake example &lt;a href=&quot;[asciidoctor.css](testsite/src/assets/css/asciidoctor.css)&quot;&gt;AsciiDoctor&lt;/a&gt; template:&lt;/p&gt; 
+&lt;p&gt;I did not find any use of the &lt;code&gt;paragraph&lt;/code&gt; class, except in the case of the latest JBake example &lt;a href=&quot;testsite/src/assets/css/asciidoctor.css&quot;&gt;asciidoctor.css&lt;/a&gt; cascading style sheet:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;p.lead, .paragraph.lead &amp;gt; p, #preamble &amp;gt; .sectionbody &amp;gt; .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;Even so, I opted to add it. So the final solution is:&lt;/p&gt; 
