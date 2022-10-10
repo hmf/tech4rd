@@ -215,7 +215,7 @@ b { color: Blue }
 <p>The <a href="https://jbake.org/docs/2.6.7/#process">baking process</a> refers to the process of parsing the content, collecting data, storing this data and then using this data to generate the content. There are three sources of data:</p> 
 <ul> 
  <li>Default values defined by JBake (for example the JBake version);</li> 
- <li>Values defined in the <a href="../../site/src/jbake.properties">jbake.properties</a> (for example the icon, titles and social media links);</li> 
+ <li>Values defined in the <a href="jbake.properties">jbake.properties</a> (for example the icon, titles and social media links);</li> 
  <li>The content <a href="https://jbake.org/docs/2.6.7/#metadata_header">metadata</a> that is provided as a header in each content file;</li> 
 </ul> 
 <p>The baking process consists of three main steps. During the first step the configuration file and content headers are parsed, the data is stored in a database. During this phase, the content files are also parsed and <a href="https://jbake.org/docs/2.6.7/#content_body">converted to HTML snippets if required</a>. These HTML snippets are stored in the database with the corresponding metadata. Note that we are free to add our own <a href="https://jbake.org/docs/2.6.7/#custom_metadata">custom metadata</a> to the headers. The HTML content and all of the metadata are recorded as named variables.</p> 

@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 18:56:45 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 18:56:45 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 19:00:52 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 19:00:52 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -28,7 +28,7 @@ b { color: Blue }
 &lt;p&gt;The &lt;a href=&quot;https://jbake.org/docs/2.6.7/#process&quot;&gt;baking process&lt;/a&gt; refers to the process of parsing the content, collecting data, storing this data and then using this data to generate the content. There are three sources of data:&lt;/p&gt; 
 &lt;ul&gt; 
  &lt;li&gt;Default values defined by JBake (for example the JBake version);&lt;/li&gt; 
- &lt;li&gt;Values defined in the &lt;a href=&quot;../../site/src/jbake.properties&quot;&gt;jbake.properties&lt;/a&gt; (for example the icon, titles and social media links);&lt;/li&gt; 
+ &lt;li&gt;Values defined in the &lt;a href=&quot;jbake.properties&quot;&gt;jbake.properties&lt;/a&gt; (for example the icon, titles and social media links);&lt;/li&gt; 
  &lt;li&gt;The content &lt;a href=&quot;https://jbake.org/docs/2.6.7/#metadata_header&quot;&gt;metadata&lt;/a&gt; that is provided as a header in each content file;&lt;/li&gt; 
 &lt;/ul&gt; 
 &lt;p&gt;The baking process consists of three main steps. During the first step the configuration file and content headers are parsed, the data is stored in a database. During this phase, the content files are also parsed and &lt;a href=&quot;https://jbake.org/docs/2.6.7/#content_body&quot;&gt;converted to HTML snippets if required&lt;/a&gt;. These HTML snippets are stored in the database with the corresponding metadata. Note that we are free to add our own &lt;a href=&quot;https://jbake.org/docs/2.6.7/#custom_metadata&quot;&gt;custom metadata&lt;/a&gt; to the headers. The HTML content and all of the metadata are recorded as named variables.&lt;/p&gt; 
