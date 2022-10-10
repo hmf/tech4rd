@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 07:31:22 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 07:31:22 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 07:34:44 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 07:34:44 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -1528,35 +1528,7 @@ btn.addEventListener(&quot;click&quot;, function () {
  &lt;li&gt;&lt;a href=&quot;https://get-coursier.io/&quot;&gt;Coursier&lt;/a&gt;&lt;/li&gt; 
  &lt;li&gt;&lt;a href=&quot;https://github.com/bmarwell/jbake-blog-template-author&quot;&gt;JBake Author template&lt;/a&gt;&lt;/li&gt; 
  &lt;li&gt;&lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt;&lt;/li&gt; 
-&lt;/ol&gt; 
-&lt;p&gt;https://typista.org/&lt;/p&gt; 
-&lt;hr&gt; 
-&lt;details close&gt; &lt;summary&gt;Want to ruin the surprise?&lt;/summary&gt; 
- &lt;br&gt; Well, you asked for it! 
-&lt;/details&gt; 
-&lt;details open&gt; &lt;summary&gt;Want to ruin the surprise?&lt;/summary&gt; 
- &lt;br&gt; Well, you asked for it! 
-&lt;/details&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; 
-&lt;style&gt;
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-&lt;/style&gt; 
-&lt;h1&gt;TODOs:&lt;/h1&gt; 
-&lt;ul&gt; 
- &lt;li&gt;
-  &lt;r&gt;
-   TODO:
-  &lt;/r&gt; Important thing to do&lt;/li&gt; 
- &lt;li&gt;
-  &lt;o&gt;
-   TODO:
-  &lt;/o&gt; Less important thing to do&lt;/li&gt; 
- &lt;li&gt;
-  &lt;g&gt;
-   DONE:
-  &lt;/g&gt; Breath deeply and improve karma&lt;/li&gt; 
-&lt;/ul&gt;
+&lt;/ol&gt;
 	</description>
     </item>
     <item>
