@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 19:22:07 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 19:22:07 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 19:23:41 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 19:23:41 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -173,7 +173,7 @@ println(&amp;amp;quot;x is &amp;amp;quot; + 123)
 		&amp;lt;script&amp;gt;hljs.highlightAll();&amp;lt;/script&amp;gt;
 		&amp;lt;!--[if lte IE 8]&amp;gt;&amp;lt;script src=&quot;/js/ie/respond.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;![endif]--&amp;gt;
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;We have effectively &lt;a href=&quot;https://github.com/highlightjs/highlight.js/blob/main/VERSION_11_UPGRADE.md&quot;&gt;upgraded&lt;/a&gt; the highlighting library &lt;a href=&quot;../../site/src/assets/js/highlight.min.js&quot;&gt;highlight.min.js&lt;/a&gt; from the original v9.2.0 version to the current v11.5.1 (git: b8f233c8e2) version. Hopefully it will be just as easy to update or change the highlighting library to a different version when you read this.&lt;/p&gt; 
+&lt;p&gt;We have effectively &lt;a href=&quot;https://github.com/highlightjs/highlight.js/blob/main/VERSION_11_UPGRADE.md&quot;&gt;upgraded&lt;/a&gt; the highlighting library &lt;a href=&quot;copy_assets/js/highlight.min.js&quot;&gt;highlight.min.js&lt;/a&gt; from the original v9.2.0 version to the current v11.5.1 (git: b8f233c8e2) version. Hopefully it will be just as easy to update or change the highlighting library to a different version when you read this.&lt;/p&gt; 
 &lt;p&gt;And here is a snippet of the HTML code above after the &lt;a href=&quot;https://highlightjs.org/&quot;&gt;HighLightJS&lt;/a&gt; script has parsed the &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; block:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;code class=&quot;language-scala hljs&quot;&amp;gt;&amp;lt;span class=&quot;hljs-comment&quot;&amp;gt;// MyScript.sc&amp;lt;/span&amp;gt;
 &amp;lt;span class=&quot;hljs-comment&quot;&amp;gt;// print banner&amp;lt;/span&amp;gt;
@@ -212,14 +212,14 @@ println(&amp;lt;span class=&quot;hljs-string&quot;&amp;gt;&quot;x is &quot;&amp;
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;The &lt;em&gt;Monokai Sublime&lt;/em&gt; template is a dark mode stylesheet that does not fit well with the blue light mode pallet that I selected. So I used &lt;a href=&quot;https://highlightjs.org/static/demo/&quot;&gt;HighlightJS&apos;s demonstrator page&lt;/a&gt; to visualize what the different styles looked like and make a triage of those that I found more appealing&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a class=&quot;footnote-ref&quot; href=&quot;#fn-2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. I then replaced the Monokai Sublime template file with each of these new templates and refreshed the website to see what they looked like. I finally selected the &lt;em&gt;Lioshi&lt;/em&gt; (&lt;code&gt;hljs_lioshi.min.css&lt;/code&gt;) and &lt;em&gt;Googlecode&lt;/em&gt; (&lt;code&gt;hljs_googlecode.min.css&lt;/code&gt;) templates for the dark and light modes respectively. For aesthetic reasons I also tweaked these templates by changing the background to conform to the website&apos;s &lt;em&gt;&quot;active&quot;&lt;/em&gt; colour pallet. So for the Lioshi template I changed &lt;code&gt;background: #303030&lt;/code&gt; to &lt;code&gt;background: #242526&lt;/code&gt; and for the Googlecode template I changed &lt;code&gt;background: #fff&lt;/code&gt; to &lt;code&gt;background: #8fb9d7&lt;/code&gt; in the &lt;code&gt;themes.css&lt;/code&gt;. In the CSS code I actually used the &lt;code&gt;var(--background_body)&lt;/code&gt; CSS value that is either set to &lt;code&gt;--facebook_card&lt;/code&gt; for the dark mode or &lt;code&gt;--blue_card&lt;/code&gt; for the light mode. If you haven&apos;t read the &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;second article of this series&lt;/a&gt;, do so to understand how to set these variables. You will also need this to understand the next section.&lt;/p&gt; 
 &lt;h2&gt;Toggling the code fence highlight&lt;/h2&gt; 
-&lt;p&gt;In the &lt;a href=&quot;./mill_mdoc_part_2.md&quot;&gt;previous article of this series&lt;/a&gt; I allowed the user to select the light or dark mode via the browser, operating system and website. I used the CSS media feature &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme&quot;&gt;&lt;code&gt;prefers-color-scheme&lt;/code&gt;&lt;/a&gt; to detect if a user has by default selected the dark mode or used the website&apos;s checkbox to toggle the mode explicitly. The CSS media feature &lt;code&gt;prefers-color-scheme&lt;/code&gt; can also be used to &lt;a href=&quot;https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/&quot;&gt;conditionally load the highlighting style&lt;/a&gt; using the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@import&quot;&gt;`@import&lt;/a&gt;, so it stands to reason that I need only add these lines to the start of the &lt;a href=&quot;../../site/src/assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; stylesheet:&lt;/p&gt; 
+&lt;p&gt;In the &lt;a href=&quot;./mill_mdoc_part_2.md&quot;&gt;previous article of this series&lt;/a&gt; I allowed the user to select the light or dark mode via the browser, operating system and website. I used the CSS media feature &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme&quot;&gt;&lt;code&gt;prefers-color-scheme&lt;/code&gt;&lt;/a&gt; to detect if a user has by default selected the dark mode or used the website&apos;s checkbox to toggle the mode explicitly. The CSS media feature &lt;code&gt;prefers-color-scheme&lt;/code&gt; can also be used to &lt;a href=&quot;https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/&quot;&gt;conditionally load the highlighting style&lt;/a&gt; using the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@import&quot;&gt;`@import&lt;/a&gt;, so it stands to reason that I need only add these lines to the start of the &lt;a href=&quot;copy_assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; stylesheet:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;/* Assume light mode by default */
 @import &quot;hljs_googlecode.min.css&quot; screen;
 /* Supersede dark mode when applicable */  
 @import &quot;hljs_lioshi.min.css&quot; screen and (prefers-color-scheme: dark);
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;It does indeed work. In fact we can also do this at the HTML level &lt;a href=&quot;(https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/)&quot;&gt;by using the media attribute of the &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; element&lt;/a&gt;. However this will not allow us to dynamically set the preferred colour scheme via the web application checkbox. To solve this, I changed the &lt;a href=&quot;../../site/src/assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script to &lt;a href=&quot;https://stackoverflow.com/questions/16057084/selecting-different-stylesheet-depending-on-the-button-pressed&quot;&gt;to dynamically add or remove the stylesheet link&lt;/a&gt; from the header. The &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link&quot;&gt;external resource link&lt;/a&gt; containing a URL to the HighlightJS style sheet is not required any more and can be removed from the &lt;a href=&quot;copy_templates/header.ftl&quot;&gt;header.ftl&lt;/a&gt; template.&lt;/p&gt; 
-&lt;p&gt;The &lt;a href=&quot;../../site/src/assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script now looks like this:&lt;/p&gt; 
+&lt;p&gt;It does indeed work. In fact we can also do this at the HTML level &lt;a href=&quot;(https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/)&quot;&gt;by using the media attribute of the &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; element&lt;/a&gt;. However this will not allow us to dynamically set the preferred colour scheme via the web application checkbox. To solve this, I changed the &lt;a href=&quot;copy_assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script to &lt;a href=&quot;https://stackoverflow.com/questions/16057084/selecting-different-stylesheet-depending-on-the-button-pressed&quot;&gt;to dynamically add or remove the stylesheet link&lt;/a&gt; from the header. The &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link&quot;&gt;external resource link&lt;/a&gt; containing a URL to the HighlightJS style sheet is not required any more and can be removed from the &lt;a href=&quot;copy_templates/header.ftl&quot;&gt;header.ftl&lt;/a&gt; template.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href=&quot;copy_assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script now looks like this:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
 $(function(){
 	// Stylesheets used by highlight.js
@@ -393,7 +393,7 @@ img[src*=&apos;#center&apos;] {
     margin: auto;
 }
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;You can try these in one of the online JavaScript editors. Here is the &lt;a href=&quot;https://jsfiddle.net/oknbt8r1/&quot;&gt;original example&lt;/a&gt;. The solutions above are good because the template already has several CSS styles for the images and we don&apos;t want to mess around with those. In particular the &lt;a href=&quot;../../site/src/assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file has a &lt;em&gt;&quot;section&quot;&lt;/em&gt; for images that starts with:&lt;/p&gt; 
+&lt;p&gt;You can try these in one of the online JavaScript editors. Here is the &lt;a href=&quot;https://jsfiddle.net/oknbt8r1/&quot;&gt;original example&lt;/a&gt;. The solutions above are good because the template already has several CSS styles for the images and we don&apos;t want to mess around with those. In particular the &lt;a href=&quot;copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; file has a &lt;em&gt;&quot;section&quot;&lt;/em&gt; for images that starts with:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;/* Image */
 
 	.image {
@@ -402,7 +402,7 @@ img[src*=&apos;#center&apos;] {
 		position: relative;
 	}
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;In addition to this, the &lt;a href=&quot;../../site/src/assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; has the following selector that is activated by the images within the posts and pages:&lt;/p&gt; 
+&lt;p&gt;In addition to this, the &lt;a href=&quot;copy_assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; has the following selector that is activated by the images within the posts and pages:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;    #content img {
       max-width: 100%;
     }
@@ -414,7 +414,7 @@ img[src*=&apos;#center&apos;] {
 			margin: 0 auto;
     }
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;I opted for the second CSS solution I linked to above. This way, I can explicitly mark and format the images how I see fit without inadvertently messing with the rest of the template. To do this in the &lt;a href=&quot;../../site/src/assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; stylesheet I added the &lt;code&gt;#content img&lt;/code&gt; selectors as shown below:&lt;/p&gt; 
+&lt;p&gt;I opted for the second CSS solution I linked to above. This way, I can explicitly mark and format the images how I see fit without inadvertently messing with the rest of the template. To do this in the &lt;a href=&quot;copy_assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; stylesheet I added the &lt;code&gt;#content img&lt;/code&gt; selectors as shown below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;.post {
     margin: 0 0 2em 0;
 }
@@ -444,7 +444,7 @@ img[src*=&apos;#center&apos;] {
 &lt;p&gt;I prefer seeing my content with its text justified. The default template setting has the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/text-align&quot;&gt;text aligned to the left&lt;/a&gt;. The HTML output is equivalent to:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;p style=&quot;text-align=left&quot;&amp;gt;Content text.&amp;lt;/p&amp;gt;
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;Choosing a random sample of the content text and using the browser&apos;s &lt;code&gt;inspect (Q)&lt;/code&gt; context-sensitive menu option, we can see (via the developer tools) that the initial text alignment setting are selected via the following CSS snippet found in the &lt;a href=&quot;../../site/src/assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; stylesheet:&lt;/p&gt; 
+&lt;p&gt;Choosing a random sample of the content text and using the browser&apos;s &lt;code&gt;inspect (Q)&lt;/code&gt; context-sensitive menu option, we can see (via the developer tools) that the initial text alignment setting are selected via the following CSS snippet found in the &lt;a href=&quot;copy_assets/css/add-on.css&quot;&gt;&lt;code&gt;add-on.css&lt;/code&gt;&lt;/a&gt; stylesheet:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-CSS&quot;&gt;    #content p a, #content ul li a {
         border-bottom: dotted 2px var(--content_border);
     }
@@ -457,7 +457,7 @@ img[src*=&apos;#center&apos;] {
         margin: 0 0 1em;
     }
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;In addition to this, the &lt;a href=&quot;../../site/src/assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; CSS file also has the following relevant set of selectors:&lt;/p&gt; 
+&lt;p&gt;In addition to this, the &lt;a href=&quot;copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt; CSS file also has the following relevant set of selectors:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;    article.post p,
     article.post h2,
     article.post h3,
@@ -526,7 +526,7 @@ img[src*=&apos;#center&apos;] {
 &lt;p&gt;The standard code block text, on the other hand, is formatted just as any other text in the paragraph. Here is an example: &lt;em&gt;This sentence holds an inline &lt;code&gt;code block of text&lt;/code&gt;&lt;/em&gt;. The following is the HTML generated by the &lt;a href=&quot;https://github.com/vsch/flexmark-java&quot;&gt;Flexmark&lt;/a&gt; Markdown processor.&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;i&amp;gt;This sentence holds an inline &amp;lt;code&amp;gt;code block of text&amp;lt;/code&amp;gt;&amp;lt;/i&amp;gt;.
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;The HTML source above is not changed and is rendered using the &lt;a href=&quot;../../site/src/assets/css/main.css&quot;&gt;main.css&lt;/a&gt; stylesheet based on the &lt;code&gt;code&lt;/code&gt; element selector shown below:&lt;/p&gt; 
+&lt;p&gt;The HTML source above is not changed and is rendered using the &lt;a href=&quot;copy_assets/css/main.css&quot;&gt;main.css&lt;/a&gt; stylesheet based on the &lt;code&gt;code&lt;/code&gt; element selector shown below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;code {
   background: var(--dark_gray_alpha_2);
   border: solid 1px var(--dark_gray_alpha);
@@ -582,7 +582,7 @@ println(&quot;x is &quot; + 123)
 &amp;lt;/code&amp;gt;
 &amp;lt;/pre&amp;gt;
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;Note that the resulting HTML has the same &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; element placed within the &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; element. The altered HTML is rendered using the &lt;a href=&quot;../../site/src/assets/css/main.css&quot;&gt;main.css&lt;/a&gt; stylesheet based on the combined &lt;code&gt;pre code&lt;/code&gt; element selector shown below:&lt;/p&gt; 
+&lt;p&gt;Note that the resulting HTML has the same &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; element placed within the &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; element. The altered HTML is rendered using the &lt;a href=&quot;copy_assets/css/main.css&quot;&gt;main.css&lt;/a&gt; stylesheet based on the combined &lt;code&gt;pre code&lt;/code&gt; element selector shown below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;		pre code {
 			display: block;
 			line-height: 1.75em;
@@ -590,7 +590,7 @@ println(&quot;x is &quot; + 123)
 			overflow-x: auto;
 		}
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;This allows us to effectively render the code blocks and fenced code blocks differently. I used this to remove the border from the standard code blocks and add this back to fenced code blocks only. In addition to this, several standard code blocks are used as hyperlinks (shown as the anchor &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;&apos;s text). The original colour &lt;code&gt;--dark_gray_alpha_2&lt;/code&gt;, set in the &lt;a href=&quot;../../site/src/assets/css/theme.css&quot;&gt;&lt;code&gt;themes.css&lt;/code&gt;&lt;/a&gt;, was opaque. This covered the links&apos; underline and hid the visual cue that users need. In this case I added a 50% alpha channel to the colour and used that as the line code&apos;s background colour. Here is the final version of the selectors:&lt;/p&gt; 
+&lt;p&gt;This allows us to effectively render the code blocks and fenced code blocks differently. I used this to remove the border from the standard code blocks and add this back to fenced code blocks only. In addition to this, several standard code blocks are used as hyperlinks (shown as the anchor &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;&apos;s text). The original colour &lt;code&gt;--dark_gray_alpha_2&lt;/code&gt;, set in the &lt;a href=&quot;copy_assets/css/theme.css&quot;&gt;&lt;code&gt;themes.css&lt;/code&gt;&lt;/a&gt;, was opaque. This covered the links&apos; underline and hid the visual cue that users need. In this case I added a 50% alpha channel to the colour and used that as the line code&apos;s background colour. Here is the final version of the selectors:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;	code {
 	  background: var(--dark_gray_alpha_2);
       font-family: &quot;Courier New&quot;, monospace;
@@ -621,7 +621,7 @@ println(&quot;x is &quot; + 123)
 ...
 	background: rgba(var(--dark_gray_alpha_2), 0.5);
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;That means the colour definition would have to be a triplet of values and not a single colour code as currently used in the &lt;a href=&quot;../../site/src/assets/css/theme.css&quot;&gt;&lt;code&gt;theme.css&lt;/code&gt;&lt;/a&gt; stylesheet. Recall that in &lt;a href=&quot;mill_mdoc_part_2.md&quot;&gt;part 2&lt;/a&gt; of this series we set up colour pallets for light and dark modes. So the base colour is not a single &lt;code&gt;--dark_gray_alpha_2&lt;/code&gt; value but can be either a &lt;code&gt;--blue_hover&lt;/code&gt; or &lt;code&gt;--facebook_hover&lt;/code&gt; colour. And many other colours set in the template use these &lt;em&gt;hover&lt;/em&gt; pallet colours. Specifically here is a list of those colours that are affected:&lt;/p&gt; 
+&lt;p&gt;That means the colour definition would have to be a triplet of values and not a single colour code as currently used in the &lt;a href=&quot;copy_assets/css/theme.css&quot;&gt;&lt;code&gt;theme.css&lt;/code&gt;&lt;/a&gt; stylesheet. Recall that in &lt;a href=&quot;mill_mdoc_part_2.md&quot;&gt;part 2&lt;/a&gt; of this series we set up colour pallets for light and dark modes. So the base colour is not a single &lt;code&gt;--dark_gray_alpha_2&lt;/code&gt; value but can be either a &lt;code&gt;--blue_hover&lt;/code&gt; or &lt;code&gt;--facebook_hover&lt;/code&gt; colour. And many other colours set in the template use these &lt;em&gt;hover&lt;/em&gt; pallet colours. Specifically here is a list of those colours that are affected:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;    /* light mode */
     --dark_gray            : var(--blue_hover);
     --dark_gray_alpha      : var(--blue_hover);
@@ -639,7 +639,7 @@ println(&quot;x is &quot; + 123)
     --hover_alpha          : var(--facebook_hover);
 
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;Were I to use this technique to add the alpha channel, I would have to a) define the &lt;code&gt;hover&lt;/code&gt; colours in RGB and b) replace all of the above variable assignments with a call to either &lt;code&gt;rgb(var(--variable))&lt;/code&gt; or &lt;code&gt;rgba(var(--variable), opacity)&lt;/code&gt;. Because the &lt;code&gt;--dark_gray_alpha_2&lt;/code&gt; is only used once in the &lt;a href=&quot;../../site/src/assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt;, I simply created 2 new variables (&lt;code&gt;--blue_hover_light&lt;/code&gt; and &lt;code&gt;--facebook_hover_light&lt;/code&gt;) and assigned those in only two places as shown below:&lt;/p&gt; 
+&lt;p&gt;Were I to use this technique to add the alpha channel, I would have to a) define the &lt;code&gt;hover&lt;/code&gt; colours in RGB and b) replace all of the above variable assignments with a call to either &lt;code&gt;rgb(var(--variable))&lt;/code&gt; or &lt;code&gt;rgba(var(--variable), opacity)&lt;/code&gt;. Because the &lt;code&gt;--dark_gray_alpha_2&lt;/code&gt; is only used once in the &lt;a href=&quot;copy_assets/css/main.css&quot;&gt;&lt;code&gt;main.css&lt;/code&gt;&lt;/a&gt;, I simply created 2 new variables (&lt;code&gt;--blue_hover_light&lt;/code&gt; and &lt;code&gt;--facebook_hover_light&lt;/code&gt;) and assigned those in only two places as shown below:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;    --dark_gray_alpha_2    : var(--blue_hover_light);
     --dark_gray_alpha_2    : var(--facebook_hover_light);
 &lt;/code&gt;&lt;/pre&gt; 
@@ -677,8 +677,8 @@ header.separator=---------
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;It is important to note that &lt;strong&gt;all Markdown headers&lt;/strong&gt; must use this separator.&lt;/p&gt; 
 &lt;h2&gt;Google Chrome fails to toggle light/dark mode&lt;/h2&gt; 
-&lt;p&gt;While testing the latest changes to the website&apos;s scripts in Google Chrome, I realized that the button to toggle between dark and light mode did not seem to work. Using the browser&apos;s developer tools shows that the toggle button does indeed work and the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element&apos;s class was being changed to the &lt;code&gt;&quot;dark-theme&quot;&lt;/code&gt; and &lt;code&gt;&quot;light-theme&quot;&lt;/code&gt; classes correctly. However the inherited &lt;code&gt;html&lt;/code&gt; selector did not change between &lt;code&gt;html.dark-theme&lt;/code&gt; and &lt;code&gt;html.light-theme&lt;/code&gt;. This pointed to a potential problem in the &lt;a href=&quot;../../site/src/assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; stylesheet. In addition to this, even though the OS is configured for dark mode, the browser does not seem to detect this setting via the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme&quot;&gt;&lt;code&gt;@media (prefers-color-scheme: dark)&lt;/code&gt;&lt;/a&gt; CSS selector. It may have to do with the &lt;a href=&quot;https://stackoverflow.com/questions/65966664/media-prefers-color-scheme-light-not-working-in-chrome&quot;&gt;&apos;Auto Dark Mode for Web Contents&apos; flag&lt;/a&gt; used in the browser because the Google landing page was shown in dark automatically. I also noticed that the the DarkReader plugin does not work in &lt;code&gt;auto&lt;/code&gt; mode but does so if set to &lt;code&gt;on&lt;/code&gt;.&lt;/p&gt; 
-&lt;p&gt;To solve this problem the &lt;a href=&quot;../../site/src/assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; stylesheet was changed to define both light and dark mode colour schemes. Only then is the &lt;code&gt;@media&lt;/code&gt; selector used to reassign the dark mode as a fallback. I suspect this was working for the Firefox browser because I have only tested it with the OS set to dark mode.&lt;/p&gt; 
+&lt;p&gt;While testing the latest changes to the website&apos;s scripts in Google Chrome, I realized that the button to toggle between dark and light mode did not seem to work. Using the browser&apos;s developer tools shows that the toggle button does indeed work and the &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; element&apos;s class was being changed to the &lt;code&gt;&quot;dark-theme&quot;&lt;/code&gt; and &lt;code&gt;&quot;light-theme&quot;&lt;/code&gt; classes correctly. However the inherited &lt;code&gt;html&lt;/code&gt; selector did not change between &lt;code&gt;html.dark-theme&lt;/code&gt; and &lt;code&gt;html.light-theme&lt;/code&gt;. This pointed to a potential problem in the &lt;a href=&quot;copy_assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; stylesheet. In addition to this, even though the OS is configured for dark mode, the browser does not seem to detect this setting via the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme&quot;&gt;&lt;code&gt;@media (prefers-color-scheme: dark)&lt;/code&gt;&lt;/a&gt; CSS selector. It may have to do with the &lt;a href=&quot;https://stackoverflow.com/questions/65966664/media-prefers-color-scheme-light-not-working-in-chrome&quot;&gt;&apos;Auto Dark Mode for Web Contents&apos; flag&lt;/a&gt; used in the browser because the Google landing page was shown in dark automatically. I also noticed that the the DarkReader plugin does not work in &lt;code&gt;auto&lt;/code&gt; mode but does so if set to &lt;code&gt;on&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;To solve this problem the &lt;a href=&quot;copy_assets/css/theme.css&quot;&gt;theme.css&lt;/a&gt; stylesheet was changed to define both light and dark mode colour schemes. Only then is the &lt;code&gt;@media&lt;/code&gt; selector used to reassign the dark mode as a fallback. I suspect this was working for the Firefox browser because I have only tested it with the OS set to dark mode.&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;:root,
 :root.light-theme {
 
