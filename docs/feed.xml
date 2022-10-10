@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 07:47:09 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 07:47:09 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 08:03:25 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 08:03:25 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -15,7 +15,7 @@
       <pubDate>Sun, 9 Oct 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_3.html</guid>
       	<description>
-	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex, hljs ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir, Fontawesome, stackoverflow ---&gt; &lt;!--  cSpell:ignore stumbleupon, darkmode, rootpath, monospaced, disqus, Monokai, lioshi, googlecode, Flexmark ---&gt; &lt;!--  cSpell:ignore println, rgba ---&gt; &lt;!-- https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown --&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; 
+	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex, hljs ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir, Fontawesome, stackoverflow ---&gt; &lt;!--  cSpell:ignore stumbleupon, darkmode, rootpath, monospaced, disqus, Monokai, lioshi, googlecode, Flexmark ---&gt; &lt;!--  cSpell:ignore println, rgba ---&gt; &lt;!-- https://www.deadlinkchecker.com/website-dead-link-checker.asp --&gt; &lt;!-- https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown --&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; 
 &lt;style&gt;
 r { color: Red }
 o { color: Orange }
@@ -872,7 +872,7 @@ g { color: Green }
       <pubDate>Sun, 9 Oct 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_2.html</guid>
       	<description>
-	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir, Fontawesome, stackoverflow ---&gt; &lt;!--  cSpell:ignore stumbleupon, darkmode, rootpath ---&gt; &lt;!-- https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown --&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; 
+	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir, Fontawesome, stackoverflow ---&gt; &lt;!--  cSpell:ignore stumbleupon, darkmode, rootpath ---&gt; &lt;!-- https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown --&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; &lt;!-- https://www.deadlinkchecker.com/website-dead-link-checker.asp --&gt; 
 &lt;style&gt;
 r { color: Red }
 o { color: Orange }
@@ -1537,7 +1537,7 @@ btn.addEventListener(&quot;click&quot;, function () {
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_1.html</guid>
       	<description>
-	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir ---&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; &lt;!-- ./mill ./mill resolve site._
+	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir ---&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; &lt;!-- https://www.deadlinkchecker.com/website-dead-link-checker.asp --&gt; &lt;!-- ./mill ./mill resolve site._
 
 [1/1] resolve 
 site.gitTemplateURL
