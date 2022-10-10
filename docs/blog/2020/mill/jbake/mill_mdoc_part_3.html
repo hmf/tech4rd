@@ -857,7 +857,7 @@ Cond 1.1 text node {.red}
 </code></pre> 
 <p>I am unsure if the use of attributes with no values are supported by this extension, but <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">CSS selectors</a> for such attributes are also possible. Unfortunately, I was unable to test this solution because I could not get <a href="https://github.com/jbake-org/jbake/issues/759">JBake to activate the attribute extension</a>. The problem stems from the fact that a <a href="https://github.com/vsch/flexmark-java/issues/509">com.vladsch.flexmark.parser.PegdownExtensions</a> object is used by the <a href="https://github.com/jbake-org/jbake/blob/8b08d4b2e80ee78b52943a84defd30a1448e6d6d/jbake-core/src/main/java/org/jbake/parser/MarkdownEngine.java#L55">JBake configuration code</a> to activate the extension. However, not all the currently available extensions are listed in this object, so JBake cannot use these extensions. This nonetheless does not preclude someone from using Flexmark directly on Markdown sources.</p> 
 <h2>Change Metadata header separator</h2> 
-<p>One annoying issue is that the <a href="https://jbake.org/docs/2.6.7/#metadata_header">metadata header</a> makes editing <a href="[https://en.wikipedia.org/wiki/Markdown]">Markdown</a> and <a href="https://asciidoc.org/">AsciiDoc site</a> sources using IDEs difficult. Because the <a href="https://github.com/jbake-org/jbake/issues/231">metadata header' separator is not recognized</a>, the editors fail to parse and therefore correctly render the content. The solution is to configure JBake to use an <a href="https://github.com/jbake-org/jbake/issues/475#issuecomment-406869915">alternate separator</a> that is recognized by various editors. To do this, add the following section to your <a href="../../site/src/jbake.properties"><code>jbake.properties</code></a> file:</p> 
+<p>One annoying issue is that the <a href="https://jbake.org/docs/2.6.7/#metadata_header">metadata header</a> makes editing <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="https://asciidoc.org/">AsciiDoc site</a> sources using IDEs difficult. Because the <a href="https://github.com/jbake-org/jbake/issues/231">metadata header' separator is not recognized</a>, the editors fail to parse and therefore correctly render the content. The solution is to configure JBake to use an <a href="https://github.com/jbake-org/jbake/issues/475#issuecomment-406869915">alternate separator</a> that is recognized by various editors. To do this, add the following section to your <a href="../../site/src/jbake.properties"><code>jbake.properties</code></a> file:</p> 
 <pre><code class="language-.properties"># Facilitates editing in VSCode and other IDEs
 # Must be used in all headers now
 header.separator=---------
@@ -935,7 +935,7 @@ header.separator=---------
 <p>You can also find the <a href="./mill_mdoc_part_1">first</a> and <a href="./mill_mdoc_part_2">second</a> parts of this series in this website.</p> 
 <h1>References</h1> 
 <ol> 
- <li><a href="[https://en.wikipedia.org/wiki/Markdown]">Markdown</a></li> 
+ <li><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a></li> 
  <li><a href="https://asciidoc.org/">AsciiDoc site</a></li> 
  <li><a href="https://en.wikipedia.org/wiki/AsciiDoc">AsciiDoc Wikipedia</a></li> 
  <li><a href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredText</a></li> 
