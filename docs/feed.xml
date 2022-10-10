@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>https://hmf.github.io/tech4rd/</link>
-    <atom:link href="https://hmf.github.io/tech4rd//feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://hmf.github.io/tech4rd</link>
+    <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 18:37:18 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 18:37:18 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 18:42:54 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 18:42:54 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
-      <link>https://hmf.github.io/tech4rd//blog/2020/mill/jbake/mill_mdoc_part_3.html</link>
+      <link>https://hmf.github.io/tech4rd/blog/2020/mill/jbake/mill_mdoc_part_3.html</link>
       <pubDate>Sun, 9 Oct 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_3.html</guid>
       	<description>
@@ -868,7 +868,7 @@ g { color: Green }
     </item>
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 2)</title>
-      <link>https://hmf.github.io/tech4rd//blog/2020/mill/jbake/mill_mdoc_part_2.html</link>
+      <link>https://hmf.github.io/tech4rd/blog/2020/mill/jbake/mill_mdoc_part_2.html</link>
       <pubDate>Sun, 9 Oct 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_2.html</guid>
       	<description>
@@ -1533,7 +1533,7 @@ btn.addEventListener(&quot;click&quot;, function () {
     </item>
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 1)</title>
-      <link>https://hmf.github.io/tech4rd//blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
+      <link>https://hmf.github.io/tech4rd/blog/2020/mill/jbake/mill_mdoc_part_1.html</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_1.html</guid>
       	<description>
@@ -2717,7 +2717,7 @@ To https://github.com/user/tech4rd.git
     </item>
     <item>
       <title>Tutorial: JavaFX Mill project</title>
-      <link>https://hmf.github.io/tech4rd//blog/2020/mill/javafx/javafx.html</link>
+      <link>https://hmf.github.io/tech4rd/blog/2020/mill/javafx/javafx.html</link>
       <pubDate>Thu, 9 Jun 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/javafx/javafx.html</guid>
       	<description>
