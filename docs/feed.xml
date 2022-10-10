@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 19:23:41 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 19:23:41 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 19:35:22 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 19:35:22 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -218,7 +218,7 @@ println(&amp;lt;span class=&quot;hljs-string&quot;&amp;gt;&quot;x is &quot;&amp;
 /* Supersede dark mode when applicable */  
 @import &quot;hljs_lioshi.min.css&quot; screen and (prefers-color-scheme: dark);
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;It does indeed work. In fact we can also do this at the HTML level &lt;a href=&quot;(https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/)&quot;&gt;by using the media attribute of the &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; element&lt;/a&gt;. However this will not allow us to dynamically set the preferred colour scheme via the web application checkbox. To solve this, I changed the &lt;a href=&quot;copy_assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script to &lt;a href=&quot;https://stackoverflow.com/questions/16057084/selecting-different-stylesheet-depending-on-the-button-pressed&quot;&gt;to dynamically add or remove the stylesheet link&lt;/a&gt; from the header. The &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link&quot;&gt;external resource link&lt;/a&gt; containing a URL to the HighlightJS style sheet is not required any more and can be removed from the &lt;a href=&quot;copy_templates/header.ftl&quot;&gt;header.ftl&lt;/a&gt; template.&lt;/p&gt; 
+&lt;p&gt;It does indeed work. In fact we can also do this at the HTML level &lt;a href=&quot;https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/&quot;&gt;by using the media attribute of the &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; element&lt;/a&gt;. However this will not allow us to dynamically set the preferred colour scheme via the web application checkbox. To solve this, I changed the &lt;a href=&quot;copy_assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script to &lt;a href=&quot;https://stackoverflow.com/questions/16057084/selecting-different-stylesheet-depending-on-the-button-pressed&quot;&gt;to dynamically add or remove the stylesheet link&lt;/a&gt; from the header. The &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link&quot;&gt;external resource link&lt;/a&gt; containing a URL to the HighlightJS style sheet is not required any more and can be removed from the &lt;a href=&quot;copy_templates/header.ftl&quot;&gt;header.ftl&lt;/a&gt; template.&lt;/p&gt; 
 &lt;p&gt;The &lt;a href=&quot;copy_assets/js/darkmode.js&quot;&gt;&lt;code&gt;darkmode.js&lt;/code&gt;&lt;/a&gt; script now looks like this:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
 $(function(){
