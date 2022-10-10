@@ -6,13 +6,13 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 18:51:08 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 18:51:08 +0100</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2022 18:56:45 +0100</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2022 18:56:45 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
       <link>https://hmf.github.io/tech4rd/blog/2020/mill/jbake/mill_mdoc_part_3.html</link>
-      <pubDate>Sun, 9 Oct 2022 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0100</pubDate>
       <guid isPermaLink="false">blog/2020/mill/jbake/mill_mdoc_part_3.html</guid>
       	<description>
 	&lt;!-- cSpell:ignore javac, Haoyi, Roeser, Coursier, scalac, lihaoyi, Laika, Pamflet, Nanoc, CNAME, Gruber, millw, Thymeleaf, tototec, tobiasroeser ---&gt; &lt;!-- cSpell:ignore Freemarker, Plotly, Tabler, Commonmark, glyphicons, rwxrwxr, jbake, masterindex, hljs ---&gt; &lt;!-- cSpell:ignore adoc, shiv, ivys, halflings, asciidoctor, classpath, scaladoc, mkdir, Fontawesome, stackoverflow ---&gt; &lt;!--  cSpell:ignore stumbleupon, darkmode, rootpath, monospaced, disqus, Monokai, lioshi, googlecode, Flexmark ---&gt; &lt;!--  cSpell:ignore println, rgba ---&gt; &lt;!-- https://www.deadlinkchecker.com/website-dead-link-checker.asp --&gt; &lt;!-- https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown --&gt; &lt;!-- https://stackoverflow.com/questions/35465557/how-to-apply-color-in-markdown --&gt; &lt;!-- https://opensource.com/article/17/7/4-lightweight-image-viewers-linux-desktop --&gt; &lt;!-- https://github.com/streetsidesoftware/vscode-spell-checker/issues/117 --&gt; &lt;!-- https://gist.github.com/daramcq/3118367 --&gt; &lt;!-- https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/httpThreadLink/HttpClient.html --&gt; &lt;!-- Selenium + Java --&gt; &lt;!-- https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium --&gt; &lt;!-- https://blog.knoldus.com/are-you-worried-about-the-broken-links-on-your-application/ --&gt; &lt;!-- JSoup --&gt; &lt;!-- https://medium.com/sahibinden-technology/how-to-check-broken-links-in-a-single-web-page-programmatically-c36561e3eb2f --&gt; 
