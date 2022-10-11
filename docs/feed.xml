@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 11 Oct 2022 18:15:16 +0100</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2022 18:15:16 +0100</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2022 18:22:28 +0100</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 18:22:28 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -947,7 +947,7 @@ To https://github.com/hmf/tech4rd.git
 &lt;p&gt;The next icon is used for the the small image located on the top right of each post. The source image is found in the &lt;code&gt;site/src/assets/img/main/icon.png&lt;/code&gt; file. This is also a 75 x 75 PNG image, so I simply removed the original, copied my favicon to the folder and renamed it to &lt;code&gt;avatar.png&lt;/code&gt;. You should now see the icon below appear on each post (remember to clear the cache first):&lt;/p&gt; 
 &lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/avatar.png&quot; alt=&quot;site/src/assets/img/main/avatar.png&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;The final image is the larger avatar found in the left sidebar just above the blog&apos;s title. This was originally a 128 x 128 PNG image. I took the same icon, scaled it from 512 x 512 pixels down to a 128 x 128 pixel image and replaced the original file named &lt;code&gt;icon.png&lt;/code&gt;. If you refresh your browser, you should see the new icon, shown below, in your browser&apos;s tab (remember to clear the cache first):&lt;/p&gt; 
-&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/icon.png&quot; alt=&quot;site/src/assets/img/main/icon.png&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/icon.png&quot; alt=&quot;site/src/assets/img/main/icon.png&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;Our next stop is the JBake configuration file:&lt;/p&gt; 
 &lt;p&gt;&lt;a href=&quot;/tech4rd/blog/2020/mill/jbake/jbake.properties&quot;&gt;site/src/jbake.properties&lt;/a&gt;&lt;/p&gt; 
 &lt;p&gt;The template uses many of the Jbake default properties found in this file. This configuration file also includes many other properties used by the FreeMarker templates. Changes to the Jbake configuration (properties) file are not detected by the JBake serve command. Whenever you make changes to this file you have to restart the &lt;code&gt;jbakeServe&lt;/code&gt; command. Use the &lt;code&gt;Ctrl-C&lt;/code&gt; key combination to stop the HTTP server and repeat the JBake serve command.&lt;/p&gt; 
