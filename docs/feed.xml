@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 11 Oct 2022 07:14:58 +0100</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2022 07:14:58 +0100</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2022 07:27:13 +0100</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 07:27:13 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -23,7 +23,7 @@ g { color: Green }
 b { color: Blue }
 &lt;/style&gt; 
 &lt;h1&gt;Introduction&lt;/h1&gt; 
-&lt;p&gt;In the the &lt;a href=&quot;./mill_mdoc_part_1&quot;&gt;first article of this series&lt;/a&gt; we looked at how to setup a &lt;a href=&quot;https://jbake.org/&quot;&gt;JBake&lt;/a&gt; site using the &lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill&lt;/a&gt; build tool (&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill documentation&lt;/a&gt;) to develop and execute the required scripts to generate and publish the website&apos;s content. In the &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;second article of this series&lt;/a&gt;, I showed you how to download, configure and brand the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt;, which is a freely available template that is not part of the JBake default templates. In this third instalment the goal is to show you how to publish content. So lets get to it.&lt;/p&gt; 
+&lt;p&gt;In the the &lt;a href=&quot;tech4rd/blog/2020/mill/jbake/mill_mdoc_part_1&quot;&gt;first article of this series&lt;/a&gt; we looked at how to setup a &lt;a href=&quot;https://jbake.org/&quot;&gt;JBake&lt;/a&gt; site using the &lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill&lt;/a&gt; build tool (&lt;a href=&quot;https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html&quot;&gt;Mill documentation&lt;/a&gt;) to develop and execute the required scripts to generate and publish the website&apos;s content. In the &lt;a href=&quot;./mill_mdoc_part_2&quot;&gt;second article of this series&lt;/a&gt;, I showed you how to download, configure and brand the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt;, which is a freely available template that is not part of the JBake default templates. In this third instalment the goal is to show you how to publish content. So lets get to it.&lt;/p&gt; 
 &lt;h1&gt;The Baking Process&lt;/h1&gt; 
 &lt;p&gt;The &lt;a href=&quot;https://jbake.org/docs/2.6.7/#process&quot;&gt;baking process&lt;/a&gt; refers to the process of parsing the content, collecting data, storing this data and then using this data to generate the content. There are three sources of data:&lt;/p&gt; 
 &lt;ul&gt; 
