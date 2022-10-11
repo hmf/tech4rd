@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 11 Oct 2022 12:31:35 +0100</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2022 12:31:35 +0100</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2022 15:25:29 +0100</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 15:25:29 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -68,7 +68,7 @@ description=Part 1: how to easily to set up and manage your own blog
 &lt;p&gt;Besides the &lt;code&gt;post&lt;/code&gt; &lt;a href=&quot;https://jbake.org/docs/2.6.7/#type&quot;&gt;type&lt;/a&gt; we also have the &lt;code&gt;page&lt;/code&gt; type. These types indicate which &lt;a href=&quot;https://jbake.org/docs/2.6.7/#default_templates&quot;&gt;templates&lt;/a&gt; are used to render the content. The &lt;code&gt;page&lt;/code&gt; template of the current site generates the same content, but the header does not include the small icon, author name and estimated reading time of the article. In addition to this, even though these articles&apos; tags are listed and the links to them are generated in the website&apos;s site map, no other links are created. A quick search shows that the &lt;a href=&quot;https://jbake.org/docs/2.6.7/#global&quot;&gt;&lt;code&gt;published_pages&lt;/code&gt; global data variable&lt;/a&gt; is not used in the FreeMark templates. The &lt;code&gt;published_content&lt;/code&gt; global data variable is only used for listing the tags that generate the indexing of the site map.&lt;/p&gt; 
 &lt;p&gt;This document type is usually reserved for permanent content such as the &lt;a href=&quot;blog/2020/mill/jbake/copy_content/404.html&quot;&gt;&lt;code&gt;404.html&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;blog/2020/mill/jbake/copy_content/about.html&quot;&gt;&lt;code&gt;about.html&lt;/code&gt;&lt;/a&gt;. Use this content type for content with permanent links that are accessible from the site&apos;s menu.&lt;/p&gt; 
 &lt;h2&gt;Add and post your content&lt;/h2&gt; 
-&lt;p&gt;You can now add your blog posts and use the Mill commands described in &lt;a href=&quot;mill_mdoc_part_1&quot;&gt;parts 1&lt;/a&gt; and &lt;a href=&quot;mill_mdoc_part_2&quot;&gt;2&lt;/a&gt; to serve your content locally or on your project&apos;s github pages. If you don&apos;t see the expected changes, refresh the page. If that does not work, try to clean the browser&apos;s cache. You are also free to change any of the other assets of your website. Below I describe what changes I did to these assets in order to tweak my site to my liking.&lt;/p&gt; 
+&lt;p&gt;You can now add your blog posts and use the Mill commands described in &lt;a href=&quot;blog/2020/mill/jbake/mill_mdoc_part_1&quot;&gt;parts 1&lt;/a&gt; and &lt;a href=&quot;blog/2020/mill/jbake/mill_mdoc_part_2&quot;&gt;2&lt;/a&gt; to serve your content locally or on your project&apos;s github pages. If you don&apos;t see the expected changes, refresh the page. If that does not work, try to clean the browser&apos;s cache. You are also free to change any of the other assets of your website. Below I describe what changes I did to these assets in order to tweak my site to my liking.&lt;/p&gt; 
 &lt;h1&gt;Formatting and processing issues&lt;/h1&gt; 
 &lt;p&gt;When testing the rendered content I found the following issues that required additional changes to the &lt;a href=&quot;https://github.com/manikmagar/jbake-future-imperfect-template&quot;&gt;JBake Future Imperfect template&lt;/a&gt; (see &lt;a href=&quot;blog/2020/mill/jbake/mill_mdoc_part_2&quot;&gt;part 2&lt;/a&gt; for more details):&lt;/p&gt; 
 &lt;ol&gt; 
@@ -511,7 +511,7 @@ img[src*=&apos;#center&apos;] {
       text-align: justify;
     }
 &lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;I did not find any use of the &lt;code&gt;paragraph&lt;/code&gt; class, except in the case of the latest JBake example &lt;a href=&quot;testsite/src/assets/css/asciidoctor.css&quot;&gt;asciidoctor.css&lt;/a&gt; cascading style sheet:&lt;/p&gt; 
+&lt;p&gt;I did not find any use of the &lt;code&gt;paragraph&lt;/code&gt; class, except in the case of the latest JBake example &lt;a href=&quot;blog/2020/mill/jbake/testsite/src/assets/css/asciidoctor.css&quot;&gt;asciidoctor.css&lt;/a&gt; cascading style sheet:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;p.lead, .paragraph.lead &amp;gt; p, #preamble &amp;gt; .sectionbody &amp;gt; .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;Even so, I opted to add it. So the final solution is:&lt;/p&gt; 

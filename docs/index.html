@@ -257,7 +257,7 @@ description=Part 1: how to easily to set up and manage your own blog
 <p>Besides the <code>post</code> <a href="https://jbake.org/docs/2.6.7/#type">type</a> we also have the <code>page</code> type. These types indicate which <a href="https://jbake.org/docs/2.6.7/#default_templates">templates</a> are used to render the content. The <code>page</code> template of the current site generates the same content, but the header does not include the small icon, author name and estimated reading time of the article. In addition to this, even though these articles' tags are listed and the links to them are generated in the website's site map, no other links are created. A quick search shows that the <a href="https://jbake.org/docs/2.6.7/#global"><code>published_pages</code> global data variable</a> is not used in the FreeMark templates. The <code>published_content</code> global data variable is only used for listing the tags that generate the indexing of the site map.</p> 
 <p>This document type is usually reserved for permanent content such as the <a href="blog/2020/mill/jbake/copy_content/404.html"><code>404.html</code></a> and <a href="blog/2020/mill/jbake/copy_content/about.html"><code>about.html</code></a>. Use this content type for content with permanent links that are accessible from the site's menu.</p> 
 <h2>Add and post your content</h2> 
-<p>You can now add your blog posts and use the Mill commands described in <a href="mill_mdoc_part_1">parts 1</a> and <a href="mill_mdoc_part_2">2</a> to serve your content locally or on your project's github pages. If you don't see the expected changes, refresh the page. If that does not work, try to clean the browser's cache. You are also free to change any of the other assets of your website. Below I describe what changes I did to these assets in order to tweak my site to my liking.</p> 
+<p>You can now add your blog posts and use the Mill commands described in <a href="blog/2020/mill/jbake/mill_mdoc_part_1">parts 1</a> and <a href="blog/2020/mill/jbake/mill_mdoc_part_2">2</a> to serve your content locally or on your project's github pages. If you don't see the expected changes, refresh the page. If that does not work, try to clean the browser's cache. You are also free to change any of the other assets of your website. Below I describe what changes I did to these assets in order to tweak my site to my liking.</p> 
 <h1>Formatting and processing issues</h1> 
 <p>When testing the rendered content I found the following issues that required additional changes to the <a href="https://github.com/manikmagar/jbake-future-imperfect-template">JBake Future Imperfect template</a> (see <a href="blog/2020/mill/jbake/mill_mdoc_part_2">part 2</a> for more details):</p> 
 <ol> 
@@ -700,7 +700,7 @@ img[src*='#center'] {
       text-align: justify;
     }
 </code></pre> 
-<p>I did not find any use of the <code>paragraph</code> class, except in the case of the latest JBake example <a href="testsite/src/assets/css/asciidoctor.css">asciidoctor.css</a> cascading style sheet:</p> 
+<p>I did not find any use of the <code>paragraph</code> class, except in the case of the latest JBake example <a href="blog/2020/mill/jbake/testsite/src/assets/css/asciidoctor.css">asciidoctor.css</a> cascading style sheet:</p> 
 <pre><code class="language-css">p.lead, .paragraph.lead &gt; p, #preamble &gt; .sectionbody &gt; .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
 </code></pre> 
 <p>Even so, I opted to add it. So the final solution is:</p> 
