@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 11 Oct 2022 07:12:16 +0100</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2022 07:12:16 +0100</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2022 07:14:58 +0100</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 07:14:58 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -2032,7 +2032,7 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
  &lt;li&gt;If the destination directory &lt;code&gt;docs&lt;/code&gt; subfolder exists, then its contents are first deleted, and the new website&apos;s compiled content is copied into it;&lt;/li&gt; 
  &lt;li&gt;The method then returns the destination path if a copy was performed (&lt;code&gt;Some(destination)&lt;/code&gt;) or &lt;code&gt;None&lt;/code&gt; to indicate the copy failed.&lt;/li&gt; 
 &lt;/ol&gt; 
-&lt;p&gt;Next we show how to execute this target on a new site. First place yourself at the &lt;a href=&quot;https://github.com/hmf/blog&quot;&gt;private source repository&apos;s&lt;/a&gt; directory:&lt;/p&gt; 
+&lt;p&gt;Next we show how to execute this target on a new site. First place yourself at the &lt;a href=&quot;https://github.com/hmf/hashnode-pubs&quot;&gt;private source repository&apos;s&lt;/a&gt; directory:&lt;/p&gt; 
 &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ cd /home/user/VSCodeProjects/blog
 &lt;/code&gt;&lt;/pre&gt; 
 &lt;p&gt;Output:&lt;/p&gt; 
