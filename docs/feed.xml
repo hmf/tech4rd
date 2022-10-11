@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 11 Oct 2022 18:22:28 +0100</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2022 18:22:28 +0100</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2022 18:23:07 +0100</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 18:23:07 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -943,7 +943,7 @@ To https://github.com/hmf/tech4rd.git
 &lt;p&gt;Originally is was a 75 x 75 PNG image. I downloaded the icon, scaled it from 512 x 512 pixels down to a 75 x 75 pixel image and replaced the original file indicated above. If you refresh your browser, you should see the new icon, shown below, in your browser&apos;s tab:&lt;/p&gt; &lt;!-- Use a copy of the assets in case we change the site. Retains validity of article --&gt; &lt;!-- Following link ok for local and remote host servers                              --&gt; &lt;!-- ![site/src/assets/img/main/favicon.png](./../../../../img/favicon/favicon.png)   --&gt; &lt;!-- Net URL fails in JBake&apos;s served localhost because the double slash is not handled 
      by JBake&apos;s HTTP server. Some servers are configured to collapse duplicate forward 
      slashes to a single one. So this is not an issue                                 --&gt; &lt;!-- ![site/src/assets/img/main/favicon.png](./assets/img/favicon/favicon.png)        --&gt; 
-&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/tech4rd/blog/2020/mill/jbake/copy_assets/img/favicon/favicon.png&quot; alt=&quot;site/src/assets/img/main/favicon.png&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/favicon/favicon.png&quot; alt=&quot;site/src/assets/img/main/favicon.png&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;The next icon is used for the the small image located on the top right of each post. The source image is found in the &lt;code&gt;site/src/assets/img/main/icon.png&lt;/code&gt; file. This is also a 75 x 75 PNG image, so I simply removed the original, copied my favicon to the folder and renamed it to &lt;code&gt;avatar.png&lt;/code&gt;. You should now see the icon below appear on each post (remember to clear the cache first):&lt;/p&gt; 
 &lt;p&gt;&lt;img src=&quot;https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/avatar.png&quot; alt=&quot;site/src/assets/img/main/avatar.png&quot;&gt;&lt;/p&gt; 
 &lt;p&gt;The final image is the larger avatar found in the left sidebar just above the blog&apos;s title. This was originally a 128 x 128 PNG image. I took the same icon, scaled it from 512 x 512 pixels down to a 128 x 128 pixel image and replaced the original file named &lt;code&gt;icon.png&lt;/code&gt;. If you refresh your browser, you should see the new icon, shown below, in your browser&apos;s tab (remember to clear the cache first):&lt;/p&gt; 
