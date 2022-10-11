@@ -210,7 +210,7 @@ g { color: Green }
 b { color: Blue }
 </style> 
 <h1>Introduction</h1> 
-<p>In the <a href="./mill_mdoc_part_1">first part of this series</a> of articles we looked at how to setup a <a href="https://jbake.org/">JBake</a> site using the <a href="https://github.com/com-lihaoyi/mill">Mill</a> build tool (<a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill documentation</a>) to develop and execute the required scripts to generate and publish the content. The goal now is to prepare the <a href="https://github.com/manikmagar/jbake-future-imperfect-template">JBake Future Imperfect template</a> that is not one of the default templates of JBake. After reading this article, you will able to use other templates that are freely available in the Internet. In this article, I assume you have read and worked through the previous post. In particular, you have a <a href="https://github.com/hmf/hashnode-pubs">private Github repository</a> that holds your website's sources, a <a href="https://github.com/hmf/tech4rd">public Github repository</a> configured with its own <a href="https://hmf.github.io/tech4rd/">Github pages URL</a> and a Mill <code>build.sc</code> script with the <code>site</code> module and respective Mill targets to copy, <em>"bake"</em> and deploy your website's sources.</p> 
+<p>In the <a href="blog/2020/mill/jbake/mill_mdoc_part_1">first part of this series</a> of articles we looked at how to setup a <a href="https://jbake.org/">JBake</a> site using the <a href="https://github.com/com-lihaoyi/mill">Mill</a> build tool (<a href="https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html">Mill documentation</a>) to develop and execute the required scripts to generate and publish the content. The goal now is to prepare the <a href="https://github.com/manikmagar/jbake-future-imperfect-template">JBake Future Imperfect template</a> that is not one of the default templates of JBake. After reading this article, you will able to use other templates that are freely available in the Internet. In this article, I assume you have read and worked through the previous post. In particular, you have a <a href="https://github.com/hmf/hashnode-pubs">private Github repository</a> that holds your website's sources, a <a href="https://github.com/hmf/tech4rd">public Github repository</a> configured with its own <a href="https://hmf.github.io/tech4rd/">Github pages URL</a> and a Mill <code>build.sc</code> script with the <code>site</code> module and respective Mill targets to copy, <em>"bake"</em> and deploy your website's sources.</p> 
 <h1>Getting started</h1> 
 <p>We will first initialize our source repository to hold a copy of the <a href="https://github.com/manikmagar/jbake-future-imperfect-template">JBake Future Imperfect template</a> executing the following command:</p> 
 <pre><code class="language-bash">~/VSCodeProjects/blog$ ./mill -i site.jbakeGitTemplate
@@ -273,13 +273,13 @@ To https://github.com/hmf/tech4rd.git
 <p>Originally is was a 75 x 75 PNG image. I downloaded the icon, scaled it from 512 x 512 pixels down to a 75 x 75 pixel image and replaced the original file indicated above. If you refresh your browser, you should see the new icon, shown below, in your browser's tab:</p> <!-- Use a copy of the assets in case we change the site. Retains validity of article --> <!-- Following link ok for local and remote host servers                              --> <!-- ![site/src/assets/img/main/favicon.png](./../../../../img/favicon/favicon.png)   --> <!-- Net URL fails in JBake's served localhost because the double slash is not handled 
      by JBake's HTTP server. Some servers are configured to collapse duplicate forward 
      slashes to a single one. So this is not an issue                                 --> <!-- ![site/src/assets/img/main/favicon.png](./assets/img/favicon/favicon.png)        --> 
-<p><img src="https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/favicon/favicon.png" alt="site/src/assets/img/main/favicon.png"></p> 
+<p><img src="https://hmf.github.io/tech4rd/blog/2020/mill/jbake/blog/2020/mill/jbake/copy_assets/img/favicon/favicon.png" alt="site/src/assets/img/main/favicon.png"></p> 
 <p>The next icon is used for the the small image located on the top right of each post. The source image is found in the <code>site/src/assets/img/main/icon.png</code> file. This is also a 75 x 75 PNG image, so I simply removed the original, copied my favicon to the folder and renamed it to <code>avatar.png</code>. You should now see the icon below appear on each post (remember to clear the cache first):</p> 
-<p><img src="https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/avatar.png" alt="site/src/assets/img/main/avatar.png"></p> 
+<p><img src="https://hmf.github.io/tech4rd/blog/2020/mill/jbake/blog/2020/mill/jbake/copy_assets/img/main/avatar.png" alt="site/src/assets/img/main/avatar.png"></p> 
 <p>The final image is the larger avatar found in the left sidebar just above the blog's title. This was originally a 128 x 128 PNG image. I took the same icon, scaled it from 512 x 512 pixels down to a 128 x 128 pixel image and replaced the original file named <code>icon.png</code>. If you refresh your browser, you should see the new icon, shown below, in your browser's tab (remember to clear the cache first):</p> 
-<p><img src="https://hmf.github.io/tech4rd/blog/2020/mill/jbake/copy_assets/img/main/icon.png" alt="site/src/assets/img/main/icon.png"></p> 
+<p><img src="https://hmf.github.io/tech4rd/blog/2020/mill/jbake/blog/2020/mill/jbake/copy_assets/img/main/icon.png" alt="site/src/assets/img/main/icon.png"></p> 
 <p>Our next stop is the JBake configuration file:</p> 
-<p><a href="./jbake.properties">site/src/jbake.properties</a></p> 
+<p><a href="blog/2020/mill/jbake/jbake.properties">site/src/jbake.properties</a></p> 
 <p>The template uses many of the Jbake default properties found in this file. This configuration file also includes many other properties used by the FreeMarker templates. Changes to the Jbake configuration (properties) file are not detected by the JBake serve command. Whenever you make changes to this file you have to restart the <code>jbakeServe</code> command. Use the <code>Ctrl-C</code> key combination to stop the HTTP server and repeat the JBake serve command.</p> 
 <p>We will start off by changing the sites URL, title, author name and avatar icon as shown below:</p> 
 <pre><code>site.host=https://hmf.github.io/tech4rd/
@@ -294,7 +294,7 @@ site.author.avatar=img/main/avatar.png
  <li><code>site.title</code> is the title that appears on the top left corner (left of the menu option).</li> 
 </ul> 
 <p>We don't change any of the menu's or their respective <a href="https://fontawesome.com/">Fontawesome icons</a>. For example, the <a href="https://fontawesome.com/v4/icon/user">user icon</a> is used in the "about" menu option.</p> 
-<p>The side bar icon (<code>icon.png</code>) referred to above, can be placed either in a circle or a hexagonal shape. One can set the JBake properties to use one of these shapes or none, by changing several variables. These variables, shown in the section below, are used in the <a href="./local_templates/commons/sidebar.ftl">sidebar.ftl</a> template. Here are the values I set:</p> 
+<p>The side bar icon (<code>icon.png</code>) referred to above, can be placed either in a circle or a hexagonal shape. One can set the JBake properties to use one of these shapes or none, by changing several variables. These variables, shown in the section below, are used in the <a href="blog/2020/mill/jbake/local_templates/commons/sidebar.ftl">sidebar.ftl</a> template. Here are the values I set:</p> 
 <pre><code>sidebar.intro.pic.src = img/main/icon.png
 # modify your picture in the shape of a circle or
 # future imperfect's hexagonal shape
@@ -303,14 +303,14 @@ sidebar.intro.pic.imperfect = false
 sidebar.intro.pic.width     = 75px
 sidebar.intro.pic.alt       = Tech 4 R&amp;D
 </code></pre> 
-<p>If we opt to use either one of these shapes, then the icon is set as a link to the site's root. If not, then only the image is used. The <a href="./local_templates/commons/sidebar.ftl"><code>sidebar.ftl</code></a> uses, for example, the <code>intro-circle</code> property that is defined in the <a href="./copy_assets/css/add-on.css"><code>add-on.css</code></a> CSS file. This property sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">border-radius</a>. Note that besides the circle's background colour, an SVG image of a hexagon (future imperfect's hexagonal shape) is also set behind the icon. When setting the colours we can also set both these background colours. Below, I provide additional information on this. However, for a simple dark mode colour scheme, I have opted to use no background shapes.</p> 
+<p>If we opt to use either one of these shapes, then the icon is set as a link to the site's root. If not, then only the image is used. The <a href="blog/2020/mill/jbake/local_templates/commons/sidebar.ftl"><code>sidebar.ftl</code></a> uses, for example, the <code>intro-circle</code> property that is defined in the <a href="blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> CSS file. This property sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">border-radius</a>. Note that besides the circle's background colour, an SVG image of a hexagon (future imperfect's hexagonal shape) is also set behind the icon. When setting the colours we can also set both these background colours. Below, I provide additional information on this. However, for a simple dark mode colour scheme, I have opted to use no background shapes.</p> 
 <p>I did notice the following though:</p> 
 <ol> 
- <li>The picture width has no effect if either or both <code>pic.circle</code> and <code>pic.imperfect</code> are set to true (see <code>#intro .logo img</code> in <a href="./copy_assets/css/main.css"><code>main.css</code></a>);</li> 
+ <li>The picture width has no effect if either or both <code>pic.circle</code> and <code>pic.imperfect</code> are set to true (see <code>#intro .logo img</code> in <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a>);</li> 
  <li>If you set <code>pic.circle</code> to true then <code>pic.imperfect</code> will automatically be activated, even if you set it to false;</li> 
  <li>Because you cannot change the icon size, if the image covers most of the square, then the background can make the image less aesthetically pleasing.</li> 
 </ol> 
-<p>The icon's size is set in the <a href="./copy_assets/css/main.css"><code>main.css</code></a> file via the following CSS snippet:</p> 
+<p>The icon's size is set in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file via the following CSS snippet:</p> 
 <pre><code class="language-css">		#intro .logo img {
 			display: block;
 			margin-left: -0.25em;
@@ -325,7 +325,7 @@ sidebar.intro.about =A blog with technical articles on programming\\, software e
 sidebar.intro.about.learnMore=about.html
 </code></pre> 
 <p>Note that we need to <a href="https://stackoverflow.com/questions/67482008/jbake-freemarker-errror-this-has-evaluated-to-a-sequence-wrapper-f-t-simplese">escape the commas</a> with the double backslash (<code>\\,</code>), otherwise the parsing fails.</p> 
-<p>The next step is to fill in your <a href="../../../../about.html"><em>"about"</em> page</a>, which is a raw HTML file. As per the JBake documentation, all raw HTML or Markdown files must have a <a href="https://jbake.org/docs/2.6.7/#metadata_header">metadata header</a> that looks something like this:</p> 
+<p>The next step is to fill in your <a href="about.html"><em>"about"</em> page</a>, which is a raw HTML file. As per the JBake documentation, all raw HTML or Markdown files must have a <a href="https://jbake.org/docs/2.6.7/#metadata_header">metadata header</a> that looks something like this:</p> 
 <pre><code class="language-properties">title=Weekly Links #2
 date=2013-02-01
 type=post
@@ -354,7 +354,7 @@ sidebar.social.twitter         =
 </code></pre> 
 <p>Note that we should only provide the user's identifier. The correct URL will be used by the template.</p> 
 <h1>Color scheme</h1> 
-<p>Setting up your colour scheme or pallet for your site is important for branding. It sets the look and feel of the website. If you look through the CSS files in the assets folder, you will see many colours defined by value. This makes adapting the current template difficult and time consuming. So the first step was to define a set of colours in a separate CSS file named <a href="./copy_assets/css/theme.css"><code>theme.css</code></a> with all the existing colours found in the other CSS files. These were defined using CSS variables. I then replaced each and every colour in the <a href="./copy_assets/css/main.css">main.css</a> and <a href="./copy_assets/css/add-on.css">add-on.css</a> files, with the corresponding variables of the <code>theme.css</code> file. Here is an example of the variables that I used:</p> 
+<p>Setting up your colour scheme or pallet for your site is important for branding. It sets the look and feel of the website. If you look through the CSS files in the assets folder, you will see many colours defined by value. This makes adapting the current template difficult and time consuming. So the first step was to define a set of colours in a separate CSS file named <a href="blog/2020/mill/jbake/copy_assets/css/theme.css"><code>theme.css</code></a> with all the existing colours found in the other CSS files. These were defined using CSS variables. I then replaced each and every colour in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css">main.css</a> and <a href="blog/2020/mill/jbake/copy_assets/css/add-on.css">add-on.css</a> files, with the corresponding variables of the <code>theme.css</code> file. Here is an example of the variables that I used:</p> 
 <pre><code class="language-css">:root {
     --red         : #ff0000;
     --persian-red : #d1342fff;
@@ -434,8 +434,8 @@ sidebar.social.twitter         =
     --mask_b_red_2           : #a84858;
 }
 </code></pre> 
-<p>Note that some of the variables are defined indirectly via another set of variables. More concretely one can observe, for example, that the <code>--foreground</code> variable that is used in the <a href="./copy_assets/css/main.css"><code>main.css</code></a> file, is set to the value of the variable <code>--blue_primary_text</code>. This has allowed me use simple colour schemes of 5 + 2 colours defined in the <a href="./copy_assets/css/theme.css">theme.css</a> and map only those to a larger set of colours that were used in the original template. To set up your own pallet, just define and map those variables to the colour combination of your choice. Note that the <em>"+2"</em> colours set the borders that signal selected components via clicks (<code>--content_border</code>) or hovering (<code>--hover</code>). I kept the original colours of the "share link" icons.</p> 
-<p>One functionality I added to the template, was the automated selection of a <em>"dark mode"</em> colour scheme based on the user's preference. A problem with this, is that the colours visibility and user's perception of these colours will change based on the contrast provided by the selected colour schemes. Even though it is advisable to change several other properties to solve possible issues with the <em>"dark mode"</em> colour pallets, I only encountered problems with the underlining of the links and author name. To make these more visible I simply increase the line's thickness from <code>1px</code> to <code>2px</code> in the <a href="./copy_assets/css/main.css"><code>main.css</code></a> file. Here are the changes I made:</p> 
+<p>Note that some of the variables are defined indirectly via another set of variables. More concretely one can observe, for example, that the <code>--foreground</code> variable that is used in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file, is set to the value of the variable <code>--blue_primary_text</code>. This has allowed me use simple colour schemes of 5 + 2 colours defined in the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css">theme.css</a> and map only those to a larger set of colours that were used in the original template. To set up your own pallet, just define and map those variables to the colour combination of your choice. Note that the <em>"+2"</em> colours set the borders that signal selected components via clicks (<code>--content_border</code>) or hovering (<code>--hover</code>). I kept the original colours of the "share link" icons.</p> 
+<p>One functionality I added to the template, was the automated selection of a <em>"dark mode"</em> colour scheme based on the user's preference. A problem with this, is that the colours visibility and user's perception of these colours will change based on the contrast provided by the selected colour schemes. Even though it is advisable to change several other properties to solve possible issues with the <em>"dark mode"</em> colour pallets, I only encountered problems with the underlining of the links and author name. To make these more visible I simply increase the line's thickness from <code>1px</code> to <code>2px</code> in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file. Here are the changes I made:</p> 
 <pre><code class="language-css">		.author .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
@@ -457,7 +457,7 @@ sidebar.social.twitter         =
 		text-decoration: none;
 	}
 </code></pre> 
-<p>Recall that we can set the side bar icon (<code>icon.png</code>) via the Jbake properties file. This allows us to place either a circle or a hexagonal shape under the icon. The colours of the shape are defined in two places. The first is set by the <code>.intro-circle</code> class that is configured in the <a href="./copy_assets/css/add-on.css"><code>add-on.css</code></a> as follows:</p> 
+<p>Recall that we can set the side bar icon (<code>icon.png</code>) via the Jbake properties file. This allows us to place either a circle or a hexagonal shape under the icon. The colours of the shape are defined in two places. The first is set by the <code>.intro-circle</code> class that is configured in the <a href="blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> as follows:</p> 
 <pre><code class="language-css">#intro .intro-circle {
     border-radius: 50%;
 }
@@ -467,7 +467,7 @@ sidebar.social.twitter         =
     background-color: var(--intro_logo_color);
 }
 </code></pre> 
-<p>In this case I created and used the <code>--intro_logo_color</code> variable. The second is set by the <code>.logo:before</code> class defined in the <a href="./copy_assets/css/main.css"><code>main.css</code></a> file as follows:</p> 
+<p>In this case I created and used the <code>--intro_logo_color</code> variable. The second is set by the <code>.logo:before</code> class defined in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file as follows:</p> 
 <pre><code class="language-css">		#intro .logo:before {
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%23f4f4f4' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75' style='fill:%23f4f4f4' /%3E%3C/svg%3E");
 			background-position: top left;
@@ -482,14 +482,14 @@ sidebar.social.twitter         =
 			width: 100%;
 		}
 </code></pre> 
-<p>Note that the hexagon's <code>background-image</code> colour is hardcoded to <code>#f4f4f4</code>. To be able to change the colour dynamically, I defined the <code>--intro_logo_shape</code> variable in the <a href="./copy_assets/css/theme.css"><code>theme.css</code></a> file as follows:</p> 
+<p>Note that the hexagon's <code>background-image</code> colour is hardcoded to <code>#f4f4f4</code>. To be able to change the colour dynamically, I defined the <code>--intro_logo_shape</code> variable in the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css"><code>theme.css</code></a> file as follows:</p> 
 <pre><code class="language-css">  :root{
 
       --intro_logo_shape: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%230000ff' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75' style='fill:%230000ff' /%3E%3C/svg%3E");
 
   }
 </code></pre> 
-<p>and then used that variable in the in the <a href="./copy_assets/css/main.css"><code>main.css</code></a> file as follows:</p> 
+<p>and then used that variable in the in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file as follows:</p> 
 <pre><code class="language-css">		#intro .logo:before {
 			background-image: var(--intro_logo_shape);
 			background-position: top left;
@@ -504,7 +504,7 @@ sidebar.social.twitter         =
 			width: 100%;
 		}
 </code></pre> 
-<p>So now, by setting the appropriate colours in the <a href="./copy_assets/css/theme.css"><code>theme.css</code></a> file, we can have the desired background behind the logo. I finally decided <strong>not</strong> to do it because: a) I could not find a good combination of colours for the pallets I selected and b) the hexagon shape is too "tight" and the result is less aesthetically appealing (maybe I could increase the <code>background-size</code> to solve this). However, you are free to change the template as you wish.</p> 
+<p>So now, by setting the appropriate colours in the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css"><code>theme.css</code></a> file, we can have the desired background behind the logo. I finally decided <strong>not</strong> to do it because: a) I could not find a good combination of colours for the pallets I selected and b) the hexagon shape is too "tight" and the result is less aesthetically appealing (maybe I could increase the <code>background-size</code> to solve this). However, you are free to change the template as you wish.</p> 
 <h2>Dark Mode</h2> 
 <p>Dark mode allows one to select a colour pallet that uses a dark background and light foreground. A user may opt for the dark mode in the following 3 ways:</p> 
 <ol> 
@@ -548,7 +548,7 @@ p {
 </code></pre> 
 <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"><code>:root</code></a> is a pseudo-class that matches the root element of the document. This means that <code>:root</code> represents the <code>&lt;html&gt;</code> elements with a <code>html</code> selector. Because it has the highest specificity, all elements within the <code>&lt;html&gt;</code> element will be selected unless overridden by a more specific selector. This selector is also visible to all other selectors in the CSS files. So in the case above, the variables <code>--text-color</code> and <code>--bkg-color</code> will be assigned to the <code>body</code>, <code>h1</code> and <code>p</code> selectors. As a result, all of the matched elements in the <code>&lt;html&gt;</code> element and its descendants, will be selected, and hence the colours defined by these variables will be used by default.</p> 
 <p>If a user selects the dark mode, we need only redefine the <code>:root</code> pseudo-class with new content. The <code>@media (prefers-color-scheme: dark)</code> simply checks if the dark mode has been selected and redefines the colour variables. The selectors thereafter will automatically use the new dark mode colour scheme. So the HTML file is always rendered with the <code>:root</code> variables, but the values of those variables will changed according to the user's preference in the operating system or web browser.</p> 
-<p>In the <a href="./copy_assets/css/theme.css"><code>theme.css</code></a> file I initially used this strategy. However, I later added the possibility for the user to interactively set this option in the web application - the static website. This required some minor changes and is explained in the next section. Here is an example of overriding the colour scheme to use dark mode when selected by the OS or web browser:</p> 
+<p>In the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css"><code>theme.css</code></a> file I initially used this strategy. However, I later added the possibility for the user to interactively set this option in the web application - the static website. This required some minor changes and is explained in the next section. Here is an example of overriding the colour scheme to use dark mode when selected by the OS or web browser:</p> 
 <pre><code class="language-css">/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -583,10 +583,10 @@ p {
 }
 </code></pre> 
 <h2>Adding a Dark Mode application selector</h2> 
-<p>Some users are not aware of the dark mode option, don't want to have the trouble to change it, or simply want to use the dark mode at the application level. To change this at the application level, I added a checkbox on the top menu and a script, which checks for events on this checkbox and changes the colour pallet accordingly. All of the JS scripts used by the website are added by the <a href="./local_templates/footer.ftl"><code>footer.ftl</code></a> template file. The idea is to load the script when the rest of the page content has loaded. The user will have the perception that the page has finished loading, when indeed it is still loading the scripts. Here is the line I added:</p> 
+<p>Some users are not aware of the dark mode option, don't want to have the trouble to change it, or simply want to use the dark mode at the application level. To change this at the application level, I added a checkbox on the top menu and a script, which checks for events on this checkbox and changes the colour pallet accordingly. All of the JS scripts used by the website are added by the <a href="blog/2020/mill/jbake/local_templates/footer.ftl"><code>footer.ftl</code></a> template file. The idea is to load the script when the rest of the page content has loaded. The user will have the perception that the page has finished loading, when indeed it is still loading the scripts. Here is the line I added:</p> 
 <pre><code class="language-html">		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/darkmode.js"&gt;&lt;/script&gt;
 </code></pre> 
-<p>Then I added the following code to the <a href="./copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script:</p> 
+<p>Then I added the following code to the <a href="blog/2020/mill/jbake/copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script:</p> 
 <pre><code class="language-javascript">$(function(){
 	const btn = document.getElementById("mode_checkbox");
 	const btn = document.getElementById("mode_checkbox");
@@ -623,7 +623,7 @@ p {
 		
 });
 </code></pre> 
-<p>The next step was to add the checkbox to the static website. The <a href="./local_templates/menu.ftl"><code>menu.ftl</code></a> template sets up the top menu bar of the website. I changed one of the <code>nav</code> elements to include this checkbox. Here is a snippet of the code I changed (<code>id=="mode_checkbox"</code>):</p> 
+<p>The next step was to add the checkbox to the static website. The <a href="blog/2020/mill/jbake/local_templates/menu.ftl"><code>menu.ftl</code></a> template sets up the top menu bar of the website. I changed one of the <code>nav</code> elements to include this checkbox. Here is a snippet of the code I changed (<code>id=="mode_checkbox"</code>):</p> 
 <pre><code class="language-html">    &lt;nav class="main"&gt;
         &lt;ul&gt;
             &lt;li&gt;
@@ -652,7 +652,7 @@ p {
         &lt;/ul&gt;
     &lt;/nav&gt;
 </code></pre> 
-<p>As a side note, I was unable to use the checkbox with the light/dark icons due to spacing and formatting issues. For the same reasons I was also unable to add a label. In addition to this, the checkbox was not centred correctly. I ended up leaving the default tick icon and changed the <a href="./copy_assets/css/main.css"><code>main.css</code></a> file slightly by removing the <code>margin-right</code> property of the <code>input[type="checkbox"]</code> selector. Here is a snippet with the changes made:</p> 
+<p>As a side note, I was unable to use the checkbox with the light/dark icons due to spacing and formatting issues. For the same reasons I was also unable to add a label. In addition to this, the checkbox was not centred correctly. I ended up leaving the default tick icon and changed the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file slightly by removing the <code>margin-right</code> property of the <code>input[type="checkbox"]</code> selector. Here is a snippet with the changes made:</p> 
 <pre><code class="language-css">	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
