@@ -6,8 +6,8 @@
     <atom:link href="https://hmf.github.io/tech4rd/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Oct 2022 19:38:21 +0100</pubDate>
-    <lastBuildDate>Mon, 10 Oct 2022 19:38:21 +0100</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2022 07:12:16 +0100</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 07:12:16 +0100</lastBuildDate>
 
     <item>
       <title>Tutorial: Publishing your own Github blog (Part 3)</title>
@@ -1570,7 +1570,7 @@ b { color: Blue }
 &lt;p&gt;Then we create the &lt;a href=&quot;https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site&quot;&gt;Github repository where the website is published&lt;/a&gt;.&lt;/p&gt; 
 &lt;ol&gt; 
  &lt;li&gt;Go to your github account and &lt;a href=&quot;https://github.com/new&quot;&gt;press the &lt;code&gt;create a new repository&lt;/code&gt;&lt;/a&gt; option;&lt;/li&gt; 
- &lt;li&gt;Create the &lt;a href=&quot;tech4rtd&quot;&gt;repository name&lt;/a&gt; for your site using GitHub pages;&lt;/li&gt; 
+ &lt;li&gt;Create the repository name (in my case &lt;code&gt;tech4rd&lt;/code&gt;) for your site using GitHub pages;&lt;/li&gt; 
  &lt;li&gt;Add a description (&lt;code&gt;Articles on software development, programming stuff, embedded systems, sensors and electronics.&lt;/code&gt;);&lt;/li&gt; 
  &lt;li&gt;Make sure the site is public (don&apos;t keep their anything private);&lt;/li&gt; 
  &lt;li&gt;Select the option to initialize the repository with a &lt;code&gt;README.md&lt;/code&gt; file;&lt;/li&gt; 
@@ -1993,12 +1993,12 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 &lt;ol&gt; 
  &lt;li&gt;Create and clone your &lt;a href=&quot;https://github.com/hmf/tech4rd&quot;&gt;public website repository&lt;/a&gt;;&lt;/li&gt; 
  &lt;li&gt;Configure your public website repository to contain a &lt;a href=&quot;https://hmf.github.io/tech4rd/&quot;&gt;Github pages URL&lt;/a&gt;;&lt;/li&gt; 
- &lt;li&gt;Create and clone your &lt;a href=&quot;https://github.com/hmf/blog&quot;&gt;private source repository&lt;/a&gt;;&lt;/li&gt; 
+ &lt;li&gt;Create and clone your &lt;a href=&quot;https://github.com/hmf/hashnode-pubs&quot;&gt;private source repository&lt;/a&gt;;&lt;/li&gt; 
  &lt;li&gt;Use the Mill JBake plugin to develop and test the local copy of your static website in your private repository;&lt;/li&gt; 
  &lt;li&gt;When you are ready to publish: 
   &lt;ol&gt; 
-   &lt;li&gt;Delete your &lt;a href=&quot;https://github.com/hmf/tech4rd/docs&quot;&gt;public website repository&apos;s source folder&lt;/a&gt; from your &lt;a href=&quot;/home/user/VSCodeProjects/tech4rd/docs/&quot;&gt;local copy&lt;/a&gt;;&lt;/li&gt; 
-   &lt;li&gt;Copy the &lt;a href=&quot;/home/user/VSCodeProjects/blog/out/site/jbake.dest/&quot;&gt;compiled static website from your copy of the private site&lt;/a&gt; to your &lt;a href=&quot;/home/user/VSCodeProjects/tech4rd/docs/&quot;&gt;copy of the public site&lt;/a&gt;;&lt;/li&gt; 
+   &lt;li&gt;Delete your &lt;a href=&quot;https://github.com/hmf/tech4rd/tree/main/docs&quot;&gt;public website repository&apos;s source folder&lt;/a&gt; from your local copy(such as &lt;code&gt;/home/user/VSCodeProjects/tech4rd/docs/&lt;/code&gt;);&lt;/li&gt; 
+   &lt;li&gt;Copy the compiled static website from your copy of the private site (for example &lt;code&gt;/home/user/VSCodeProjects/blog/out/site/jbake.dest/&lt;/code&gt;) to your copy of the public site (for example &lt;code&gt;/home/user/VSCodeProjects/tech4rd/docs/&lt;/code&gt;);&lt;/li&gt; 
    &lt;li&gt;Push and commit the changes of your copy of the &lt;a href=&quot;https://github.com/hmf/tech4rd&quot;&gt;public website repository&lt;/a&gt;;&lt;/li&gt; 
   &lt;/ol&gt; &lt;/li&gt; 
  &lt;li&gt;Github pages will detect the update and publish your site&lt;/li&gt; 

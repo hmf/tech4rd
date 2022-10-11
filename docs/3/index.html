@@ -237,7 +237,7 @@ b { color: Blue }
 <p>Then we create the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site">Github repository where the website is published</a>.</p> 
 <ol> 
  <li>Go to your github account and <a href="https://github.com/new">press the <code>create a new repository</code></a> option;</li> 
- <li>Create the <a href="tech4rtd">repository name</a> for your site using GitHub pages;</li> 
+ <li>Create the repository name (in my case <code>tech4rd</code>) for your site using GitHub pages;</li> 
  <li>Add a description (<code>Articles on software development, programming stuff, embedded systems, sensors and electronics.</code>);</li> 
  <li>Make sure the site is public (don't keep their anything private);</li> 
  <li>Select the option to initialize the repository with a <code>README.md</code> file;</li> 
@@ -660,12 +660,12 @@ Warning: Nashorn engine is planned to be removed from a future JDK release
 <ol> 
  <li>Create and clone your <a href="https://github.com/hmf/tech4rd">public website repository</a>;</li> 
  <li>Configure your public website repository to contain a <a href="https://hmf.github.io/tech4rd/">Github pages URL</a>;</li> 
- <li>Create and clone your <a href="https://github.com/hmf/blog">private source repository</a>;</li> 
+ <li>Create and clone your <a href="https://github.com/hmf/hashnode-pubs">private source repository</a>;</li> 
  <li>Use the Mill JBake plugin to develop and test the local copy of your static website in your private repository;</li> 
  <li>When you are ready to publish: 
   <ol> 
-   <li>Delete your <a href="https://github.com/hmf/tech4rd/docs">public website repository's source folder</a> from your <a href="/home/user/VSCodeProjects/tech4rd/docs/">local copy</a>;</li> 
-   <li>Copy the <a href="/home/user/VSCodeProjects/blog/out/site/jbake.dest/">compiled static website from your copy of the private site</a> to your <a href="/home/user/VSCodeProjects/tech4rd/docs/">copy of the public site</a>;</li> 
+   <li>Delete your <a href="https://github.com/hmf/tech4rd/tree/main/docs">public website repository's source folder</a> from your local copy(such as <code>/home/user/VSCodeProjects/tech4rd/docs/</code>);</li> 
+   <li>Copy the compiled static website from your copy of the private site (for example <code>/home/user/VSCodeProjects/blog/out/site/jbake.dest/</code>) to your copy of the public site (for example <code>/home/user/VSCodeProjects/tech4rd/docs/</code>);</li> 
    <li>Push and commit the changes of your copy of the <a href="https://github.com/hmf/tech4rd">public website repository</a>;</li> 
   </ol> </li> 
  <li>Github pages will detect the update and publish your site</li> 
