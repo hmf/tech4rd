@@ -296,7 +296,7 @@ site.author.avatar=img/main/avatar.png
  <li><code>site.title</code> is the title that appears on the top left corner (left of the menu option).</li> 
 </ul> 
 <p>We don't change any of the menu's or their respective <a href="https://fontawesome.com/">Fontawesome icons</a>. For example, the <a href="https://fontawesome.com/v4/icon/user">user icon</a> is used in the "about" menu option.</p> 
-<p>The side bar icon (<code>icon.png</code>) referred to above, can be placed either in a circle or a hexagonal shape. One can set the JBake properties to use one of these shapes or none, by changing several variables. These variables, shown in the section below, are used in the <a href="/tech4rd/blog/2020/mill/jbake/local_templates/commons/sidebar.ftl">sidebar.ftl</a> template. Here are the values I set:</p> 
+<p>The side bar icon (<code>icon.png</code>) referred to above, can be placed either in a circle or a hexagonal shape. One can set the JBake properties to use one of these shapes or none, by changing several variables. These variables, shown in the section below, are used in the <a href="/tech4rd/blog/2020/mill/jbake/copy_templates/commons/sidebar.ftl">sidebar.ftl</a> template. Here are the values I set:</p> 
 <pre><code>sidebar.intro.pic.src = img/main/icon.png
 # modify your picture in the shape of a circle or
 # future imperfect's hexagonal shape
@@ -305,7 +305,7 @@ sidebar.intro.pic.imperfect = false
 sidebar.intro.pic.width     = 75px
 sidebar.intro.pic.alt       = Tech 4 R&amp;D
 </code></pre> 
-<p>If we opt to use either one of these shapes, then the icon is set as a link to the site's root. If not, then only the image is used. The <a href="/tech4rd/blog/2020/mill/jbake/local_templates/commons/sidebar.ftl"><code>sidebar.ftl</code></a> uses, for example, the <code>intro-circle</code> property that is defined in the <a href="/tech4rd/blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> CSS file. This property sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">border-radius</a>. Note that besides the circle's background colour, an SVG image of a hexagon (future imperfect's hexagonal shape) is also set behind the icon. When setting the colours we can also set both these background colours. Below, I provide additional information on this. However, for a simple dark mode colour scheme, I have opted to use no background shapes.</p> 
+<p>If we opt to use either one of these shapes, then the icon is set as a link to the site's root. If not, then only the image is used. The <a href="/tech4rd/blog/2020/mill/jbake/copy_templates/commons/sidebar.ftl"><code>sidebar.ftl</code></a> uses, for example, the <code>intro-circle</code> property that is defined in the <a href="/tech4rd/blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> CSS file. This property sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">border-radius</a>. Note that besides the circle's background colour, an SVG image of a hexagon (future imperfect's hexagonal shape) is also set behind the icon. When setting the colours we can also set both these background colours. Below, I provide additional information on this. However, for a simple dark mode colour scheme, I have opted to use no background shapes.</p> 
 <p>I did notice the following though:</p> 
 <ol> 
  <li>The picture width has no effect if either or both <code>pic.circle</code> and <code>pic.imperfect</code> are set to true (see <code>#intro .logo img</code> in <a href="/tech4rd/blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a>);</li> 
@@ -585,7 +585,7 @@ p {
 }
 </code></pre> 
 <h2>Adding a Dark Mode application selector</h2> 
-<p>Some users are not aware of the dark mode option, don't want to have the trouble to change it, or simply want to use the dark mode at the application level. To change this at the application level, I added a checkbox on the top menu and a script, which checks for events on this checkbox and changes the colour pallet accordingly. All of the JS scripts used by the website are added by the <a href="/tech4rd/blog/2020/mill/jbake/local_templates/footer.ftl"><code>footer.ftl</code></a> template file. The idea is to load the script when the rest of the page content has loaded. The user will have the perception that the page has finished loading, when indeed it is still loading the scripts. Here is the line I added:</p> 
+<p>Some users are not aware of the dark mode option, don't want to have the trouble to change it, or simply want to use the dark mode at the application level. To change this at the application level, I added a checkbox on the top menu and a script, which checks for events on this checkbox and changes the colour pallet accordingly. All of the JS scripts used by the website are added by the <a href="/tech4rd/blog/2020/mill/jbake/copy_templates/footer.ftl"><code>footer.ftl</code></a> template file. The idea is to load the script when the rest of the page content has loaded. The user will have the perception that the page has finished loading, when indeed it is still loading the scripts. Here is the line I added:</p> 
 <pre><code class="language-html">		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/darkmode.js"&gt;&lt;/script&gt;
 </code></pre> 
 <p>Then I added the following code to the <a href="/tech4rd/blog/2020/mill/jbake/copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script:</p> 
@@ -625,7 +625,7 @@ p {
 		
 });
 </code></pre> 
-<p>The next step was to add the checkbox to the static website. The <a href="/tech4rd/blog/2020/mill/jbake/local_templates/menu.ftl"><code>menu.ftl</code></a> template sets up the top menu bar of the website. I changed one of the <code>nav</code> elements to include this checkbox. Here is a snippet of the code I changed (<code>id=="mode_checkbox"</code>):</p> 
+<p>The next step was to add the checkbox to the static website. The <a href="/tech4rd/blog/2020/mill/jbake/copy_templates/menu.ftl"><code>menu.ftl</code></a> template sets up the top menu bar of the website. I changed one of the <code>nav</code> elements to include this checkbox. Here is a snippet of the code I changed (<code>id=="mode_checkbox"</code>):</p> 
 <pre><code class="language-html">    &lt;nav class="main"&gt;
         &lt;ul&gt;
             &lt;li&gt;
