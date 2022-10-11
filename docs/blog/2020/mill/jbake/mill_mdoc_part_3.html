@@ -220,7 +220,7 @@ b { color: Blue }
 </ul> 
 <p>The baking process consists of three main steps. During the first step the configuration file and content headers are parsed, the data is stored in a database. During this phase, the content files are also parsed and <a href="https://jbake.org/docs/2.6.7/#content_body">converted to HTML snippets if required</a>. These HTML snippets are stored in the database with the corresponding metadata. Note that we are free to add our own <a href="https://jbake.org/docs/2.6.7/#custom_metadata">custom metadata</a> to the headers. The HTML content and all of the metadata are recorded as named variables.</p> 
 <p>During a second phase, each HTML snippet and respective variable values are injected into the template engine. The template engine processes this data and generates the HTML files. The <a href="https://jbake.org/docs/2.6.7/#type"><code>type</code> metadata</a> variable determines which template is used by the template engine to generate the final output. JBake has <a href="https://jbake.org/docs/2.6.7/#default_templates">default templates</a> for the <code>type</code> marked as <code>page</code> or <code>post</code>. However, you can also add your own <a href="https://jbake.org/docs/2.6.7/#custom_templates">custom templates</a> for specific rendering.</p> 
-<p>In a final phase, JBake processes a set of <a href="https://jbake.org/docs/2.6.7/#default_templates">default templates</a> that don't require any content (<code>index</code>, <code>archive</code>, <code>feed</code>, <code>tag</code> and <code>sitemap</code>) and the <a href="copy_templates/index.ftl"><code>index.ftl</code></a> template that processes the site's content. JBake expects the content to be placed in a well defined path. It uses this information to generate the index, archive, tag and sitemap links. More concretely we must place the content in the <code>site/src/content</code> directory. We will now explore how to add and publish content.</p> 
+<p>In a final phase, JBake processes a set of <a href="https://jbake.org/docs/2.6.7/#default_templates">default templates</a> that don't require any content (<code>index</code>, <code>archive</code>, <code>feed</code>, <code>tag</code> and <code>sitemap</code>) and the <a href="blog/2020/mill/jbake/copy_templates/index.ftl"><code>index.ftl</code></a> template that processes the site's content. JBake expects the content to be placed in a well defined path. It uses this information to generate the index, archive, tag and sitemap links. More concretely we must place the content in the <code>site/src/content</code> directory. We will now explore how to add and publish content.</p> 
 <h1>Adding your articles</h1> 
 <p>To add a blog post we must add its sources to the <a href="https://jbake.org/docs/2.6.7/#content_directory">content directory</a>. You can use any folder structure you want to store your content files. JBake examples use a <code>blog</code> root and then have a single folder for each year. Depending on the number of articles you publish, you can use alternate structures as per your requirements. For example, you can create folders using month, trimester or even topic names. I am currently using a year and then topic sub-structure.</p> 
 <p>Your content may include text made available via raw HTML, Markdown or AsciiDoc files. You may also include any other files required to generate your HTML content. These may include images, cascading stylesheets (CSS), fonts and even JavaScript libraries and functions. Technically you can place these files anywhere within the website's sources. In this tutorial's running example, that would be the project's root folder <code>site/src</code> (see <a href="blog/2020/mill/jbake/mill_mdoc_part_1">part 1</a> for more details on this). However, JBake has the dedicated <code>assets</code> directory that contains the following folders for sharing specific kinds of content:</p> 
@@ -253,7 +253,7 @@ description=Part 1: how to easily to set up and manage your own blog
 </ul> 
 <h2>Content type <code>page</code></h2> 
 <p>Besides the <code>post</code> <a href="https://jbake.org/docs/2.6.7/#type">type</a> we also have the <code>page</code> type. These types indicate which <a href="https://jbake.org/docs/2.6.7/#default_templates">templates</a> are used to render the content. The <code>page</code> template of the current site generates the same content, but the header does not include the small icon, author name and estimated reading time of the article. In addition to this, even though these articles' tags are listed and the links to them are generated in the website's site map, no other links are created. A quick search shows that the <a href="https://jbake.org/docs/2.6.7/#global"><code>published_pages</code> global data variable</a> is not used in the FreeMark templates. The <code>published_content</code> global data variable is only used for listing the tags that generate the indexing of the site map.</p> 
-<p>This document type is usually reserved for permanent content such as the <a href="copy_content/404.html"><code>404.html</code></a> and <a href="copy_content/about.html"><code>about.html</code></a>. Use this content type for content with permanent links that are accessible from the site's menu.</p> 
+<p>This document type is usually reserved for permanent content such as the <a href="blog/2020/mill/jbake/copy_content/404.html"><code>404.html</code></a> and <a href="blog/2020/mill/jbake/copy_content/about.html"><code>about.html</code></a>. Use this content type for content with permanent links that are accessible from the site's menu.</p> 
 <h2>Add and post your content</h2> 
 <p>You can now add your blog posts and use the Mill commands described in <a href="mill_mdoc_part_1">parts 1</a> and <a href="mill_mdoc_part_2">2</a> to serve your content locally or on your project's github pages. If you don't see the expected changes, refresh the page. If that does not work, try to clean the browser's cache. You are also free to change any of the other assets of your website. Below I describe what changes I did to these assets in order to tweak my site to my liking.</p> 
 <h1>Formatting and processing issues</h1> 
@@ -292,7 +292,7 @@ val x = 123
 println(&amp;quot;x is &amp;quot; + 123)
 &lt;/code&gt;&lt;/pre&gt;
 </code></pre> 
-<p>Note the <code>class="language-scala"</code> that was used. To render the code snippet correctly we <a href="https://github.com/vsch/flexmark-java/issues/183">can use</a> the <a href="https://prismjs.com/">PrismJS</a> or <a href="https://highlightjs.org/">HighLightJS</a> JavaScript libraries by adding appropriate script links to the HTML files. So what library was the original template using? If we look at the <a href="copy_templates/footer.ftl"><code>footer.ftl</code></a> file we will see the following code snippet:</p> 
+<p>Note the <code>class="language-scala"</code> that was used. To render the code snippet correctly we <a href="https://github.com/vsch/flexmark-java/issues/183">can use</a> the <a href="https://prismjs.com/">PrismJS</a> or <a href="https://highlightjs.org/">HighLightJS</a> JavaScript libraries by adding appropriate script links to the HTML files. So what library was the original template using? If we look at the <a href="blog/2020/mill/jbake/copy_templates/footer.ftl"><code>footer.ftl</code></a> file we will see the following code snippet:</p> 
 <pre><code class="language-html">		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/highlight.pack.js"&gt;&lt;/script&gt;
 		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/readingTime.js"&gt;&lt;/script&gt;
 
@@ -342,10 +342,10 @@ println(&amp;quot;x is &amp;quot; + 123)
 <ol> 
  <li>The downloaded <code>highlight.min.js</code> file was copied to the site's <code>/assets/js/</code> folder;</li> 
  <li>Several pre-selected stylesheets were copied to the site's <code>/assets/cds</code> folder. Examples included <code>lioshi.min.css</code>, <code>googlecode.min.css</code>, <code>default-dark.min.css</code>, <code>tomorrow-night-blue.min.css</code>, <code>magula.min.css</code> and <code>docco.min.css</code>. The prefix <code>hljs_</code> was added to the filenames. I will explain how we use these CSS files later;</li> 
- <li>The <a href="copy_templates/footer.ftl"><code>footer.ftl</code></a> template was changed to use the <code>highlight.min.js</code> script (replaced <code>highlight.pack.js</code> with <code>highlight.min.js</code>);</li> 
- <li>The <a href="copy_templates/footer.ftl"><code>footer.ftl</code></a> template was changed to call the <code>highlightAll()</code> script (replaced <code>initHighlightingOnLoad()</code> with <code>highlightAll()</code>)<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>.</li> 
+ <li>The <a href="blog/2020/mill/jbake/copy_templates/footer.ftl"><code>footer.ftl</code></a> template was changed to use the <code>highlight.min.js</code> script (replaced <code>highlight.pack.js</code> with <code>highlight.min.js</code>);</li> 
+ <li>The <a href="blog/2020/mill/jbake/copy_templates/footer.ftl"><code>footer.ftl</code></a> template was changed to call the <code>highlightAll()</code> script (replaced <code>initHighlightingOnLoad()</code> with <code>highlightAll()</code>)<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>.</li> 
 </ol> 
-<p>Here is a snippet containing the changes that were made to the <a href="copy_templates/footer.ftl"><code>footer.ftl</code></a> template:</p> 
+<p>Here is a snippet containing the changes that were made to the <a href="blog/2020/mill/jbake/copy_templates/footer.ftl"><code>footer.ftl</code></a> template:</p> 
 <pre><code class="language-html">		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/highlight.min.js"&gt;&lt;/script&gt;
 		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/readingTime.js"&gt;&lt;/script&gt;
 		&lt;script src="&lt;#if (content.rootpath)??&gt;${content.rootpath}&lt;#else&gt;&lt;/#if&gt;js/darkmode.js"&gt;&lt;/script&gt;
@@ -360,7 +360,7 @@ println(&amp;quot;x is &amp;quot; + 123)
 		&lt;script&gt;hljs.highlightAll();&lt;/script&gt;
 		&lt;!--[if lte IE 8]&gt;&lt;script src="/js/ie/respond.min.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
 </code></pre> 
-<p>We have effectively <a href="https://github.com/highlightjs/highlight.js/blob/main/VERSION_11_UPGRADE.md">upgraded</a> the highlighting library <a href="copy_assets/js/highlight.min.js">highlight.min.js</a> from the original v9.2.0 version to the current v11.5.1 (git: b8f233c8e2) version. Hopefully it will be just as easy to update or change the highlighting library to a different version when you read this.</p> 
+<p>We have effectively <a href="https://github.com/highlightjs/highlight.js/blob/main/VERSION_11_UPGRADE.md">upgraded</a> the highlighting library <a href="blog/2020/mill/jbake/copy_assets/js/highlight.min.js">highlight.min.js</a> from the original v9.2.0 version to the current v11.5.1 (git: b8f233c8e2) version. Hopefully it will be just as easy to update or change the highlighting library to a different version when you read this.</p> 
 <p>And here is a snippet of the HTML code above after the <a href="https://highlightjs.org/">HighLightJS</a> script has parsed the <code>&lt;code&gt;</code> block:</p> 
 <pre><code class="language-html">&lt;code class="language-scala hljs"&gt;&lt;span class="hljs-comment"&gt;// MyScript.sc&lt;/span&gt;
 &lt;span class="hljs-comment"&gt;// print banner&lt;/span&gt;
@@ -376,7 +376,7 @@ println(&lt;span class="hljs-string"&gt;"x is "&lt;/span&gt; + &lt;span class="h
 &lt;/code&gt;
 </code></pre> 
 <h2>Code fence highlight styles</h2> 
-<p>The website I set up allows for the use of light and dark mode visualization. So the first question is how to change the colour scheme used by the highlighting library. One of the available <a href="https://highlightjs.org/">HighLightJS</a> <a href="https://github.com/highlightjs/highlight.js/tree/main/src/styles">styles</a> is called <a href="https://github.com/highlightjs/highlight.js/blob/main/src/styles/monokai-sublime.css">Monokai Sublime</a>. The use of this template is set in the <a href="copy_templates/header.ftl">header.ftl</a>. Here is a snippet of the relevant code:</p> 
+<p>The website I set up allows for the use of light and dark mode visualization. So the first question is how to change the colour scheme used by the highlighting library. One of the available <a href="https://highlightjs.org/">HighLightJS</a> <a href="https://github.com/highlightjs/highlight.js/tree/main/src/styles">styles</a> is called <a href="https://github.com/highlightjs/highlight.js/blob/main/src/styles/monokai-sublime.css">Monokai Sublime</a>. The use of this template is set in the <a href="blog/2020/mill/jbake/copy_templates/header.ftl">header.ftl</a>. Here is a snippet of the relevant code:</p> 
 <pre><code class="language-html">  &lt;head&gt;
     &lt;meta charset="utf-8"/&gt;
     &lt;title&gt;${config.site_title}&lt;#if (content.title)??&gt; - &lt;#escape x as x?xml&gt;${content.title}&lt;/#escape&gt;&lt;/#if&gt;&lt;/title&gt;
@@ -399,14 +399,14 @@ println(&lt;span class="hljs-string"&gt;"x is "&lt;/span&gt; + &lt;span class="h
 </code></pre> 
 <p>The <em>Monokai Sublime</em> template is a dark mode stylesheet that does not fit well with the blue light mode pallet that I selected. So I used <a href="https://highlightjs.org/static/demo/">HighlightJS's demonstrator page</a> to visualize what the different styles looked like and make a triage of those that I found more appealing<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup>. I then replaced the Monokai Sublime template file with each of these new templates and refreshed the website to see what they looked like. I finally selected the <em>Lioshi</em> (<code>hljs_lioshi.min.css</code>) and <em>Googlecode</em> (<code>hljs_googlecode.min.css</code>) templates for the dark and light modes respectively. For aesthetic reasons I also tweaked these templates by changing the background to conform to the website's <em>"active"</em> colour pallet. So for the Lioshi template I changed <code>background: #303030</code> to <code>background: #242526</code> and for the Googlecode template I changed <code>background: #fff</code> to <code>background: #8fb9d7</code> in the <code>themes.css</code>. In the CSS code I actually used the <code>var(--background_body)</code> CSS value that is either set to <code>--facebook_card</code> for the dark mode or <code>--blue_card</code> for the light mode. If you haven't read the <a href="blog/2020/mill/jbake/mill_mdoc_part_2">second article of this series</a>, do so to understand how to set these variables. You will also need this to understand the next section.</p> 
 <h2>Toggling the code fence highlight</h2> 
-<p>In the <a href="blog/2020/mill/jbake/mill_mdoc_part_2">previous article of this series</a> I allowed the user to select the light or dark mode via the browser, operating system and website. I used the CSS media feature <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code>prefers-color-scheme</code></a> to detect if a user has by default selected the dark mode or used the website's checkbox to toggle the mode explicitly. The CSS media feature <code>prefers-color-scheme</code> can also be used to <a href="https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/">conditionally load the highlighting style</a> using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">`@import</a>, so it stands to reason that I need only add these lines to the start of the <a href="copy_assets/css/theme.css">theme.css</a> stylesheet:</p> 
+<p>In the <a href="blog/2020/mill/jbake/mill_mdoc_part_2">previous article of this series</a> I allowed the user to select the light or dark mode via the browser, operating system and website. I used the CSS media feature <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code>prefers-color-scheme</code></a> to detect if a user has by default selected the dark mode or used the website's checkbox to toggle the mode explicitly. The CSS media feature <code>prefers-color-scheme</code> can also be used to <a href="https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/">conditionally load the highlighting style</a> using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">`@import</a>, so it stands to reason that I need only add these lines to the start of the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css">theme.css</a> stylesheet:</p> 
 <pre><code class="language-css">/* Assume light mode by default */
 @import "hljs_googlecode.min.css" screen;
 /* Supersede dark mode when applicable */  
 @import "hljs_lioshi.min.css" screen and (prefers-color-scheme: dark);
 </code></pre> 
-<p>It does indeed work. In fact we can also do this at the HTML level <a href="https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/">by using the media attribute of the <code>&lt;link&gt;</code> element</a>. However this will not allow us to dynamically set the preferred colour scheme via the web application checkbox. To solve this, I changed the <a href="copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script to <a href="https://stackoverflow.com/questions/16057084/selecting-different-stylesheet-depending-on-the-button-pressed">to dynamically add or remove the stylesheet link</a> from the header. The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">external resource link</a> containing a URL to the HighlightJS style sheet is not required any more and can be removed from the <a href="copy_templates/header.ftl">header.ftl</a> template.</p> 
-<p>The <a href="copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script now looks like this:</p> 
+<p>It does indeed work. In fact we can also do this at the HTML level <a href="https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/">by using the media attribute of the <code>&lt;link&gt;</code> element</a>. However this will not allow us to dynamically set the preferred colour scheme via the web application checkbox. To solve this, I changed the <a href="blog/2020/mill/jbake/copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script to <a href="https://stackoverflow.com/questions/16057084/selecting-different-stylesheet-depending-on-the-button-pressed">to dynamically add or remove the stylesheet link</a> from the header. The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">external resource link</a> containing a URL to the HighlightJS style sheet is not required any more and can be removed from the <a href="blog/2020/mill/jbake/copy_templates/header.ftl">header.ftl</a> template.</p> 
+<p>The <a href="blog/2020/mill/jbake/copy_assets/js/darkmode.js"><code>darkmode.js</code></a> script now looks like this:</p> 
 <pre><code class="language-javascript">
 $(function(){
 	// Stylesheets used by highlight.js
@@ -500,7 +500,7 @@ $(function(){
  <li>Each <code>index.html</code> file has the previous and next buttons that access the corresponding indexed <code>index.html</code> files of the other pages;</li> 
  <li>No additional content is copied to the indexing folders. The index files contain the exact same content as the original sources.</li> 
 </ol> 
-<p>This is the source code snippet of the <a href="copy_templates/index.ftl"><code>index.flt</code></a> showing how the content is used without any changes:</p> 
+<p>This is the source code snippet of the <a href="blog/2020/mill/jbake/copy_templates/index.ftl"><code>index.flt</code></a> showing how the content is used without any changes:</p> 
 <pre><code class="language-html">&lt;#include "header.ftl"&gt;
 	
 	&lt;#include "menu.ftl"&gt;
@@ -580,7 +580,7 @@ img[src*='#center'] {
     margin: auto;
 }
 </code></pre> 
-<p>You can try these in one of the online JavaScript editors. Here is the <a href="https://jsfiddle.net/oknbt8r1/">original example</a>. The solutions above are good because the template already has several CSS styles for the images and we don't want to mess around with those. In particular the <a href="copy_assets/css/main.css"><code>main.css</code></a> file has a <em>"section"</em> for images that starts with:</p> 
+<p>You can try these in one of the online JavaScript editors. Here is the <a href="https://jsfiddle.net/oknbt8r1/">original example</a>. The solutions above are good because the template already has several CSS styles for the images and we don't want to mess around with those. In particular the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> file has a <em>"section"</em> for images that starts with:</p> 
 <pre><code class="language-css">/* Image */
 
 	.image {
@@ -589,7 +589,7 @@ img[src*='#center'] {
 		position: relative;
 	}
 </code></pre> 
-<p>In addition to this, the <a href="copy_assets/css/add-on.css"><code>add-on.css</code></a> has the following selector that is activated by the images within the posts and pages:</p> 
+<p>In addition to this, the <a href="blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> has the following selector that is activated by the images within the posts and pages:</p> 
 <pre><code class="language-css">    #content img {
       max-width: 100%;
     }
@@ -601,7 +601,7 @@ img[src*='#center'] {
 			margin: 0 auto;
     }
 </code></pre> 
-<p>I opted for the second CSS solution I linked to above. This way, I can explicitly mark and format the images how I see fit without inadvertently messing with the rest of the template. To do this in the <a href="copy_assets/css/add-on.css"><code>add-on.css</code></a> stylesheet I added the <code>#content img</code> selectors as shown below:</p> 
+<p>I opted for the second CSS solution I linked to above. This way, I can explicitly mark and format the images how I see fit without inadvertently messing with the rest of the template. To do this in the <a href="blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> stylesheet I added the <code>#content img</code> selectors as shown below:</p> 
 <pre><code class="language-css">.post {
     margin: 0 0 2em 0;
 }
@@ -631,7 +631,7 @@ img[src*='#center'] {
 <p>I prefer seeing my content with its text justified. The default template setting has the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align">text aligned to the left</a>. The HTML output is equivalent to:</p> 
 <pre><code class="language-html">&lt;p style="text-align=left"&gt;Content text.&lt;/p&gt;
 </code></pre> 
-<p>Choosing a random sample of the content text and using the browser's <code>inspect (Q)</code> context-sensitive menu option, we can see (via the developer tools) that the initial text alignment setting are selected via the following CSS snippet found in the <a href="copy_assets/css/add-on.css"><code>add-on.css</code></a> stylesheet:</p> 
+<p>Choosing a random sample of the content text and using the browser's <code>inspect (Q)</code> context-sensitive menu option, we can see (via the developer tools) that the initial text alignment setting are selected via the following CSS snippet found in the <a href="blog/2020/mill/jbake/copy_assets/css/add-on.css"><code>add-on.css</code></a> stylesheet:</p> 
 <pre><code class="language-CSS">    #content p a, #content ul li a {
         border-bottom: dotted 2px var(--content_border);
     }
@@ -644,7 +644,7 @@ img[src*='#center'] {
         margin: 0 0 1em;
     }
 </code></pre> 
-<p>In addition to this, the <a href="copy_assets/css/main.css"><code>main.css</code></a> CSS file also has the following relevant set of selectors:</p> 
+<p>In addition to this, the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a> CSS file also has the following relevant set of selectors:</p> 
 <pre><code class="language-css">    article.post p,
     article.post h2,
     article.post h3,
@@ -713,7 +713,7 @@ img[src*='#center'] {
 <p>The standard code block text, on the other hand, is formatted just as any other text in the paragraph. Here is an example: <em>This sentence holds an inline <code>code block of text</code></em>. The following is the HTML generated by the <a href="https://github.com/vsch/flexmark-java">Flexmark</a> Markdown processor.</p> 
 <pre><code class="language-html">&lt;i&gt;This sentence holds an inline &lt;code&gt;code block of text&lt;/code&gt;&lt;/i&gt;.
 </code></pre> 
-<p>The HTML source above is not changed and is rendered using the <a href="copy_assets/css/main.css">main.css</a> stylesheet based on the <code>code</code> element selector shown below:</p> 
+<p>The HTML source above is not changed and is rendered using the <a href="blog/2020/mill/jbake/copy_assets/css/main.css">main.css</a> stylesheet based on the <code>code</code> element selector shown below:</p> 
 <pre><code class="language-css">code {
   background: var(--dark_gray_alpha_2);
   border: solid 1px var(--dark_gray_alpha);
@@ -769,7 +769,7 @@ println("x is " + 123)
 &lt;/code&gt;
 &lt;/pre&gt;
 </code></pre> 
-<p>Note that the resulting HTML has the same <code>&lt;code&gt;</code> element placed within the <code>&lt;pre&gt;</code> element. The altered HTML is rendered using the <a href="copy_assets/css/main.css">main.css</a> stylesheet based on the combined <code>pre code</code> element selector shown below:</p> 
+<p>Note that the resulting HTML has the same <code>&lt;code&gt;</code> element placed within the <code>&lt;pre&gt;</code> element. The altered HTML is rendered using the <a href="blog/2020/mill/jbake/copy_assets/css/main.css">main.css</a> stylesheet based on the combined <code>pre code</code> element selector shown below:</p> 
 <pre><code class="language-css">		pre code {
 			display: block;
 			line-height: 1.75em;
@@ -777,7 +777,7 @@ println("x is " + 123)
 			overflow-x: auto;
 		}
 </code></pre> 
-<p>This allows us to effectively render the code blocks and fenced code blocks differently. I used this to remove the border from the standard code blocks and add this back to fenced code blocks only. In addition to this, several standard code blocks are used as hyperlinks (shown as the anchor <code>&lt;a&gt;</code>'s text). The original colour <code>--dark_gray_alpha_2</code>, set in the <a href="copy_assets/css/theme.css"><code>themes.css</code></a>, was opaque. This covered the links' underline and hid the visual cue that users need. In this case I added a 50% alpha channel to the colour and used that as the line code's background colour. Here is the final version of the selectors:</p> 
+<p>This allows us to effectively render the code blocks and fenced code blocks differently. I used this to remove the border from the standard code blocks and add this back to fenced code blocks only. In addition to this, several standard code blocks are used as hyperlinks (shown as the anchor <code>&lt;a&gt;</code>'s text). The original colour <code>--dark_gray_alpha_2</code>, set in the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css"><code>themes.css</code></a>, was opaque. This covered the links' underline and hid the visual cue that users need. In this case I added a 50% alpha channel to the colour and used that as the line code's background colour. Here is the final version of the selectors:</p> 
 <pre><code class="language-css">	code {
 	  background: var(--dark_gray_alpha_2);
       font-family: "Courier New", monospace;
@@ -808,7 +808,7 @@ println("x is " + 123)
 ...
 	background: rgba(var(--dark_gray_alpha_2), 0.5);
 </code></pre> 
-<p>That means the colour definition would have to be a triplet of values and not a single colour code as currently used in the <a href="copy_assets/css/theme.css"><code>theme.css</code></a> stylesheet. Recall that in <a href="mill_mdoc_part_2.md">part 2</a> of this series we set up colour pallets for light and dark modes. So the base colour is not a single <code>--dark_gray_alpha_2</code> value but can be either a <code>--blue_hover</code> or <code>--facebook_hover</code> colour. And many other colours set in the template use these <em>hover</em> pallet colours. Specifically here is a list of those colours that are affected:</p> 
+<p>That means the colour definition would have to be a triplet of values and not a single colour code as currently used in the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css"><code>theme.css</code></a> stylesheet. Recall that in <a href="blog/2020/mill/jbake/mill_mdoc_part_2">part 2</a> of this series we set up colour pallets for light and dark modes. So the base colour is not a single <code>--dark_gray_alpha_2</code> value but can be either a <code>--blue_hover</code> or <code>--facebook_hover</code> colour. And many other colours set in the template use these <em>hover</em> pallet colours. Specifically here is a list of those colours that are affected:</p> 
 <pre><code class="language-css">    /* light mode */
     --dark_gray            : var(--blue_hover);
     --dark_gray_alpha      : var(--blue_hover);
@@ -826,7 +826,7 @@ println("x is " + 123)
     --hover_alpha          : var(--facebook_hover);
 
 </code></pre> 
-<p>Were I to use this technique to add the alpha channel, I would have to a) define the <code>hover</code> colours in RGB and b) replace all of the above variable assignments with a call to either <code>rgb(var(--variable))</code> or <code>rgba(var(--variable), opacity)</code>. Because the <code>--dark_gray_alpha_2</code> is only used once in the <a href="copy_assets/css/main.css"><code>main.css</code></a>, I simply created 2 new variables (<code>--blue_hover_light</code> and <code>--facebook_hover_light</code>) and assigned those in only two places as shown below:</p> 
+<p>Were I to use this technique to add the alpha channel, I would have to a) define the <code>hover</code> colours in RGB and b) replace all of the above variable assignments with a call to either <code>rgb(var(--variable))</code> or <code>rgba(var(--variable), opacity)</code>. Because the <code>--dark_gray_alpha_2</code> is only used once in the <a href="blog/2020/mill/jbake/copy_assets/css/main.css"><code>main.css</code></a>, I simply created 2 new variables (<code>--blue_hover_light</code> and <code>--facebook_hover_light</code>) and assigned those in only two places as shown below:</p> 
 <pre><code class="language-css">    --dark_gray_alpha_2    : var(--blue_hover_light);
     --dark_gray_alpha_2    : var(--facebook_hover_light);
 </code></pre> 
@@ -864,8 +864,8 @@ header.separator=---------
 </code></pre> 
 <p>It is important to note that <strong>all Markdown headers</strong> must use this separator.</p> 
 <h2>Google Chrome fails to toggle light/dark mode</h2> 
-<p>While testing the latest changes to the website's scripts in Google Chrome, I realized that the button to toggle between dark and light mode did not seem to work. Using the browser's developer tools shows that the toggle button does indeed work and the <code>&lt;html&gt;</code> element's class was being changed to the <code>"dark-theme"</code> and <code>"light-theme"</code> classes correctly. However the inherited <code>html</code> selector did not change between <code>html.dark-theme</code> and <code>html.light-theme</code>. This pointed to a potential problem in the <a href="copy_assets/css/theme.css">theme.css</a> stylesheet. In addition to this, even though the OS is configured for dark mode, the browser does not seem to detect this setting via the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code>@media (prefers-color-scheme: dark)</code></a> CSS selector. It may have to do with the <a href="https://stackoverflow.com/questions/65966664/media-prefers-color-scheme-light-not-working-in-chrome">'Auto Dark Mode for Web Contents' flag</a> used in the browser because the Google landing page was shown in dark automatically. I also noticed that the the DarkReader plugin does not work in <code>auto</code> mode but does so if set to <code>on</code>.</p> 
-<p>To solve this problem the <a href="copy_assets/css/theme.css">theme.css</a> stylesheet was changed to define both light and dark mode colour schemes. Only then is the <code>@media</code> selector used to reassign the dark mode as a fallback. I suspect this was working for the Firefox browser because I have only tested it with the OS set to dark mode.</p> 
+<p>While testing the latest changes to the website's scripts in Google Chrome, I realized that the button to toggle between dark and light mode did not seem to work. Using the browser's developer tools shows that the toggle button does indeed work and the <code>&lt;html&gt;</code> element's class was being changed to the <code>"dark-theme"</code> and <code>"light-theme"</code> classes correctly. However the inherited <code>html</code> selector did not change between <code>html.dark-theme</code> and <code>html.light-theme</code>. This pointed to a potential problem in the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css">theme.css</a> stylesheet. In addition to this, even though the OS is configured for dark mode, the browser does not seem to detect this setting via the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code>@media (prefers-color-scheme: dark)</code></a> CSS selector. It may have to do with the <a href="https://stackoverflow.com/questions/65966664/media-prefers-color-scheme-light-not-working-in-chrome">'Auto Dark Mode for Web Contents' flag</a> used in the browser because the Google landing page was shown in dark automatically. I also noticed that the the DarkReader plugin does not work in <code>auto</code> mode but does so if set to <code>on</code>.</p> 
+<p>To solve this problem the <a href="blog/2020/mill/jbake/copy_assets/css/theme.css">theme.css</a> stylesheet was changed to define both light and dark mode colour schemes. Only then is the <code>@media</code> selector used to reassign the dark mode as a fallback. I suspect this was working for the Firefox browser because I have only tested it with the OS set to dark mode.</p> 
 <pre><code class="language-css">:root,
 :root.light-theme {
 
